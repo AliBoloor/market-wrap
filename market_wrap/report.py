@@ -61,6 +61,16 @@ def generate_report(config: AppConfig, market_provider: MarketDataProvider) -> R
     )
     path = output_dir / "market-wrap.html"
     path.write_text(html, encoding="utf-8")
+    # A redirect keeps chart URLs correct because the full report remains beside its images.
+    relative_report = f"{now:%Y-%m-%d}/market-wrap.html"
+    redirect = (
+        '<!doctype html><html><head><meta charset="utf-8">'
+        f'<meta http-equiv="refresh" content="0; url={relative_report}">'
+        f'<link rel="canonical" href="{relative_report}"></head>'
+        f'<body><p><a href="{relative_report}">Open the latest Market Wrap</a></p></body></html>'
+    )
+    index = config.report.output_dir / "index.html"
     latest = config.report.output_dir / "latest.html"
-    latest.write_text(html, encoding="utf-8")
-    return ReportResult(path=path, as_of=now, flags=flags, metadata={"latest": str(latest)})
+    index.write_text(redirect, encoding="utf-8")
+    latest.write_text(redirect, encoding="utf-8")
+    return ReportResult(path=path, as_of=now, flags=flags, metadata={"latest": str(index)})

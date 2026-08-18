@@ -1,0 +1,84 @@
+name: Daily Market Wrap
+
+on:
+  workflow_dispatch:
+    inputs:
+      send_email:
+        description: Send the delivery email
+        type: boolean
+        default: false
+  schedule:
+    # GitHub cron uses UTC. Both times are scheduled to cover New York daylight
+    # and standard time; the timezone gate below keeps only the 07:00 run.
+    - cron: "0 11 * * 1-5"
+    - cron: "0 12 * * 1-5"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check New York delivery time
+        id: timegate
+        shell: bash
+        run: |
+          hour="$(TZ=America/New_York date +%H)"
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" || "$hour" == "07" ]]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.timegate.outputs.run == 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.timegate.outputs.run == 'true'
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install and generate report
+        if: steps.timegate.outputs.run == 'true'
+        run: |
+          python -m pip install .
+          cp config.example.yaml config.yaml
+          market-wrap --config config.yaml run
+
+      - uses: actions/configure-pages@v5
+        if: steps.timegate.outputs.run == 'true'
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.timegate.outputs.run == 'true'
+        with:
+          path: output
+
+      - name: Deploy public report
+        if: steps.timegate.outputs.run == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Email report link
+        if: >-
+          steps.timegate.outputs.run == 'true' &&
+          (github.event_name == 'schedule' || inputs.send_email == true)
+        env:
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          REPORT_EMAIL_TO: a.boloor@gmail.com
+          REPORT_URL: https://aliboloor.github.io/market-wrap/
+        run: >-
+          python -c 'import os; from pathlib import Path; from market_wrap.email_delivery import send_report_email;
+          p=sorted(Path("output").glob("*/market-wrap.html"))[-1];
+          send_report_email(p, os.environ["REPORT_URL"])'

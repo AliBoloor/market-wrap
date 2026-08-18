@@ -5,7 +5,6 @@ from datetime import datetime, timedelta
 from email.utils import parsedate_to_datetime
 from zoneinfo import ZoneInfo
 
-import feedparser
 import pandas as pd
 import yfinance as yf
 
@@ -55,6 +54,10 @@ class YahooMarketDataProvider(MarketDataProvider):
 
 class RssNewsProvider:
     def fetch(self, feeds: tuple[dict[str, str], ...], since: datetime, limit: int) -> tuple[list[NewsItem], list[QualityFlag]]:
+        if not feeds:
+            return [], []
+        import feedparser
+
         items: list[NewsItem] = []
         flags: list[QualityFlag] = []
         for feed in feeds:
