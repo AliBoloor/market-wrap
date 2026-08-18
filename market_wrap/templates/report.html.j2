@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ title }}</title>
+<style>
+:root{--ink:#152033;--muted:#64748b;--line:#e2e8f0;--paper:#fff;--bg:#f4f7fb;--blue:#1d4ed8;--red:#b91c1c;--amber:#a16207}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,sans-serif}
+main{max-width:1180px;margin:auto;padding:28px}.masthead{background:#10213f;color:white;padding:28px;border-radius:14px;margin-bottom:18px}
+h1{margin:0 0 5px;font-size:30px}.asof{color:#cbd5e1}.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px;margin:16px 0;overflow:auto}
+h2{font-size:19px;margin:0 0 14px}.data-table{width:100%;border-collapse:collapse;white-space:nowrap}.data-table th{background:#eff6ff;color:#1e3a8a;text-align:right}
+.data-table th:first-child,.data-table th:nth-child(2),.data-table th:nth-child(3),.data-table td:first-child,.data-table td:nth-child(2),.data-table td:nth-child(3){text-align:left}
+.data-table th,.data-table td{padding:9px 11px;border-bottom:1px solid var(--line);text-align:right}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.news{padding:0;list-style:none}.news li{padding:10px 0;border-bottom:1px solid var(--line)}a{color:var(--blue);text-decoration:none}.meta,.muted{color:var(--muted);font-size:12px}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:14px}.chart{border:1px solid var(--line);border-radius:9px;padding:8px}.chart img{width:100%;display:block}
+.flag{padding:8px 10px;margin:6px 0;border-left:4px solid var(--amber);background:#fffbeb}.flag.error{border-color:var(--red);background:#fef2f2}
+@media(max-width:800px){main{padding:12px}.grid,.charts{grid-template-columns:1fr}}
+@media print{body{background:white}main{max-width:none;padding:0}.card,.masthead{break-inside:avoid}}
+</style></head><body><main>
+<header class="masthead"><h1>{{ title }}</h1><div class="asof">As of {{ as_of.strftime('%A, %B %d, %Y at %H:%M %Z') }}</div></header>
+<section class="card"><h2>Cross-Asset Snapshot</h2>{{ returns_table|safe }}</section>
+<div class="grid">
+  <section class="card"><h2>Market & News</h2><ul class="news">{% for item in news %}<li><a href="{{ item.link }}">{{ item.title }}</a><div class="meta">{{ item.source }}{% if item.published %} · {{ item.published.strftime('%b %d %H:%M %Z') }}{% endif %}</div></li>{% else %}<li class="muted">No recent headlines were available.</li>{% endfor %}</ul></section>
+  <section class="card"><h2>Calendar: Next 7 Days</h2><ul class="news">{% for event in events %}<li><strong>{{ event.title }}</strong><div class="meta">{{ event.when.strftime('%a %b %d, %H:%M %Z') }} · {{ event.importance|title }}</div></li>{% else %}<li class="muted">No configured events. Add events or a calendar provider in configuration.</li>{% endfor %}</ul></section>
+</div>
+<section class="card"><h2>Technical Levels</h2>{{ levels_table|safe }}</section>
+<section class="card"><h2>Realized & Implied Volatility</h2>{{ volatility_table|safe }}<p class="muted">Realized volatility is annualized from daily log returns. Implied volatility uses configured index proxies and is not an option-chain calculation.</p></section>
+<section class="card"><h2>Technical Charts</h2><div class="charts">{% for symbol,path in charts.items() %}<div class="chart"><img src="{{ path }}" alt="{{ assets[symbol].name }} technical chart"></div>{% else %}<p class="muted">No charts available.</p>{% endfor %}</div></section>
+<section class="card"><h2>Data Quality</h2>{% for flag in flags %}<div class="flag {{ flag.severity }}"><strong>{{ flag.severity|upper }} · {{ flag.source }}</strong> — {{ flag.message }}</div>{% else %}<p>No data-quality exceptions detected.</p>{% endfor %}</section>
+</main></body></html>
+

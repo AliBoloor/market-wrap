@@ -1,0 +1,35 @@
+report:
+  title: "Daily Pre-Market Wrap"
+  output_dir: "output"
+  timezone: "America/New_York"
+  lookback_days: 260
+  news_lookback_hours: 24
+  max_news_items: 12
+
+schedule:
+  enabled: true
+  hour: 7
+  minute: 0
+  weekdays: "mon-fri"
+
+assets:
+  - {symbol: "SPY", name: "S&P 500", group: "Equities", implied_vol_symbol: "^VIX"}
+  - {symbol: "QQQ", name: "Nasdaq 100", group: "Equities", implied_vol_symbol: "^VXN"}
+  - {symbol: "IWM", name: "Russell 2000", group: "Equities", implied_vol_symbol: "^RVX"}
+  - {symbol: "^VIX", name: "VIX", group: "Volatility"}
+  - {symbol: "TLT", name: "20+ Year Treasuries", group: "Rates"}
+  - {symbol: "IEF", name: "7-10 Year Treasuries", group: "Rates"}
+  - {symbol: "UUP", name: "US Dollar", group: "FX"}
+  - {symbol: "GLD", name: "Gold", group: "Commodities"}
+  - {symbol: "USO", name: "Crude Oil", group: "Commodities"}
+  - {symbol: "BTC-USD", name: "Bitcoin", group: "Crypto"}
+
+news_feeds:
+  - {name: "Reuters Markets", url: "https://feeds.reuters.com/reuters/businessNews"}
+  - {name: "Yahoo Finance", url: "https://finance.yahoo.com/news/rssindex"}
+
+# Optional manually maintained events. Provider interfaces allow an economic-calendar
+# API to replace or supplement these later.
+calendar_events: []
+#  - {time: "2026-08-18 08:30", title: "US CPI", importance: "high", timezone: "America/New_York"}
+
