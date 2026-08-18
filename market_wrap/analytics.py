@@ -11,7 +11,13 @@ RETURN_WINDOWS = {"1D": 1, "5D": 5, "1M": 21, "3M": 63, "YTD": None}
 
 def close_series(frame: pd.DataFrame) -> pd.Series:
     column = "adj_close" if "adj_close" in frame and frame["adj_close"].notna().any() else "close"
-    return frame[column].dropna().astype(float)
+    series = frame[column].dropna().astype(float)
+    return series[~series.index.duplicated(keep="last")].sort_index()
+
+
+def moving_average(close: pd.Series, window: int) -> pd.Series:
+    """Return a full-history simple moving average for table/chart consistency."""
+    return close.rolling(window=window, min_periods=window).mean()
 
 
 def asset_summary(assets: tuple[Asset, ...], data: MarketData) -> pd.DataFrame:
@@ -46,9 +52,9 @@ def technical_levels(assets: tuple[Asset, ...], data: MarketData) -> pd.DataFram
         rows.append({
             "Asset": asset.name,
             "Last": close.iloc[-1],
-            "20D MA": close.tail(20).mean(),
-            "50D MA": close.tail(50).mean(),
-            "200D MA": close.tail(200).mean(),
+            "20D MA": moving_average(close, 20).iloc[-1],
+            "50D MA": moving_average(close, 50).iloc[-1],
+            "200D MA": moving_average(close, 200).iloc[-1],
             "20D Low": close.tail(20).min(),
             "20D High": close.tail(20).max(),
             "52W Low": close.tail(252).min(),
@@ -94,4 +100,3 @@ def validate_market_data(assets: tuple[Asset, ...], data: MarketData) -> list[Qu
         if (daily.abs() > 0.35).any():
             flags.append(QualityFlag("warning", asset.symbol, "Daily move above 35%; verify adjustment"))
     return flags
-

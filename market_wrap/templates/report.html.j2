@@ -12,10 +12,12 @@ h2{font-size:19px;margin:0 0 14px}.data-table{width:100%;border-collapse:collaps
 .news{padding:0;list-style:none}.news li{padding:10px 0;border-bottom:1px solid var(--line)}a{color:var(--blue);text-decoration:none}.meta,.muted{color:var(--muted);font-size:12px}
 .charts{display:grid;grid-template-columns:1fr 1fr;gap:14px}.chart{border:1px solid var(--line);border-radius:9px;padding:8px}.chart img{width:100%;display:block}
 .flag{padding:8px 10px;margin:6px 0;border-left:4px solid var(--amber);background:#fffbeb}.flag.error{border-color:var(--red);background:#fef2f2}
+.narrative{border-top:4px solid var(--blue)}.narrative p{font-size:15px;line-height:1.65;margin:0 0 12px}.narrative p:last-child{margin-bottom:0}
 @media(max-width:800px){main{padding:12px}.grid,.charts{grid-template-columns:1fr}}
 @media print{body{background:white}main{max-width:none;padding:0}.card,.masthead{break-inside:avoid}}
 </style></head><body><main>
 <header class="masthead"><h1>{{ title }}</h1><div class="asof">As of {{ as_of.strftime('%A, %B %d, %Y at %H:%M %Z') }}</div></header>
+<section class="card narrative"><h2>Market Narrative</h2>{% for paragraph in narrative %}<p>{{ paragraph }}</p>{% endfor %}</section>
 <section class="card"><h2>Cross-Asset Snapshot</h2>{{ returns_table|safe }}</section>
 <div class="grid">
   <section class="card"><h2>Market & News</h2><ul class="news">{% for item in news %}<li><a href="{{ item.link }}">{{ item.title }}</a><div class="meta">{{ item.source }}{% if item.published %} · {{ item.published.strftime('%b %d %H:%M %Z') }}{% endif %}</div></li>{% else %}<li class="muted">No recent headlines were available.</li>{% endfor %}</ul></section>
@@ -26,4 +28,3 @@ h2{font-size:19px;margin:0 0 14px}.data-table{width:100%;border-collapse:collaps
 <section class="card"><h2>Technical Charts</h2><div class="charts">{% for symbol,path in charts.items() %}<div class="chart"><img src="{{ path }}" alt="{{ assets[symbol].name }} technical chart"></div>{% else %}<p class="muted">No charts available.</p>{% endfor %}</div></section>
 <section class="card"><h2>Data Quality</h2>{% for flag in flags %}<div class="flag {{ flag.severity }}"><strong>{{ flag.severity|upper }} · {{ flag.source }}</strong> — {{ flag.message }}</div>{% else %}<p>No data-quality exceptions detected.</p>{% endfor %}</section>
 </main></body></html>
-

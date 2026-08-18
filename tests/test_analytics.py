@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-from market_wrap.analytics import asset_summary, technical_levels, volatility_summary
+from market_wrap.analytics import asset_summary, moving_average, technical_levels, volatility_summary
 from market_wrap.models import Asset, MarketData
 
 
@@ -26,4 +26,5 @@ def test_technical_levels() -> None:
     levels = technical_levels(assets, sample_data()).iloc[0]
     assert levels["20D Low"] <= levels["Last"] <= levels["20D High"]
     assert levels["20D MA"] > levels["50D MA"]
-
+    close = sample_data().prices["TEST"]["close"]
+    assert levels["200D MA"] == moving_average(close, 200).iloc[-1]

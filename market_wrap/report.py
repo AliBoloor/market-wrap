@@ -11,6 +11,7 @@ from .analytics import asset_summary, technical_levels, validate_market_data, vo
 from .charts import create_technical_charts
 from .config import AppConfig
 from .models import QualityFlag, ReportResult
+from .narrative import build_market_narrative
 from .providers import ConfigCalendarProvider, MarketDataProvider, RssNewsProvider
 
 
@@ -45,11 +46,13 @@ def generate_report(config: AppConfig, market_provider: MarketDataProvider) -> R
     returns = asset_summary(config.assets, market)
     levels = technical_levels(config.assets, market)
     volatility = volatility_summary(config.assets, market)
+    narrative = build_market_narrative(returns, levels, volatility, events, news, now)
     environment = Environment(loader=PackageLoader("market_wrap"), autoescape=select_autoescape())
     template = environment.get_template("report.html.j2")
     html = template.render(
         title=config.report.title,
         as_of=now,
+        narrative=narrative,
         returns_table=_html_table(returns, {"1D", "5D", "1M", "3M", "YTD", "RV20", "RV60"}),
         levels_table=_html_table(levels),
         volatility_table=_html_table(volatility, {"RV20", "RV60", "IV Proxy", "IV-RV Spread"}),
