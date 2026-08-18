@@ -28,9 +28,11 @@ market-wrap = "market_wrap.cli:main"
 [tool.setuptools.packages.find]
 include = ["market_wrap*"]
 
+[tool.setuptools.package-data]
+market_wrap = ["templates/*.j2"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
 [tool.ruff]
 line-length = 100
-
