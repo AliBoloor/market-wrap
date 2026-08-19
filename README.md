@@ -18,18 +18,9 @@ market-wrap --config config.yaml run
 
 Open `output/latest.html`. A dated copy and its chart images are stored under `output/YYYY-MM-DD/`.
 
-## Public page and email delivery
+## Public page
 
-The included GitHub Actions workflow generates and publishes the report to GitHub Pages at 07:00 New York time each weekday. It also emails a link to `a.boloor@gmail.com`.
-
-To enable email, create a Gmail app password for the sending account, then add these repository Actions secrets under **Settings → Secrets and variables → Actions**:
-
-- `SMTP_USERNAME`: the Gmail address that sends the report
-- `SMTP_PASSWORD`: its 16-character Gmail app password
-
-Do not use or commit the normal Gmail password. Email is sent only after the public report deploys. A manually triggered workflow defaults to publishing without emailing; enable **Send the delivery email** when desired.
-
-Email delivery is isolated from report publication: missing or rejected credentials produce a workflow warning, but do not fail the generated report or public webpage.
+The included GitHub Actions workflow generates and publishes the report to GitHub Pages at 07:00 New York time each weekday. The latest report is available at <https://aliboloor.github.io/market-wrap/>. The workflow can also be run manually from the repository's Actions page.
 
 Network or provider failures do not silently disappear: available sections still render and the Data Quality section identifies missing, stale, suspicious, or failed inputs. A complete market-data outage still produces a report shell.
 
