@@ -73,12 +73,15 @@ jobs:
         if: >-
           steps.timegate.outputs.run == 'true' &&
           (github.event_name == 'schedule' || inputs.send_email == true)
+        continue-on-error: true
         env:
           SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           REPORT_EMAIL_TO: a.boloor@gmail.com
           REPORT_URL: https://aliboloor.github.io/market-wrap/
-        run: >-
-          python -c 'import os; from pathlib import Path; from market_wrap.email_delivery import send_report_email;
-          p=sorted(Path("output").glob("*/market-wrap.html"))[-1];
-          send_report_email(p, os.environ["REPORT_URL"])'
+        run: |
+          if [[ -z "$SMTP_USERNAME" || -z "$SMTP_PASSWORD" ]]; then
+            echo "::warning title=Email not configured::Add SMTP_USERNAME and SMTP_PASSWORD repository secrets to enable delivery."
+            exit 0
+          fi
+          python -c 'import os; from pathlib import Path; from market_wrap.email_delivery import send_report_email; p=sorted(Path("output").glob("*/market-wrap.html"))[-1]; send_report_email(p, os.environ["REPORT_URL"])'

@@ -29,6 +29,8 @@ To enable email, create a Gmail app password for the sending account, then add t
 
 Do not use or commit the normal Gmail password. Email is sent only after the public report deploys. A manually triggered workflow defaults to publishing without emailing; enable **Send the delivery email** when desired.
 
+Email delivery is isolated from report publication: missing or rejected credentials produce a workflow warning, but do not fail the generated report or public webpage.
+
 Network or provider failures do not silently disappear: available sections still render and the Data Quality section identifies missing, stale, suspicious, or failed inputs. A complete market-data outage still produces a report shell.
 
 ## Configure assets and events
