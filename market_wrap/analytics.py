@@ -1,102 +1,97 @@
+"""Transparent technical calculations over recorded observations."""
+
 from __future__ import annotations
 
-import numpy as np
-import pandas as pd
+from dataclasses import dataclass
+from math import log, sqrt
+from statistics import stdev
 
-from .models import Asset, MarketData, QualityFlag
-
-
-RETURN_WINDOWS = {"1D": 1, "5D": 5, "1M": 21, "3M": 63, "YTD": None}
+from .models import MarketSeries
 
 
-def close_series(frame: pd.DataFrame) -> pd.Series:
-    column = "adj_close" if "adj_close" in frame and frame["adj_close"].notna().any() else "close"
-    series = frame[column].dropna().astype(float)
-    return series[~series.index.duplicated(keep="last")].sort_index()
+@dataclass(frozen=True)
+class TechnicalSnapshot:
+    symbol: str
+    latest_close: float
+    prior_high: float | None
+    prior_low: float | None
+    prior_close: float | None
+    recent_high_20d: float | None
+    recent_low_20d: float | None
+    return_1d_pct: float | None
+    sma20: float | None
+    sma50: float | None
+    sma200: float | None
+    distance_sma50_pct: float | None
+    distance_sma200_pct: float | None
+    sma50_direction: str
+    sma200_direction: str
+    trend_structure: str
+    realized_vol_20d_pct: float | None
 
 
-def moving_average(close: pd.Series, window: int) -> pd.Series:
-    """Return a full-history simple moving average for table/chart consistency."""
-    return close.rolling(window=window, min_periods=window).mean()
+def simple_moving_average(values: list[float], window: int) -> list[float | None]:
+    if window <= 0:
+        raise ValueError("window must be positive")
+    output: list[float | None] = [None] * len(values)
+    rolling_sum = 0.0
+    for index, value in enumerate(values):
+        rolling_sum += value
+        if index >= window:
+            rolling_sum -= values[index - window]
+        if index >= window - 1:
+            output[index] = rolling_sum / window
+    return output
 
 
-def asset_summary(assets: tuple[Asset, ...], data: MarketData) -> pd.DataFrame:
-    rows: list[dict] = []
-    for asset in assets:
-        frame = data.prices.get(asset.symbol)
-        if frame is None or frame.empty:
-            continue
-        close = close_series(frame)
-        row = {"Group": asset.group, "Asset": asset.name, "Symbol": asset.symbol, "Last": close.iloc[-1]}
-        for label, periods in RETURN_WINDOWS.items():
-            if label == "YTD":
-                current_year = close.index[-1].year
-                base = close[close.index.year == current_year]
-                row[label] = close.iloc[-1] / base.iloc[0] - 1 if len(base) > 1 else np.nan
-            else:
-                row[label] = close.iloc[-1] / close.iloc[-periods - 1] - 1 if len(close) > periods else np.nan
-        returns = np.log(close / close.shift(1)).dropna()
-        row["RV20"] = returns.tail(20).std(ddof=1) * np.sqrt(252) if len(returns) >= 10 else np.nan
-        row["RV60"] = returns.tail(60).std(ddof=1) * np.sqrt(252) if len(returns) >= 20 else np.nan
-        rows.append(row)
-    return pd.DataFrame(rows)
+def percent_change(current: float, prior: float) -> float:
+    if prior == 0:
+        raise ValueError("prior value cannot be zero")
+    return (current / prior - 1.0) * 100.0
 
 
-def technical_levels(assets: tuple[Asset, ...], data: MarketData) -> pd.DataFrame:
-    rows: list[dict] = []
-    for asset in assets:
-        frame = data.prices.get(asset.symbol)
-        if frame is None or frame.empty:
-            continue
-        close = close_series(frame)
-        rows.append({
-            "Asset": asset.name,
-            "Last": close.iloc[-1],
-            "20D MA": moving_average(close, 20).iloc[-1],
-            "50D MA": moving_average(close, 50).iloc[-1],
-            "200D MA": moving_average(close, 200).iloc[-1],
-            "20D Low": close.tail(20).min(),
-            "20D High": close.tail(20).max(),
-            "52W Low": close.tail(252).min(),
-            "52W High": close.tail(252).max(),
-        })
-    return pd.DataFrame(rows)
+def realized_volatility(closes: list[float], window: int = 20, annualization: int = 252) -> float | None:
+    if len(closes) < window + 1:
+        return None
+    if any(value <= 0 for value in closes[-(window + 1):]):
+        return None
+    returns = [log(closes[i] / closes[i - 1]) for i in range(len(closes) - window, len(closes))]
+    return stdev(returns) * sqrt(annualization) * 100.0 if len(returns) >= 2 else None
 
 
-def volatility_summary(assets: tuple[Asset, ...], data: MarketData) -> pd.DataFrame:
-    summary = asset_summary(assets, data)
-    if summary.empty:
-        return summary
-    rows: list[dict] = []
-    for asset in assets:
-        base = summary.loc[summary["Symbol"] == asset.symbol]
-        if base.empty:
-            continue
-        iv = np.nan
-        if asset.implied_vol_symbol and asset.implied_vol_symbol in data.prices:
-            iv_close = close_series(data.prices[asset.implied_vol_symbol])
-            iv = iv_close.iloc[-1] / 100.0
-        rv20 = base.iloc[0]["RV20"]
-        rows.append({
-            "Asset": asset.name, "RV20": rv20, "RV60": base.iloc[0]["RV60"],
-            "IV Proxy": iv, "IV-RV Spread": iv - rv20 if pd.notna(iv) and pd.notna(rv20) else np.nan,
-        })
-    return pd.DataFrame(rows)
+def technical_snapshot(series: MarketSeries) -> TechnicalSnapshot:
+    closes = [item.close for item in series.observations]
+    if not closes:
+        raise ValueError("cannot calculate technicals without observations")
+    averages = {window: simple_moving_average(closes, window) for window in (20, 50, 200)}
+    latest = closes[-1]
+    prior = series.observations[-2] if len(closes) > 1 else None
+    recent = series.observations[-20:]
+    sma50, sma200 = averages[50][-1], averages[200][-1]
 
+    def direction(window: int) -> str:
+        values = averages[window]
+        if len(values) < 6 or values[-1] is None or values[-6] is None:
+            return "unavailable"
+        if values[-1] > values[-6]:
+            return "rising"
+        if values[-1] < values[-6]:
+            return "falling"
+        return "flat"
 
-def validate_market_data(assets: tuple[Asset, ...], data: MarketData) -> list[QualityFlag]:
-    flags: list[QualityFlag] = []
-    for asset in assets:
-        frame = data.prices.get(asset.symbol)
-        if frame is None:
-            flags.append(QualityFlag("error", asset.symbol, "Required asset is missing"))
-            continue
-        close = close_series(frame)
-        daily = close.pct_change().dropna()
-        if close.index.duplicated().any():
-            flags.append(QualityFlag("warning", asset.symbol, "Duplicate timestamps detected"))
-        if (close <= 0).any():
-            flags.append(QualityFlag("error", asset.symbol, "Non-positive price detected"))
-        if (daily.abs() > 0.35).any():
-            flags.append(QualityFlag("warning", asset.symbol, "Daily move above 35%; verify adjustment"))
-    return flags
+    structure = "unavailable"
+    if sma50 is not None and sma200 is not None:
+        structure = "bullish" if latest > sma50 > sma200 else "bearish" if latest < sma50 < sma200 else "mixed"
+    return TechnicalSnapshot(
+        symbol=series.symbol, latest_close=latest,
+        prior_high=prior.high if prior else None, prior_low=prior.low if prior else None,
+        prior_close=prior.close if prior else None,
+        recent_high_20d=max((item.high for item in recent), default=None),
+        recent_low_20d=min((item.low for item in recent), default=None),
+        return_1d_pct=percent_change(latest, prior.close) if prior else None,
+        sma20=averages[20][-1], sma50=sma50, sma200=sma200,
+        distance_sma50_pct=percent_change(latest, sma50) if sma50 else None,
+        distance_sma200_pct=percent_change(latest, sma200) if sma200 else None,
+        sma50_direction=direction(50), sma200_direction=direction(200),
+        trend_structure=structure, realized_vol_20d_pct=realized_volatility(closes),
+    )

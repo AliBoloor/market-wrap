@@ -1,62 +1,55 @@
 # Market Wrap
 
-Phase 1 is a runnable pre-market report pipeline. It downloads daily cross-asset history, calculates returns and technical levels, estimates realized volatility, adds configured implied-volatility proxies, collects RSS headlines and calendar events, renders charts, records data-quality exceptions, and produces a self-contained HTML report.
+Status: **implemented**. The repository contains the deterministic data, chart,
+validation, and site layers used by the scheduled Codex research workflow.
 
-The default source is Yahoo Finance. It is convenient for an initial personal workflow, but is not an exchange-grade feed. Provider interfaces isolate ingestion so an IBKR adapter and the Option Research codebase can be added later.
+The goal is a researched daily U.S. market wrap that:
 
-## Quick start
+- is written by a scheduled Codex task using the user's ChatGPT plan;
+- requires no OpenAI API key and no paid data API key;
+- is delivered inside ChatGPT;
+- is saved as dated files in this repository;
+- includes sourced narrative, technical analysis, and trustworthy charts; and
+- is published as a public static website through GitHub Pages.
 
-Python 3.11 or newer is required.
+## How it works
+
+1. A scheduled Codex task researches and writes one dated report using the
+   user's ChatGPT allowance—there is no LLM API call or API key.
+2. No-key public market history is saved alongside explicit source and failure
+   metadata. The project calculates technicals and renders charts locally.
+3. Validation fails closed if required evidence or files are absent.
+4. A push to `main` lets GitHub Actions test and build the public static site.
+
+The public site is [aliboloor.github.io/market-wrap](https://aliboloor.github.io/market-wrap/).
+
+## Local setup
+
+Requires Python 3.11 or newer.
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -e .
-market-wrap --config config.yaml init
-market-wrap --config config.yaml run
+python -m pip install -e '.[test]'
+python -m pytest
+python -m market_wrap validate --root .
+python -m market_wrap build --root . --output site
 ```
 
-Open `output/latest.html`. A dated copy and its chart images are stored under `output/YYYY-MM-DD/`.
+Open `site/index.html` to inspect the generated version. See
+[operations](docs/operations.md), [architecture](docs/architecture.md), the
+[report specification](docs/report-spec.md), and the [decision records](docs/decisions/)
+for the operating contract.
 
-## Public page
+## Repository layout
 
-The included GitHub Actions workflow generates and publishes the report to GitHub Pages at 07:00 New York time each weekday. The latest report is available at <https://aliboloor.github.io/market-wrap/>. The workflow can also be run manually from the repository's Actions page.
-
-Network or provider failures do not silently disappear: available sections still render and the Data Quality section identifies missing, stale, suspicious, or failed inputs. A complete market-data outage still produces a report shell.
-
-## Configure assets and events
-
-Edit `config.yaml`. Each asset has a Yahoo symbol, display name, and group. `implied_vol_symbol` is optional; for example, SPY uses `^VIX` as a broad proxy. These proxies are shown separately and should not be interpreted as exact option-chain IV.
-
-Economic events can be listed under `calendar_events`. Times without an explicit offset use the event `timezone`, or the report timezone if omitted. RSS feeds are configured under `news_feeds`; feed availability varies, and failures are flagged.
-
-## Daily scheduling
-
-The built-in scheduler runs in the foreground and uses the report timezone:
-
-```bash
-market-wrap --config config.yaml schedule
+```text
+automation/             Scheduled-task prompt and operating instructions
+content/reports/        Dated Markdown reports
+data/                   Dated, publication-safe source manifests and observations
+docs/                   Plans, specifications, and architecture decisions
+public/charts/          Dated chart images
+scripts/                Deterministic build and validation code
+site/                   Generated static website (not hand-edited)
+tests/                  Validation tests
 ```
-
-By default it generates the report at 07:00 America/New_York on weekdays. Keep this process alive with your normal service manager (launchd on macOS, systemd on Linux, or a container). Alternatively, use cron or a platform scheduler to invoke `market-wrap --config /absolute/path/config.yaml run` daily. The process logs failures and prevents overlapping jobs.
-
-## Architecture and extension points
-
-- `providers.py`: source adapters. Implement `MarketDataProvider` for IBKR or internal data.
-- `analytics.py`: returns, technical levels, and volatility calculations.
-- `charts.py`: static report charts.
-- `report.py` and `templates/`: orchestration and HTML rendering.
-- `scheduler.py`: timezone-aware weekday execution.
-- `models.py`: shared typed domain objects; useful as the integration contract.
-
-For an Option Research integration, add an adapter that returns option-chain IV/skew/term-structure outputs, then pass those results into the report context. For IBKR, implement `MarketDataProvider.history` using `ib_insync` or the official API and select it in the CLI. Neither dependency is coupled to the Phase 1 pipeline.
-
-## Validation
-
-```bash
-python -m pip install -e '.[dev]'
-pytest
-ruff check market_wrap tests
-```
-
-This project is informational and does not provide investment advice.

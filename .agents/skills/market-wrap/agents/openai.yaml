@@ -1,0 +1,4 @@
+interface:
+  display_name: "Market Wrap"
+  short_description: "Research, validate, and publish the daily Market Wrap"
+  default_prompt: "Produce today’s sourced Market Wrap, validate it, save it locally, and publish it safely."

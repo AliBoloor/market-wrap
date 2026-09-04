@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-09-03",
+  "report_type": "Closing Market Wrap",
+  "generated_at": "2026-09-04T01:23:59Z",
+  "market_data_as_of": "2026-09-03T20:00:00Z",
+  "state": "validated",
+  "sources": [
+    {"source_id":"reuters-dashboard","title":"Trading Day: Waller cools Fed hike hoopla","url":"https://www.investing.com/news/economy-news/trading-day-waller-cools-fed-hike-hoopla-4888590","publisher":"Reuters","accessed_at":"2026-09-04T01:23:59Z","supports":["cross-asset closing moves","Fed pricing"]},
+    {"source_id":"reuters-close","title":"Wall Street ends sharply higher","url":"https://www.marketscreener.com/news/wall-street-ends-sharply-higher-as-waller-remarks-ease-rate-hike-fears-ce785bdadb8df225","publisher":"Reuters","accessed_at":"2026-09-04T01:23:59Z","supports":["equity closes","sector performance"]},
+    {"source_id":"ap-waller","title":"Markets react to Waller remarks","url":"https://apnews.com/article/5506d6b43cc2e3d4144f622f8cc29e43","publisher":"Associated Press","accessed_at":"2026-09-04T01:23:59Z","supports":["policy reaction"]},
+    {"source_id":"bls-calendar","title":"September 2026 release calendar","url":"https://www.bls.gov/schedule/2026/09_sched_list.htm","publisher":"U.S. Bureau of Labor Statistics","accessed_at":"2026-09-04T01:23:59Z","supports":["employment release time"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-09-04T01:23:59Z","supports":["technical calculations","charts"]}
+  ],
+  "series_files": [
+    "data/2026-09-03/series/SPY.json", "data/2026-09-03/series/QQQ.json",
+    "data/2026-09-03/series/IWM.json", "data/2026-09-03/series/TLT.json",
+    "data/2026-09-03/series/VIX.json", "data/2026-09-03/series/TNX.json",
+    "data/2026-09-03/series/GC_F.json", "data/2026-09-03/series/CL_F.json"
+  ],
+  "chart_files": [
+    "public/charts/2026-09-03/SPY.png", "public/charts/2026-09-03/QQQ.png",
+    "public/charts/2026-09-03/IWM.png", "public/charts/2026-09-03/SPY-vs-TLT.png"
+  ],
+  "warnings": [
+    "ETF daily history was available through 2026-09-02 at generation time.",
+    "DX-Y.NYB and BTC-USD were excluded after strict OHLC integrity checks failed."
+  ]
+}

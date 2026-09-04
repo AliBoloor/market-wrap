@@ -1,38 +1,28 @@
 [build-system]
-requires = ["setuptools>=69", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
 
 [project]
 name = "market-wrap"
 version = "0.1.0"
-description = "Automated pre-market market wrap report"
+description = "Deterministic tooling for the Market Wrap static website"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-  "APScheduler>=3.10,<4",
-  "feedparser>=6.0",
-  "Jinja2>=3.1",
-  "matplotlib>=3.8",
-  "numpy>=1.26",
-  "pandas>=2.2",
-  "PyYAML>=6.0",
-  "yfinance>=0.2.54",
+  "Markdown>=3.6,<4",
+  "matplotlib>=3.8,<4",
+  "PyYAML>=6.0,<7",
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8", "ruff>=0.6"]
+test = ["pytest>=8,<9"]
 
 [project.scripts]
-market-wrap = "market_wrap.cli:main"
-
-[tool.setuptools.packages.find]
-include = ["market_wrap*"]
-
-[tool.setuptools.package-data]
-market_wrap = ["templates/*.j2"]
+market-wrap-build = "market_wrap.site:main"
 
 [tool.pytest.ini_options]
+addopts = "-q"
 testpaths = ["tests"]
 
-[tool.ruff]
-line-length = 100
+[tool.hatch.build.targets.wheel]
+packages = ["market_wrap"]
