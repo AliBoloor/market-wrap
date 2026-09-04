@@ -45,17 +45,19 @@ def render_relative_chart(primary: MarketSeries, secondary: MarketSeries, output
     try:
         import matplotlib
         matplotlib.use("Agg")
+        import matplotlib.dates as mdates
         import matplotlib.pyplot as plt
     except ImportError as exc:
         raise RuntimeError("chart rendering requires matplotlib") from exc
     first = {item.timestamp[:10]: item.close for item in primary.observations}
     second = {item.timestamp[:10]: item.close for item in secondary.observations}
-    dates = sorted(first.keys() & second.keys())
-    if len(dates) < 2:
+    common_dates = sorted(first.keys() & second.keys())
+    if len(common_dates) < 2:
         raise ValueError("relative chart requires at least two common observations")
-    a0, b0 = first[dates[0]], second[dates[0]]
-    a = [first[date] / a0 * 100 for date in dates]
-    b = [second[date] / b0 * 100 for date in dates]
+    dates = [datetime.fromisoformat(value) for value in common_dates]
+    a0, b0 = first[common_dates[0]], second[common_dates[0]]
+    a = [first[value] / a0 * 100 for value in common_dates]
+    b = [second[value] / b0 * 100 for value in common_dates]
     fig, axis = plt.subplots(figsize=(12, 6.5), constrained_layout=True)
     axis.plot(dates, a, linewidth=2, label=primary.symbol)
     axis.plot(dates, b, linewidth=2, label=secondary.symbol)
@@ -65,6 +67,8 @@ def render_relative_chart(primary: MarketSeries, secondary: MarketSeries, output
     axis.set_xlabel("Date")
     axis.grid(axis="y", alpha=.22)
     axis.legend(frameon=False)
+    axis.xaxis.set_major_locator(mdates.AutoDateLocator(minticks=5, maxticks=9))
+    axis.xaxis.set_major_formatter(mdates.ConciseDateFormatter(axis.xaxis.get_major_locator()))
     axis.text(0, -0.16, f"Sources: {primary.source_name}; {secondary.source_name} | No interpolation", transform=axis.transAxes, fontsize=8, color="#555")
     output.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output, dpi=160, facecolor="white")

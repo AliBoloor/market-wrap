@@ -37,11 +37,16 @@ unless the editorial task explicitly calls for a dated holiday note.
 3. **Global markets** — a few lines on material developments in Europe, Asia,
    emerging markets, currencies, commodities, or sovereign rates and their
    relevance to the U.S. session.
-4. **Participation, options, and volatility** — realized volatility in a
-   standalone table with lookback and annualization method. When trustworthy
-   data is available, include put/call ratios, options-contract volume, and
-   consolidated cash-equity share volume, with scope and timestamps. Never
-   compare contracts and shares as equivalent units.
+4. **Options and volatility** — realized volatility in a standalone two-column
+   table containing only instrument and realized-volatility value; state the
+   shared lookback and annualization method in adjacent prose. Synthesize what
+   reputable derivatives commentary says option prices imply about expected
+   movement, skew, term structure, hedging demand, or event risk. Prefer Cboe,
+   established brokers and transparent specialist research. Public X or other
+   social commentary may add color only when author, date, data basis and
+   methodology are verifiable. Do not calculate a directional story from raw
+   put/call or venue-volume totals, assume dealer positioning, or compare
+   options contracts with equity shares as equivalent units.
 5. **What mattered today** — releases, central-bank developments, Treasury
    activity, major earnings, corporate events, and geopolitics that mattered.
 6. **Tomorrow's setup** — scheduled economic, central-bank, Treasury, major

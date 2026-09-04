@@ -43,6 +43,27 @@ def safe_symbol(symbol: str) -> str:
     return re.sub(r"[^A-Za-z0-9._-]+", "_", symbol).strip("_")
 
 
+def clip_series_on_or_before(item: MarketSeries, cutoff: date) -> MarketSeries | None:
+    """Return a series bounded to a publication date, or None when empty."""
+    observations = tuple(
+        observation
+        for observation in item.observations
+        if observation.timestamp[:10] <= cutoff.isoformat()
+    )
+    if not observations:
+        return None
+    return MarketSeries(
+        instrument=item.instrument,
+        symbol=item.symbol,
+        interval=item.interval,
+        currency=item.currency,
+        source_name=item.source_name,
+        source_url=item.source_url,
+        retrieved_at=item.retrieved_at,
+        observations=observations,
+    )
+
+
 def collect_bundle(
     root: Path,
     trading_date: date,
@@ -53,7 +74,20 @@ def collect_bundle(
     if report_family not in {"daily", "weekly", "monthly", "canadian-economy"}:
         raise ValueError(f"unsupported report family: {report_family}")
     instruments = CANADIAN_INSTRUMENTS if report_family == "canadian-economy" else DEFAULT_INSTRUMENTS
-    series, failures = YahooChartClient().histories(instruments, period="2y", interval="1d")
+    fetched, failures = YahooChartClient().histories(instruments, period="2y", interval="1d")
+    series: dict[str, MarketSeries] = {}
+    for symbol, item in fetched.items():
+        clipped = clip_series_on_or_before(item, trading_date)
+        if clipped is None:
+            failures.append(
+                DataFailure(
+                    symbol=symbol,
+                    source=item.source_name,
+                    reason=f"no observations on or before {trading_date.isoformat()}",
+                )
+            )
+            continue
+        series[symbol] = clipped
     data_dir = root / "data" / report_family / trading_date.isoformat()
     series_dir = data_dir / "series"
     chart_dir = root / "public" / "charts" / report_family / trading_date.isoformat()

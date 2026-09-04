@@ -1,0 +1,7 @@
+[
+  {
+    "symbol": "CAD=X",
+    "source": "Yahoo Finance chart data",
+    "reason": "low is above another OHLC value"
+  }
+]

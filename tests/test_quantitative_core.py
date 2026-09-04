@@ -11,6 +11,7 @@ from market_wrap.analytics import simple_moving_average, technical_snapshot
 from market_wrap.charts import render_price_chart
 from market_wrap.data import YahooChartClient
 from market_wrap.models import EvidenceManifest, MarketSeries, Observation, SourceEvidence
+from market_wrap.pipeline import clip_series_on_or_before
 from market_wrap.validation import validate_manifest, validate_markdown_citations
 
 
@@ -73,3 +74,14 @@ def test_price_chart_is_nonempty(tmp_path: Path) -> None:
     pytest.importorskip("matplotlib")
     chart = render_price_chart(make_series(), tmp_path / "spy.png")
     assert chart.stat().st_size > 1_000
+
+
+def test_historical_bundle_series_stops_at_publication_date() -> None:
+    from datetime import date
+
+    series = make_series(3)
+    clipped = clip_series_on_or_before(series, date(2025, 1, 2))
+
+    assert clipped is not None
+    assert len(clipped.observations) == 2
+    assert clipped.latest.timestamp.startswith("2025-01-02")

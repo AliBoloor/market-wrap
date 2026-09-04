@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-08-31",
+  "report_type": "Monthly Market Wrap",
+  "report_family": "monthly",
+  "generated_at": "2026-09-04T02:18:01Z",
+  "market_data_as_of": "2026-08-31T20:00:00Z",
+  "state": "validated",
+  "sources": [
+    {"source_id":"reuters-month","title":"Wall Street closes lower as indexes notch monthly gains","url":"https://www.investing.com/news/economy-news/us-stock-index-futures-dip-as-middle-east-strikes-worsen-inflation-fears-4882344","publisher":"Reuters","accessed_at":"2026-09-04T02:18:01Z","supports":["monthly narrative","market close"]},
+    {"source_id":"bea-gdp","title":"GDP second estimate and corporate profits","url":"https://www.bea.gov/news/2026/gdp-second-estimate-and-corporate-profits-2nd-quarter-2026","publisher":"U.S. Bureau of Economic Analysis","accessed_at":"2026-09-04T02:18:01Z","supports":["growth","profits"]},
+    {"source_id":"bea-pce","title":"Personal Income and Outlays July 2026","url":"https://www.bea.gov/news/2026/personal-income-and-outlays-july-2026","publisher":"U.S. Bureau of Economic Analysis","accessed_at":"2026-09-04T02:18:01Z","supports":["consumer","inflation"]},
+    {"source_id":"bls-cpi","title":"Consumer Price Index July 2026","url":"https://www.bls.gov/news.release/archives/cpi_08122026.htm","publisher":"U.S. Bureau of Labor Statistics","accessed_at":"2026-09-04T02:18:01Z","supports":["CPI"]},
+    {"source_id":"bls-jobs","title":"Employment Situation July 2026","url":"https://www.bls.gov/news.release/empsit.htm","publisher":"U.S. Bureau of Labor Statistics","accessed_at":"2026-09-04T02:18:01Z","supports":["labor market"]},
+    {"source_id":"fed-warsh","title":"Chair Warsh at Jackson Hole","url":"https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm","publisher":"Federal Reserve Board","accessed_at":"2026-09-04T02:18:01Z","supports":["monetary policy"]},
+    {"source_id":"factset","title":"S&P 500 Earnings Season Update","url":"https://insight.factset.com/sp-500-earnings-season-update-august-7-2026","publisher":"FactSet","accessed_at":"2026-09-04T02:18:01Z","supports":["earnings"]},
+    {"source_id":"reuters-europe","title":"STOXX 600 secures fifth monthly gain","url":"https://www.marketscreener.com/news/european-stocks-ease-as-u-s-iran-strikes-fuel-oil-rally-ce7858dcdc8efe26","publisher":"Reuters","accessed_at":"2026-09-04T02:18:01Z","supports":["European markets"]},
+    {"source_id":"ap-nvidia","title":"Nvidia second-quarter results","url":"https://apnews.com/article/dc8d556e709b50915cca9217a60b1991","publisher":"Associated Press","accessed_at":"2026-09-04T02:18:01Z","supports":["AI earnings"]},
+    {"source_id":"reuters-global","title":"Oil and yields slide","url":"https://www.investing.com/news/economy-news/oil-yields-slide-4875984","publisher":"Reuters","accessed_at":"2026-09-04T02:18:01Z","supports":["global markets"]},
+    {"source_id":"bls-calendar","title":"September release calendar","url":"https://www.bls.gov/schedule/2026/09_sched.htm","publisher":"U.S. Bureau of Labor Statistics","accessed_at":"2026-09-04T02:18:01Z","supports":["September events"]},
+    {"source_id":"bea-calendar","title":"BEA release schedule","url":"https://www.bea.gov/news/schedule/full","publisher":"U.S. Bureau of Economic Analysis","accessed_at":"2026-09-04T02:18:01Z","supports":["September releases"]},
+    {"source_id":"fed-calendar","title":"September 2026 calendar","url":"https://www.federalreserve.gov/newsevents/2026-september.htm","publisher":"Federal Reserve Board","accessed_at":"2026-09-04T02:18:01Z","supports":["FOMC schedule"]},
+    {"source_id":"yahoo","title":"Yahoo Finance chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-09-04T02:18:01Z","supports":["returns","technicals","charts"]}
+  ],
+  "series_files": ["data/monthly/2026-08-31/series/SPY.json","data/monthly/2026-08-31/series/QQQ.json","data/monthly/2026-08-31/series/IWM.json","data/monthly/2026-08-31/series/TLT.json","data/monthly/2026-08-31/series/VIX.json","data/monthly/2026-08-31/series/TNX.json","data/monthly/2026-08-31/series/GC_F.json","data/monthly/2026-08-31/series/CL_F.json","data/monthly/2026-08-31/series/BTC-USD.json"],
+  "chart_files": ["public/charts/monthly/2026-08-31/SPY.png","public/charts/monthly/2026-08-31/QQQ.png","public/charts/monthly/2026-08-31/IWM.png","public/charts/monthly/2026-08-31/SPY-vs-TLT.png"],
+  "warnings": ["DX-Y.NYB failed strict OHLC validation and was excluded.","August labor and inflation outcomes were not yet available at month-end; July reference-period data are labeled."]
+}

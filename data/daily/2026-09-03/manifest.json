@@ -3,7 +3,7 @@
   "trading_date": "2026-09-03",
   "report_type": "Daily Market Wrap",
   "report_family": "daily",
-  "generated_at": "2026-09-04T02:07:28Z",
+  "generated_at": "2026-09-04T02:24:34Z",
   "market_data_as_of": "2026-09-03T20:00:00Z",
   "state": "validated",
   "sources": [
@@ -12,9 +12,10 @@
     {"source_id":"ap-waller","title":"Markets react to Waller remarks","url":"https://apnews.com/article/5506d6b43cc2e3d4144f622f8cc29e43","publisher":"Associated Press","accessed_at":"2026-09-04T01:23:59Z","supports":["policy reaction"]},
     {"source_id":"bls-calendar","title":"September 2026 release calendar","url":"https://www.bls.gov/schedule/2026/09_sched_list.htm","publisher":"U.S. Bureau of Labor Statistics","accessed_at":"2026-09-04T01:23:59Z","supports":["employment release time"]},
     {"source_id":"reuters-treasuries","title":"U.S. bond market extends global rally","url":"https://www.investing.com/news/forex-news/global-bond-rout-takes-a-breath-as-european-and-aussie-yieldsease-from-peaks-4887089","publisher":"Reuters","accessed_at":"2026-09-04T01:42:35Z","supports":["two-year Treasury yield"]},
-    {"source_id":"cboe-options-volume","title":"Cboe Options Exchange Symbol Data","url":"https://www.cboe.com/us/options/market_statistics/symbol_data/?mkt=cone","publisher":"Cboe Global Markets","accessed_at":"2026-09-04T01:42:35Z","supports":["options volume"]},
-    {"source_id":"cboe-equity-volume","title":"U.S. equity market volume summary","url":"https://www.cboe.com/us/equities/listings/analytics/","publisher":"Cboe Global Markets","accessed_at":"2026-09-04T01:42:35Z","supports":["consolidated equity volume"]},
-    {"source_id":"cboe-index-pcr","title":"Cboe index put/call ratio","url":"https://ycharts.com/indicators/cboe_index_put_call_ratio","publisher":"YCharts using Cboe data","accessed_at":"2026-09-04T01:42:35Z","supports":["index option put/call ratio"]},
+    {"source_id":"cboe-august","title":"Index Insights: August 2026","url":"https://www.cboe.com/insights/posts/index-insights-august-2026","publisher":"Cboe Global Markets","accessed_at":"2026-09-04T02:18:01Z","supports":["VIX regime","options-income context"]},
+    {"source_id":"cboe-term","title":"VIX term structure","url":"https://www.cboe.com/tradable-products/vix/term-structure/","publisher":"Cboe Global Markets","accessed_at":"2026-09-04T02:18:01Z","supports":["term-structure interpretation"]},
+    {"source_id":"schwab-options","title":"Today's Options Market Update","url":"https://www.schwab.com/learn/story/todays-options-market-update","publisher":"Charles Schwab","accessed_at":"2026-09-04T02:18:01Z","supports":["event-risk commentary"]},
+    {"source_id":"robomacro-options","title":"VIX Daily — September 3, 2026","url":"https://robomacro.com/notes/VIX_Daily/VIX_Daily_20260903.html","publisher":"RoboMacro","accessed_at":"2026-09-04T02:18:01Z","supports":["implied move","volatility term structure"]},
     {"source_id":"yahoo-chart","title":"Yahoo Finance chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-09-04T01:23:59Z","supports":["technical calculations","charts"]}
   ],
   "series_files": [
@@ -30,6 +31,6 @@
   "warnings": [
     "ETF daily history was available through 2026-09-02 at generation time.",
     "DX-Y.NYB and BTC-USD were excluded after strict OHLC integrity checks failed.",
-    "The latest verified index put/call ratio was for 2026-09-02; Cboe options volume is venue-specific while equity volume is consolidated."
+    "Public option-chain commentary is methodology-dependent; assumed dealer positioning is not treated as an observed fact."
   ]
 }
