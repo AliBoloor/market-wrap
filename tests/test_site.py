@@ -54,6 +54,11 @@ def test_builds_latest_dated_pages_and_archive(tmp_path: Path) -> None:
     archive = (output / "daily/archive/index.html").read_text()
     assert archive.index("September 04, 2026") < archive.index("September 03, 2026")
     assert (output / "static/style.css").is_file()
+    assert (output / "static/theme.js").is_file()
+    homepage = (output / "index.html").read_text()
+    assert 'class="theme-toggle"' in homepage
+    assert 'id="main-content"' in homepage
+    assert 'href="#main-content"' in homepage
     assert (output / ".nojekyll").is_file()
     for family in ("weekly", "monthly", "canadian-economy"):
         assert "not been published yet" in (output / family / "index.html").read_text()

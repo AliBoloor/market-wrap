@@ -5,20 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Sourced daily, weekly, monthly, and Canadian macro market research.">
   <title>$page_title · Market Wrap</title>
+  <script>
+    (function () {
+      var saved = localStorage.getItem("market-wrap-theme");
+      if (saved === "light" || saved === "dark") {
+        document.documentElement.dataset.theme = saved;
+      }
+    }());
+  </script>
   <link rel="stylesheet" href="/market-wrap/static/style.css">
   <link rel="canonical" href="https://aliboloor.github.io/market-wrap/$canonical_path">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to report</a>
   <header class="site-header">
-    <a class="brand" href="/market-wrap/">Market Wrap</a>
-    <nav aria-label="Primary">
-      <a href="/market-wrap/daily/">Daily Wrap</a>
-      <a href="/market-wrap/weekly/">Weekly Wrap</a>
-      <a href="/market-wrap/monthly/">Monthly Wrap</a>
-      <a href="/market-wrap/canadian-economy/">Canadian Economy</a>
-    </nav>
+    <div class="site-header-inner">
+      <a class="brand" href="/market-wrap/" aria-label="Market Wrap home">
+        <span class="brand-mark" aria-hidden="true">MW</span>
+        <span>Market Wrap</span>
+      </a>
+      <div class="header-actions">
+        <nav aria-label="Primary">
+          <a href="/market-wrap/daily/">Daily</a>
+          <a href="/market-wrap/weekly/">Weekly</a>
+          <a href="/market-wrap/monthly/">Monthly</a>
+          <a href="/market-wrap/canadian-economy/">Canada</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch color theme">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.5"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path></svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"></path></svg>
+        </button>
+      </div>
+    </div>
   </header>
-  <main>$content</main>
-  <footer>Public-source research. Informational only; not investment advice.</footer>
+  <main id="main-content">$content</main>
+  <footer><span>Market Wrap</span><span>Public-source research · Informational only, not investment advice</span></footer>
+  <script src="/market-wrap/static/theme.js" defer></script>
 </body>
 </html>
