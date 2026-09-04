@@ -16,7 +16,8 @@ a { color: var(--accent); text-underline-offset: .16em; }
 .site-header, main, footer { width: min(1080px, calc(100% - 2rem)); margin-inline: auto; }
 .site-header { display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 0; border-bottom: 1px solid var(--line); }
 .brand { color: var(--ink); font: 700 1.05rem/1.2 system-ui, sans-serif; text-decoration: none; letter-spacing: .02em; }
-nav a { font: 600 .9rem/1.2 system-ui, sans-serif; }
+nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .35rem 1rem; }
+nav a { font: 600 .86rem/1.2 system-ui, sans-serif; white-space: nowrap; }
 main { padding: clamp(2rem, 5vw, 5rem) 0; }
 .report, .archive { max-width: 850px; }
 .report-header { margin-bottom: 3rem; }
@@ -33,6 +34,7 @@ h3 { margin-top: 2rem; font-size: 1.2rem; }
 .timestamps div { display: grid; gap: .1rem; }
 .timestamps dt { font-weight: 700; color: var(--ink); }
 .timestamps dd { margin: 0; }
+.archive-link { margin: -1.75rem 0 2.5rem; font: 600 .82rem/1.4 system-ui, sans-serif; }
 .report-body > p:first-child { font-size: 1.23rem; line-height: 1.62; }
 table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; background: var(--panel); font: .86rem/1.45 system-ui, sans-serif; }
 th, td { padding: .65rem .75rem; border: 1px solid var(--line); text-align: right; }
@@ -43,5 +45,5 @@ blockquote { margin-inline: 0; border-left: 3px solid var(--accent); padding-lef
 .archive-list li { display: grid; grid-template-columns: minmax(9rem, 1fr) 2fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
 .archive-list span { color: var(--muted); }
 footer { border-top: 1px solid var(--line); padding: 1.5rem 0 3rem; color: var(--muted); font: .8rem/1.4 system-ui, sans-serif; }
+@media (max-width: 760px) { .site-header { align-items: flex-start; flex-direction: column; gap: 1rem; } nav { justify-content: flex-start; } }
 @media (max-width: 620px) { .archive-list li { grid-template-columns: 1fr; gap: .2rem; } table { font-size: .72rem; } }
-

@@ -1,16 +1,25 @@
 # Operations
 
-## Daily execution
+## Intelligent generation
 
-The recurring Codex task is the only intelligent generator. It checks every 15 minutes during the configured weekday morning window and exits before research when a validated report already exists for the current New York date.
+Scheduled Codex tasks are the only intelligent generators. They run under the
+user's ChatGPT allowance and write into this dedicated repository. Repository
+code, builds, and GitHub Actions contain no LLM call and require no OpenAI key.
 
-The Mac must be awake, logged in, online, and running the ChatGPT desktop app. A task missed while the Mac sleeps is not guaranteed to run on wake; the recurring check supplies catch-up behavior. A catch-up after 9:30 a.m. New York time is labeled `Intraday update`.
+Each task uses the calendar and distinct completion key in
+`docs/architecture.md`. Daily runs use a bounded post-close catch-up window.
+Weekly, Monthly, and Canadian Economy tasks run only when their calendar
+condition is met. If more than one is due, run serially and pull/revalidate
+between commits.
 
-The task instructions live in `automation/DAILY_TASK_PROMPT.md`. The repository-scoped procedure lives in `.agents/skills/market-wrap/SKILL.md`.
+The Mac must be awake, logged in, online, and running ChatGPT desktop. A missed
+run cannot execute while it sleeps; bounded checks provide catch-up after wake.
+Every delayed publication shows its true generation and observation times.
+
+The editorial procedure lives in `.agents/skills/market-wrap/SKILL.md`; detailed
+requirements live in `docs/report-spec.md`.
 
 ## Local verification
-
-From the repository root:
 
 ```bash
 python -m pytest
@@ -18,23 +27,29 @@ python -m market_wrap validate --root .
 python -m market_wrap build --root . --output site
 ```
 
-Open `site/index.html` and inspect the newest report, charts, timestamps, source links, freshness state, and archive navigation before pushing.
+Inspect the new route and archive entry. Verify publication name and coverage
+period, timestamps, citations, chart/table agreement, freshness, outlook
+horizon, and navigation among all four sections.
 
 ## Publication
 
-A push to `main` starts `.github/workflows/pages.yml`. GitHub Actions installs the project, runs tests, validates committed content, builds `site/`, and deploys it to GitHub Pages. It does not research or write the report and needs no OpenAI API key.
-
-Enable GitHub Pages with **GitHub Actions** as its source in the repository settings. The workflow requires only the standard `GITHUB_TOKEN`; no repository secret is required.
+A push to `main` starts `.github/workflows/pages.yml`. GitHub Actions installs,
+tests, validates, builds `site/`, and deploys GitHub Pages. It does not research
+or write. It needs only the standard `GITHUB_TOKEN`, not a repository secret.
 
 ## Failure recovery
 
-- **Research or local validation fails:** do not commit; keep the previous public report.
-- **Push fails:** confirm GitHub authentication and reconcile remote changes without force-pushing.
-- **Build job fails:** inspect the first failed test or validation step, repair locally, and push a new commit.
-- **Deploy job fails:** verify Pages is enabled and the workflow has Pages permissions; rerun after correcting configuration.
-- **Report is late:** let the next catch-up check create an `Intraday update` within the allowed window.
-- **Report already exists:** exit successfully without research, file changes, or a new commit.
+- **Research/validation fails:** do not commit; preserve the previous site.
+- **Tasks overlap:** serialize, update the next checkout, and revalidate.
+- **Push fails:** reconcile remote changes without force-pushing.
+- **Build fails:** repair locally and push a new commit.
+- **Deploy fails:** verify Pages permissions and rerun after correction.
+- **Publication is late:** use the next eligible post-close check and show the
+  real generation time; never reclassify Daily as an opening or mid-session report.
+- **Publication exists:** exit without research, changes, or a new commit.
 
 ## Safety
 
-The repository is public. Review staged files before every publication. Never commit secrets, cookies, private messages, local paths, account details, or browser state. Never force-push from the scheduled task.
+The repository is public. Review staged files before publication. Never commit
+secrets, cookies, private messages, local paths, account details, positions,
+orders, or browser state. Never force-push from a scheduled task.

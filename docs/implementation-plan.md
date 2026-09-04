@@ -1,66 +1,69 @@
 # Implementation plan
 
-The initial end-to-end version was implemented on September 3, 2026. The phase
-descriptions below now serve as an operating roadmap; production hardening and
-the five-session reliability trial remain ongoing.
+The first Daily Market Wrap pipeline was implemented on September 3, 2026. The
+next release expands it into four publication families while retaining the
+validated, no-key, static-site architecture.
 
-## Phase 1 — Publication foundation
+## Phase 1 — Existing foundation (complete)
 
-- Define the report Markdown front matter and evidence-manifest schema.
-- Build a deterministic static-site generator.
-- Build the latest-report page and dated archive.
-- Add freshness, citation, file, and schema validation.
-- Add GitHub Pages deployment triggered only by pushes to `main`.
-- Test publication using a fixed sample report with no market research.
+- Deterministic Markdown/front-matter and evidence-manifest validation.
+- Reproducible market calculations and chart generation.
+- Static-site build, dated archive, and GitHub Pages deployment.
+- Repository-scoped Codex skill and source-quality policy.
+- Public-repository safety and fail-closed publication behavior.
 
-Exit criterion: a sample bundle can be validated and published reproducibly.
+## Phase 2 — Four-publication information architecture
 
-## Phase 2 — Research workflow
+- Add landing/archive routes for Daily, Weekly, Monthly, and Canadian Economy.
+- Add publication type and coverage-period metadata with legacy compatibility.
+- Use type-specific completion markers so overlapping reports coexist.
+- Make Daily the default landing view and clearly navigate to all sections.
 
-- Turn the approved prompt into a repository-scoped Market Wrap skill.
-- Define source priorities and minimum corroboration rules.
-- Define the risk-regime rubric and technical-analysis methodology.
-- Establish no-key sources for current values, history, calendars, and news.
-- Run several manual research trials before scheduling.
+Exit criterion: fixtures for all four types validate and render correctly.
 
-Exit criterion: repeated manual runs produce appropriately sourced, consistent reports.
+## Phase 3 — Editorial contracts and quantitative coverage
 
-## Phase 3 — Charts and quantitative checks
+- Enforce the type-specific sections in `docs/report-spec.md`.
+- Keep Daily post-close with a tomorrow outlook, technical map, and calendar.
+- Add weekly/monthly scorecards and appropriate technical horizons.
+- Include global-markets context in Daily, Weekly, and Monthly.
+- Add Canadian macro series, neutral political coverage, and balanced annotated
+  policy reading.
+- Preserve standalone realized-volatility tables and carefully scoped options
+  and equity-volume measures when trustworthy data is available.
 
-- Implement transparent calculations for returns and 20/50/200-day averages.
-- Record exact inputs used by each chart.
-- Generate accessible, publication-quality chart images.
-- Test that final moving-average values match report tables.
-- Add stale-data and instrument-mismatch detection.
+Exit criterion: a manually reviewed publication of each type satisfies its
+editorial, sourcing, chart, and data-quality contract.
 
-Exit criterion: charts are reproducible from the committed observation bundle and agree with the narrative.
+## Phase 4 — Scheduled operation
 
-## Phase 4 — Local scheduled operation
+- Replace the former opening-time schedule with bounded post-close Daily checks.
+- Schedule Weekly after the actual final session, including Friday holidays.
+- Schedule Monthly after the final U.S. session of the month.
+- Schedule Canadian Economy after the final Canadian trading session of the month.
+- Serialize overlapping tasks and test sleep/wake, holidays, month-end overlap,
+  network failure, dirty worktree, and deployment failure.
 
-- Configure the task to work directly in this dedicated repository.
-- Pre-authorize the narrow filesystem, web, and Git operations it requires.
-- Schedule an idempotent check every 15 minutes during the weekday morning window.
-- Generate a pre-market report before the open or a clearly labeled intraday update after the open.
-- Prevent duplicates with an atomic dated completion marker.
-- Test sleep, wake, network-failure, dirty-worktree, and push-failure scenarios.
+Exit criterion: each schedule is idempotent, calendar-aware, and independent.
 
-Exit criterion: five consecutive trading-day runs complete or produce actionable failure notices without corrupting the archive.
+## Phase 5 — Reliability and editorial QA
 
-## Phase 5 — Operational hardening
+- Verify citations, timestamps, freshness, tables, and chart reconciliation.
+- Confirm the deployed route, not only the workflow job.
+- Maintain a public-safe audit trail and actionable failure notice in ChatGPT.
+- Test at least five daily sessions, one weekly close, and one month-end cycle.
 
-- Add link and citation checks.
-- Add a visible last-updated and freshness indicator.
-- Add deployment confirmation.
-- Add an audit log containing no secrets.
-- Document recovery and manual-run procedures.
-
-Exit criterion: failures are visible, recoverable, and never silently presented as fresh reports.
+Exit criterion: failures are visible and recoverable, with the prior site intact.
 
 ## Decisions adopted
 
-1. Weekday catch-up window: 05:30–12:00 America/Vancouver.
-2. Before 09:30 America/New_York use `Pre-market`; after the open use `Intraday update`.
-3. The report sections and focused two-to-four-chart set are approved.
-4. Public no-key endpoints may be used, with failures and timestamps disclosed.
-5. GitHub Actions builds generated site files; only source reports, evidence,
-   and chart assets are committed.
+1. Intelligence runs in Codex under the user's ChatGPT allowance; repository
+   code and GitHub Actions do not call an LLM API.
+2. Daily means after-close reporting about today and the next session.
+3. Weekly publishes after the week's final session; Friday-holiday weeks publish
+   Thursday after close.
+4. Monthly Market Wrap and Canadian Economy are distinct monthly products.
+5. Daily, Weekly, and Monthly include global-markets context.
+6. Canadian Economy is macro/educational, politically neutral, and includes
+   balanced annotated policy reading.
+7. Public no-key endpoints may be used with limitations disclosed.

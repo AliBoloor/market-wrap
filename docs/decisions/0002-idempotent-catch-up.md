@@ -1,15 +1,16 @@
-# ADR 0002: Use an idempotent morning catch-up schedule
+# ADR 0002: Use idempotent bounded catch-up schedules
 
-Status: Proposed
+Status: Superseded by ADR 0005
 
 ## Decision
 
-Run a lightweight check every 15 minutes during an approved weekday morning window. Generate a report only when no validated completion marker exists for the current U.S. trading date.
+Run lightweight checks during bounded publication windows. Generate only when
+no validated marker exists for the applicable publication type and period.
 
 ## Consequences
 
-- A Mac that wakes late can create a report at the next check.
+- A Mac that wakes late can create a report at the next eligible check.
 - Repeated checks must stop before web research when a report already exists.
-- A report created after the regular-session open must be labeled `Intraday update`.
+- Daily reports are always closing reports and run only after the session ends.
+- Weekly and monthly checks resolve the actual final trading session.
 - Sleep catch-up depends on the ChatGPT app resuming and is not guaranteed by a single missed scheduled run.
-

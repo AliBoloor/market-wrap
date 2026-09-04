@@ -1,6 +1,6 @@
 # ADR 0004: Treat all repository content as public
 
-Status: Proposed
+Status: Accepted
 
 ## Decision
 
@@ -11,4 +11,3 @@ Allow only public-source research, publication-safe observations, generated char
 - The repository can remain public.
 - Source manifests must contain public URLs and timestamps only.
 - Validation must scan for common secret patterns before commit.
-

@@ -61,7 +61,7 @@ def test_yahoo_client_skips_incomplete_rows() -> None:
 def test_validation_fails_closed(tmp_path: Path) -> None:
     now = datetime.now(timezone.utc)
     source = SourceEvidence("fed", "Federal Reserve", "https://federalreserve.gov", "Fed", now.isoformat(), ("calendar",))
-    manifest = EvidenceManifest("1.0", now.date().isoformat(), "Pre-market", now.isoformat(), now.isoformat(), "validated", [source], ["data/series.json"], [], [])
+    manifest = EvidenceManifest("1.0", now.date().isoformat(), "Daily Market Wrap", now.isoformat(), now.isoformat(), "validated", [source], ["data/series.json"], [], [])
     result = validate_manifest(manifest, tmp_path, expected_date=now.date().isoformat(), now=now)
     assert not result.valid
     assert "missing or empty file" in result.errors[0]

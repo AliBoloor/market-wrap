@@ -1,4 +1,4 @@
 interface:
   display_name: "Market Wrap"
-  short_description: "Research, validate, and publish the daily Market Wrap"
-  default_prompt: "Produce today’s sourced Market Wrap, validate it, save it locally, and publish it safely."
+  short_description: "Publish daily, weekly, monthly, and Canadian reports"
+  default_prompt: "Use $market-wrap to produce, validate, save, and safely publish the due report."

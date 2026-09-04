@@ -22,6 +22,7 @@ import yaml
 
 _FRONT_MATTER = re.compile(r"\A---\s*\n(?P<meta>.*?)\n---\s*\n(?P<body>.*)\Z", re.DOTALL)
 _REQUIRED_METADATA = (
+    "report_family",
     "trading_date",
     "title",
     "report_type",
@@ -30,6 +31,19 @@ _REQUIRED_METADATA = (
     "freshness",
     "completeness",
 )
+
+REPORT_FAMILIES = {
+    "daily": "Daily Wrap",
+    "weekly": "Weekly Wrap",
+    "monthly": "Monthly Wrap",
+    "canadian-economy": "Canadian Economy",
+}
+REPORT_TYPES = {
+    "daily": "Daily Market Wrap",
+    "weekly": "Weekly Market Wrap",
+    "monthly": "Monthly Market Wrap",
+    "canadian-economy": "Canadian Economy",
+}
 
 
 class SiteBuildError(ValueError):
@@ -54,6 +68,10 @@ class Report:
     @property
     def slug(self) -> str:
         return self.trading_date.isoformat()
+
+    @property
+    def family(self) -> str:
+        return str(self.metadata["report_family"])
 
 
 def load_report(path: Path) -> Report:
@@ -85,16 +103,24 @@ def load_report(path: Path) -> Report:
         raise SiteBuildError(
             f"{path}: filename must match trading_date {parsed_date.isoformat()}"
         )
+    family = str(raw_metadata["report_family"])
+    if family not in REPORT_FAMILIES:
+        raise SiteBuildError(f"{path}: unsupported report_family {family!r}")
+    if path.parent.name != family:
+        raise SiteBuildError(f"{path}: parent directory must match report_family {family}")
+    expected_type = REPORT_TYPES[family]
+    if str(raw_metadata["report_type"]) != expected_type:
+        raise SiteBuildError(
+            f"{path}: report_type must be {expected_type!r} for family {family!r}"
+        )
     return Report(path, raw_metadata, match.group("body").strip())
 
 
 def discover_reports(reports_dir: Path) -> list[Report]:
-    reports = [load_report(path) for path in sorted(reports_dir.glob("*.md"))]
-    if not reports:
-        raise SiteBuildError(f"no reports found in {reports_dir}")
-    slugs = [report.slug for report in reports]
+    reports = [load_report(path) for path in sorted(reports_dir.glob("*/*.md"))]
+    slugs = [(report.family, report.slug) for report in reports]
     if len(slugs) != len(set(slugs)):
-        raise SiteBuildError("duplicate report trading dates")
+        raise SiteBuildError("duplicate report family/date pairs")
     return sorted(reports, key=lambda report: report.trading_date, reverse=True)
 
 
@@ -127,6 +153,7 @@ def _report_article(report: Report, template: Template) -> str:
         freshness_class=_css_token(freshness),
         completeness=html.escape(completeness),
         completeness_class=_css_token(completeness),
+        family_archive_path=f"/market-wrap/{report.family}/archive/",
         report_body=_render_markdown(report.body_markdown),
     )
 
@@ -144,7 +171,7 @@ def _page(base: Template, *, title: str, content: str, canonical_path: str) -> s
     )
 
 
-def _archive_list(reports: Iterable[Report]) -> str:
+def _archive_list(reports: Iterable[Report], family: str) -> str:
     items = []
     for report in reports:
         metadata = report.metadata
@@ -160,6 +187,17 @@ def _archive_list(reports: Iterable[Report]) -> str:
     return "\n".join(items)
 
 
+def _empty_family(label: str) -> str:
+    slug = next(key for key, value in REPORT_FAMILIES.items() if value == label)
+    return (
+        '<section class="archive empty-state"><p class="eyebrow">Coming soon</p>'
+        f'<h1>{html.escape(label)}</h1>'
+        '<p>The first validated edition has not been published yet. '
+        'It will appear here automatically after publication.</p>'
+        f'<p><a href="/market-wrap/{slug}/archive/">View archive</a></p></section>'
+    )
+
+
 def build_site(
     reports_dir: Path,
     output_dir: Path,
@@ -173,7 +211,13 @@ def build_site(
     templates_dir = templates_dir or package_root / "templates"
     static_dir = static_dir or package_root / "static"
     reports = discover_reports(reports_dir)
-    latest = reports[0]
+    grouped = {
+        family: [report for report in reports if report.family == family]
+        for family in REPORT_FAMILIES
+    }
+    if not grouped["daily"]:
+        raise SiteBuildError("at least one daily report is required")
+    latest = grouped["daily"][0]
 
     staging = output_dir.with_name(f".{output_dir.name}.staging")
     if staging.exists():
@@ -184,26 +228,52 @@ def build_site(
     report_template = _read_template(templates_dir, "report.html")
     archive_template = _read_template(templates_dir, "archive.html")
 
-    for report in reports:
-        article = _report_article(report, report_template)
-        destination = staging / "reports" / report.slug
-        destination.mkdir(parents=True)
-        (destination / "index.html").write_text(
-            _page(base, title=str(report.metadata["title"]), content=article, canonical_path=f"reports/{report.slug}/"),
+    for family, label in REPORT_FAMILIES.items():
+        family_reports = grouped[family]
+        family_root = staging / family
+        family_root.mkdir(parents=True)
+        for report in family_reports:
+            article = _report_article(report, report_template)
+            destination = family_root / "reports" / report.slug
+            destination.mkdir(parents=True)
+            (destination / "index.html").write_text(
+                _page(
+                    base,
+                    title=str(report.metadata["title"]),
+                    content=article,
+                    canonical_path=f"{family}/reports/{report.slug}/",
+                ),
+                encoding="utf-8",
+            )
+
+        if family_reports:
+            newest = family_reports[0]
+            family_content = _report_article(newest, report_template)
+            family_title = str(newest.metadata["title"])
+        else:
+            family_content = _empty_family(label)
+            family_title = label
+        (family_root / "index.html").write_text(
+            _page(base, title=family_title, content=family_content, canonical_path=f"{family}/"),
+            encoding="utf-8",
+        )
+
+        archive_destination = family_root / "archive"
+        archive_destination.mkdir()
+        archive_content = archive_template.substitute(
+            archive_title=f"{label} archive",
+            archive_description=f"Every validated {label.lower()} remains available with its original timestamps.",
+            report_items=_archive_list(family_reports, family),
+            empty_message=("" if family_reports else "<p>No editions have been published yet.</p>"),
+        )
+        (archive_destination / "index.html").write_text(
+            _page(base, title=f"{label} archive", content=archive_content, canonical_path=f"{family}/archive/"),
             encoding="utf-8",
         )
 
     latest_article = _report_article(latest, report_template)
     (staging / "index.html").write_text(
         _page(base, title=str(latest.metadata["title"]), content=latest_article, canonical_path=""),
-        encoding="utf-8",
-    )
-
-    archive_content = archive_template.substitute(report_items=_archive_list(reports))
-    archive_destination = staging / "archive"
-    archive_destination.mkdir()
-    (archive_destination / "index.html").write_text(
-        _page(base, title="Report archive", content=archive_content, canonical_path="archive/"),
         encoding="utf-8",
     )
 
@@ -236,4 +306,3 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

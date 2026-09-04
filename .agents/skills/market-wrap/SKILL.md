@@ -1,48 +1,86 @@
 ---
 name: market-wrap
-description: Research, write, validate, archive, and publish the daily U.S. Market Wrap from this repository. Use when Codex is asked to produce or retry a pre-market, intraday catch-up, or market-holiday report; update the Market Wrap archive; or diagnose a failed daily publication. This workflow uses Codex web research under the user’s ChatGPT plan and never calls an LLM API.
+description: Research, write, validate, archive, and publish the Daily Market Wrap, Weekly Market Wrap, Monthly Market Wrap, or Canadian Economy report from this repository. Use for closing-market reports, week or month reviews and outlooks, Canadian macro/policy reporting, publication retries, archive updates, or failed-publication diagnosis. This workflow uses Codex web research under the user's ChatGPT plan and never calls an LLM API.
 ---
 
 # Market Wrap
 
-Produce at most one validated report for each New York trading date. Treat the repository as public.
+Create validated, public research publications without an external LLM API.
+Treat every repository artifact as public.
 
-## Run the daily workflow
+## Start every publication
 
-1. Read `AGENTS.md`, `docs/report-spec.md`, and `automation/DAILY_TASK_PROMPT.md`.
-2. Determine the current date and time in `America/New_York`. Stop before web research when today’s validated completion marker already exists.
-3. Stop outside the configured weekday catch-up window. On a U.S. market holiday, produce the short holiday form defined by the report specification.
-4. Inspect the worktree. Never overwrite, commit, or publish unrelated local changes.
-5. Research the current session. Apply [the source and evidence policy](references/source-policy.md). Prefer primary sources for schedules and official releases; use reputable financial reporting for context.
-6. Distinguish observed facts from interpretation. Describe a causal market driver only when evidence supports it; otherwise state that attribution is inconclusive.
-7. Create the report bundle in the paths required by the repository schema. Record source URLs, observation timestamps, instruments, units, and chart inputs. Do not put secrets, local paths, account data, cookies, or private information in any artifact.
-8. Use deterministic repository tooling for calculations and charts. Never estimate a plotted value by eye or invent missing observations.
-9. Run:
+1. Read `AGENTS.md`, `docs/report-spec.md`, `docs/architecture.md`, and the
+   applicable scheduled-task prompt.
+2. Determine the current time in `America/New_York`, resolve the trading
+   calendar, and identify publication type and coverage period.
+3. Stop before web research if that type/period has a validated marker.
+4. Confirm the cadence is due:
+   - Daily: after the completed regular U.S. session.
+   - Weekly: after the week's final U.S. session, normally Friday, or Thursday
+     when Friday is a U.S. market holiday.
+   - Monthly: after the final U.S. session of the calendar month.
+   - Canadian Economy: after the final Canadian trading session of the month.
+5. Inspect the worktree. Never overwrite, commit, or publish unrelated changes.
+   Serialize work if another publication task is writing or pushing.
 
-   ```bash
-   python -m pytest
-   python -m market_wrap validate --root .
-   python -m market_wrap build --root . --output site
-   ```
+## Research and write
 
-10. Inspect the built site and verify the report date, latest-update time, citations, charts, archive link, and freshness label.
-11. Commit only the validated publication artifacts and related generated indexes. Pull safely if necessary; never force-push. Push to the configured publication branch.
-12. Confirm the GitHub Pages deployment. Return the report and public URL in ChatGPT.
+1. Apply [the source and evidence policy](references/source-policy.md). Use
+   primary sources for schedules and releases and reputable financial reporting
+   for timely context.
+2. Match the depth and horizon in `docs/report-spec.md`:
+   - Daily explains the completed session and tomorrow's catalysts, technical
+     levels, and conditional scenarios.
+   - Weekly explains the completed week and next week, with more macro,
+     positioning, sentiment, and calendar context.
+   - Monthly explains durable U.S./global economic, earnings, growth, rates,
+     policy, and market trends and frames the next month.
+   - Canadian Economy is a comprehensive educational macro/political review,
+     not a daily equity recap, ending with annotated reading from credible
+     institutions and varied policy viewpoints.
+3. Include global-market context in Daily, Weekly, and Monthly.
+4. Separate observed facts, attributed explanations, and interpretation. Assert
+   a causal driver only when evidence supports it; otherwise call attribution
+   inconclusive.
+5. Save source URLs, publication/coverage dates, observation timestamps,
+   instruments, units, and failure flags. Never include secrets, local paths,
+   account data, cookies, or private information.
+6. Use deterministic repository tooling for calculations and charts. Never
+   estimate plotted values by eye, invent missing observations, or hide stale
+   data. Reconcile chart endpoints with tables.
 
-## Choose the report type
+## Validate and publish
 
-- Before 9:30 a.m. New York time: `Pre-market`.
-- At or after 9:30 a.m. during the approved catch-up window: `Intraday update`; use current observations and say that trading has begun.
-- U.S. market holiday: `Market holiday`; focus on the next session and omit unsupported live-market claims.
+Run:
+
+```bash
+python -m pytest
+python -m market_wrap validate --root .
+python -m market_wrap build --root . --output site
+```
+
+Inspect the built site and verify publication name, coverage period, generation
+and observation times, citations, charts, archive route, navigation, freshness,
+and required outlook. Then:
+
+1. Write the type-and-period completion marker only after validation.
+2. Commit only the validated bundle and related generated indexes.
+3. Pull safely when needed; never force-push.
+4. Push and confirm the exact GitHub Pages route renders successfully.
+5. Return the publication and public URL in ChatGPT.
 
 ## Fail safely
 
-- Preserve the last valid public report whenever research, validation, build, Git, or deployment fails.
-- Do not write a completion marker until the full bundle validates.
-- Do not treat a skipped duplicate run as a new publication.
-- Report the failed stage and the smallest useful recovery action in ChatGPT.
-- If the worktree contains overlapping user changes, stop before committing and explain the conflict.
+- Preserve the last valid publication when research, validation, build, Git, or
+  deployment fails.
+- Never treat a skipped duplicate as a new publication.
+- Publish simultaneous due reports serially and revalidate after upstream change.
+- Report the failed stage and smallest useful recovery action in ChatGPT.
+- Stop before committing when the worktree has overlapping user changes.
 
 ## Keep GitHub deterministic
 
-GitHub Actions may test, validate, build, and deploy committed content. It must never perform research, call an LLM, or silently create narrative. The intelligent report content must be created by the scheduled Codex run under the user’s ChatGPT allowance.
+GitHub Actions may test, validate, build, and deploy committed content. It must
+never research, call an LLM, or silently create narrative. Intelligent content
+is created only by scheduled Codex tasks under the user's ChatGPT allowance.

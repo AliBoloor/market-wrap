@@ -1,27 +1,39 @@
 # Market Wrap
 
-Status: **implemented**. The repository contains the deterministic data, chart,
-validation, and site layers used by the scheduled Codex research workflow.
+Status: **implemented and being expanded to four publications**. This repository
+contains the deterministic data, chart, validation, and static-site layers used
+by scheduled Codex research workflows.
 
-The goal is a researched daily U.S. market wrap that:
+The public publication has four sections:
 
-- is written by a scheduled Codex task using the user's ChatGPT plan;
-- requires no OpenAI API key and no paid data API key;
-- is delivered inside ChatGPT;
-- is saved as dated files in this repository;
-- includes sourced narrative, technical analysis, and trustworthy charts; and
-- is published as a public static website through GitHub Pages.
+- **Daily Market Wrap** — a closing report for each U.S. trading session: what
+  happened, why it mattered, and what to watch in the next session.
+- **Weekly Market Wrap** — published after the final U.S. session of the week
+  (normally Friday, or Thursday when Friday is a market holiday), with a more
+  macro-oriented review and week-ahead outlook.
+- **Monthly Market Wrap** — a U.S. and global macro review covering the economy,
+  earnings, growth, rates, policy, markets, and the month ahead.
+- **Canadian Economy** — a monthly, educational macro and political review of
+  Canada, ending with balanced further reading from public institutions and
+  policy organizations across viewpoints.
+
+Daily, weekly, and monthly Market Wraps include a concise global-markets section.
+All publications distinguish observations from interpretation, carry direct
+source links, expose stale or missing data, and use reproducible calculations
+for their tables and charts.
 
 ## How it works
 
-1. A scheduled Codex task researches and writes one dated report using the
-   user's ChatGPT allowance—there is no LLM API call or API key.
-2. No-key public market history is saved alongside explicit source and failure
-   metadata. The project calculates technicals and renders charts locally.
-3. Validation fails closed if required evidence or files are absent.
-4. A push to `main` lets GitHub Actions test and build the public static site.
+1. Scheduled Codex tasks research and write the publications using the user's
+   ChatGPT allowance. Repository code never calls an LLM API and requires no
+   OpenAI API key.
+2. No-key public market history is saved with source, timestamp, scope, and
+   failure metadata. Local Python tooling calculates technicals and charts.
+3. Validation fails closed if required evidence or publication files are absent.
+4. A push to `main` lets GitHub Actions build and deploy the public static site.
 
-The public site is [aliboloor.github.io/market-wrap](https://aliboloor.github.io/market-wrap/).
+GitHub Actions performs no research and creates no narrative. The public site is
+[aliboloor.github.io/market-wrap](https://aliboloor.github.io/market-wrap/).
 
 ## Local setup
 
@@ -38,18 +50,18 @@ python -m market_wrap build --root . --output site
 
 Open `site/index.html` to inspect the generated version. See
 [operations](docs/operations.md), [architecture](docs/architecture.md), the
-[report specification](docs/report-spec.md), and the [decision records](docs/decisions/)
-for the operating contract.
+[report specification](docs/report-spec.md), and the
+[decision records](docs/decisions/) for the operating contract.
 
 ## Repository layout
 
 ```text
-automation/             Scheduled-task prompt and operating instructions
-content/reports/        Dated Markdown reports
-data/                   Dated, publication-safe source manifests and observations
+automation/             Scheduled-task prompts and operating instructions
+content/reports/        Dated publication source files
+data/                   Publication-safe source manifests and observations
 docs/                   Plans, specifications, and architecture decisions
 public/charts/          Dated chart images
-scripts/                Deterministic build and validation code
+market_wrap/            Deterministic calculations, validation, and site build
 site/                   Generated static website (not hand-edited)
 tests/                  Validation tests
 ```

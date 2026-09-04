@@ -7,7 +7,7 @@ import json
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from .site import build_site
+from .site import build_site, load_report
 from .validation import load_manifest, validate_manifest, validate_markdown_citations
 
 
@@ -24,7 +24,7 @@ def _build(args: argparse.Namespace) -> int:
 
 def _validate(args: argparse.Namespace) -> int:
     root = args.root.resolve()
-    reports = sorted((root / "content" / "reports").glob("*.md"))
+    reports = sorted((root / "content" / "reports").glob("*/*.md"))
     if not reports:
         raise ValueError("no reports found")
     errors: list[str] = []
@@ -32,29 +32,41 @@ def _validate(args: argparse.Namespace) -> int:
     today = datetime.now(timezone.utc).date().isoformat()
     for report_path in reports:
         trading_date = report_path.stem
-        manifest_path = root / "data" / trading_date / "manifest.json"
-        completion_path = root / "data" / trading_date / "complete.json"
+        family = report_path.parent.name
+        key = f"{family}/{trading_date}"
+        try:
+            report = load_report(report_path)
+        except ValueError as exc:
+            errors.append(f"{key}: {exc}")
+            continue
+        manifest_path = root / "data" / family / trading_date / "manifest.json"
+        completion_path = root / "data" / family / trading_date / "complete.json"
         if not manifest_path.is_file():
-            errors.append(f"{trading_date}: missing evidence manifest")
+            errors.append(f"{key}: missing evidence manifest")
             continue
         if not completion_path.is_file():
-            errors.append(f"{trading_date}: missing completion marker")
+            errors.append(f"{key}: missing completion marker")
         else:
             marker = json.loads(completion_path.read_text(encoding="utf-8"))
-            if marker.get("trading_date") != trading_date or marker.get("status") != "validated":
-                errors.append(f"{trading_date}: invalid completion marker")
+            if (marker.get("trading_date") != trading_date
+                    or marker.get("report_family") != family
+                    or marker.get("status") != "validated"):
+                errors.append(f"{key}: invalid completion marker")
         manifest = load_manifest(manifest_path)
+        if manifest.report_type != str(report.metadata["report_type"]):
+            errors.append(f"{key}: manifest report_type does not match report metadata")
         # Historical archive entries remain valid; only today's publication has
         # an operational freshness deadline.
         maximum_age = timedelta(hours=24) if trading_date == today else timedelta(days=36500)
         result = validate_manifest(
-            manifest, root, expected_date=trading_date, maximum_age=maximum_age
+            manifest, root, expected_date=trading_date, expected_family=family,
+            maximum_age=maximum_age
         )
         citations = validate_markdown_citations(
             report_path.read_text(encoding="utf-8"), manifest
         )
-        errors.extend(f"{trading_date}: {item}" for item in result.errors + citations.errors)
-        warnings.extend(f"{trading_date}: {item}" for item in result.warnings + citations.warnings)
+        errors.extend(f"{key}: {item}" for item in result.errors + citations.errors)
+        warnings.extend(f"{key}: {item}" for item in result.warnings + citations.warnings)
     for warning in warnings:
         print(f"WARNING: {warning}")
     if errors:

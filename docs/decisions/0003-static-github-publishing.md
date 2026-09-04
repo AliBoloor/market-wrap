@@ -1,6 +1,6 @@
 # ADR 0003: Make GitHub publishing deterministic
 
-Status: Proposed
+Status: Accepted
 
 ## Decision
 
@@ -11,4 +11,3 @@ GitHub Actions will validate, build, and deploy the static site only after Codex
 - The public website is reproducible from repository content.
 - A local file change alone does not deploy; a successful push is required.
 - A failed or incomplete local run leaves the last valid website intact.
-

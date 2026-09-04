@@ -1,8 +1,9 @@
 {
   "schema_version": "1.0",
   "trading_date": "2026-09-03",
-  "report_type": "Closing Market Wrap",
-  "generated_at": "2026-09-04T01:42:35Z",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-09-04T02:07:28Z",
   "market_data_as_of": "2026-09-03T20:00:00Z",
   "state": "validated",
   "sources": [
@@ -17,14 +18,14 @@
     {"source_id":"yahoo-chart","title":"Yahoo Finance chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-09-04T01:23:59Z","supports":["technical calculations","charts"]}
   ],
   "series_files": [
-    "data/2026-09-03/series/SPY.json", "data/2026-09-03/series/QQQ.json",
-    "data/2026-09-03/series/IWM.json", "data/2026-09-03/series/TLT.json",
-    "data/2026-09-03/series/VIX.json", "data/2026-09-03/series/TNX.json",
-    "data/2026-09-03/series/GC_F.json", "data/2026-09-03/series/CL_F.json"
+    "data/daily/2026-09-03/series/SPY.json", "data/daily/2026-09-03/series/QQQ.json",
+    "data/daily/2026-09-03/series/IWM.json", "data/daily/2026-09-03/series/TLT.json",
+    "data/daily/2026-09-03/series/VIX.json", "data/daily/2026-09-03/series/TNX.json",
+    "data/daily/2026-09-03/series/GC_F.json", "data/daily/2026-09-03/series/CL_F.json"
   ],
   "chart_files": [
-    "public/charts/2026-09-03/SPY.png", "public/charts/2026-09-03/QQQ.png",
-    "public/charts/2026-09-03/IWM.png", "public/charts/2026-09-03/SPY-vs-TLT.png"
+    "public/charts/daily/2026-09-03/SPY.png", "public/charts/daily/2026-09-03/QQQ.png",
+    "public/charts/daily/2026-09-03/IWM.png", "public/charts/daily/2026-09-03/SPY-vs-TLT.png"
   ],
   "warnings": [
     "ETF daily history was available through 2026-09-02 at generation time.",

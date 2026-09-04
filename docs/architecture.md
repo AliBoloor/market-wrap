@@ -1,67 +1,68 @@
-# Proposed architecture
+# Architecture
 
 ## Objective
 
-Produce one intelligent, sourced market wrap per U.S. trading day using a local scheduled Codex task under the user's ChatGPT plan. Save the result locally, deliver it in ChatGPT, and publish it through GitHub Pages without an OpenAI API key.
+Publish four intelligent, sourced products—Daily Market Wrap, Weekly Market
+Wrap, Monthly Market Wrap, and Canadian Economy—through a public static site.
+Scheduled Codex tasks perform research and writing under the user's ChatGPT
+plan. Repository code and GitHub Actions use no LLM API and require no OpenAI
+API key.
 
 ## Responsibilities
 
-### Scheduled Codex task
+### Scheduled Codex tasks
 
-The scheduled task performs the work requiring judgment:
+Separate scheduled tasks may serve each cadence. Each task resolves the relevant
+trading calendar and coverage period; exits when that type/period already has a
+validated completion marker; researches and writes to its editorial contract;
+saves its evidence, observations, and charts; validates; commits; pushes; and
+confirms the deployed route.
 
-1. Check whether a complete report already exists for the current trading date.
-2. Research current markets and upcoming catalysts using web access.
-3. Evaluate source quality and corroborate causal claims.
-4. Write the narrative, risk-regime assessment, technical interpretation, and risks.
-5. Obtain reliable no-key time-series data when charts are possible.
-6. Save the report, evidence manifest, and charts.
-7. Run deterministic validation.
-8. Commit and push only when validation passes.
-9. Return the report and publication status in ChatGPT.
-
-The task must not publish approximate values, invented causal explanations, or charts built from unsourced observations.
+Tasks use distinct publication keys so daily, weekly, and month-end publications
+can coexist on one date. When schedules overlap, they must serialize Git
+operations, pull safely, and never overwrite another task's artifacts.
 
 ### Local deterministic tooling
 
-Small Python programs will handle only reproducible operations:
-
-- calculations such as returns and moving averages;
-- chart rendering from recorded observations;
-- report-schema and timestamp validation;
-- citation and asset-table consistency checks;
-- static-site generation; and
-- archive-index generation.
-
-No LLM API is called by these programs.
+Python handles calculations, chart rendering, schema/timestamp validation,
+citation checks, site generation, and archive indexes. It does not write market
+narratives and never calls an LLM.
 
 ### GitHub Actions
 
-GitHub Actions runs only after a push. It validates the committed publication bundle, builds the static site, and deploys GitHub Pages. It does not research markets or write narrative.
+GitHub Actions starts only after a push. It tests, validates, builds the four
+site sections and archives, and deploys GitHub Pages. It performs no research
+and creates no editorial content.
 
-## Daily sequence
+## Publication calendar
 
-1. macOS and ChatGPT are available.
-2. A recurring catch-up task checks for today's completion marker.
-3. If a valid report exists, the task exits without further work.
-4. If no report exists, Codex researches and creates a draft bundle.
-5. Local tools validate calculations, sources, dates, and files.
-6. A successful bundle is moved into the dated publication paths.
-7. Codex commits and pushes without force.
-8. GitHub Actions deploys the website.
-9. Codex reports success or a precise failure inside ChatGPT.
+- **Daily:** after each completed regular U.S. session; always a closing review
+  with a next-session outlook.
+- **Weekly:** after the week's final U.S. session, normally Friday, or Thursday
+  when Friday is a U.S. market holiday.
+- **Monthly:** after the final U.S. session of the calendar month.
+- **Canadian Economy:** after the final Canadian trading session of each month;
+  economic series may have different reference periods, which must be labeled explicitly.
 
-## Failure policy
+Use bounded post-close catch-up checks rather than one wake-up. A sleeping Mac
+cannot execute the task; the next eligible check runs after the Mac and ChatGPT
+desktop app resume. A missed period is not silently backfilled outside the
+documented recovery policy.
 
-- Never replace the latest valid report with a partial report.
-- Never mark a skipped check as a completed publication.
-- Never publish when material claims lack sources.
+## Failure and concurrency policy
+
+- Never replace a valid publication with a partial report.
+- Never mark a skipped check as completed.
+- Never publish material claims without adequate sources.
 - Never force-push or overwrite unrelated local changes.
-- If the Mac is unavailable, create a late report after wake only within the configured catch-up window.
-- Label reports created after the U.S. open as `Intraday update`, not `Pre-market`.
-- Preserve the prior public report and show its actual generation timestamp after a failed run.
+- Preserve the prior public site after research, validation, Git, or deployment
+  failure.
+- Use a publication lock or equivalent serialization when tasks can collide.
+- Show actual generation and observation times after delayed execution.
 
 ## Security and privacy
 
-The repository and website are public. Only public market information and publication artifacts may be committed. Secrets, cookies, credentials, browser state, private messages, and local system information are prohibited.
-
+The repository and website are public. Commit only public-source research,
+publication-safe observations, generated charts, and validation metadata.
+Secrets, cookies, credentials, browser state, private messages, account data,
+positions, and local system information are prohibited.

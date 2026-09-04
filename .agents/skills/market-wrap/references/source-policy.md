@@ -2,7 +2,7 @@
 
 ## Source priority
 
-1. Use primary sources for official data, policy decisions, event times, filings, and company announcements: Federal Reserve, BLS, BEA, U.S. Treasury, SEC, exchanges, and issuer investor-relations sites.
+1. Use primary sources for official data, policy decisions, event times, filings, and company announcements: central banks, national statistical agencies, finance ministries, treasuries, securities regulators, exchanges, governments, and issuer investor-relations sites.
 2. Use direct market or exchange sources for instrument definitions and timestamps when available.
 3. Use established financial newsrooms for breaking context and reported attribution.
 4. Use aggregators only as discovery aids or when the limitation is explicit.
@@ -22,6 +22,18 @@
 - Include units, comparison basis, and observation timestamp.
 - Keep futures, cash indexes, and ETFs distinct.
 - Retain numerical chart inputs and their sources in the publication bundle.
+
+## Canadian policy reading
+
+- Link to a specific substantive piece, not a publisher homepage.
+- Identify the publisher's institutional role and, where reasonably clear, its
+  policy orientation. Do not reduce an institution to a party label.
+- Balance government and Bank of Canada research, commercial-bank economics,
+  business/labour organizations, and reputable market-oriented/conservative,
+  centrist/institutional, and progressive/liberal policy organizations.
+- Summarize each argument fairly and distinguish it from report analysis.
+- Inclusion is educational, not endorsement. Quality and relevance take
+  precedence over artificial both-sides symmetry.
 
 ## Public-repository safety
 

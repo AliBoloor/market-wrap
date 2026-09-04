@@ -33,6 +33,7 @@ def validate_manifest(
     repository: Path,
     *,
     expected_date: str | None = None,
+    expected_family: str | None = None,
     now: datetime | None = None,
     maximum_age: timedelta = timedelta(hours=18),
 ) -> ValidationResult:
@@ -41,6 +42,10 @@ def validate_manifest(
         result.errors.append(f"unsupported evidence schema: {manifest.schema_version}")
     if expected_date and manifest.trading_date != expected_date:
         result.errors.append(f"trading date {manifest.trading_date} does not match {expected_date}")
+    if expected_family and manifest.report_family != expected_family:
+        result.errors.append(
+            f"report family {manifest.report_family} does not match {expected_family}"
+        )
     generated = datetime.fromisoformat(manifest.generated_at.replace("Z", "+00:00"))
     reference = now or datetime.now(timezone.utc)
     if generated > reference + timedelta(minutes=5):

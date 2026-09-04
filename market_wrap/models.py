@@ -9,7 +9,14 @@ from pathlib import Path
 from typing import Any, Literal
 
 
-ReportType = Literal["Pre-market", "Intraday update", "Closing Market Wrap", "Market holiday"]
+ReportFamily = Literal["daily", "weekly", "monthly", "canadian-economy"]
+REPORT_FAMILIES = frozenset({"daily", "weekly", "monthly", "canadian-economy"})
+ReportType = Literal[
+    "Daily Market Wrap",
+    "Weekly Market Wrap",
+    "Monthly Market Wrap",
+    "Canadian Economy",
+]
 PublicationState = Literal["draft", "validated", "published", "failed"]
 
 
@@ -100,11 +107,14 @@ class EvidenceManifest:
     series_files: list[str] = field(default_factory=list)
     chart_files: list[str] = field(default_factory=list)
     warnings: list[str] = field(default_factory=list)
+    report_family: ReportFamily = "daily"
 
     def __post_init__(self) -> None:
         datetime.fromisoformat(self.trading_date)
         _parse_time(self.generated_at)
         _parse_time(self.market_data_as_of)
+        if self.report_family not in REPORT_FAMILIES:
+            raise ValueError(f"unsupported report family: {self.report_family}")
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
