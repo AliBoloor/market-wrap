@@ -3,7 +3,7 @@
 ## Required metadata
 
 - Trading date
-- Report type: `Pre-market`, `Intraday update`, or `Market holiday`
+- Report type: `Pre-market`, `Intraday update`, `Closing Market Wrap`, or `Market holiday`
 - Generation time and timezone
 - Latest market-data observation time
 - Freshness and completeness status
@@ -17,13 +17,17 @@ Three to five concise paragraphs covering the overnight setup, strongest support
 
 ### 2. Cross-asset snapshot
 
-When reliable values are available, include U.S. equity futures or equivalent liquid proxies, Treasury yields, the dollar, oil, gold, bitcoin, volatility, and meaningful sector leaders and laggards. Every value requires an instrument label, timestamp, and source.
+When reliable values are available, include U.S. equity futures or equivalent liquid proxies, two- and ten-year Treasury yields, the dollar, oil, gold, bitcoin, VIX, and meaningful sector leaders and laggards. Every value requires an instrument label, timestamp, and source.
 
-### 3. Catalyst calendar
+### 3. Participation and volatility
+
+Present realized volatility in a standalone table with its window and annualization method. When trustworthy data is available, include put/call volume ratios, options contract volume, and consolidated cash-equity share volume. State the scope and timestamp of every measure, distinguish volume from open interest, and do not compare contracts with shares as if they were equivalent units.
+
+### 4. Catalyst calendar
 
 Include material economic releases, central-bank events, Treasury events, major earnings, and geopolitical or corporate catalysts for the current day and next two trading days. Times must be displayed in New York time.
 
-### 4. Technical setup
+### 5. Technical setup
 
 For the S&P 500, Nasdaq 100, and other instruments central to that day's setup, include when supported:
 
@@ -38,7 +42,7 @@ For the S&P 500, Nasdaq 100, and other instruments central to that day's setup, 
 
 The report must explain how important levels were selected, avoid false precision, and distinguish futures, cash indexes, and ETFs.
 
-### 5. Charts
+### 6. Charts
 
 Include two to four charts only when reliable observations are available:
 
@@ -48,11 +52,11 @@ Include two to four charts only when reliable observations are available:
 
 Each chart requires a title, instrument, interval, axes with units, readable legend, source, latest observation time, and agreement with the report's stated figures. Missing data must result in a table or omission, never interpolation disguised as observation.
 
-### 6. Risks and scenarios
+### 7. Risks and scenarios
 
 List the developments most capable of changing the current interpretation and state what evidence would invalidate the reported risk regime.
 
-### 7. Sources
+### 8. Sources
 
 Provide direct links near claims and a compact source list. Prefer primary sources for scheduled events and official data. Use reputable reporting for breaking context. Do not assert causation from timing alone.
 
@@ -62,4 +66,3 @@ Provide direct links near claims and a compact source list. Prefer primary sourc
 - `validated`: all required checks pass; eligible for commit.
 - `published`: pushed and confirmed on GitHub Pages.
 - `failed`: preserve the last valid public report and record the reason locally.
-
