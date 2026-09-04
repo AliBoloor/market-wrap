@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-09-04",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-09-04T20:33:08Z",
+  "market_data_as_of": "2026-09-04T20:32:00Z",
+  "state": "validated",
+  "sources": [
+    {"source_id":"bls-employment","title":"The Employment Situation August 2026","url":"https://www.bls.gov/news.release/archives/empsit_09042026.htm","publisher":"U.S. Bureau of Labor Statistics","accessed_at":"2026-09-04T20:33:08Z","supports":["payrolls","unemployment","industry employment"]},
+    {"source_id":"ap-close","title":"Stocks fall after a surprisingly strong jobs report","url":"https://apnews.com/article/stocks-markets-oil-trump-iran-war-1af16359af43eb8abc66445465f633c8","publisher":"Associated Press","accessed_at":"2026-09-04T20:33:08Z","supports":["cash index moves","Treasury yields","company moves","global markets"]},
+    {"source_id":"reuters-markets","title":"Yields rise stocks mostly ease after solid U.S. jobs report","url":"https://www.marketscreener.com/news/yields-rise-stocks-mostly-ease-after-solid-u-s-jobs-report-ce785bdad08ff12c","publisher":"Reuters","accessed_at":"2026-09-04T20:33:08Z","supports":["Fed pricing","rates reaction"]},
+    {"source_id":"reuters-equities","title":"Wall Street slides after strong jobs report bolsters hawkish Fed bets","url":"https://ca.marketscreener.com/news/wall-st-slides-after-strong-jobs-report-bolsters-hawkish-fed-bets-ce785bdbd98af127","publisher":"Reuters","accessed_at":"2026-09-04T20:33:08Z","supports":["equity reaction","rate hike odds"]},
+    {"source_id":"ap-geopolitics","title":"U.S. tightens economic squeeze on Iran","url":"https://apnews.com/article/f26ad8d666cc1d38fcce78df4612a24d","publisher":"Associated Press","accessed_at":"2026-09-04T20:33:08Z","supports":["Iran risk","oil and inflation risk"]},
+    {"source_id":"cboe-term","title":"VIX term structure","url":"https://www.cboe.com/tradable-products/vix/term-structure/","publisher":"Cboe Global Markets","accessed_at":"2026-09-04T20:33:08Z","supports":["SPX implied volatility term structure","options interpretation"]},
+    {"source_id":"schwab-commentary","title":"Market Commentary","url":"https://www.schwab.com/learn/market-commentary","publisher":"Charles Schwab","accessed_at":"2026-09-04T20:33:08Z","supports":["jobs reaction","rates and equity commentary"]},
+    {"source_id":"schwab-breadth","title":"Yields rise breadth fades bitcoin pauses","url":"https://workplace.schwab.com/story/weekly-digest","publisher":"Charles Schwab","accessed_at":"2026-09-04T20:33:08Z","supports":["breadth commentary"]},
+    {"source_id":"nyfed-calendar","title":"September 2026 Economic Indicators Calendar","url":"https://www.newyorkfed.org/research/calendars/i-sep26.html","publisher":"Federal Reserve Bank of New York","accessed_at":"2026-09-04T20:33:08Z","supports":["next-session economic calendar"]},
+    {"source_id":"bls-calendar","title":"September 2026 release calendar","url":"https://www.bls.gov/schedule/2026/09_sched.htm","publisher":"U.S. Bureau of Labor Statistics","accessed_at":"2026-09-04T20:33:08Z","supports":["PPI and CPI schedule"]},
+    {"source_id":"fed-blackout","title":"FOMC blackout period calendar","url":"https://www.federalreserve.gov/monetarypolicy/files/fomc-blackout-period-calendar.pdf","publisher":"Federal Reserve Board","accessed_at":"2026-09-04T20:33:08Z","supports":["FOMC blackout period"]},
+    {"source_id":"earnings-calendar","title":"Earnings Calendar September 8 2026","url":"https://www.tipranks.com/calendars/earnings/2026-9-8","publisher":"TipRanks","accessed_at":"2026-09-04T20:33:08Z","supports":["next-session earnings"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-09-04T20:32:00Z","supports":["market dashboard","technical calculations","charts"]}
+  ],
+  "series_files": [
+    "data/daily/2026-09-04/series/SPY.json",
+    "data/daily/2026-09-04/series/QQQ.json",
+    "data/daily/2026-09-04/series/IWM.json",
+    "data/daily/2026-09-04/series/TLT.json",
+    "data/daily/2026-09-04/series/VIX.json",
+    "data/daily/2026-09-04/series/TNX.json",
+    "data/daily/2026-09-04/series/DX-Y.NYB.json",
+    "data/daily/2026-09-04/series/GC_F.json",
+    "data/daily/2026-09-04/series/CL_F.json",
+    "data/daily/2026-09-04/series/BTC-USD.json"
+  ],
+  "chart_files": [
+    "public/charts/daily/2026-09-04/SPY.png",
+    "public/charts/daily/2026-09-04/QQQ.png",
+    "public/charts/daily/2026-09-04/SPY-vs-TLT.png"
+  ],
+  "warnings": [
+    "Cash-index and Treasury closes come from reporting; ETF and continuous-futures histories are separate proxies.",
+    "Bitcoin trades continuously and its value is a shortly-after-close snapshot.",
+    "Cboe standard-expiry term structure is volatility information, not a directional forecast.",
+    "Earnings calendar dates and times may change pending issuer confirmation."
+  ]
+}
