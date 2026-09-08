@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-09-08",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-09-08T20:33:39Z",
+  "market_data_as_of": "2026-09-08T20:22:42Z",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"Oil prices keep rising and weigh on Wall Street","url":"https://apnews.com/article/stocks-markets-trump-oil-ai-rates-d3d6157a534584985987f828a940cffa","publisher":"Associated Press","accessed_at":"2026-09-08T20:33:39Z","supports":["market narrative","Treasury yield","oil","company moves","global markets"]},
+    {"source_id":"ap-indexes","title":"How major US stock indexes fared Tuesday 9/8/2026","url":"https://apnews.com/article/stock-market-dow-nasdaq-cadd309d4fd4933397cd38fe436edb71","publisher":"Associated Press","accessed_at":"2026-09-08T20:33:39Z","supports":["cash index closes"]},
+    {"source_id":"cboe-commentary","title":"Markets Move to the Downside amid Uptick in Oil Prices","url":"https://www.cboe.com/insights/posts/markets-move-to-the-downside-amid-uptick-in-oil-prices","publisher":"Cboe Global Markets","accessed_at":"2026-09-08T20:33:39Z","supports":["VIX futures curve","single-name options commentary"]},
+    {"source_id":"bls-calendar","title":"September 2026 release calendar","url":"https://www.bls.gov/schedule/2026/09_sched_list.htm","publisher":"U.S. Bureau of Labor Statistics","accessed_at":"2026-09-08T20:33:39Z","supports":["next-session calendar","PPI and CPI schedule"]},
+    {"source_id":"earnings-calendar","title":"Earnings Calendar September 9 2026","url":"https://www.tipranks.com/calendars/earnings/2026-9-9","publisher":"TipRanks","accessed_at":"2026-09-08T20:33:39Z","supports":["next-session earnings"]},
+    {"source_id":"two-year-snapshot","title":"Treasury yields hold near multi-year highs after hot jobs report and oil surge","url":"https://ca.investing.com/news/forex-news/euro-yields-push-higher-with-crude-near-100-and-ecb-hike-imminent-4830171","publisher":"Investing.com","accessed_at":"2026-09-08T20:33:39Z","supports":["two-year Treasury yield snapshot"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-09-08T20:22:42Z","supports":["market dashboard","technical calculations","charts"]}
+  ],
+  "series_files": [
+    "data/daily/2026-09-08/series/SPY.json",
+    "data/daily/2026-09-08/series/QQQ.json",
+    "data/daily/2026-09-08/series/IWM.json",
+    "data/daily/2026-09-08/series/TLT.json",
+    "data/daily/2026-09-08/series/VIX.json",
+    "data/daily/2026-09-08/series/TNX.json",
+    "data/daily/2026-09-08/series/DX-Y.NYB.json",
+    "data/daily/2026-09-08/series/GC_F.json",
+    "data/daily/2026-09-08/series/CL_F.json",
+    "data/daily/2026-09-08/series/BTC-USD.json"
+  ],
+  "chart_files": [
+    "public/charts/daily/2026-09-08/SPY.png",
+    "public/charts/daily/2026-09-08/QQQ.png",
+    "public/charts/daily/2026-09-08/SPY-vs-TLT.png"
+  ],
+  "warnings": [
+    "Cash-index and Treasury observations come from reporting; ETF and continuous-futures histories are separate proxies.",
+    "The two-year Treasury yield is an intraday reported snapshot rather than a verified official close.",
+    "Bitcoin trades continuously and its value is a shortly-after-close snapshot.",
+    "Cboe options commentary was published during the session and is not a final settlement or directional forecast.",
+    "Earnings calendar dates and times may change pending issuer confirmation."
+  ]
+}
