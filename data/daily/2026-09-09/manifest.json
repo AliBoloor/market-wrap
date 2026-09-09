@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-09-09",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-09-09T20:33:09Z",
+  "market_data_as_of": "2026-09-09T20:32:00Z",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"Stocks fall as oil prices jump above $100","url":"https://apnews.com/article/stock-markets-inflation-currencies-fed-rates-d1284eb72934a3b076c14449bc087fbd","publisher":"Associated Press","accessed_at":"2026-09-09T20:33:09Z","supports":["market narrative","sector breadth","Treasury yields","Brent","company moves","global markets"]},
+    {"source_id":"ap-indexes","title":"How major US stock indexes fared Wednesday 9/9/2026","url":"https://apnews.com/article/wall-street-stocks-dow-nasdaq-31c966aef214740b8fec71e399a051b8","publisher":"Associated Press","accessed_at":"2026-09-09T20:33:09Z","supports":["cash index closes"]},
+    {"source_id":"reuters-close","title":"S&P 500 ends down as oil tops $100 per barrel","url":"https://www.marketscreener.com/news/s-p-500-ends-down-as-oil-tops-100-per-barrel-ce785bd9d08ff52c","publisher":"Reuters","accessed_at":"2026-09-09T20:33:09Z","supports":["Treasury buyback reaction","market attribution"]},
+    {"source_id":"cboe-commentary","title":"Markets Move to the Downside amid Uptick in Oil Prices","url":"https://www.cboe.com/insights/posts/markets-move-to-the-downside-amid-uptick-in-oil-prices","publisher":"Cboe Global Markets","accessed_at":"2026-09-09T20:33:09Z","supports":["VIX futures curve","single-name options commentary"]},
+    {"source_id":"bls-ppi-calendar","title":"Schedule of Releases for the Producer Price Index","url":"https://www.bls.gov/schedule/news_release/ppi.htm","publisher":"U.S. Bureau of Labor Statistics","accessed_at":"2026-09-09T20:33:09Z","supports":["PPI release time"]},
+    {"source_id":"nyfed-calendar","title":"September 2026 Economic Indicators Calendar","url":"https://www.newyorkfed.org/research/calendars/i-sep26.html","publisher":"Federal Reserve Bank of New York","accessed_at":"2026-09-09T20:33:09Z","supports":["jobless claims schedule"]},
+    {"source_id":"ecb-calendar","title":"Meetings of the Governing Council and General Council","url":"https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html","publisher":"European Central Bank","accessed_at":"2026-09-09T20:33:09Z","supports":["ECB monetary policy meeting"]},
+    {"source_id":"earnings-calendar","title":"Earnings Calendar September 10 2026","url":"https://www.tipranks.com/calendars/earnings/2026-9-10","publisher":"TipRanks","accessed_at":"2026-09-09T20:33:09Z","supports":["next-session earnings"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-09-09T20:32:00Z","supports":["market dashboard","technical calculations","charts"]}
+  ],
+  "series_files": [
+    "data/daily/2026-09-09/series/SPY.json",
+    "data/daily/2026-09-09/series/QQQ.json",
+    "data/daily/2026-09-09/series/IWM.json",
+    "data/daily/2026-09-09/series/TLT.json",
+    "data/daily/2026-09-09/series/VIX.json",
+    "data/daily/2026-09-09/series/TNX.json",
+    "data/daily/2026-09-09/series/DX-Y.NYB.json",
+    "data/daily/2026-09-09/series/GC_F.json",
+    "data/daily/2026-09-09/series/CL_F.json",
+    "data/daily/2026-09-09/series/BTC-USD.json"
+  ],
+  "chart_files": [
+    "public/charts/daily/2026-09-09/SPY.png",
+    "public/charts/daily/2026-09-09/QQQ.png",
+    "public/charts/daily/2026-09-09/SPY-vs-TLT.png"
+  ],
+  "warnings": [
+    "Cash-index, Treasury and Brent observations come from reporting; ETF and continuous-futures histories are separate proxies.",
+    "Bitcoin trades continuously and its value is a shortly-after-close snapshot.",
+    "Cboe options observations are one session old and are not September 9 closing settlements or directional forecasts.",
+    "Earnings calendar dates and times may change pending issuer confirmation."
+  ]
+}
