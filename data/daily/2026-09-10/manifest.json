@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-09-10",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-09-10T20:33:05Z",
+  "market_data_as_of": "2026-09-10T20:32:00Z",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"Stocks fall as oil and yields rise","url":"https://apnews.com/article/stocks-markets-oil-trump-rates-7fbc77061abd778608068d3beb1bbbaf","publisher":"Associated Press","accessed_at":"2026-09-10T20:33:00Z","supports":["closing narrative","Treasury yields","oil","Fed pricing","global markets"]},
+    {"source_id":"ap-indexes","title":"How major US stock indexes fared Thursday","url":"https://apnews.com/article/wall-street-stocks-dow-nasdaq-0c547c6cc3e374a2c04f78a90e35e113","publisher":"Associated Press","accessed_at":"2026-09-10T20:33:00Z","supports":["cash index closes"]},
+    {"source_id":"bls-ppi","title":"Producer Price Index News Release","url":"https://www.bls.gov/news.release/ppi.nr0.htm","publisher":"U.S. Bureau of Labor Statistics","accessed_at":"2026-09-10T20:33:00Z","supports":["August PPI"]},
+    {"source_id":"bls-cpi-calendar","title":"Consumer Price Index release schedule","url":"https://www.bls.gov/schedule/news_release/cpi.htm","publisher":"U.S. Bureau of Labor Statistics","accessed_at":"2026-09-10T20:33:00Z","supports":["CPI release time"]},
+    {"source_id":"schwab-options","title":"Today's Options Market Update","url":"https://www.schwab.com/learn/story/todays-options-market-update","publisher":"Charles Schwab","accessed_at":"2026-09-10T20:33:00Z","supports":["VIX option volume commentary","VIX range"]},
+    {"source_id":"schwab-market","title":"Stock Market Update","url":"https://www.schwab.com/learn/story/stock-market-update-open","publisher":"Charles Schwab","accessed_at":"2026-09-10T20:33:00Z","supports":["market breadth","CPI consensus"]},
+    {"source_id":"kroger","title":"Kroger Announces Second Quarter Conference Call with Investors","url":"https://ir.kroger.com/news/news-details/2026/Kroger-Announces-Second-Quarter-Conference-Call-with-Investors/default.aspx","publisher":"Kroger","accessed_at":"2026-09-10T20:33:00Z","supports":["Kroger earnings timing"]},
+    {"source_id":"nyfed-calendar","title":"September 2026 U.S. economic indicators calendar","url":"https://www.newyorkfed.org/research/calendars/i-sep26.html","publisher":"Federal Reserve Bank of New York","accessed_at":"2026-09-10T20:33:00Z","supports":["consumer sentiment schedule"]},
+    {"source_id":"yahoo-chart","title":"SPY chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-09-10T20:32:00Z","supports":["market dashboard","technical calculations","charts"]}
+  ],
+  "series_files": [
+    "data/daily/2026-09-10/series/SPY.json",
+    "data/daily/2026-09-10/series/QQQ.json",
+    "data/daily/2026-09-10/series/IWM.json",
+    "data/daily/2026-09-10/series/TLT.json",
+    "data/daily/2026-09-10/series/VIX.json",
+    "data/daily/2026-09-10/series/TNX.json",
+    "data/daily/2026-09-10/series/DX-Y.NYB.json",
+    "data/daily/2026-09-10/series/GC_F.json",
+    "data/daily/2026-09-10/series/CL_F.json",
+    "data/daily/2026-09-10/series/BTC-USD.json"
+  ],
+  "chart_files": [
+    "public/charts/daily/2026-09-10/SPY.png",
+    "public/charts/daily/2026-09-10/QQQ.png",
+    "public/charts/daily/2026-09-10/SPY-vs-TLT.png"
+  ],
+  "warnings": [
+    "The U.S. two-year Treasury yield is the September 9 close; the September 10 close was unavailable at publication.",
+    "Cash-index, Treasury and Brent observations come from reporting; ETF and continuous-futures histories are separate proxies.",
+    "Yahoo Finance timestamps differ by instrument and venue, and Bitcoin is a post-close snapshot.",
+    "Aggregate options volume does not reveal direction or dealer positioning."
+  ]
+}
