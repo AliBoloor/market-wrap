@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-09-11",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-09-11T20:32:17Z",
+  "market_data_as_of": "2026-09-11T20:31:30Z",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"US stocks jump after oil prices ease and inflation update comes in near expectations","url":"https://apnews.com/article/financial-markets-stocks-oil-iran-war-bonds-rates-8c3272812f5e9b9238c6a3301921c17a","publisher":"Associated Press","accessed_at":"2026-09-11T20:32:00Z","supports":["closing narrative","Treasury yields","Brent","global markets","company moves"]},
+    {"source_id":"ap-indexes","title":"How major US stock indexes fared Friday","url":"https://apnews.com/article/wall-street-stocks-dow-nasdaq-67a463295d9ea178d7802ca4338a6eb5","publisher":"Associated Press","accessed_at":"2026-09-11T20:32:00Z","supports":["cash index closes","weekly index returns"]},
+    {"source_id":"bls-cpi","title":"Consumer Price Index Summary August 2026","url":"https://www.bls.gov/news.release/cpi.nr0.htm","publisher":"U.S. Bureau of Labor Statistics","accessed_at":"2026-09-11T20:32:00Z","supports":["August CPI"]},
+    {"source_id":"schwab-options","title":"Today's Options Market Update","url":"https://www.schwab.com/learn/story/todays-options-market-update","publisher":"Charles Schwab","accessed_at":"2026-09-11T20:32:00Z","supports":["CPI consensus","VIX range","VIX contract activity","single-name options commentary"]},
+    {"source_id":"nyfed-calendar","title":"September 2026 Economic Indicators Calendar","url":"https://www.newyorkfed.org/research/calendars/i-sep26.html","publisher":"Federal Reserve Bank of New York","accessed_at":"2026-09-11T20:32:00Z","supports":["Empire State Manufacturing Survey schedule"]},
+    {"source_id":"fed-calendar","title":"FOMC meeting calendars and information","url":"https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm","publisher":"Federal Reserve Board","accessed_at":"2026-09-11T20:32:00Z","supports":["September FOMC dates","economic projections"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-09-11T20:31:30Z","supports":["market dashboard","technical calculations","charts"]}
+  ],
+  "series_files": [
+    "data/daily/2026-09-11/series/SPY.json",
+    "data/daily/2026-09-11/series/QQQ.json",
+    "data/daily/2026-09-11/series/IWM.json",
+    "data/daily/2026-09-11/series/TLT.json",
+    "data/daily/2026-09-11/series/VIX.json",
+    "data/daily/2026-09-11/series/TNX.json",
+    "data/daily/2026-09-11/series/DX-Y.NYB.json",
+    "data/daily/2026-09-11/series/GC_F.json",
+    "data/daily/2026-09-11/series/CL_F.json",
+    "data/daily/2026-09-11/series/BTC-USD.json"
+  ],
+  "chart_files": [
+    "public/charts/daily/2026-09-11/SPY.png",
+    "public/charts/daily/2026-09-11/QQQ.png",
+    "public/charts/daily/2026-09-11/SPY-vs-TLT.png"
+  ],
+  "warnings": [
+    "Cash-index, Treasury and Brent observations come from reporting; ETF and continuous-futures histories are separate proxies.",
+    "Yahoo Finance timestamps differ by instrument and venue, and Bitcoin is a post-close snapshot.",
+    "Schwab options observations are intraday rather than final closing totals.",
+    "Aggregate options volume does not reveal direction or dealer positioning."
+  ]
+}
