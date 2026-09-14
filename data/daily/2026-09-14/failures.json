@@ -1,0 +1,7 @@
+[
+  {
+    "symbol": "BTC-USD",
+    "source": "Yahoo Finance chart data",
+    "reason": "high is below another OHLC value"
+  }
+]

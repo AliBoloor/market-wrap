@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-09-14",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-09-14T20:32:27Z",
+  "market_data_as_of": "2026-09-14T20:31:30Z",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"AI stocks drop, but the rest of Wall Street holds steadier","url":"https://apnews.com/article/stocks-markets-oil-ai-rates-0b44bfb43960c6ae850567c0c4e5003a","publisher":"Associated Press","accessed_at":"2026-09-14T20:32:00Z","supports":["closing narrative","breadth","10-year yield","Brent","global markets","company moves"]},
+    {"source_id":"ap-indexes","title":"How major US stock indexes fared Monday","url":"https://apnews.com/article/wall-street-stocks-dow-nasdaq-8f72a301be85728018018735163f4dad","publisher":"Associated Press","accessed_at":"2026-09-14T20:32:00Z","supports":["cash index closes"]},
+    {"source_id":"schwab-options","title":"Today's Options Market Update","url":"https://www.schwab.com/learn/story/todays-options-market-update","publisher":"Charles Schwab","accessed_at":"2026-09-14T20:32:00Z","supports":["VIX range","VIX option volume","single-name option context","Bitcoin intraday snapshot","Fed probability"]},
+    {"source_id":"nyfed-calendar","title":"September 2026 Economic Indicators Calendar","url":"https://www.newyorkfed.org/research/calendars/i-sep26.html","publisher":"Federal Reserve Bank of New York","accessed_at":"2026-09-14T20:32:00Z","supports":["Empire State Survey timing","Wednesday releases"]},
+    {"source_id":"fed-calendar","title":"FOMC meeting calendars and information","url":"https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm","publisher":"Federal Reserve Board","accessed_at":"2026-09-14T20:32:00Z","supports":["September FOMC dates","economic projections"]},
+    {"source_id":"earnings-calendar","title":"Earnings calendar September 14 to 18","url":"https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks","publisher":"Kiplinger","accessed_at":"2026-09-14T20:32:00Z","supports":["Tuesday earnings calendar"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-09-14T20:31:30Z","supports":["market dashboard","technical calculations","charts"]}
+  ],
+  "series_files": [
+    "data/daily/2026-09-14/series/SPY.json",
+    "data/daily/2026-09-14/series/QQQ.json",
+    "data/daily/2026-09-14/series/IWM.json",
+    "data/daily/2026-09-14/series/TLT.json",
+    "data/daily/2026-09-14/series/VIX.json",
+    "data/daily/2026-09-14/series/TNX.json",
+    "data/daily/2026-09-14/series/DX-Y.NYB.json",
+    "data/daily/2026-09-14/series/GC_F.json",
+    "data/daily/2026-09-14/series/CL_F.json"
+  ],
+  "chart_files": [
+    "public/charts/daily/2026-09-14/SPY.png",
+    "public/charts/daily/2026-09-14/QQQ.png",
+    "public/charts/daily/2026-09-14/SPY-vs-TLT.png"
+  ],
+  "warnings": [
+    "Bitcoin Yahoo data failed OHLC validation; the report uses a labeled Schwab intraday observation instead and excludes Bitcoin from calculations.",
+    "The U.S. two-year Treasury yield is the September 11 close; the September 14 close was unavailable at publication.",
+    "Cash-index, Treasury and Brent observations come from reporting; ETF and continuous-futures histories are separate proxies.",
+    "Schwab options observations are intraday and aggregate options volume does not reveal direction or dealer positioning."
+  ]
+}
