@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-09-15",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-09-15T20:35:00Z",
+  "market_data_as_of": "2026-09-15T20:31:53Z",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"US stocks slip after oil prices and the bond market crank up the pressure","url":"https://apnews.com/article/stock-markets-oil-rates-inflation-ai-123ddc2d8ba06c324cbbd899f7eeebd2","publisher":"Associated Press","accessed_at":"2026-09-15T20:34:00Z","supports":["closing narrative","10-year yield","Brent","global markets","company moves"]},
+    {"source_id":"ap-indexes","title":"How major US stock indexes fared Tuesday","url":"https://apnews.com/article/wall-street-stocks-dow-nasdaq-b1b1bc9f943da62c6a639a8761b4eca3","publisher":"Associated Press","accessed_at":"2026-09-15T20:34:00Z","supports":["cash index closes"]},
+    {"source_id":"schwab-options","title":"Today's Options Market Update","url":"https://www.schwab.com/learn/story/todays-options-market-update","publisher":"Charles Schwab","accessed_at":"2026-09-15T20:34:00Z","supports":["intraday VIX range","VIX option volume and call/put activity"]},
+    {"source_id":"fed-h15","title":"Selected Interest Rates H.15","url":"https://www.federalreserve.gov/releases/h15/","publisher":"Federal Reserve Board","accessed_at":"2026-09-15T20:34:00Z","supports":["stale September 11 two-year constant-maturity Treasury yield"]},
+    {"source_id":"fed-calendar","title":"FOMC meeting calendars and information","url":"https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm","publisher":"Federal Reserve Board","accessed_at":"2026-09-15T20:34:00Z","supports":["September FOMC dates","economic projections"]},
+    {"source_id":"fed-events","title":"Federal Reserve September 2026 event calendar","url":"https://www.federalreserve.gov/newsevents/2026-september.htm","publisher":"Federal Reserve Board","accessed_at":"2026-09-15T20:34:00Z","supports":["Wednesday decision-event context"]},
+    {"source_id":"census-retail","title":"Retail sales release schedule","url":"https://www.census.gov/retail/release_schedule.html","publisher":"U.S. Census Bureau","accessed_at":"2026-09-15T20:34:00Z","supports":["Wednesday August advance retail-sales release"]},
+    {"source_id":"nyfed-calendar","title":"September 2026 Economic Indicators Calendar","url":"https://www.newyorkfed.org/research/calendars/i-sep26.html","publisher":"Federal Reserve Bank of New York","accessed_at":"2026-09-15T20:34:00Z","supports":["Wednesday economic release times"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-09-15T20:31:53Z","supports":["ETF, VIX, dollar, futures and Bitcoin dashboard","technical calculations","realized volatility","charts"]}
+  ],
+  "series_files": [
+    "data/daily/2026-09-15/series/SPY.json",
+    "data/daily/2026-09-15/series/QQQ.json",
+    "data/daily/2026-09-15/series/IWM.json",
+    "data/daily/2026-09-15/series/TLT.json",
+    "data/daily/2026-09-15/series/VIX.json",
+    "data/daily/2026-09-15/series/TNX.json",
+    "data/daily/2026-09-15/series/DX-Y.NYB.json",
+    "data/daily/2026-09-15/series/GC_F.json",
+    "data/daily/2026-09-15/series/CL_F.json",
+    "data/daily/2026-09-15/series/BTC-USD.json"
+  ],
+  "chart_files": [
+    "public/charts/daily/2026-09-15/SPY.png",
+    "public/charts/daily/2026-09-15/QQQ.png",
+    "public/charts/daily/2026-09-15/SPY-vs-TLT.png"
+  ],
+  "warnings": [
+    "H.15 displayed a September 14 release with September 11 yield observations; the official two-year constant-maturity value is stale and has no September 15 move.",
+    "AP late-session 10-year market yield and official H.15 constant maturity have different conventions.",
+    "Cash-index and Brent observations come from closing reporting; ETF and continuous-futures histories are separately labeled proxies. Bitcoin is a rolling daily snapshot, not a U.S. cash close.",
+    "Schwab VIX options observations are intraday; aggregate contract volume does not reveal trade direction or dealer positioning."
+  ]
+}
