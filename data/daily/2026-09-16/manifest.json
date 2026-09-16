@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-09-16",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-09-16T20:34:00Z",
+  "market_data_as_of": "2026-09-16T20:31:44Z",
+  "state": "validated",
+  "sources": [
+    {"source_id":"fed-statement","title":"Federal Reserve issues FOMC statement","url":"https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm","publisher":"Federal Reserve Board","accessed_at":"2026-09-16T20:33:00Z","supports":["rate decision","target range","vote","policy rationale"]},
+    {"source_id":"fed-projections","title":"September 16, 2026 FOMC projections materials","url":"https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm","publisher":"Federal Reserve Board","accessed_at":"2026-09-16T20:33:00Z","supports":["policy-rate path","GDP","unemployment","inflation projections"]},
+    {"source_id":"ap-close","title":"Stocks give up early gains and fall after the Fed hikes interest rates","url":"https://apnews.com/article/stocks-markets-fed-rate-decision-oil-e2e82957e490b7be205db6013f621c3d","publisher":"Associated Press","accessed_at":"2026-09-16T20:33:00Z","supports":["closing narrative","Treasury yields","leadership","global markets"]},
+    {"source_id":"ap-indexes","title":"How major US stock indexes fared Wednesday","url":"https://apnews.com/article/wall-street-stocks-dow-nasdaq-b082e78c9b572b6b0a94b8033a0ee96b","publisher":"Associated Press","accessed_at":"2026-09-16T20:33:00Z","supports":["cash index closes"]},
+    {"source_id":"ap-retail","title":"Retail sales rise a better-than-expected 1.2% in August","url":"https://apnews.com/article/474ed13de492362589405a47ec044d29","publisher":"Associated Press","accessed_at":"2026-09-16T20:33:00Z","supports":["August retail sales","July revision"]},
+    {"source_id":"schwab-options","title":"Today's Options Market Update","url":"https://www.schwab.com/learn/story/todays-options-market-update","publisher":"Charles Schwab","accessed_at":"2026-09-16T20:33:00Z","supports":["intraday VIX range","VIX contract activity"]},
+    {"source_id":"census-construction","title":"Survey of Construction release schedule","url":"https://www.census.gov/construction/soc/schedule.html","publisher":"U.S. Census Bureau","accessed_at":"2026-09-16T20:33:00Z","supports":["Thursday housing release"]},
+    {"source_id":"dol-claims","title":"Unemployment Insurance Weekly Claims releases","url":"https://www.dol.gov/index.php/newsroom/releases/eta","publisher":"U.S. Department of Labor","accessed_at":"2026-09-16T20:33:00Z","supports":["Thursday weekly claims context"]},
+    {"source_id":"philadelphia-fed","title":"Manufacturing Business Outlook Survey","url":"https://www.philadelphiafed.org/surveys-and-data/regional-economic-analysis/manufacturing-business-outlook-survey","publisher":"Federal Reserve Bank of Philadelphia","accessed_at":"2026-09-16T20:33:00Z","supports":["Thursday survey time and scope"]},
+    {"source_id":"bls-calendar","title":"Schedule of Selected Releases for September 2026","url":"https://www.bls.gov/schedule/2026/09_sched.htm","publisher":"U.S. Bureau of Labor Statistics","accessed_at":"2026-09-16T20:33:00Z","supports":["state employment release time"]},
+    {"source_id":"earnings-calendar","title":"Earnings calendar September 14 to 18","url":"https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks","publisher":"Kiplinger","accessed_at":"2026-09-16T20:33:00Z","supports":["Thursday earnings calendar"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-09-16T20:31:44Z","supports":["market dashboard","technical calculations","realized volatility","charts"]}
+  ],
+  "series_files": [
+    "data/daily/2026-09-16/series/SPY.json",
+    "data/daily/2026-09-16/series/QQQ.json",
+    "data/daily/2026-09-16/series/IWM.json",
+    "data/daily/2026-09-16/series/TLT.json",
+    "data/daily/2026-09-16/series/VIX.json",
+    "data/daily/2026-09-16/series/TNX.json",
+    "data/daily/2026-09-16/series/DX-Y.NYB.json",
+    "data/daily/2026-09-16/series/GC_F.json",
+    "data/daily/2026-09-16/series/CL_F.json",
+    "data/daily/2026-09-16/series/BTC-USD.json"
+  ],
+  "chart_files": [
+    "public/charts/daily/2026-09-16/SPY.png",
+    "public/charts/daily/2026-09-16/QQQ.png",
+    "public/charts/daily/2026-09-16/SPY-vs-TLT.png"
+  ],
+  "warnings": [
+    "Yahoo daily bar timestamps are provider dates and not precise closing quote times.",
+    "AP late-session Treasury yields and Yahoo's TNX index proxy use different instruments and conventions.",
+    "Bitcoin is a rolling 24-hour observation; WTI and gold are continuous futures proxies, not U.S. cash closes.",
+    "Schwab options observations are intraday and pre-decision; contract activity does not reveal trade direction or dealer positioning."
+  ]
+}
