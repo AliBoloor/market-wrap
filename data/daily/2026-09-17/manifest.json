@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-09-17",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-09-17T20:34:00Z",
+  "market_data_as_of": "2026-09-17T20:31:34Z",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"US stocks rise after oil prices fall and pressure from the bond market eases","url":"https://apnews.com/article/stock-markets-fed-oil-26a4da336d561d213a3f28f260f25d2c","publisher":"Associated Press","accessed_at":"2026-09-17T20:40:00Z","supports":["closing narrative","10-year yield","oil","leadership","global markets"]},
+    {"source_id":"ap-indexes","title":"How major US stock indexes fared Thursday","url":"https://apnews.com/article/a8ce06ff4ffcf66d9f28bd3453bdf998","publisher":"Associated Press","accessed_at":"2026-09-17T20:40:00Z","supports":["cash index closes"]},
+    {"source_id":"fed-statement","title":"Federal Reserve issues FOMC statement","url":"https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm","publisher":"Federal Reserve Board","accessed_at":"2026-09-17T20:40:00Z","supports":["policy backdrop","target range"]},
+    {"source_id":"fed-projections","title":"September 16, 2026 FOMC projections materials","url":"https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm","publisher":"Federal Reserve Board","accessed_at":"2026-09-17T20:40:00Z","supports":["projected policy path"]},
+    {"source_id":"census-housing","title":"New Residential Construction","url":"https://www.census.gov/construction/nrc/current/","publisher":"U.S. Census Bureau","accessed_at":"2026-09-17T20:40:00Z","supports":["housing starts","building permits","confidence intervals"]},
+    {"source_id":"philadelphia-fed","title":"September 2026 Manufacturing Business Outlook Survey","url":"https://www.philadelphiafed.org/surveys-and-data/regional-economic-analysis/mbos-2026-09","publisher":"Federal Reserve Bank of Philadelphia","accessed_at":"2026-09-17T20:40:00Z","supports":["regional manufacturing","prices"]},
+    {"source_id":"rates-update","title":"U.S. Treasury Yields Fall as Fed Regains Trust, BOE Leaves Rates Unchanged","url":"https://www.marketscreener.com/news/u-s-treasury-yields-fall-as-fed-regains-trust-boe-leaves-rates-unchanged-update-ce785bd3df8bf327","publisher":"Dow Jones via MarketScreener","accessed_at":"2026-09-17T20:40:00Z","supports":["intraday two-year yield"]},
+    {"source_id":"schwab-options","title":"Today's Stock Options Market Update","url":"https://www.schwab.com/learn/story/todays-options-market-update","publisher":"Charles Schwab","accessed_at":"2026-09-17T20:40:00Z","supports":["intraday VIX","VIX option activity"]},
+    {"source_id":"cboe-calendar","title":"2026 Options Expiration Calendar","url":"https://cdn.cboe.com/resources/options/Cboe2026OPTIONSCalendar.pdf","publisher":"Cboe Global Markets","accessed_at":"2026-09-17T20:40:00Z","supports":["quarterly options expiration"]},
+    {"source_id":"fed-g17","title":"Industrial Production and Capacity Utilization release calendar","url":"https://www.federalreserve.gov/releases/g17/","publisher":"Federal Reserve Board","accessed_at":"2026-09-17T20:40:00Z","supports":["Friday industrial production release"]},
+    {"source_id":"bls-calendar","title":"Schedule of Selected Releases for September 2026","url":"https://www.bls.gov/schedule/2026/09_sched_list.htm","publisher":"U.S. Bureau of Labor Statistics","accessed_at":"2026-09-17T20:40:00Z","supports":["Friday state employment release"]},
+    {"source_id":"nyfed-calendar","title":"September 2026 Research Calendar","url":"https://www.newyorkfed.org/research/calendars/i-sep26.html","publisher":"Federal Reserve Bank of New York","accessed_at":"2026-09-17T20:40:00Z","supports":["Friday research releases"]},
+    {"source_id":"earnings-calendar","title":"Earnings calendar September 14 to 18","url":"https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks","publisher":"Kiplinger","accessed_at":"2026-09-17T20:40:00Z","supports":["Friday earnings calendar"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-09-17T20:31:34Z","supports":["market dashboard","technical calculations","realized volatility","charts"]}
+  ],
+  "series_files": [
+    "data/daily/2026-09-17/series/SPY.json",
+    "data/daily/2026-09-17/series/QQQ.json",
+    "data/daily/2026-09-17/series/IWM.json",
+    "data/daily/2026-09-17/series/TLT.json",
+    "data/daily/2026-09-17/series/VIX.json",
+    "data/daily/2026-09-17/series/TNX.json",
+    "data/daily/2026-09-17/series/DX-Y.NYB.json",
+    "data/daily/2026-09-17/series/GC_F.json",
+    "data/daily/2026-09-17/series/CL_F.json",
+    "data/daily/2026-09-17/series/BTC-USD.json"
+  ],
+  "chart_files": [
+    "public/charts/daily/2026-09-17/SPY.png",
+    "public/charts/daily/2026-09-17/QQQ.png",
+    "public/charts/daily/2026-09-17/SPY-vs-TLT.png"
+  ],
+  "warnings": [
+    "Yahoo daily bar timestamps are provider dates and not precise closing quote times.",
+    "The two-year Treasury yield is an intraday observation and not a closing quote.",
+    "AP's 10-year market yield and Yahoo's TNX index proxy use different instruments and conventions.",
+    "Bitcoin is rolling; WTI and gold are continuous futures proxies, not U.S. cash closes.",
+    "Schwab options observations are intraday; aggregate volume does not reveal complete positioning or direction."
+  ]
+}
