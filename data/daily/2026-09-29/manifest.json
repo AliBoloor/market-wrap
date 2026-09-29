@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-09-29",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-09-29T20:33:21Z",
+  "market_data_as_of": "2026-09-29T20:31:31Z",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"Stocks drift lower while Treasury yields remain high","url":"https://apnews.com/article/stocks-markets-oil-bonds-us-269abea6fd8ea7f314a8c34152788e0c","publisher":"Associated Press","accessed_at":"2026-09-29T20:32:00Z","supports":["closing narrative","Treasury yields","economic releases","oil","global markets"]},
+    {"source_id":"ap-indexes","title":"How major US stock indexes fared Tuesday","url":"https://apnews.com/article/wall-street-stocks-dow-nasdaq-69778ade7a033a10cb44b9078b6bb15d","publisher":"Associated Press","accessed_at":"2026-09-29T20:32:00Z","supports":["cash index closes"]},
+    {"source_id":"ap-confidence","title":"US consumer confidence falls to lowest level in 12 years","url":"https://apnews.com/article/b9429c6d4f025d00e6283bfde4e0197d","publisher":"Associated Press","accessed_at":"2026-09-29T20:32:00Z","supports":["consumer confidence"]},
+    {"source_id":"reuters-rates","title":"Dollar holds near two-month peak as yields rise","url":"https://uk.marketscreener.com/news/dollar-hold-near-two-month-peak-as-yields-rise-fed-data-looms-ce785addd889f621","publisher":"Reuters via MarketScreener","accessed_at":"2026-09-29T20:32:00Z","supports":["intraday two-year yield"]},
+    {"source_id":"schwab-options","title":"Today's Stock Options Market Update","url":"https://www.schwab.com/learn/story/todays-options-market-update","publisher":"Charles Schwab","accessed_at":"2026-09-29T20:32:00Z","supports":["intraday VIX","VIX option activity"]},
+    {"source_id":"cboe-volatility","title":"Week of 9/28/2026: Equities Unfazed by Spike in Rates Volatility","url":"https://www.cboe.com/insights/posts/week-of-9-28-2026-equities-unfazed-by-spike-in-rates-volatility","publisher":"Cboe Global Markets","accessed_at":"2026-09-29T20:32:00Z","supports":["rates volatility","SPX skew","single-stock implied volatility"]},
+    {"source_id":"bea-calendar","title":"BEA release schedule","url":"https://bea.gov/news/schedule/full","publisher":"Bureau of Economic Analysis","accessed_at":"2026-09-29T20:32:00Z","supports":["PCE","GDP","corporate profits"]},
+    {"source_id":"adp-calendar","title":"ADP National Employment Report","url":"https://adpemploymentreport.com/","publisher":"ADP Research","accessed_at":"2026-09-29T20:32:00Z","supports":["ADP employment release"]},
+    {"source_id":"census-calendar","title":"Economic Indicators Release Schedule","url":"https://www.census.gov/econ/indicators/release_schedule.html","publisher":"U.S. Census Bureau","accessed_at":"2026-09-29T20:32:00Z","supports":["advance economic indicators"]},
+    {"source_id":"nyfed-calendar","title":"September 2026 Economic Indicators Calendar","url":"https://www.newyorkfed.org/research/calendars/i-sep26.html","publisher":"Federal Reserve Bank of New York","accessed_at":"2026-09-29T20:32:00Z","supports":["Wednesday calendar"]},
+    {"source_id":"micron-ir","title":"Micron Technology to Report Fiscal Fourth Quarter Results","url":"https://investors.micron.com/news/press-release/2026/Micron-Technology-to-Report-Fiscal-Fourth-Quarter-Results-on-September-30-2026/default.aspx","publisher":"Micron Technology","accessed_at":"2026-09-29T20:32:00Z","supports":["Wednesday earnings call"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-09-29T20:31:31Z","supports":["closing dashboard","technical calculations","realized volatility","charts"]}
+  ],
+  "series_files": [
+    "data/daily/2026-09-29/series/SPY.json",
+    "data/daily/2026-09-29/series/QQQ.json",
+    "data/daily/2026-09-29/series/IWM.json",
+    "data/daily/2026-09-29/series/TLT.json",
+    "data/daily/2026-09-29/series/VIX.json",
+    "data/daily/2026-09-29/series/TNX.json",
+    "data/daily/2026-09-29/series/DX-Y.NYB.json",
+    "data/daily/2026-09-29/series/GC_F.json",
+    "data/daily/2026-09-29/series/CL_F.json",
+    "data/daily/2026-09-29/series/BTC-USD.json"
+  ],
+  "chart_files": [
+    "public/charts/daily/2026-09-29/SPY.png",
+    "public/charts/daily/2026-09-29/QQQ.png",
+    "public/charts/daily/2026-09-29/SPY-vs-TLT.png"
+  ],
+  "warnings": [
+    "Yahoo daily bar timestamps are provider labels and not precise closing quote times.",
+    "The two-year Treasury yield is an approximate intraday observation, not a closing quote.",
+    "Cash-index closes and ETF proxies differ in constituents and trading mechanics.",
+    "Gold daily return is withheld because of a likely continuous-futures contract-roll discontinuity.",
+    "Bitcoin is rolling; WTI and gold are continuous futures proxies, not U.S. cash closes.",
+    "Cboe's skew discussion describes the prior week and Schwab options observations are intraday."
+  ]
+}
