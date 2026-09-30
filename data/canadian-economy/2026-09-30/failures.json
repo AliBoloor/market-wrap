@@ -1,0 +1,17 @@
+[
+  {
+    "symbol": "CAD=X",
+    "source": "Yahoo Finance chart data",
+    "reason": "low is above another OHLC value"
+  },
+  {
+    "symbol": "TD",
+    "source": "Yahoo Finance chart data",
+    "reason": "high is below another OHLC value"
+  },
+  {
+    "symbol": "CNI",
+    "source": "Yahoo Finance chart data",
+    "reason": "high is below another OHLC value"
+  }
+]
