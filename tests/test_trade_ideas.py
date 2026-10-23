@@ -70,3 +70,13 @@ def test_authorized_caps_render_and_validate():
     assert 'UNSET' not in text
     data['risk_caps']['other']=1000
     with pytest.raises(ValueError): validate_ideas(data)
+
+
+def test_daily_scheduler_contract_refreshes_and_retries_companion():
+    from pathlib import Path
+    root=Path(__file__).resolve().parents[1]
+    prompt=(root/'automation/DAILY_TASK_PROMPT.md').read_text()
+    assert prompt.index('git merge --ff-only origin/main') < prompt.index('BOTH validated Daily and Trade Ideas')
+    assert 'On EVERY invocation' in prompt
+    assert 'markers independently' in prompt
+    assert 'return both the Daily and Trade Ideas page links' in prompt

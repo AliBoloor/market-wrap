@@ -10,6 +10,10 @@ Treat every repository artifact as public.
 
 ## Start every publication
 
+On every scheduled wake, re-read this skill and the applicable prompt from disk;
+never rely on cached completion logic from an earlier heartbeat. Daily's prompt
+contains the safe checkout-refresh procedure and two independent bundle guards.
+
 1. Read `AGENTS.md`, `docs/report-spec.md`, `docs/architecture.md`, and the
    applicable scheduled-task prompt.
 2. Determine the current time in `America/New_York`, resolve the trading

@@ -1,5 +1,21 @@
 # Daily Market Wrap scheduled-task prompt
 
+## Per-wake checkout refresh
+
+On EVERY invocation, including heartbeat retries in a long-lived thread, read
+this prompt and `.agents/skills/market-wrap/SKILL.md` from disk before using
+cached instructions or completion guards. The scheduler's existing target and
+recurrence stay unchanged.
+
+Before publication work or completion checks, inspect Git status and fetch
+`origin main`. Fast-forward with `git merge --ff-only origin/main` only when
+tracked files are clean and incoming paths do not overlap untracked files.
+Preserve unrelated files; do not stash, reset, clean, force, or overwrite them.
+If synchronization fails or branches diverge, stop this publication attempt,
+report the exact stage, and preserve the last valid publications. After a
+successful fast-forward, re-read the updated skill, this prompt and referenced
+contracts. A cached Daily-only completion guard must never bypass the companion.
+
 Use the repository-scoped `$market-wrap` skill. This is an **after-close** publication only. Determine the current time and U.S. trading date in `America/New_York`. Stop before broad web research if the U.S. cash session has not closed, today is not a U.S. trading day, or BOTH validated Daily and Trade Ideas completion markers already exist for today. If only one exists, perform only the missing companion branch. Never publish a pre-market, intraday, or holiday placeholder as the Daily Market Wrap.
 
 If today needs a report, inspect the public repository and read `docs/report-spec.md`, the source policy, and the relevant schema before editing. Do not disturb unrelated worktree changes. Research and write one evidence-backed **Daily Market Wrap** that answers two questions: what happened in today’s completed U.S. session and what matters for the next trading day.
@@ -55,3 +71,5 @@ Risk caps are USD 1,000 maximum per SPX trade and USD 500 per other ETF/single-n
 structures are welcome, explicitly labeled; verified listed contracts require
 current chain source, timestamp and exact contract identifiers. Never invent
 premiums, executable quotes, probabilities or falsely certify a loss cap.
+
+After successful publication, return both the Daily and Trade Ideas page links in the existing task delivery. Do not create or change a scheduler or destination.
