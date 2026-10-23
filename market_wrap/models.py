@@ -9,13 +9,14 @@ from pathlib import Path
 from typing import Any, Literal
 
 
-ReportFamily = Literal["daily", "weekly", "monthly", "canadian-economy"]
-REPORT_FAMILIES = frozenset({"daily", "weekly", "monthly", "canadian-economy"})
+ReportFamily = Literal["daily", "weekly", "monthly", "canadian-economy", "trade-ideas"]
+REPORT_FAMILIES = frozenset({"daily", "weekly", "monthly", "canadian-economy", "trade-ideas"})
 ReportType = Literal[
     "Daily Market Wrap",
     "Weekly Market Wrap",
     "Monthly Market Wrap",
     "Canadian Economy",
+    "Trade Ideas",
 ]
 PublicationState = Literal["draft", "validated", "published", "failed"]
 

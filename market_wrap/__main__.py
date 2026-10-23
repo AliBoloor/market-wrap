@@ -52,6 +52,18 @@ def _validate(args: argparse.Namespace) -> int:
                     or marker.get("report_family") != family
                     or marker.get("status") != "validated"):
                 errors.append(f"{key}: invalid completion marker")
+        if family == "trade-ideas":
+            from .trade_ideas import validate_ideas, render_ideas
+            evidence_path = root / "data" / family / trading_date / "ideas.json"
+            try:
+                payload = json.loads(evidence_path.read_text())
+                validate_ideas(payload)
+                if payload['trading_date'] != trading_date:
+                    raise ValueError("ideas date differs from report")
+                if report_path.read_text() != render_ideas(payload):
+                    raise ValueError("report differs from validated candidate evidence")
+            except (ValueError, KeyError, TypeError, OSError) as exc:
+                errors.append(f"{key}: invalid candidate evidence: {exc}")
         manifest = load_manifest(manifest_path)
         if manifest.report_type != str(report.metadata["report_type"]):
             errors.append(f"{key}: manifest report_type does not match report metadata")
@@ -75,6 +87,12 @@ def _validate(args: argparse.Namespace) -> int:
     return 0
 
 
+def _ideas(args: argparse.Namespace) -> int:
+    from .trade_ideas import write_ideas
+    print(write_ideas(args.input, args.root))
+    return 0
+
+
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Market Wrap publication tooling")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -85,6 +103,10 @@ def _parser() -> argparse.ArgumentParser:
     validate = subparsers.add_parser("validate", help="validate publication bundles")
     validate.add_argument("--root", type=Path, default=Path("."))
     validate.set_defaults(handler=_validate)
+    ideas = subparsers.add_parser("trade-ideas", help="render evidence-backed ideas; no research, publishing or scheduler")
+    ideas.add_argument("--input", type=Path, required=True)
+    ideas.add_argument("--root", type=Path, default=Path("."))
+    ideas.set_defaults(handler=_ideas)
     return parser
 
 

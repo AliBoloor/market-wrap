@@ -12,6 +12,8 @@ from .models import MarketSeries
 @dataclass(frozen=True)
 class TechnicalSnapshot:
     symbol: str
+    session_high: float
+    session_low: float
     latest_close: float
     prior_high: float | None
     prior_low: float | None
@@ -83,7 +85,8 @@ def technical_snapshot(series: MarketSeries) -> TechnicalSnapshot:
     if sma50 is not None and sma200 is not None:
         structure = "bullish" if latest > sma50 > sma200 else "bearish" if latest < sma50 < sma200 else "mixed"
     return TechnicalSnapshot(
-        symbol=series.symbol, latest_close=latest,
+        symbol=series.symbol, session_high=series.latest.high,
+        session_low=series.latest.low, latest_close=latest,
         prior_high=prior.high if prior else None, prior_low=prior.low if prior else None,
         prior_close=prior.close if prior else None,
         recent_high_20d=max((item.high for item in recent), default=None),

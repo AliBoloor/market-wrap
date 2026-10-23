@@ -33,12 +33,14 @@ _REQUIRED_METADATA = (
 )
 
 REPORT_FAMILIES = {
+    "trade-ideas": "Trade Ideas",
     "daily": "Daily Wrap",
     "weekly": "Weekly Wrap",
     "monthly": "Monthly Wrap",
     "canadian-economy": "Canadian Economy",
 }
 REPORT_TYPES = {
+    "trade-ideas": "Trade Ideas",
     "daily": "Daily Market Wrap",
     "weekly": "Weekly Market Wrap",
     "monthly": "Monthly Market Wrap",

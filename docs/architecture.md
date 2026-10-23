@@ -66,3 +66,12 @@ The repository and website are public. Commit only public-source research,
 publication-safe observations, generated charts, and validation metadata.
 Secrets, cookies, credentials, browser state, private messages, account data,
 positions, and local system information are prohibited.
+
+## Trade Ideas companion
+
+The same daily research run also prepares the Trade Ideas family. It uses the
+shared Markdown/manifest/site architecture and its own date/family completion
+marker, not a separate scheduler. See trade-ideas.md for candidate evidence and
+risk-cap gates. Daily technical scenarios remain in Daily; expanded 1–7 DTE
+candidates appear in the Trade Ideas tab. Existing recurrences/delivery stay
+unchanged; active prompt updates and publication need separate authorization.

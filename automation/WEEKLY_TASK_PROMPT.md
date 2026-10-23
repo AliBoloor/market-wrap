@@ -15,3 +15,10 @@ Save the report and evidence bundle using the schema's weekly conventions. Use i
 Run all tests, validation, and the site build. Inspect the Weekly page, navigation, archive, tables, charts, citations, week-ending label, freshness, and next-week section. Only then create the marker, commit intended artifacts and required indexes, reconcile without force, push, and confirm Pages deployment.
 
 On failure, preserve the last valid site, leave the marker absent, and report the failed stage and recovery action. Use only ChatGPT/Codex allowance; never call an OpenAI API, another LLM API, or a service requiring an external API key.
+
+Apply the SPX preparation and sector coverage contract in docs/report-spec.md.
+Use actual ^GSPC data; lead next-session technical preparation with SPX while
+retaining SPY/QQQ/IWM and XLV/XLK/XLF/XLE/XLI. Integrate and research-complete
+spx-preparation.md, including official next-session calendar, macro catalyst
+times/sources, three opening scenarios, confirmation, invalidation and no-trade
+gates. Do not invent chains, strikes, premiums or probabilities.

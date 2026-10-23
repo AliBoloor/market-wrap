@@ -12,3 +12,7 @@ These prompts separate intelligent research from deterministic GitHub Pages publ
 Configure each recurrence with timezone `America/Vancouver`. The repeated evening attempts provide catch-up after sleep or a temporary outage. Eligibility checks and type-specific completion markers make later attempts no-ops. The monthly tasks run a cheap official-calendar gate on ordinary weekdays because an RRULE cannot reliably encode the last exchange trading day or ad hoc holidays.
 
 Staggering the four schedules reduces concurrent edits to the shared repository. Monthly checks are limited to the final seven calendar days. If two eligible tasks still overlap, each must stop when the worktree contains overlapping publication changes; a later recurrence can retry after the first push completes. Never force-push.
+
+Trade Ideas is a companion branch of the existing Daily task, not a fifth
+automation. Check the daily/trade-ideas completion markers independently. Proposed
+prompt changes do not activate themselves; preserve the recurrences above.

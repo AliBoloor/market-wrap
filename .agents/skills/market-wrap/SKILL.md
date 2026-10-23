@@ -14,7 +14,7 @@ Treat every repository artifact as public.
    applicable scheduled-task prompt.
 2. Determine the current time in `America/New_York`, resolve the trading
    calendar, and identify publication type and coverage period.
-3. Stop before web research if that type/period has a validated marker.
+3. Stop before web research if that type/period has a validated marker. For the daily run, check Daily and Trade Ideas markers independently and retry only the missing companion.
 4. Confirm the cadence is due:
    - Daily: after the completed regular U.S. session.
    - Weekly: after the week's final U.S. session, normally Friday, or Thursday
@@ -84,3 +84,8 @@ and required outlook. Then:
 GitHub Actions may test, validate, build, and deploy committed content. It must
 never research, call an LLM, or silently create narrative. Intelligent content
 is created only by scheduled Codex tasks under the user's ChatGPT allowance.
+
+## SPX focus
+For U.S. reports apply the SPX/sector contract in docs/report-spec.md and review
+the collected spx-preparation.md. Resolve its calendar/catalyst gate before
+presenting a dated next-session plan; missing data never becomes a proxy SPX price.

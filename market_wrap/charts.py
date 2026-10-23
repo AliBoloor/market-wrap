@@ -28,7 +28,7 @@ def render_price_chart(series: MarketSeries, output: Path, *, windows: tuple[int
     for window, color in zip(windows, colors):
         axis.plot(dates, simple_moving_average(closes, window), color=color, linewidth=1.35, label=f"{window}-day SMA")
     axis.set_title(f"{series.instrument} ({series.symbol}) — Daily Technical Structure", loc="left", fontweight="bold")
-    axis.set_ylabel(f"Price ({series.currency})")
+    axis.set_ylabel("Index points" if series.symbol == "^GSPC" else f"Price ({series.currency})")
     axis.set_xlabel("Date")
     axis.grid(axis="y", alpha=0.22)
     axis.legend(frameon=False, ncol=4)

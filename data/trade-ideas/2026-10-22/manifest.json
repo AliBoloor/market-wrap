@@ -1,0 +1,181 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-10-22",
+  "report_family": "trade-ideas",
+  "report_type": "Trade Ideas",
+  "generated_at": "2026-10-23T01:00:36.142192+00:00",
+  "market_data_as_of": "2026-10-22T20:00:00+00:00",
+  "state": "validated",
+  "sources": [
+    {
+      "source_id": "quote-SPX",
+      "title": "SPX timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T00:53:50.419272+00:00",
+      "supports": [
+        "conditional technical candidate"
+      ]
+    },
+    {
+      "source_id": "quote-SPY",
+      "title": "SPY timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T00:58:55.625600+00:00",
+      "supports": [
+        "conditional technical candidate"
+      ]
+    },
+    {
+      "source_id": "quote-QQQ",
+      "title": "QQQ timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T00:58:55.784643+00:00",
+      "supports": [
+        "conditional technical candidate"
+      ]
+    },
+    {
+      "source_id": "quote-IWM",
+      "title": "IWM timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IWM?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T00:58:55.942793+00:00",
+      "supports": [
+        "conditional technical candidate"
+      ]
+    },
+    {
+      "source_id": "quote-XLV",
+      "title": "XLV timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/XLV?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T00:58:56.102864+00:00",
+      "supports": [
+        "conditional technical candidate"
+      ]
+    },
+    {
+      "source_id": "quote-XLK",
+      "title": "XLK timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T00:58:56.258989+00:00",
+      "supports": [
+        "conditional technical candidate"
+      ]
+    },
+    {
+      "source_id": "quote-XLF",
+      "title": "XLF timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/XLF?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T00:58:56.426115+00:00",
+      "supports": [
+        "conditional technical candidate"
+      ]
+    },
+    {
+      "source_id": "quote-XLE",
+      "title": "XLE timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/XLE?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T00:58:56.583240+00:00",
+      "supports": [
+        "conditional technical candidate"
+      ]
+    },
+    {
+      "source_id": "quote-AAPL",
+      "title": "AAPL timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T00:58:56.898895+00:00",
+      "supports": [
+        "conditional technical candidate"
+      ]
+    },
+    {
+      "source_id": "quote-MSFT",
+      "title": "MSFT timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T00:58:57.098863+00:00",
+      "supports": [
+        "conditional technical candidate"
+      ]
+    },
+    {
+      "source_id": "nyse",
+      "title": "NYSE trading hours/calendar",
+      "url": "https://www.nyse.com/markets/hours-calendars",
+      "publisher": "NYSE trading hours/calendar",
+      "accessed_at": "2026-10-23T01:00:36.142192+00:00",
+      "supports": [
+        "calendar or coverage limitation"
+      ]
+    },
+    {
+      "source_id": "michigan",
+      "title": "University of Michigan release schedule",
+      "url": "https://www.sca.isr.umich.edu/",
+      "publisher": "University of Michigan release schedule",
+      "accessed_at": "2026-10-23T01:00:36.142192+00:00",
+      "supports": [
+        "calendar or coverage limitation"
+      ]
+    },
+    {
+      "source_id": "fed",
+      "title": "FOMC meeting calendar",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "publisher": "FOMC meeting calendar",
+      "accessed_at": "2026-10-23T01:00:36.142192+00:00",
+      "supports": [
+        "calendar or coverage limitation"
+      ]
+    },
+    {
+      "source_id": "pmi",
+      "title": "PMI calendar retrieval limitation",
+      "url": "https://www.pmi.spglobal.com/Public/Release/ReleaseDates",
+      "publisher": "PMI calendar retrieval limitation",
+      "accessed_at": "2026-10-23T01:00:36.142192+00:00",
+      "supports": [
+        "calendar or coverage limitation"
+      ]
+    },
+    {
+      "source_id": "calendar-secondary",
+      "title": "Public economic calendar; PMI time secondary-only",
+      "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar",
+      "publisher": "Public economic calendar; PMI time secondary-only",
+      "accessed_at": "2026-10-23T01:00:36.142192+00:00",
+      "supports": [
+        "calendar or coverage limitation"
+      ]
+    }
+  ],
+  "series_files": [
+    "data/trade-ideas/2026-10-22/series/SPX.json",
+    "data/trade-ideas/2026-10-22/series/SPY.json",
+    "data/trade-ideas/2026-10-22/series/QQQ.json",
+    "data/trade-ideas/2026-10-22/series/IWM.json",
+    "data/trade-ideas/2026-10-22/series/XLV.json",
+    "data/trade-ideas/2026-10-22/series/XLK.json",
+    "data/trade-ideas/2026-10-22/series/XLF.json",
+    "data/trade-ideas/2026-10-22/series/XLE.json",
+    "data/trade-ideas/2026-10-22/series/AAPL.json",
+    "data/trade-ideas/2026-10-22/series/MSFT.json",
+    "data/trade-ideas/2026-10-22/ideas.json"
+  ],
+  "chart_files": [],
+  "warnings": [
+    "All strikes illustrative; no verified chain, premium or exact max loss.",
+    "Zero verified current X posts; own technical analysis only.",
+    "PMI primary calendar HTTP 403; time requires recheck; other event coverage incomplete.",
+    "ETF/single-name levels from current five-minute bars; daily endpoint lagged one session."
+  ]
+}

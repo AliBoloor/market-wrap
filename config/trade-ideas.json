@@ -1,0 +1,6 @@
+{
+  "risk_caps": {"currency": "USD", "spx": 1000, "other": 500},
+  "target_candidates": 10,
+  "minimum_calendar_dte": 1,
+  "maximum_calendar_dte": 7
+}

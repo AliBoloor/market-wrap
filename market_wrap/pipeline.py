@@ -12,9 +12,16 @@ from .analytics import technical_snapshot
 from .charts import render_price_chart, render_relative_chart
 from .data import DataFailure, YahooChartClient
 from .models import MarketSeries
+from .preparation import spx_preparation
 
 
 DEFAULT_INSTRUMENTS = {
+    "^GSPC": "S&P 500 cash index (SPX)",
+    "XLV": "Health Care Select Sector ETF",
+    "XLK": "Technology Select Sector ETF",
+    "XLF": "Financial Select Sector ETF",
+    "XLE": "Energy Select Sector ETF",
+    "XLI": "Industrial Select Sector ETF",
     "SPY": "S&P 500 ETF",
     "QQQ": "Nasdaq-100 ETF",
     "IWM": "Russell 2000 ETF",
@@ -87,6 +94,10 @@ def collect_bundle(
                 )
             )
             continue
+        if clipped.latest.timestamp[:10] != trading_date.isoformat():
+            failures.append(DataFailure(symbol, item.source_name,
+                f"stale: latest observation {clipped.latest.timestamp}; expected session {trading_date}"))
+            continue
         series[symbol] = clipped
     data_dir = root / "data" / report_family / trading_date.isoformat()
     series_dir = data_dir / "series"
@@ -102,9 +113,12 @@ def collect_bundle(
     (data_dir / "failures.json").write_text(
         json.dumps([asdict(item) for item in failures], indent=2) + "\n", encoding="utf-8"
     )
-    for symbol in ("SPY", "QQQ", "IWM"):
+    if report_family != "canadian-economy":
+        (data_dir / "spx-preparation.md").write_text(
+            spx_preparation(series.get("^GSPC"), trading_date), encoding="utf-8")
+    for symbol in ("^GSPC", "SPY", "QQQ", "IWM"):
         if symbol in series:
-            render_price_chart(series[symbol], chart_dir / f"{symbol}.png")
+            render_price_chart(series[symbol], chart_dir / f"{safe_symbol(symbol)}.png")
     if "SPY" in series and "TLT" in series:
         render_relative_chart(series["SPY"], series["TLT"], chart_dir / "SPY-vs-TLT.png")
     if report_family == "canadian-economy":

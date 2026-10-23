@@ -63,7 +63,7 @@ class YahooChartClient:
                     timestamp=datetime.fromtimestamp(epoch, tz=timezone.utc).isoformat(),
                     open=float(values["open"]), high=float(values["high"]),
                     low=float(values["low"]), close=float(values["close"]),
-                    volume=_optional_number(quote_data.get("volume", []), index),
+                    volume=None if symbol == "^GSPC" else _optional_number(quote_data.get("volume", []), index),
                 )
             )
         if not observations:

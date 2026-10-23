@@ -158,3 +158,45 @@ financial-stability, trade, or policy trend.
 - `validated`: all required checks pass; eligible for commit.
 - `published`: pushed and confirmed on GitHub Pages.
 - `failed`: preserve the last valid publication and record the reason locally.
+
+## SPX preparation and sector coverage (U.S. publications)
+
+SPX cash index (`^GSPC` from Yahoo; no SPY scaling) is the primary technical
+preparation instrument. Retain SPY, QQQ and IWM as separate ETF contexts.
+Include XLV and XLK; add XLF, XLE and XLI for financial/credit sensitivity,
+energy/inflation and industrial/cyclical breadth. This compact sector selection
+complements technology and defensive health care without an eleven-sector dump.
+Use actual observations and explain any missing coverage. Weekly and monthly
+retain their macro horizons but include a concise next-session SPX preparation
+box alongside their longer-horizon outlook. Canadian Economy is unchanged.
+
+Use `data/<family>/<date>/spx-preparation.md` as a deterministic starting section,
+not a finished report. Lead the daily outlook with this section. The level map
+uses the just-completed session high/low/close (not the penultimate bar) and
+20-session extremes/SMA20/50/200. Explain level clustering and distance from
+SMA50/200 using `technicals.json`. The collector omits stale instruments and
+records failures; no SPY fallback for SPX. A current date on an intraday Yahoo
+bar does not prove a final close: collection remains strictly after confirmed
+cash close. Record actual retrieval and observation timestamps and quote delay.
+
+Research must replace the calendar/catalyst gate with the verified next session
+and dated primary-source calendar evidence, including intervening holidays,
+weekends, early closes and exceptional closures. Include scheduled releases in
+New York time, their sources and material uncertainty. Never infer “no events”
+from a failed calendar lookup. Keep a no-trade gate when unresolved.
+Retain all three opening scenarios, confirmations, invalidations and no-trade
+cases. No invented strikes, premia, probabilities or chain data. These are
+conditional educational plans; execution requires fresh opening SPX and actual
+same-day chains. Identify exact expiration/AM or PM settlement; SPX close is
+not SET. SPX has no traded volume; separately label any SPY/ES volume/VWAP proxy.
+
+## Trade Ideas
+
+See [Trade Ideas evidence contract](trade-ideas.md). Daily retains its primary
+SPX next-session technical scenarios and separate 0DTE feature. Expanded trade
+candidates go into the companion tab, targeting ten supported 1–7 DTE ideas
+across indices/ETFs/single names, with fewer shown when current evidence is
+insufficient. Illustrative level-based strikes are explicitly labeled and never
+represented as verified listed contracts or executable quotes. Maximum-loss cap
+amount/currency remain unset until clarified. Do not certify a cap from missing
+premiums/fees. Attribute X commentary and distinguish it from own analysis.
