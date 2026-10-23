@@ -148,8 +148,10 @@ def _report_article(report: Report, template: Template) -> str:
     return template.substitute(
         title=html.escape(str(metadata["title"])),
         trading_date=html.escape(report.slug),
+        coverage_label=html.escape(f"Data session {report.slug}" if report.family == "trade-ideas" else report.slug),
         report_type=html.escape(str(metadata["report_type"])),
         generated_at=html.escape(str(metadata["generated_at"])),
+        generation_label="Research generated" if report.family == "trade-ideas" else "Generated",
         data_observed_at=html.escape(str(metadata["data_observed_at"])),
         freshness=html.escape(freshness),
         freshness_class=_css_token(freshness),

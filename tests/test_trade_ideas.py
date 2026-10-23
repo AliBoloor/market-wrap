@@ -17,7 +17,9 @@ def bundle():
             market_source='https://example.com/fixture', thesis='Conditional test',
             level_basis='Synthetic level', trigger='Reclaim', invalidation='Loss of level',
             no_trade='No confirmation', structure='Illustrative 100/101 call debit vertical',
-            expiry='2026-10-26', strike_status='illustrative')])
+            expiry='2026-10-26', strike_status='illustrative',
+            payoff_profile=dict(kind='debit',option_type='call',long_strike=100,short_strike=101,
+                expiry='2026-10-26',quantity=1,multiplier=100,premium=.5,fees=0,assumption_status='illustrative'))])
 
 
 def test_ideas_render_cap_unset_and_separate_page(tmp_path):

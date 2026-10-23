@@ -26,7 +26,19 @@
       "no_trade": "No confirming retest; opens beyond the map with no new structure; wide/missing chain; release window; unknown fees; cap test fails; issuer earnings/corporate-event calendar unverified. No opening market order and no assumed fills.",
       "structure": "Illustrative only: buy 7635 put, sell 7630 put, same 2026-10-30 expiry, one vertical if actually listed. Width 5 points; assumed standard multiplier 100 must be verified. No premium assumed. At debit \u2264 width, payoff loss before fees is bounded by USD 500; eligibility still requires actual debit and all fees within the applicable cap. Do not leg into an unhedged short; close together before expiry to avoid ETF/single-name assignment/exercise exposure.",
       "expiry": "2026-10-30",
-      "strike_status": "illustrative"
+      "strike_status": "illustrative",
+      "payoff_profile": {
+        "kind": "debit",
+        "option_type": "put",
+        "long_strike": 7635.0,
+        "short_strike": 7630.0,
+        "expiry": "2026-10-30",
+        "quantity": 1,
+        "multiplier": 100,
+        "premium": 2.5,
+        "fees": 0,
+        "assumption_status": "illustrative"
+      }
     },
     {
       "id": "02",
@@ -42,7 +54,19 @@
       "no_trade": "No confirming retest; opens beyond the map with no new structure; wide/missing chain; release window; unknown fees; cap test fails; issuer earnings/corporate-event calendar unverified. No opening market order and no assumed fills.",
       "structure": "Illustrative only: buy 761 put, sell 760 put, same 2026-10-30 expiry, one vertical if actually listed. Width 1 points; assumed standard multiplier 100 must be verified. No premium assumed. At debit \u2264 width, payoff loss before fees is bounded by USD 100; eligibility still requires actual debit and all fees within the applicable cap. Do not leg into an unhedged short; close together before expiry to avoid ETF/single-name assignment/exercise exposure.",
       "expiry": "2026-10-30",
-      "strike_status": "illustrative"
+      "strike_status": "illustrative",
+      "payoff_profile": {
+        "kind": "debit",
+        "option_type": "put",
+        "long_strike": 761.0,
+        "short_strike": 760.0,
+        "expiry": "2026-10-30",
+        "quantity": 1,
+        "multiplier": 100,
+        "premium": 0.5,
+        "fees": 0,
+        "assumption_status": "illustrative"
+      }
     },
     {
       "id": "03",
@@ -58,7 +82,19 @@
       "no_trade": "No confirming retest; opens beyond the map with no new structure; wide/missing chain; release window; unknown fees; cap test fails; issuer earnings/corporate-event calendar unverified. No opening market order and no assumed fills.",
       "structure": "Illustrative only: buy 701 put, sell 700 put, same 2026-10-30 expiry, one vertical if actually listed. Width 1 points; assumed standard multiplier 100 must be verified. No premium assumed. At debit \u2264 width, payoff loss before fees is bounded by USD 100; eligibility still requires actual debit and all fees within the applicable cap. Do not leg into an unhedged short; close together before expiry to avoid ETF/single-name assignment/exercise exposure.",
       "expiry": "2026-10-30",
-      "strike_status": "illustrative"
+      "strike_status": "illustrative",
+      "payoff_profile": {
+        "kind": "debit",
+        "option_type": "put",
+        "long_strike": 701.0,
+        "short_strike": 700.0,
+        "expiry": "2026-10-30",
+        "quantity": 1,
+        "multiplier": 100,
+        "premium": 0.5,
+        "fees": 0,
+        "assumption_status": "illustrative"
+      }
     },
     {
       "id": "04",
@@ -74,7 +110,19 @@
       "no_trade": "No confirming retest; opens beyond the map with no new structure; wide/missing chain; release window; unknown fees; cap test fails; issuer earnings/corporate-event calendar unverified. No opening market order and no assumed fills.",
       "structure": "Illustrative only: buy 278 call, sell 279 call, same 2026-10-30 expiry, one vertical if actually listed. Width 1 points; assumed standard multiplier 100 must be verified. No premium assumed. At debit \u2264 width, payoff loss before fees is bounded by USD 100; eligibility still requires actual debit and all fees within the applicable cap. Do not leg into an unhedged short; close together before expiry to avoid ETF/single-name assignment/exercise exposure.",
       "expiry": "2026-10-30",
-      "strike_status": "illustrative"
+      "strike_status": "illustrative",
+      "payoff_profile": {
+        "kind": "debit",
+        "option_type": "call",
+        "long_strike": 278.0,
+        "short_strike": 279.0,
+        "expiry": "2026-10-30",
+        "quantity": 1,
+        "multiplier": 100,
+        "premium": 0.5,
+        "fees": 0,
+        "assumption_status": "illustrative"
+      }
     },
     {
       "id": "05",
@@ -90,7 +138,19 @@
       "no_trade": "No confirming retest; opens beyond the map with no new structure; wide/missing chain; release window; unknown fees; cap test fails; issuer earnings/corporate-event calendar unverified. No opening market order and no assumed fills.",
       "structure": "Illustrative only: buy 183 call, sell 184 call, same 2026-10-30 expiry, one vertical if actually listed. Width 1 points; assumed standard multiplier 100 must be verified. No premium assumed. At debit \u2264 width, payoff loss before fees is bounded by USD 100; eligibility still requires actual debit and all fees within the applicable cap. Do not leg into an unhedged short; close together before expiry to avoid ETF/single-name assignment/exercise exposure.",
       "expiry": "2026-10-30",
-      "strike_status": "illustrative"
+      "strike_status": "illustrative",
+      "payoff_profile": {
+        "kind": "debit",
+        "option_type": "call",
+        "long_strike": 183.0,
+        "short_strike": 184.0,
+        "expiry": "2026-10-30",
+        "quantity": 1,
+        "multiplier": 100,
+        "premium": 0.5,
+        "fees": 0,
+        "assumption_status": "illustrative"
+      }
     },
     {
       "id": "06",
@@ -106,7 +166,19 @@
       "no_trade": "No confirming retest; opens beyond the map with no new structure; wide/missing chain; release window; unknown fees; cap test fails; issuer earnings/corporate-event calendar unverified. No opening market order and no assumed fills.",
       "structure": "Illustrative only: buy 181 put, sell 180 put, same 2026-10-30 expiry, one vertical if actually listed. Width 1 points; assumed standard multiplier 100 must be verified. No premium assumed. At debit \u2264 width, payoff loss before fees is bounded by USD 100; eligibility still requires actual debit and all fees within the applicable cap. Do not leg into an unhedged short; close together before expiry to avoid ETF/single-name assignment/exercise exposure.",
       "expiry": "2026-10-30",
-      "strike_status": "illustrative"
+      "strike_status": "illustrative",
+      "payoff_profile": {
+        "kind": "debit",
+        "option_type": "put",
+        "long_strike": 181.0,
+        "short_strike": 180.0,
+        "expiry": "2026-10-30",
+        "quantity": 1,
+        "multiplier": 100,
+        "premium": 0.5,
+        "fees": 0,
+        "assumption_status": "illustrative"
+      }
     },
     {
       "id": "07",
@@ -122,7 +194,19 @@
       "no_trade": "No confirming retest; opens beyond the map with no new structure; wide/missing chain; release window; unknown fees; cap test fails; issuer earnings/corporate-event calendar unverified. No opening market order and no assumed fills.",
       "structure": "Illustrative only: buy 57 call, sell 58 call, same 2026-10-30 expiry, one vertical if actually listed. Width 1 points; assumed standard multiplier 100 must be verified. No premium assumed. At debit \u2264 width, payoff loss before fees is bounded by USD 100; eligibility still requires actual debit and all fees within the applicable cap. Do not leg into an unhedged short; close together before expiry to avoid ETF/single-name assignment/exercise exposure.",
       "expiry": "2026-10-30",
-      "strike_status": "illustrative"
+      "strike_status": "illustrative",
+      "payoff_profile": {
+        "kind": "debit",
+        "option_type": "call",
+        "long_strike": 57.0,
+        "short_strike": 58.0,
+        "expiry": "2026-10-30",
+        "quantity": 1,
+        "multiplier": 100,
+        "premium": 0.5,
+        "fees": 0,
+        "assumption_status": "illustrative"
+      }
     },
     {
       "id": "08",
@@ -138,7 +222,19 @@
       "no_trade": "No confirming retest; opens beyond the map with no new structure; wide/missing chain; release window; unknown fees; cap test fails; issuer earnings/corporate-event calendar unverified. No opening market order and no assumed fills.",
       "structure": "Illustrative only: buy 69 call, sell 70 call, same 2026-10-30 expiry, one vertical if actually listed. Width 1 points; assumed standard multiplier 100 must be verified. No premium assumed. At debit \u2264 width, payoff loss before fees is bounded by USD 100; eligibility still requires actual debit and all fees within the applicable cap. Do not leg into an unhedged short; close together before expiry to avoid ETF/single-name assignment/exercise exposure.",
       "expiry": "2026-10-30",
-      "strike_status": "illustrative"
+      "strike_status": "illustrative",
+      "payoff_profile": {
+        "kind": "debit",
+        "option_type": "call",
+        "long_strike": 69.0,
+        "short_strike": 70.0,
+        "expiry": "2026-10-30",
+        "quantity": 1,
+        "multiplier": 100,
+        "premium": 0.5,
+        "fees": 0,
+        "assumption_status": "illustrative"
+      }
     },
     {
       "id": "09",
@@ -154,7 +250,19 @@
       "no_trade": "No confirming retest; opens beyond the map with no new structure; wide/missing chain; release window; unknown fees; cap test fails; issuer earnings/corporate-event calendar unverified. No opening market order and no assumed fills.",
       "structure": "Illustrative only: buy 349 call, sell 350 call, same 2026-10-30 expiry, one vertical if actually listed. Width 1 points; assumed standard multiplier 100 must be verified. No premium assumed. At debit \u2264 width, payoff loss before fees is bounded by USD 100; eligibility still requires actual debit and all fees within the applicable cap. Do not leg into an unhedged short; close together before expiry to avoid ETF/single-name assignment/exercise exposure.",
       "expiry": "2026-10-30",
-      "strike_status": "illustrative"
+      "strike_status": "illustrative",
+      "payoff_profile": {
+        "kind": "debit",
+        "option_type": "call",
+        "long_strike": 349.0,
+        "short_strike": 350.0,
+        "expiry": "2026-10-30",
+        "quantity": 1,
+        "multiplier": 100,
+        "premium": 0.5,
+        "fees": 0,
+        "assumption_status": "illustrative"
+      }
     },
     {
       "id": "10",
@@ -170,7 +278,20 @@
       "no_trade": "No confirming retest; opens beyond the map with no new structure; wide/missing chain; release window; unknown fees; cap test fails; issuer earnings/corporate-event calendar unverified. No opening market order and no assumed fills.",
       "structure": "Illustrative only: buy 520 put, sell 519 put, same 2026-10-30 expiry, one vertical if actually listed. Width 1 points; assumed standard multiplier 100 must be verified. No premium assumed. At debit \u2264 width, payoff loss before fees is bounded by USD 100; eligibility still requires actual debit and all fees within the applicable cap. Do not leg into an unhedged short; close together before expiry to avoid ETF/single-name assignment/exercise exposure.",
       "expiry": "2026-10-30",
-      "strike_status": "illustrative"
+      "strike_status": "illustrative",
+      "payoff_profile": {
+        "kind": "debit",
+        "option_type": "put",
+        "long_strike": 520.0,
+        "short_strike": 519.0,
+        "expiry": "2026-10-30",
+        "quantity": 1,
+        "multiplier": 100,
+        "premium": 0.5,
+        "fees": 0,
+        "assumption_status": "illustrative"
+      }
     }
-  ]
+  ],
+  "presentation_updated_at": "2026-10-23T05:13:11.460520+00:00"
 }

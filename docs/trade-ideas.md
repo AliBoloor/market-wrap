@@ -90,3 +90,33 @@ for selected ETFs/single names. It saves current five-minute bars separately in
 Trade Ideas evidence, rejects a stale New York observation date and returns
 failures. Do not calculate “20-day SMA” from 20 five-minute bars or replace daily
 history with intraday bars. Save returned failures in the companion bundle.
+
+## Required per-candidate expiry profile
+
+Each candidate includes `payoff_profile` with `kind` (`debit`/`credit`),
+`option_type` (`call`/`put`), positive distinct `long_strike`/`short_strike`,
+matching `expiry`, positive integer `quantity` and `multiplier`, net `premium`
+in underlying points/share, all-position `fees` in USD, and
+`assumption_status: illustrative`. The structured legs must agree with the
+written structure. Current profiles support same-expiry two-leg verticals;
+unsupported structures must not be presented with a misleading vertical model.
+
+Premium and fees are explicitly hypothetical until independently verified entry
+quotes/fees exist. Initial premiums in the first edition use 50% of strike width
+as a transparent modeling choice, not an estimate or a retrieved quote. Initial
+fees use zero only as a visible assumption; actual fees remain unknown. Browser
+inputs adjust premium, total fees, spread quantity and multiplier locally. No
+network request, saved trade, broker connection or order is involved.
+
+The blue line is expiry P&L including entry cash flow and fees; dashed gray is
+signed intrinsic settlement payoff before either. Show expiry leg assumptions,
+maximum model gain/loss, breakeven (or zero-P&L region/no breakeven), and comparison
+with the configured cap. A model that fits the cap is never marked executable or
+verified. Fee assumptions apply to the entire position once, not once per leg.
+Explain pre-expiry valuation, physical settlement/early assignment and fill risks
+outside this idealized paired-leg expiry model. Static charts and results remain
+available without JavaScript, with an explicit non-updating-input notice.
+
+The heading prominently names the target trading session; the coverage label
+names the data session. Canonical archive filenames retain the completed data
+date. Adding model features does not redate the underlying market observations.

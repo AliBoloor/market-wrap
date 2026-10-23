@@ -11,6 +11,7 @@ from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 from .models import _parse_time
+from .payoff import validate_profile, render_profile
 
 
 def _url(value: str) -> bool:
@@ -61,6 +62,12 @@ def validate_ideas(bundle: dict) -> None:
             chain_time = _parse_time(idea['chain_observed_at'])
             if chain_time > generated or chain_time.astimezone(ZoneInfo('America/New_York')).date() != session:
                 raise ValueError('chain evidence must be current-session and not future')
+        profile=idea.get('payoff_profile')
+        if profile is None:
+            raise ValueError('every candidate requires a structured expiry payoff profile')
+        validate_profile(profile)
+        if profile.get('expiry') != idea['expiry']:
+            raise ValueError('profile legs must share the candidate expiry')
         social = idea.get('outside_commentary')
         if social:
             if not _url(social['post_url']) or not any(host in social['post_url'] for host in ('://x.com/', '://twitter.com/')):
@@ -82,7 +89,7 @@ def render_ideas(bundle: dict) -> str:
     day = bundle['trading_date']
     observed = max((i['observed_at'] for i in bundle['candidates']), default=bundle['generated_at'])
     count = len(bundle['candidates'])
-    metadata = dict(report_family='trade-ideas', trading_date=day, title=f'Trade Ideas — {day}',
+    metadata = dict(report_family='trade-ideas', trading_date=day, title=f"Trade Ideas for {date.fromisoformat(bundle['next_session']).strftime('%B %d, %Y')}",
         report_type='Trade Ideas', generated_at=bundle['generated_at'], data_observed_at=observed,
         freshness='Current-session evidence' if count else 'No candidate observations',
         completeness=f'{count}/10 supported candidates')
@@ -92,7 +99,7 @@ def render_ideas(bundle: dict) -> str:
     cap_label = ('USD 1,000 per SPX trade; USD 500 per other ETF/single-name trade, including fees when known; NOT certified' if bundle.get('risk_caps') else None)
     if cap_label is None:
         cap_label = f"{cap['amount']} {cap['currency']} configured, NOT certified" if cap else 'UNSET — amount and currency pending clarification'
-    text += f'''# Trade Ideas
+    text += f'''**Target trading session: {bundle['next_session']} (New York). Data session: {day}.**
 
 Conditional research for {bundle['next_session']}; 1–7 calendar days to expiry from that session.
 [Session calendar]({bundle['calendar_source']}). Generated: {bundle['generated_at']}.
@@ -108,6 +115,9 @@ Outside commentary is attributed opinion; independent assessment follows separat
 No track record is assumed from popularity or self-reported results.
 
 '''
+    if bundle.get('presentation_updated_at'):
+        _parse_time(bundle['presentation_updated_at'])
+        text += f"**P&L profile presentation updated:** {bundle['presentation_updated_at']}. Research observations retain their original dates; this is not a new market-data snapshot.\n\n"
     if bundle.get('catalysts'):
         text += '## Next-session catalysts and coverage\n\n' + bundle['catalysts'] + '\n\n'
     for idea in bundle['candidates']:
@@ -120,6 +130,7 @@ No track record is assumed from popularity or self-reported results.
             text += f"**{key.replace('_', ' ').title()}:** {idea[key]}\n\n"
         if idea['strike_status'] == 'verified listed':
             text += f"[Chain evidence]({idea['chain_source']}) at {idea['chain_observed_at']}; contracts: {idea['contract_identifiers']}. Prices require refresh.\n\n"
+        text += render_profile(idea['payoff_profile'], expiry=idea['expiry'], cap=limit if bundle.get('risk_caps') else None) + '\n\n'
         social = idea.get('outside_commentary')
         if social:
             text += f"Outside commentary: {social['author']}, {social['posted_at']}, {social['quote_or_paraphrase']}: {social['excerpt']} [Original post]({social['post_url']}).\n\nCredibility: {social['credibility']}\n\nOwn assessment: {social['own_assessment']}\n\n"

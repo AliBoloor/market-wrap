@@ -73,3 +73,11 @@ current chain source, timestamp and exact contract identifiers. Never invent
 premiums, executable quotes, probabilities or falsely certify a loss cap.
 
 After successful publication, return both the Daily and Trade Ideas page links in the existing task delivery. Do not create or change a scheduler or destination.
+
+For EVERY Trade Ideas candidate, include the structured `payoff_profile` from
+docs/trade-ideas.md with same-expiry long/short legs, option type, debit/credit,
+quantity, multiplier and clearly illustrative premium/fee assumptions. Keep the
+written structure consistent. Render its expiry payoff versus P&L, breakeven,
+bounds and cap comparison. Never omit the profile or imply the what-if model is
+a verified entry quote. Name the target session in the title and data date in
+the coverage label; keep original source timestamps intact.

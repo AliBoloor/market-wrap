@@ -156,6 +156,26 @@
       "supports": [
         "calendar or coverage limitation"
       ]
+    },
+    {
+      "source_id": "pnl-method-bear-put-spread",
+      "title": "OIC bear-put-spread",
+      "url": "https://www.optionseducation.org/strategies/all-strategies/bear-put-spread",
+      "publisher": "Options Industry Council",
+      "accessed_at": "2026-10-23T05:13:11.461776+00:00",
+      "supports": [
+        "expiry payoff methodology"
+      ]
+    },
+    {
+      "source_id": "pnl-method-bull-call-spread-debit-call-spread",
+      "title": "OIC bull-call-spread-debit-call-spread",
+      "url": "https://www.optionseducation.org/strategies/all-strategies/bull-call-spread-debit-call-spread",
+      "publisher": "Options Industry Council",
+      "accessed_at": "2026-10-23T05:13:11.461779+00:00",
+      "supports": [
+        "expiry payoff methodology"
+      ]
     }
   ],
   "series_files": [
@@ -176,6 +196,7 @@
     "All strikes illustrative; no verified chain, premium or exact max loss.",
     "Zero verified current X posts; own technical analysis only.",
     "PMI primary calendar HTTP 403; time requires recheck; other event coverage incomplete.",
-    "ETF/single-name levels from current five-minute bars; daily endpoint lagged one session."
+    "ETF/single-name levels from current five-minute bars; daily endpoint lagged one session.",
+    "Expiry P&L profiles use explicitly illustrative entry premiums, fees, quantity and multiplier; all real pricing and risk-cap eligibility remain unverified."
   ]
 }

@@ -334,3 +334,32 @@ footer span:first-child { color: var(--heading); font-weight: 700; }
   html { scroll-behavior: auto; }
   * { transition-duration: 0.01ms !important; }
 }
+
+/* Expiry profiles: scoped, responsive and independent of market-data access. */
+.pnl-profile { margin: 1.8rem 0 2.8rem; padding: 1.25rem; border: 1px solid var(--line); border-radius: .8rem; background: var(--surface, transparent); }
+.pnl-profile h3 { margin-top: 0; }
+.pnl-profile p, .pnl-profile details { font: .85rem/1.6 var(--sans); }
+.pnl-assumption { padding: .8rem; border-left: 3px solid #b27716; }
+.pnl-inputs { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .8rem; }
+.pnl-inputs label { display: grid; gap: .35rem; min-width: 0; font: .78rem/1.4 var(--sans); }
+.pnl-inputs input { box-sizing: border-box; width: 100%; min-width: 0; padding: .65rem; border: 1px solid var(--line); border-radius: .35rem; color: var(--heading); background: var(--surface-subtle); font: inherit; font-size: 1rem; }
+.pnl-inputs input:focus-visible { outline: 2px solid #2873b4; outline-offset: 2px; }
+.pnl-chart { display: block; width: 100%; height: auto; max-height: 340px; overflow: visible; color: var(--heading); }
+.pnl-chart text { fill: currentColor; font: 13px var(--sans); }
+.pnl-axis { stroke: currentColor; opacity: .45; stroke-width: 1; }
+.payoff-line { fill: none; stroke: #9199a2; stroke-width: 2.4; stroke-dasharray: 7 5; }
+.pnl-line { fill: none; stroke: var(--pnl-blue); stroke-width: 3; }
+.pnl-key { color: var(--pnl-blue); font-weight: 650; }
+.pnl-results { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .9rem; font: .82rem/1.5 var(--sans); }
+.pnl-results dt { color: var(--muted); }
+.pnl-results dd { margin: .2rem 0 0; font-weight: 650; overflow-wrap: anywhere; }
+.pnl-profile [role="alert"] { color: #b74832; font-weight: 650; }
+@media (max-width: 520px) {
+  .pnl-profile { padding: .85rem; }
+  .pnl-inputs, .pnl-results { gap: .65rem; }
+  .pnl-chart text { font-size: 17px; }
+}
+
+:root { --pnl-blue: #2873b4; }
+:root[data-theme="dark"] { --pnl-blue: #80baff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --pnl-blue: #80baff; } }

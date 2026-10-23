@@ -1,13 +1,13 @@
 <article class="report">
   <header class="report-header">
-    <p class="eyebrow">$report_type · $trading_date</p>
+    <p class="eyebrow">$report_type · $coverage_label</p>
     <h1>$title</h1>
     <div class="status-row" aria-label="Publication status">
       <span class="status $freshness_class">Freshness: $freshness</span>
       <span class="status $completeness_class">Completeness: $completeness</span>
     </div>
     <dl class="timestamps">
-      <div><dt>Generated</dt><dd>$generated_at</dd></div>
+      <div><dt>$generation_label</dt><dd>$generated_at</dd></div>
       <div><dt>Latest observation</dt><dd>$data_observed_at</dd></div>
     </dl>
   </header>
