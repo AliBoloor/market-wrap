@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-10-23",
+  "report_family": "trade-ideas",
+  "report_type": "Trade Ideas",
+  "generated_at": "2026-10-23T20:25:28.166Z",
+  "market_data_as_of": "2026-10-23T20:00:00+00:00",
+  "state": "validated",
+  "sources": [
+    {
+      "source_id": "quote-SPX",
+      "title": "SPX timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T20:26:40.636790+00:00",
+      "supports": [
+        "conditional candidate or calendar/payoff evidence"
+      ]
+    },
+    {
+      "source_id": "quote-SPY",
+      "title": "SPY timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T20:26:40.774940+00:00",
+      "supports": [
+        "conditional candidate or calendar/payoff evidence"
+      ]
+    },
+    {
+      "source_id": "quote-QQQ",
+      "title": "QQQ timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T20:26:40.929369+00:00",
+      "supports": [
+        "conditional candidate or calendar/payoff evidence"
+      ]
+    },
+    {
+      "source_id": "quote-IWM",
+      "title": "IWM timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IWM?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T20:26:41.098365+00:00",
+      "supports": [
+        "conditional candidate or calendar/payoff evidence"
+      ]
+    },
+    {
+      "source_id": "quote-XLV",
+      "title": "XLV timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/XLV?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T20:26:41.259773+00:00",
+      "supports": [
+        "conditional candidate or calendar/payoff evidence"
+      ]
+    },
+    {
+      "source_id": "quote-XLK",
+      "title": "XLK timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T20:26:41.430903+00:00",
+      "supports": [
+        "conditional candidate or calendar/payoff evidence"
+      ]
+    },
+    {
+      "source_id": "quote-XLF",
+      "title": "XLF timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/XLF?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T20:26:41.578388+00:00",
+      "supports": [
+        "conditional candidate or calendar/payoff evidence"
+      ]
+    },
+    {
+      "source_id": "quote-XLE",
+      "title": "XLE timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/XLE?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T20:26:41.758938+00:00",
+      "supports": [
+        "conditional candidate or calendar/payoff evidence"
+      ]
+    },
+    {
+      "source_id": "quote-XLI",
+      "title": "XLI timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/XLI?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T20:26:41.914355+00:00",
+      "supports": [
+        "conditional candidate or calendar/payoff evidence"
+      ]
+    },
+    {
+      "source_id": "quote-MSFT",
+      "title": "MSFT timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-23T20:26:42.241508+00:00",
+      "supports": [
+        "conditional candidate or calendar/payoff evidence"
+      ]
+    },
+    {
+      "source_id": "nyse",
+      "title": "NYSE trading hours and calendar",
+      "url": "https://www.nyse.com/markets/hours-calendars",
+      "publisher": "NYSE",
+      "accessed_at": "2026-10-23T20:25:28.166Z",
+      "supports": [
+        "conditional candidate or calendar/payoff evidence"
+      ]
+    },
+    {
+      "source_id": "nyfed",
+      "title": "Economic Indicators Calendar",
+      "url": "https://www.newyorkfed.org/research/calendars/i-oct26.html",
+      "publisher": "Federal Reserve Bank of New York",
+      "accessed_at": "2026-10-23T20:25:28.166Z",
+      "supports": [
+        "conditional candidate or calendar/payoff evidence"
+      ]
+    },
+    {
+      "source_id": "verizon",
+      "title": "Verizon Q3 earnings schedule",
+      "url": "https://www.verizon.com/about/news/verizon-q3-2026-earnings-report-date",
+      "publisher": "Verizon",
+      "accessed_at": "2026-10-23T20:25:28.166Z",
+      "supports": [
+        "conditional candidate or calendar/payoff evidence"
+      ]
+    },
+    {
+      "source_id": "fed",
+      "title": "FOMC meeting calendar",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "publisher": "Federal Reserve Board",
+      "accessed_at": "2026-10-23T20:25:28.166Z",
+      "supports": [
+        "conditional candidate or calendar/payoff evidence"
+      ]
+    },
+    {
+      "source_id": "pnl-method-bear-put-spread",
+      "title": "OIC bear put spread",
+      "url": "https://www.optionseducation.org/strategies/all-strategies/bear-put-spread",
+      "publisher": "Options Industry Council",
+      "accessed_at": "2026-10-23T20:25:28.166Z",
+      "supports": [
+        "conditional candidate or calendar/payoff evidence"
+      ]
+    },
+    {
+      "source_id": "pnl-method-bull-call-spread",
+      "title": "OIC bull call spread",
+      "url": "https://www.optionseducation.org/strategies/all-strategies/bull-call-spread-debit-call-spread",
+      "publisher": "Options Industry Council",
+      "accessed_at": "2026-10-23T20:25:28.166Z",
+      "supports": [
+        "conditional candidate or calendar/payoff evidence"
+      ]
+    }
+  ],
+  "series_files": [
+    "data/trade-ideas/2026-10-23/series/GSPC.json",
+    "data/trade-ideas/2026-10-23/series/SPY.json",
+    "data/trade-ideas/2026-10-23/series/QQQ.json",
+    "data/trade-ideas/2026-10-23/series/IWM.json",
+    "data/trade-ideas/2026-10-23/series/XLV.json",
+    "data/trade-ideas/2026-10-23/series/XLK.json",
+    "data/trade-ideas/2026-10-23/series/XLF.json",
+    "data/trade-ideas/2026-10-23/series/XLE.json",
+    "data/trade-ideas/2026-10-23/series/XLI.json",
+    "data/trade-ideas/2026-10-23/series/MSFT.json",
+    "data/trade-ideas/2026-10-23/ideas.json"
+  ],
+  "chart_files": [],
+  "warnings": [
+    "All strikes, premiums and fees are illustrative; no current chain or executable quote was verified.",
+    "Zero verified current X posts; own conditional technical analysis only.",
+    "Monday Dallas Fed and Verizon timing are sourced; other event coverage is incomplete.",
+    "Expiry P&L profiles use 50% of width and zero fees as visible what-if assumptions; actual cap eligibility remains unverified."
+  ]
+}
