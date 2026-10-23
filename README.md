@@ -9,7 +9,7 @@ The public publication has five sections:
 - **Daily Market Wrap** — a closing report for each U.S. trading session: what
   happened, why it mattered, and what to watch in the next session.
 - **Trade Ideas** — a companion generated in the same daily run, targeting up to ten
-  supported conditional 1–7 DTE candidates; an unset configurable loss cap and
+  supported conditional 1–7 DTE candidates; explicit USD 1,000 SPX / USD 500 other-trade caps and
   explicit evidence shortfalls prevent unsupported risk certification.
 - **Weekly Market Wrap** — published after the final U.S. session of the week
   (normally Friday, or Thursday when Friday is a market holiday), with a more

@@ -188,5 +188,26 @@
     "sma200_direction": "rising",
     "trend_structure": "mixed",
     "realized_vol_20d_pct": 24.487613146702
+  },
+  "^GSPC": {
+    "symbol": "^GSPC",
+    "session_high": 7702.93994140625,
+    "session_low": 7637.35986328125,
+    "latest_close": 7663.43017578125,
+    "prior_high": 7770.39990234375,
+    "prior_low": 7709.33984375,
+    "prior_close": 7757.169921875,
+    "recent_high_20d": 7844.52001953125,
+    "recent_low_20d": 7616.77978515625,
+    "return_1d_pct": -1.208427133063139,
+    "sma20": 7733.4615478515625,
+    "sma50": 7703.145224609375,
+    "sma200": 7287.80111328125,
+    "distance_sma50_pct": -0.5155692599595141,
+    "distance_sma200_pct": 5.154216706263504,
+    "sma50_direction": "falling",
+    "sma200_direction": "rising",
+    "trend_structure": "mixed",
+    "realized_vol_20d_pct": 9.982017201839696
   }
 }

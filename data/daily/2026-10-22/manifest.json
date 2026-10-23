@@ -1,16 +1,254 @@
 {
-  "schema_version":"1.0","trading_date":"2026-10-22","report_type":"Daily Market Wrap","report_family":"daily","generated_at":"2026-10-22T20:31:49Z","market_data_as_of":"2026-10-22T20:31:49Z","state":"validated",
-  "sources":[
-    {"source_id":"ap-close","title":"Sharp drops for AI stocks overwhelm markets worldwide as oil prices jump","url":"https://apnews.com/article/stocks-markets-rates-earnings-oil-33767691a4a0730b96d6f0c5100ea9b2","publisher":"Associated Press","accessed_at":"2026-10-22T20:31:49Z","supports":["closing narrative","cash indexes","rates","oil","global markets","earnings"]},
-    {"source_id":"ap-claims","title":"US jobless claims sink to 194,000, a 3-month low as layoffs stay scarce","url":"https://apnews.com/article/employment-layoffs-inflaton-job-cuts-8e962dcdefefa86ebc91ee9c663f1f3b","publisher":"Associated Press","accessed_at":"2026-10-22T20:31:49Z","supports":["initial claims","labor-market interpretation"]},
-    {"source_id":"nyfed-calendar","title":"Economic Indicators Calendar - October 2026","url":"https://www.newyorkfed.org/research/calendars/i-oct26.html","publisher":"Federal Reserve Bank of New York","accessed_at":"2026-10-22T20:31:49Z","supports":["Friday economic calendar"]},
-    {"source_id":"umich-survey","title":"University of Michigan Surveys of Consumers","url":"https://data.sca.isr.umich.edu/","publisher":"University of Michigan","accessed_at":"2026-10-22T20:31:49Z","supports":["Friday consumer-sentiment release"]},
-    {"source_id":"slb-ir","title":"SLB Announces Date for Third-Quarter 2026 Results Conference Call","url":"https://www.slb.com/newsroom/press-release/2026/pr-2026-0928-q3-earnings-call-announcement","publisher":"SLB","accessed_at":"2026-10-22T20:31:49Z","supports":["Friday earnings schedule"]},
-    {"source_id":"squawkflow-move","title":"SPY Expected Move Today and This Week","url":"https://squawkflow.com/expected-move/spy","publisher":"SquawkFlow","accessed_at":"2026-10-22T20:31:49Z","supports":["Friday options-implied move","methodology"]},
-    {"source_id":"squawkflow-map","title":"SPY GEX by Strike and Key Levels","url":"https://squawkflow.com/ticker/SPY","publisher":"SquawkFlow","accessed_at":"2026-10-22T20:31:49Z","supports":["options concentration map","model limitations"]},
-    {"source_id":"yahoo-chart","title":"Yahoo Finance chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-10-22T20:31:49Z","supports":["dashboard","technicals","realized volatility","charts"]}
+  "schema_version": "1.0",
+  "trading_date": "2026-10-22",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-10-23T01:02:10.489503+00:00",
+  "market_data_as_of": "2026-10-22T20:31:49Z",
+  "state": "validated",
+  "sources": [
+    {
+      "source_id": "ap-close",
+      "title": "Sharp drops for AI stocks overwhelm markets worldwide as oil prices jump",
+      "url": "https://apnews.com/article/stocks-markets-rates-earnings-oil-33767691a4a0730b96d6f0c5100ea9b2",
+      "publisher": "Associated Press",
+      "accessed_at": "2026-10-22T20:31:49Z",
+      "supports": [
+        "closing narrative",
+        "cash indexes",
+        "rates",
+        "oil",
+        "global markets",
+        "earnings"
+      ]
+    },
+    {
+      "source_id": "ap-claims",
+      "title": "US jobless claims sink to 194,000, a 3-month low as layoffs stay scarce",
+      "url": "https://apnews.com/article/employment-layoffs-inflaton-job-cuts-8e962dcdefefa86ebc91ee9c663f1f3b",
+      "publisher": "Associated Press",
+      "accessed_at": "2026-10-22T20:31:49Z",
+      "supports": [
+        "initial claims",
+        "labor-market interpretation"
+      ]
+    },
+    {
+      "source_id": "nyfed-calendar",
+      "title": "Economic Indicators Calendar - October 2026",
+      "url": "https://www.newyorkfed.org/research/calendars/i-oct26.html",
+      "publisher": "Federal Reserve Bank of New York",
+      "accessed_at": "2026-10-22T20:31:49Z",
+      "supports": [
+        "Friday economic calendar"
+      ]
+    },
+    {
+      "source_id": "umich-survey",
+      "title": "University of Michigan Surveys of Consumers",
+      "url": "https://data.sca.isr.umich.edu/",
+      "publisher": "University of Michigan",
+      "accessed_at": "2026-10-22T20:31:49Z",
+      "supports": [
+        "Friday consumer-sentiment release"
+      ]
+    },
+    {
+      "source_id": "slb-ir",
+      "title": "SLB Announces Date for Third-Quarter 2026 Results Conference Call",
+      "url": "https://www.slb.com/newsroom/press-release/2026/pr-2026-0928-q3-earnings-call-announcement",
+      "publisher": "SLB",
+      "accessed_at": "2026-10-22T20:31:49Z",
+      "supports": [
+        "Friday earnings schedule"
+      ]
+    },
+    {
+      "source_id": "squawkflow-move",
+      "title": "SPY Expected Move Today and This Week",
+      "url": "https://squawkflow.com/expected-move/spy",
+      "publisher": "SquawkFlow",
+      "accessed_at": "2026-10-22T20:31:49Z",
+      "supports": [
+        "Friday options-implied move",
+        "methodology"
+      ]
+    },
+    {
+      "source_id": "squawkflow-map",
+      "title": "SPY GEX by Strike and Key Levels",
+      "url": "https://squawkflow.com/ticker/SPY",
+      "publisher": "SquawkFlow",
+      "accessed_at": "2026-10-22T20:31:49Z",
+      "supports": [
+        "options concentration map",
+        "model limitations"
+      ]
+    },
+    {
+      "source_id": "yahoo-chart",
+      "title": "Yahoo Finance chart data",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-22T20:31:49Z",
+      "supports": [
+        "dashboard",
+        "technicals",
+        "realized volatility",
+        "charts"
+      ]
+    },
+    {
+      "source_id": "spx-index",
+      "title": "Actual SPX cash-index OHLC",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history",
+      "publisher": "Yahoo Finance chart data",
+      "accessed_at": "2026-10-23T00:53:50.419272+00:00",
+      "supports": [
+        "SPX technical preparation"
+      ]
+    },
+    {
+      "source_id": "sector-XLV",
+      "title": "XLV current five-minute observations",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/XLV?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance chart data",
+      "accessed_at": "2026-10-23T00:58:56.102864+00:00",
+      "supports": [
+        "sector context"
+      ]
+    },
+    {
+      "source_id": "sector-XLK",
+      "title": "XLK current five-minute observations",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance chart data",
+      "accessed_at": "2026-10-23T00:58:56.258989+00:00",
+      "supports": [
+        "sector context"
+      ]
+    },
+    {
+      "source_id": "sector-XLF",
+      "title": "XLF current five-minute observations",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/XLF?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance chart data",
+      "accessed_at": "2026-10-23T00:58:56.426115+00:00",
+      "supports": [
+        "sector context"
+      ]
+    },
+    {
+      "source_id": "sector-XLE",
+      "title": "XLE current five-minute observations",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/XLE?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance chart data",
+      "accessed_at": "2026-10-23T00:58:56.583240+00:00",
+      "supports": [
+        "sector context"
+      ]
+    },
+    {
+      "source_id": "sector-XLI",
+      "title": "XLI current five-minute observations",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/XLI?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance chart data",
+      "accessed_at": "2026-10-23T00:58:56.742418+00:00",
+      "supports": [
+        "sector context"
+      ]
+    },
+    {
+      "source_id": "spx-calendar",
+      "title": "NYSE calendar",
+      "url": "https://www.nyse.com/markets/hours-calendars",
+      "publisher": "NYSE calendar",
+      "accessed_at": "2026-10-23T01:02:10.489503+00:00",
+      "supports": [
+        "SPX preparation"
+      ]
+    },
+    {
+      "source_id": "michigan-primary",
+      "title": "Michigan release schedule",
+      "url": "https://www.sca.isr.umich.edu/",
+      "publisher": "Michigan release schedule",
+      "accessed_at": "2026-10-23T01:02:10.489503+00:00",
+      "supports": [
+        "SPX preparation"
+      ]
+    },
+    {
+      "source_id": "fed-calendar",
+      "title": "FOMC calendar",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "publisher": "FOMC calendar",
+      "accessed_at": "2026-10-23T01:02:10.489503+00:00",
+      "supports": [
+        "SPX preparation"
+      ]
+    },
+    {
+      "source_id": "pmi-primary-limit",
+      "title": "PMI primary retrieval failure",
+      "url": "https://www.pmi.spglobal.com/Public/Release/ReleaseDates",
+      "publisher": "PMI primary retrieval failure",
+      "accessed_at": "2026-10-23T01:02:10.489503+00:00",
+      "supports": [
+        "SPX preparation"
+      ]
+    },
+    {
+      "source_id": "pmi-secondary",
+      "title": "Secondary PMI schedule",
+      "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar",
+      "publisher": "Secondary PMI schedule",
+      "accessed_at": "2026-10-23T01:02:10.489503+00:00",
+      "supports": [
+        "SPX preparation"
+      ]
+    },
+    {
+      "source_id": "spx-specs",
+      "title": "Cboe contract specifications",
+      "url": "https://www.cboe.com/en/tradable-products/sp-500/spx-options/spx-specifications/",
+      "publisher": "Cboe contract specifications",
+      "accessed_at": "2026-10-23T01:02:10.489503+00:00",
+      "supports": [
+        "SPX preparation"
+      ]
+    }
   ],
-  "series_files":["data/daily/2026-10-22/series/SPY.json","data/daily/2026-10-22/series/QQQ.json","data/daily/2026-10-22/series/IWM.json","data/daily/2026-10-22/series/TLT.json","data/daily/2026-10-22/series/VIX.json","data/daily/2026-10-22/series/TNX.json","data/daily/2026-10-22/series/DX-Y.NYB.json","data/daily/2026-10-22/series/GC_F.json","data/daily/2026-10-22/series/CL_F.json","data/daily/2026-10-22/series/BTC-USD.json"],
-  "chart_files":["public/charts/daily/2026-10-22/SPY.png","public/charts/daily/2026-10-22/QQQ.png","public/charts/daily/2026-10-22/SPY-vs-TLT.png"],
-  "warnings":["Yahoo daily bar timestamps are provider labels, not precise closing quote times.","The two-year yield is an approximate contemporaneous market reference because a same-day official par-yield observation was not independently available at publication time.","Options expected moves are risk-neutral and dealer-gamma signs are model assumptions.","Bitcoin is rolling; WTI and gold are continuous futures proxies."]
+  "series_files": [
+    "data/daily/2026-10-22/series/SPY.json",
+    "data/daily/2026-10-22/series/QQQ.json",
+    "data/daily/2026-10-22/series/IWM.json",
+    "data/daily/2026-10-22/series/TLT.json",
+    "data/daily/2026-10-22/series/VIX.json",
+    "data/daily/2026-10-22/series/TNX.json",
+    "data/daily/2026-10-22/series/DX-Y.NYB.json",
+    "data/daily/2026-10-22/series/GC_F.json",
+    "data/daily/2026-10-22/series/CL_F.json",
+    "data/daily/2026-10-22/series/BTC-USD.json",
+    "data/daily/2026-10-22/series/GSPC.json",
+    "data/daily/2026-10-22/current-quotes/XLV.json",
+    "data/daily/2026-10-22/current-quotes/XLK.json",
+    "data/daily/2026-10-22/current-quotes/XLF.json",
+    "data/daily/2026-10-22/current-quotes/XLE.json",
+    "data/daily/2026-10-22/current-quotes/XLI.json"
+  ],
+  "chart_files": [
+    "public/charts/daily/2026-10-22/SPY.png",
+    "public/charts/daily/2026-10-22/QQQ.png",
+    "public/charts/daily/2026-10-22/SPY-vs-TLT.png",
+    "public/charts/daily/2026-10-22/GSPC.png"
+  ],
+  "warnings": [
+    "Yahoo daily bar timestamps are provider labels, not precise closing quote times.",
+    "The two-year yield is an approximate contemporaneous market reference because a same-day official par-yield observation was not independently available at publication time.",
+    "Options expected moves are risk-neutral and dealer-gamma signs are model assumptions.",
+    "Bitcoin is rolling; WTI and gold are continuous futures proxies.",
+    "SPX update: daily SPX history current; sector participation uses saved five-minute bars, not certified daily closes.",
+    "No options chain/premia or guaranteed cap; X/catalyst coverage incomplete."
+  ]
 }

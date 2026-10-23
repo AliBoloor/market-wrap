@@ -197,6 +197,5 @@ SPX next-session technical scenarios and separate 0DTE feature. Expanded trade
 candidates go into the companion tab, targeting ten supported 1–7 DTE ideas
 across indices/ETFs/single names, with fewer shown when current evidence is
 insufficient. Illustrative level-based strikes are explicitly labeled and never
-represented as verified listed contracts or executable quotes. Maximum-loss cap
-amount/currency remain unset until clarified. Do not certify a cap from missing
+represented as verified listed contracts or executable quotes. Maximum-loss caps are USD 1,000 per SPX trade and USD 500 per other ETF/single-name trade, including known fees. Do not certify a cap from missing
 premiums/fees. Attribute X commentary and distinguish it from own analysis.

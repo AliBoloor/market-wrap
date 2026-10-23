@@ -8,7 +8,7 @@ from .models import MarketSeries
 
 def spx_preparation(series: MarketSeries | None, session: date) -> str:
     heading = '## SPX next-trading-session preparation\n\n'
-    if (series is None or series.symbol != '^GSPC' or series.interval != '1d'
+    if (series is None or not series.observations or series.symbol != '^GSPC' or series.interval != '1d'
             or series.latest.timestamp[:10] != session.isoformat()):
         return heading + 'UNAVAILABLE: fresh daily SPX cash-index history for the completed session is missing. No numeric SPX levels or proxy substitutions.\n'
     t = technical_snapshot(series)

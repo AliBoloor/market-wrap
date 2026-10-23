@@ -35,3 +35,11 @@ def test_stale_and_failed_collection_never_generates_fresh_levels(tmp_path, monk
     assert 'stale' in failures[0].reason
     assert 'UNAVAILABLE' in (tmp_path / 'data/daily/2026-01-01/spx-preparation.md').read_text()
     assert {'^GSPC', 'SPY', 'QQQ', 'IWM', 'XLV', 'XLK', 'XLF', 'XLE', 'XLI'} <= DEFAULT_INSTRUMENTS.keys()
+
+
+def test_intraday_fallback_is_separate_and_rejects_stale(tmp_path, monkeypatch):
+    from market_wrap.pipeline import collect_current_quotes
+    monkeypatch.setattr(YahooChartClient, 'histories', lambda *a, **k: ({'SPY': make_series()}, []))
+    failures=collect_current_quotes(tmp_path,date(2026,10,22),{'SPY':'ETF'})
+    assert failures and 'stale intraday' in failures[0].reason
+    assert not list(tmp_path.rglob('SPY.json'))

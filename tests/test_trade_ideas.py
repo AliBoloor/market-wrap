@@ -61,3 +61,12 @@ def test_truthful_zero_idea_edition():
     assert 'supported: 0' in render_ideas(data)
     data['max_loss_cap']={'amount':100, 'currency':'USD'}
     assert '100 USD configured, NOT certified' in render_ideas(data)
+
+
+def test_authorized_caps_render_and_validate():
+    data=bundle();data['risk_caps']={'currency':'USD','spx':1000,'other':500}
+    text=render_ideas(data)
+    assert 'USD 1,000 per SPX' in text and 'USD 500' in text
+    assert 'UNSET' not in text
+    data['risk_caps']['other']=1000
+    with pytest.raises(ValueError): validate_ideas(data)

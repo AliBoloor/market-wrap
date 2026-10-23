@@ -91,12 +91,12 @@ def render_ideas(bundle: dict) -> str:
     cap = bundle.get('max_loss_cap')
     cap_label = ('USD 1,000 per SPX trade; USD 500 per other ETF/single-name trade, including fees when known; NOT certified' if bundle.get('risk_caps') else None)
     if cap_label is None:
-        cap_label = f"{cap['amount']} {cap['currency']} configured, NOT certified" if cap else 'UNSET — amount and currency pending clarification' 
+        cap_label = f"{cap['amount']} {cap['currency']} configured, NOT certified" if cap else 'UNSET — amount and currency pending clarification'
     text += f'''# Trade Ideas
 
 Conditional research for {bundle['next_session']}; 1–7 calendar days to expiry from that session.
 [Session calendar]({bundle['calendar_source']}). Generated: {bundle['generated_at']}.
-Target: 10; supported: {count}. {bundle.get('shortfall_reason', '')}
+Target: 10; supported: {count}. {bundle.get('shortfall_reason', '') or 'No numerical shortfall; chain and social coverage limitations below still apply.'}
 Maximum-loss cap: **{cap_label}**. No candidate is certified within a cap.
 Exact maximum loss needs actual premium, width, multiplier, quantity and all fees;
 refresh opening prices and chains before evaluating any candidate. Illustrative
@@ -112,7 +112,7 @@ No track record is assumed from popularity or self-reported results.
         text += '## Next-session catalysts and coverage\n\n' + bundle['catalysts'] + '\n\n'
     for idea in bundle['candidates']:
         text += f"## {idea['id']}: {idea['symbol']} — {idea['instrument']}\n\n"
-        text += f"Observed underlying: {idea['underlying_price']} at {idea['observed_at']}. [Market source]({idea['market_source']}).\n\n"
+        text += f"Observed underlying: {idea['underlying_price']:.2f} at {idea['observed_at']}. [Market source]({idea['market_source']}).\n\n"
         limit = 1000 if idea['symbol'] in ('SPX', '^GSPC') else 500
         if bundle.get('risk_caps'):
             text += f'**Risk eligibility:** USD {limit} maximum per trade. For quantity q and multiplier m, debit vertical requires q × m × actual debit + all fees ≤ {limit}; use no trade if fees/premium are unavailable. No cap certification from illustrative strikes.\n\n'
@@ -127,7 +127,7 @@ No track record is assumed from popularity or self-reported results.
                 text += f"Performance claim: {social['performance_claim']} [Independent evidence]({social['independent_performance_source']}).\n\n"
         else:
             text += 'No independently usable outside post attached; this is own analysis.\n\n'
-    return text
+    return text.rstrip() + "\n"
 
 
 def write_ideas(input_path: Path, output_root: Path) -> Path:

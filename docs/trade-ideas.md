@@ -39,9 +39,10 @@ Bundle fields:
 
 - `trading_date`, `next_session`: ISO dates; verified official `calendar_source`
   HTTPS URL and timezone-aware `generated_at`.
-- `max_loss_cap`: null until amount and currency are confirmed, otherwise an
-  object with positive `amount` and explicit `currency`. This is a configuration
-  limit, never proof that a candidate satisfies it.
+- `risk_caps`: read `config/trade-ideas.json`: USD 1,000 per SPX trade and USD 500
+  per other ETF/single-name trade. Include fees when known; missing premium/fees
+  means eligibility remains unconfirmed. Legacy `max_loss_cap` remains available
+  as a display-only configurable field for fixtures, never risk certification.
 - `social_coverage`: describe search date/scope, direct versus indexed access,
   search limitations and missing evidence. Ten posts are not mandatory.
 - `candidates`: zero to ten unique candidates. If fewer, `shortfall_reason` is
@@ -71,7 +72,7 @@ with an explicit coverage limit; never fabricate inaccessible posts.
 The schema deliberately rejects casual `premium`, `max_loss`, or
 `cap_certified` fields. Exact loss analysis needs a separate sourced calculation
 with contemporaneous bid/ask, fees, quantity, multiplier and contract width;
-never certify an unset cap. Debit vertical theoretical maximum loss is debit
+never certify a cap from absent premium or fee evidence. Debit vertical theoretical maximum loss is debit
 × multiplier × quantity + costs; credit vertical is (width − credit) × multiplier
 × quantity + costs. Verify currency, 0 < premium < width and liquidity. Do not
 present indicative quotes as executable fills or a stop as guaranteed risk.
@@ -82,3 +83,10 @@ Run pytest, repository validation, build, inspect the new tab/archives and actua
 candidate evidence, and preserve existing delivery. Proposed prompt changes are
 local only; the operator must separately authorize updating the active existing
 daily automation's prompt and publishing code. Do not create a new automation.
+
+When the daily history endpoint lags, the daily research task may call
+`market_wrap.pipeline.collect_current_quotes(root, session_date, instruments)`
+for selected ETFs/single names. It saves current five-minute bars separately in
+Trade Ideas evidence, rejects a stale New York observation date and returns
+failures. Do not calculate “20-day SMA” from 20 five-minute bars or replace daily
+history with intraday bars. Save returned failures in the companion bundle.

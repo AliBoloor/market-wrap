@@ -126,3 +126,22 @@ def collect_bundle(
             if symbol in series:
                 render_price_chart(series[symbol], chart_dir / f"{safe_symbol(symbol)}.png")
     return series, failures
+
+
+def collect_current_quotes(root: Path, trading_date: date, instruments: dict[str, str]) -> list[DataFailure]:
+    """Save current intraday evidence separately; never replace daily SMA inputs.
+
+    Useful when the daily history endpoint lags. Session completeness and quote
+    delay still require researcher verification; these are five-minute bars,
+    not certified official closing prices or listed option-chain observations.
+    """
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    fetched, failures = YahooChartClient().histories(instruments, period="5d", interval="5m")
+    for symbol, item in fetched.items():
+        latest_date = datetime.fromisoformat(item.latest.timestamp).astimezone(ZoneInfo("America/New_York")).date()
+        if latest_date != trading_date:
+            failures.append(DataFailure(symbol, item.source_name, f"stale intraday: {item.latest.timestamp}"))
+            continue
+        item.write_json(root / "data" / "trade-ideas" / trading_date.isoformat() / "series" / f"{safe_symbol(symbol)}.json")
+    return failures

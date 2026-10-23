@@ -15,7 +15,7 @@
     {
       "id": "01",
       "symbol": "SPX",
-      "instrument": "SPX cash index",
+      "instrument": "S&P 500 cash index (index points)",
       "underlying_price": 7663.43017578125,
       "observed_at": "2026-10-22T13:30:00+00:00",
       "market_source": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history",
@@ -31,7 +31,7 @@
     {
       "id": "02",
       "symbol": "SPY",
-      "instrument": "SPY",
+      "instrument": "SPDR S&P 500 ETF (USD/share)",
       "underlying_price": 763.9600219726562,
       "observed_at": "2026-10-22T20:00:00+00:00",
       "market_source": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=5d&interval=5m&events=history",
@@ -47,7 +47,7 @@
     {
       "id": "03",
       "symbol": "QQQ",
-      "instrument": "QQQ",
+      "instrument": "Invesco Nasdaq-100 ETF (USD/share)",
       "underlying_price": 704.469970703125,
       "observed_at": "2026-10-22T20:00:00+00:00",
       "market_source": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=5d&interval=5m&events=history",
@@ -63,7 +63,7 @@
     {
       "id": "04",
       "symbol": "IWM",
-      "instrument": "IWM",
+      "instrument": "iShares Russell 2000 ETF (USD/share)",
       "underlying_price": 276.6700134277344,
       "observed_at": "2026-10-22T20:00:00+00:00",
       "market_source": "https://query1.finance.yahoo.com/v8/finance/chart/IWM?range=5d&interval=5m&events=history",
@@ -79,7 +79,7 @@
     {
       "id": "05",
       "symbol": "XLV",
-      "instrument": "XLV",
+      "instrument": "Health Care Select Sector ETF (USD/share)",
       "underlying_price": 181.3000030517578,
       "observed_at": "2026-10-22T20:00:00+00:00",
       "market_source": "https://query1.finance.yahoo.com/v8/finance/chart/XLV?range=5d&interval=5m&events=history",
@@ -95,7 +95,7 @@
     {
       "id": "06",
       "symbol": "XLK",
-      "instrument": "XLK",
+      "instrument": "Technology Select Sector ETF (USD/share)",
       "underlying_price": 182.33999633789062,
       "observed_at": "2026-10-22T20:00:00+00:00",
       "market_source": "https://query1.finance.yahoo.com/v8/finance/chart/XLK?range=5d&interval=5m&events=history",
@@ -111,7 +111,7 @@
     {
       "id": "07",
       "symbol": "XLF",
-      "instrument": "XLF",
+      "instrument": "Financial Select Sector ETF (USD/share)",
       "underlying_price": 56.650001525878906,
       "observed_at": "2026-10-22T20:00:00+00:00",
       "market_source": "https://query1.finance.yahoo.com/v8/finance/chart/XLF?range=5d&interval=5m&events=history",
@@ -127,7 +127,7 @@
     {
       "id": "08",
       "symbol": "XLE",
-      "instrument": "XLE",
+      "instrument": "Energy Select Sector ETF (USD/share)",
       "underlying_price": 67.56999969482422,
       "observed_at": "2026-10-22T20:00:00+00:00",
       "market_source": "https://query1.finance.yahoo.com/v8/finance/chart/XLE?range=5d&interval=5m&events=history",
@@ -143,7 +143,7 @@
     {
       "id": "09",
       "symbol": "AAPL",
-      "instrument": "AAPL",
+      "instrument": "Apple common stock (USD/share)",
       "underlying_price": 348.2200012207031,
       "observed_at": "2026-10-22T20:00:00+00:00",
       "market_source": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=5d&interval=5m&events=history",
@@ -159,7 +159,7 @@
     {
       "id": "10",
       "symbol": "MSFT",
-      "instrument": "MSFT",
+      "instrument": "Microsoft common stock (USD/share)",
       "underlying_price": 521.0800170898438,
       "observed_at": "2026-10-22T20:00:00+00:00",
       "market_source": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=5d&interval=5m&events=history",
