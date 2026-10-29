@@ -203,3 +203,5 @@ premiums/fees. Attribute X commentary and distinguish it from own analysis.
 ## Trade Ideas policy override (2026-10-29)
 
 For new Trade Ideas editions and SPX risk sizing, `docs/trade-ideas.md` version 2 supersedes older $1,000 SPX, ten-candidate and 1–7DTE requirements. All positions require a $500 fee-inclusive maximum loss; only the three defined-risk families are authorized. Preserve historical reports as dated evidence.
+
+Trade Ideas timing is separately overridden by decision 0007 and `automation/TRADE_IDEAS_NOON_TASK_PROMPT.md`: start refresh at noon America/Vancouver, publish intraday next-session research, and never let closing Daily rewrite that edition.

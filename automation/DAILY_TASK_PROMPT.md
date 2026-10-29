@@ -14,7 +14,7 @@ Preserve unrelated files; do not stash, reset, clean, force, or overwrite them.
 If synchronization fails or branches diverge, stop this publication attempt,
 report the exact stage, and preserve the last valid publications. After a
 successful fast-forward, re-read the updated skill, this prompt and referenced
-contracts. A cached Daily-only completion guard must never bypass the companion.
+contracts. The closing guard is Daily-only; Trade Ideas has its separate noon owner.
 
 Use the repository-scoped `$market-wrap` skill. This is an **after-close** publication only. Determine the current time and U.S. trading date in `America/New_York`. Stop before broad web research if the U.S. cash session has not closed, today is not a U.S. trading day, or the validated Daily completion marker already exists for today. Never publish a pre-market, intraday, or holiday placeholder as the Daily Market Wrap.
 

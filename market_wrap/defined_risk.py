@@ -62,6 +62,8 @@ def validate_bundle(b):
         raise ValueError('current-session observation required; no future data')
     if b.get('publication_mode') == 'noon':
         from .noon import eligibility
+        if b.get('session_state') not in ('cash open','cash closed'):
+            raise ValueError('noon edition requires actual cash session state')
         scheduled=_parse_time(b['scheduled_for']).astimezone(ZoneInfo('America/Vancouver'))
         allowed,reason=eligibility(generated,session=session,next_session=target,
             is_trading_day=b.get('calendar_verified') is True,completed=False)
@@ -119,12 +121,12 @@ def profile(p):
 
 def render_bundle(b):
     validate_bundle(b)
-    meta=dict(report_family='trade-ideas',trading_date=b['trading_date'],title=f"Trade Ideas for {b['next_session']}",report_type='Trade Ideas',generated_at=b['generated_at'],data_observed_at=b['data_observed_at'],freshness='Intraday noon refresh; source delays explicit' if b.get('publication_mode')=='noon' else 'Completed close; post-close context separately timed',completeness='Conditional research; contracts and entry premiums unverified')
+    meta=dict(report_family='trade-ideas',trading_date=b['trading_date'],title=f"Trade Ideas for {b['next_session']}",report_type='Trade Ideas',generated_at=b['generated_at'],data_observed_at=b['data_observed_at'],freshness='Noon refresh; actual session state and source delays explicit' if b.get('publication_mode')=='noon' else 'Completed close; post-close context separately timed',completeness='Conditional research; contracts and entry premiums unverified')
     out='---\n'+yaml.safe_dump(meta,sort_keys=False)+'---\n\n'
-    baseline="Intraday baseline" if b.get("publication_mode")=="noon" else "Closing baseline"
+    baseline=("Intraday baseline" if b.get("session_state")=="cash open" else "Completed-session baseline") if b.get("publication_mode")=="noon" else "Closing baseline"
     out+=f"**Target session: {b['next_session']} · {baseline}: {b['trading_date']} · All times New York unless stated.**\n\n"
     if b.get('publication_mode')=='noon':
-        out+=f"Requested refresh start: **12:00 America/Vancouver**, scheduled {b['scheduled_for']}. Actual generation: {b['generated_at']}; latest observation: {b['data_observed_at']}. This is intraday research, not a completed-session close. Publication follows research and validation; timing can be delayed.\n\n"
+        out+=f"Requested refresh start: **12:00 America/Vancouver**, scheduled {b['scheduled_for']}. Actual generation: {b['generated_at']}; latest observation: {b['data_observed_at']}. Session state: **{b['session_state']}**. Use the actual observation times; no future closing values. Publication follows research and validation; timing can be delayed.\n\n"
     entry_label='Entry requirement: modeled loss of the intact package must be ≤ USD 500 including actual all-in fees. Eligibility is conditional until entry inputs are verified. Never naked options.' if b.get('publication_mode')=='noon' else 'USD 500 maximum loss per position including actual all-in fees. Never naked options.'
     out+=f'Only three families: **call vertical, put vertical, iron condor**. Each supports debit/credit variations. **{entry_label}** Candidates are alternatives, not a portfolio or orders.\n\n'
     out+=b['research']+'\n\n'

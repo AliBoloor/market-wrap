@@ -70,3 +70,5 @@ tests/                  Validation tests
 ```
 
 Trade Ideas follows [the three-family next-session contract](docs/trade-ideas.md): call verticals, put verticals and iron condors, with a USD 500 fee-inclusive cap for every position and parametric risk until entry inputs are verified.
+
+Trade Ideas refresh starts at 12:00 America/Vancouver on each verified U.S. trading day for the next session. Daily Market Wrap retains its separate after-close schedule; noon data is explicitly intraday, and publication follows research/validation.
