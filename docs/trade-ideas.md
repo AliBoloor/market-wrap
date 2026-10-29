@@ -1,122 +1,68 @@
-# Trade Ideas daily companion
+# Trade Ideas: next-session defined-risk research
 
-Trade Ideas is a fifth site section, generated during the existing daily task;
-there is no second scheduler. Daily retains SPX opening scenarios and its separate
-0DTE feature. Expanded 1–7 DTE candidates belong in Trade Ideas. Weekly/monthly
-retain technical context. The target is ten, never a minimum filled by guesses.
+The existing Daily research run also publishes Trade Ideas after the completed
+U.S. cash session, targeting the next verified exchange session. Reuse its
+scheduler, evidence bundle, independent companion marker and static Pages
+pipeline. GitHub Actions performs no research. A sleeping Mac, inaccessible
+sources or failed research can delay publication; do not promise fresh content.
 
-The existing architecture delegates research to scheduled Codex, not Python or
-GitHub Actions. Python validates structured evidence and renders candidates;
-it never invents candidates or calls a broker/database/LLM. New site sections
-have a truthful empty state until a validated edition exists. No historical
-archive report is rewritten or fabricated to populate the new tab.
+## Policy version 2
 
-Daily generation first resolves the actual completed and next U.S. sessions
-using official exchange calendars (including holidays/early closes), researches
-current data/catalysts, and collects OHLC for technical context. Candidates use
-current-session observations and source links, with quote delay/staleness shown.
-A next-open executable decision requires fresh opening prices and chains.
-Do not use research PostgreSQL data. Reuse public daily inputs and fetch current
-single-name data only when needed. No paid endpoint, credentials or broker.
+Only three families: call vertical, put vertical, iron condor. Both debit/credit
+variations are permitted. All positions, including SPX, have a USD 500 maximum
+loss including actual all-in fees. Never naked options; no broker orders.
+Core coverage is SPX, QQQ and IWM. Add GLD/TLT or selected sector ETFs only when
+current evidence improves the thesis. No single-name expansion or count quota.
+At most six alternatives; fewer or no setups is acceptable.
 
-## Evidence input
+Technical context leads: completed-session OHLC, recent 3–5 sessions and weekly
+range, swing levels and supported 20/50/200-session averages. State observations,
+source/retrieval times and vendor conflicts; five-minute bars are not daily SMA
+inputs. Research next-session official macro times, issuer earnings, news,
+public X commentary and cross-asset confirmation. Record inaccessible sources;
+never invent posts, positioning, option premiums or implied-volatility views.
+Distinguish closing baseline from timestamped post-close developments.
 
-Save `data/trade-ideas/YYYY-MM-DD/ideas.json`, then run:
+Direction and conditional volatility view select the family. Expansion favors
+debit directionals or a long iron condor after a two-sided move thesis;
+contraction/range favors credit directionals or a short iron condor after
+rejection/range confirmation. Give entry confirmation, invalidation and a
+no-trade/alternative case. A stop is not a guaranteed maximum loss.
 
-```
-python -m market_wrap trade-ideas --input data/trade-ideas/YYYY-MM-DD/ideas.json --root .
-```
+## Evidence and deterministic rendering
 
-This writes `content/reports/trade-ideas/YYYY-MM-DD.md`. To validate/publish under
-the existing convention, create a standard manifest with family `trade-ideas`,
-type `Trade Ideas`, direct evidence URLs, timestamps, series_files including
-ideas.json and any quote/chain snapshots, warnings and validated state only
-after checks. Create a `trade-ideas` completion marker independently of Daily.
-`validate` rejects a report that differs from the rendered evidence. Both marker
-checks are independent on retries; preserve valid Daily when its companion fails.
+Save `data/trade-ideas/YYYY-MM-DD/ideas.json` with `policy_version: 2`,
+`trading_date`, `next_session`, timezone-aware `generated_at` and
+`data_observed_at`, `calendar_source`, `risk_caps` (USD, spx:500, other:500),
+`research`, `social_coverage`, `sources` and `candidates`.
+Each candidate has id, permitted symbol, direction, volatility_view, level_basis,
+trigger, invalidation, alternative, expiry, listing_source, listing_status,
+listing_note and model. Model has family, kind, strictly increasing strikes,
+positive integer quantity and standard multiplier 100. Two strikes describe a
+vertical; four describe equal condor wings. All legs use the stated expiry.
 
-Bundle fields:
+A short iron condor buys outer put/call wings and sells inner put/call for a
+credit. A long iron condor reverses all four legs for a debit. Put wing must
+lie below call wing. Distinguish desired strike/expiry from actually verified
+listed contracts. Actual verification requires current source, observation time
+and exact contract identifiers. 0DTE is permitted only for an actual listed
+same-session expiry; unavailable or inaccessible ETF 0DTE is explicitly labeled.
+A generic product schedule alone does not verify exact strikes.
 
-- `trading_date`, `next_session`: ISO dates; verified official `calendar_source`
-  HTTPS URL and timezone-aware `generated_at`.
-- `risk_caps`: read `config/trade-ideas.json`: USD 1,000 per SPX trade and USD 500
-  per other ETF/single-name trade. Include fees when known; missing premium/fees
-  means eligibility remains unconfirmed. Legacy `max_loss_cap` remains available
-  as a display-only configurable field for fixtures, never risk certification.
-- `social_coverage`: describe search date/scope, direct versus indexed access,
-  search limitations and missing evidence. Ten posts are not mandatory.
-- `candidates`: zero to ten unique candidates. If fewer, `shortfall_reason` is
-  required. Expiry is 1–7 **calendar** days after next_session; confirm the
-  actual listed expiration and product's last trading/settlement conventions.
+Unknown premiums/fees remain UNKNOWN. Charts show signed intrinsic payoff only;
+net P&L and breakevens are parametric. D/C are debit/credit in points/share,
+q positive integer quantity, m=100 and F actual all-position USD costs.
+Debit loss=q*m*D+F; credit loss=q*m*(wing width-C)+F. Require loss<=500,
+0<premium<width and F<500; no trade until listing, fill, fees and liquidity are
+checked. Equal-wing condors use the same bounds. Debit gain=q*m*(width-D)-F;
+credit gain=q*m*C-F. Large fees can eliminate breakevens. Do not present
+hypothetical values as quotes or certify risk from absent premium evidence.
+ETF American/physical assignment and pin risk can create exposure outside the
+paired-leg expiry model. SPXW European/cash settlement requires explicit PM
+series/last-trading verification; standard AM SPX differs.
 
-Each candidate requires `id`, `symbol`, `instrument`, actual positive
-`underlying_price`, timezone-aware `observed_at`, HTTPS `market_source`,
-`thesis`, `level_basis`, `trigger`, `invalidation`, `no_trade`, `structure`,
-ISO `expiry`, and `strike_status` (`illustrative` or `verified listed`).
-Structure may explicitly suggest level-based strikes, but illustrative strikes
-are hypotheses until listing/expiry is verified. Verified listed status also
-requires `chain_source`, `chain_observed_at` and `contract_identifiers`.
-The renderer checks metadata, not external truth: the researcher must inspect
-and preserve source evidence. Same-session timing alone does not prove a final
-close or a fresh option quote; preserve observation meaning, delay and interval.
-
-Optional `outside_commentary` requires original `post_url`, `posted_at`,
-`author`, `excerpt`, `quote_or_paraphrase`, `credibility`, `own_assessment`.
-Link directly to the original post, distinguish outside opinion from own
-analysis and quote faithfully. Independently validate price/level/contract
-claims; follower count and self-reported wins are not a track record.
-A `performance_claim` requires `independent_performance_source`; otherwise omit
-any performance claim and say unverified. Public indexed sources are acceptable
-with an explicit coverage limit; never fabricate inaccessible posts.
-
-The schema deliberately rejects casual `premium`, `max_loss`, or
-`cap_certified` fields. Exact loss analysis needs a separate sourced calculation
-with contemporaneous bid/ask, fees, quantity, multiplier and contract width;
-never certify a cap from absent premium or fee evidence. Debit vertical theoretical maximum loss is debit
-× multiplier × quantity + costs; credit vertical is (width − credit) × multiplier
-× quantity + costs. Verify currency, 0 < premium < width and liquidity. Do not
-present indicative quotes as executable fills or a stop as guaranteed risk.
-
-## Verification and activation
-
-Run pytest, repository validation, build, inspect the new tab/archives and actual
-candidate evidence, and preserve existing delivery. Proposed prompt changes are
-local only; the operator must separately authorize updating the active existing
-daily automation's prompt and publishing code. Do not create a new automation.
-
-When the daily history endpoint lags, the daily research task may call
-`market_wrap.pipeline.collect_current_quotes(root, session_date, instruments)`
-for selected ETFs/single names. It saves current five-minute bars separately in
-Trade Ideas evidence, rejects a stale New York observation date and returns
-failures. Do not calculate “20-day SMA” from 20 five-minute bars or replace daily
-history with intraday bars. Save returned failures in the companion bundle.
-
-## Required per-candidate expiry profile
-
-Each candidate includes `payoff_profile` with `kind` (`debit`/`credit`),
-`option_type` (`call`/`put`), positive distinct `long_strike`/`short_strike`,
-matching `expiry`, positive integer `quantity` and `multiplier`, net `premium`
-in underlying points/share, all-position `fees` in USD, and
-`assumption_status: illustrative`. The structured legs must agree with the
-written structure. Current profiles support same-expiry two-leg verticals;
-unsupported structures must not be presented with a misleading vertical model.
-
-Premium and fees are explicitly hypothetical until independently verified entry
-quotes/fees exist. Initial premiums in the first edition use 50% of strike width
-as a transparent modeling choice, not an estimate or a retrieved quote. Initial
-fees use zero only as a visible assumption; actual fees remain unknown. Browser
-inputs adjust premium, total fees, spread quantity and multiplier locally. No
-network request, saved trade, broker connection or order is involved.
-
-The blue line is expiry P&L including entry cash flow and fees; dashed gray is
-signed intrinsic settlement payoff before either. Show expiry leg assumptions,
-maximum model gain/loss, breakeven (or zero-P&L region/no breakeven), and comparison
-with the configured cap. A model that fits the cap is never marked executable or
-verified. Fee assumptions apply to the entire position once, not once per leg.
-Explain pre-expiry valuation, physical settlement/early assignment and fill risks
-outside this idealized paired-leg expiry model. Static charts and results remain
-available without JavaScript, with an explicit non-updating-input notice.
-
-The heading prominently names the target trading session; the coverage label
-names the data session. Canonical archive filenames retain the completed data
-date. Adding model features does not redate the underlying market observations.
+Run `python -m market_wrap trade-ideas --input <ideas.json> --root .`, then
+pytest, publication validation and build. Preserve existing wrap and other
+editions. Legacy policy rendering remains solely for unchanged archived bundles;
+new generation must read version 2 config. This policy supersedes prior
+SPX $1,000, ten-candidate, 1–7DTE and vertical-only companion requirements.

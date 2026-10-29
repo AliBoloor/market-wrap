@@ -46,7 +46,7 @@ imminent major release; absent/illiquid chain or excessive spread; insufficient 
 SPX has no directly traded volume or native traded VWAP. SPY volume/VWAP or ES futures volume/VWAP,
 if separately sourced and timestamped, are labeled participation proxies, never SPX prices or SPX volume.
 
-**SPX risk cap:** USD 1,000 maximum loss per trade including fees when known. Require quantity × multiplier × actual debit + all fees ≤ 1,000 for debit verticals; unknown premium/fees means eligibility is unconfirmed.
+**SPX risk cap:** USD 500 maximum loss per trade including fees when known. Require quantity × multiplier × actual debit + all fees ≤ 500 for debit verticals; unknown premium/fees means eligibility is unconfirmed.
 
 **0DTE gate:** Fresh opening SPX, actual same-day option chains, bid/ask, expiration and settlement type
 are required before any strikes, premiums, widths or sizing can be evaluated. No probabilities are assigned.

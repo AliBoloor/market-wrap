@@ -75,3 +75,5 @@ marker, not a separate scheduler. See trade-ideas.md for candidate evidence and
 risk-cap gates. Daily technical scenarios remain in Daily; expanded 1–7 DTE
 candidates appear in the Trade Ideas tab. Existing recurrences/delivery stay
 unchanged; active prompt updates and publication need separate authorization.
+
+Trade Ideas policy version 2 is rendered by `defined_risk.py`; legacy rendering preserves archived evidence. The same Daily owner researches this next-session companion. See `docs/trade-ideas.md`.

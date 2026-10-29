@@ -199,3 +199,7 @@ across indices/ETFs/single names, with fewer shown when current evidence is
 insufficient. Illustrative level-based strikes are explicitly labeled and never
 represented as verified listed contracts or executable quotes. Maximum-loss caps are USD 1,000 per SPX trade and USD 500 per other ETF/single-name trade, including known fees. Do not certify a cap from missing
 premiums/fees. Attribute X commentary and distinguish it from own analysis.
+
+## Trade Ideas policy override (2026-10-29)
+
+For new Trade Ideas editions and SPX risk sizing, `docs/trade-ideas.md` version 2 supersedes older $1,000 SPX, ten-candidate and 1–7DTE requirements. All positions require a $500 fee-inclusive maximum loss; only the three defined-risk families are authorized. Preserve historical reports as dated evidence.

@@ -1,20 +1,287 @@
 {
-  "schema_version":"1.0","trading_date":"2026-10-28","report_family":"trade-ideas","report_type":"Trade Ideas","generated_at":"2026-10-28T20:25:54.113Z","market_data_as_of":"2026-10-28T20:00:00+00:00","state":"validated",
-  "sources":[
-    {"source_id":"quote-SPX","title":"SPX timestamped public chart input","url":"https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=5d&interval=5m&events=history","publisher":"Yahoo Finance","accessed_at":"2026-10-28T20:26:38.143580+00:00","supports":["conditional candidate evidence"]},
-    {"source_id":"quote-SPY","title":"SPY timestamped public chart input","url":"https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=5d&interval=5m&events=history","publisher":"Yahoo Finance","accessed_at":"2026-10-28T20:26:38.301406+00:00","supports":["conditional candidate evidence"]},
-    {"source_id":"quote-QQQ","title":"QQQ timestamped public chart input","url":"https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=5d&interval=5m&events=history","publisher":"Yahoo Finance","accessed_at":"2026-10-28T20:26:38.463592+00:00","supports":["conditional candidate evidence"]},
-    {"source_id":"quote-IWM","title":"IWM timestamped public chart input","url":"https://query1.finance.yahoo.com/v8/finance/chart/IWM?range=5d&interval=5m&events=history","publisher":"Yahoo Finance","accessed_at":"2026-10-28T20:26:38.620758+00:00","supports":["conditional candidate evidence"]},
-    {"source_id":"quote-XLE","title":"XLE timestamped public chart input","url":"https://query1.finance.yahoo.com/v8/finance/chart/XLE?range=5d&interval=5m&events=history","publisher":"Yahoo Finance","accessed_at":"2026-10-28T20:26:39.229757+00:00","supports":["conditional candidate evidence"]},
-    {"source_id":"quote-XLF","title":"XLF timestamped public chart input","url":"https://query1.finance.yahoo.com/v8/finance/chart/XLF?range=5d&interval=5m&events=history","publisher":"Yahoo Finance","accessed_at":"2026-10-28T20:26:39.075863+00:00","supports":["conditional candidate evidence"]},
-    {"source_id":"quote-AAPL","title":"AAPL timestamped public chart input","url":"https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=5d&interval=5m&events=history","publisher":"Yahoo Finance","accessed_at":"2026-10-28T20:26:39.536684+00:00","supports":["conditional candidate evidence"]},
-    {"source_id":"quote-MSFT","title":"MSFT timestamped public chart input","url":"https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=5d&interval=5m&events=history","publisher":"Yahoo Finance","accessed_at":"2026-10-28T20:26:39.727369+00:00","supports":["conditional candidate evidence"]},
-    {"source_id":"nyse","title":"NYSE trading hours and calendar","url":"https://www.nyse.com/markets/hours-calendars","publisher":"NYSE","accessed_at":"2026-10-28T20:25:54.113Z","supports":["next session"]},
-    {"source_id":"bea","title":"Gross Domestic Product","url":"https://www.bea.gov/data/gdp/gross-domestic-product","publisher":"Bureau of Economic Analysis","accessed_at":"2026-10-28T20:25:54.113Z","supports":["event calendar"]},
-    {"source_id":"pnl-bear","title":"OIC bear put spread","url":"https://www.optionseducation.org/strategies/all-strategies/bear-put-spread","publisher":"Options Industry Council","accessed_at":"2026-10-28T20:25:54.113Z","supports":["payoff method"]},
-    {"source_id":"pnl-bull","title":"OIC bull call spread","url":"https://www.optionseducation.org/strategies/all-strategies/bull-call-spread-debit-call-spread","publisher":"Options Industry Council","accessed_at":"2026-10-28T20:25:54.113Z","supports":["payoff method"]}
+  "schema_version": "1.0",
+  "trading_date": "2026-10-28",
+  "report_family": "trade-ideas",
+  "report_type": "Trade Ideas",
+  "generated_at": "2026-10-29T03:37:46.290503+00:00",
+  "market_data_as_of": "2026-10-28T23:59:00+00:00",
+  "state": "validated",
+  "sources": [
+    {
+      "source_id": "quote-SPX",
+      "title": "SPX timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-28T20:26:38.143580+00:00",
+      "supports": [
+        "conditional candidate evidence"
+      ]
+    },
+    {
+      "source_id": "quote-QQQ",
+      "title": "QQQ timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-28T20:26:38.463592+00:00",
+      "supports": [
+        "conditional candidate evidence"
+      ]
+    },
+    {
+      "source_id": "quote-IWM",
+      "title": "IWM timestamped public chart input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IWM?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-28T20:26:38.620758+00:00",
+      "supports": [
+        "conditional candidate evidence"
+      ]
+    },
+    {
+      "source_id": "nyse",
+      "title": "NYSE trading hours and calendar",
+      "url": "https://www.nyse.com/markets/hours-calendars",
+      "publisher": "NYSE",
+      "accessed_at": "2026-10-28T20:25:54.113Z",
+      "supports": [
+        "next session"
+      ]
+    },
+    {
+      "source_id": "fed",
+      "title": "Federal Reserve October 28 statement",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+      "publisher": "Federal",
+      "accessed_at": "2026-10-29T03:36:04.076870+00:00",
+      "supports": [
+        "research and stated verification limitations"
+      ]
+    },
+    {
+      "source_id": "bea",
+      "title": "BEA release schedule",
+      "url": "https://www.bea.gov/news/schedule",
+      "publisher": "BEA",
+      "accessed_at": "2026-10-29T03:36:04.076870+00:00",
+      "supports": [
+        "research and stated verification limitations"
+      ]
+    },
+    {
+      "source_id": "amazon",
+      "title": "Amazon Q3 earnings announcement",
+      "url": "https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2026-report",
+      "publisher": "Amazon",
+      "accessed_at": "2026-10-29T03:36:04.076870+00:00",
+      "supports": [
+        "research and stated verification limitations"
+      ]
+    },
+    {
+      "source_id": "spx-spec",
+      "title": "SPX contract specifications",
+      "url": "https://www.cboe.com/tradable-products/sp-500/spx-options/spx-specifications",
+      "publisher": "SPX",
+      "accessed_at": "2026-10-29T03:36:04.076870+00:00",
+      "supports": [
+        "research and stated verification limitations"
+      ]
+    },
+    {
+      "source_id": "qqq-chain",
+      "title": "QQQ option chain \u2014 unavailable rows",
+      "url": "https://www.nasdaq.com/market-activity/etf/qqq/option-chain",
+      "publisher": "QQQ",
+      "accessed_at": "2026-10-29T03:36:04.076870+00:00",
+      "supports": [
+        "research and stated verification limitations"
+      ]
+    },
+    {
+      "source_id": "iwm-chain",
+      "title": "IWM option chain \u2014 verification pending",
+      "url": "https://www.nasdaq.com/market-activity/etf/iwm/option-chain",
+      "publisher": "IWM",
+      "accessed_at": "2026-10-29T03:36:04.076870+00:00",
+      "supports": [
+        "research and stated verification limitations"
+      ]
+    },
+    {
+      "source_id": "daily-GSPC",
+      "title": "^GSPC daily history",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-28T20:26:34.573519+00:00",
+      "supports": [
+        "technical map and cross-asset context"
+      ]
+    },
+    {
+      "source_id": "daily-QQQ",
+      "title": "QQQ daily history",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=2y&interval=1d&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-28T20:26:35.763164+00:00",
+      "supports": [
+        "technical map and cross-asset context"
+      ]
+    },
+    {
+      "source_id": "daily-IWM",
+      "title": "IWM daily history",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IWM?range=2y&interval=1d&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-28T20:26:35.939431+00:00",
+      "supports": [
+        "technical map and cross-asset context"
+      ]
+    },
+    {
+      "source_id": "daily-TLT",
+      "title": "TLT daily history",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TLT?range=2y&interval=1d&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-28T20:26:36.133315+00:00",
+      "supports": [
+        "technical map and cross-asset context"
+      ]
+    },
+    {
+      "source_id": "daily-VIX",
+      "title": "^VIX daily history",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=2y&interval=1d&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-28T20:26:36.283777+00:00",
+      "supports": [
+        "technical map and cross-asset context"
+      ]
+    },
+    {
+      "source_id": "daily-TNX",
+      "title": "^TNX daily history",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ETNX?range=2y&interval=1d&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-28T20:26:36.439766+00:00",
+      "supports": [
+        "technical map and cross-asset context"
+      ]
+    },
+    {
+      "source_id": "spx-history",
+      "title": "SPX history",
+      "url": "https://www.investing.com/indices/us-spx-500-historical-data",
+      "publisher": "SPX",
+      "accessed_at": "2026-10-29T03:35:00+00:00",
+      "supports": [
+        "recent technicals and post-close update"
+      ]
+    },
+    {
+      "source_id": "qqq-history",
+      "title": "QQQ history and after-hours snapshot",
+      "url": "https://stockanalysis.com/etf/qqq/history/",
+      "publisher": "QQQ",
+      "accessed_at": "2026-10-29T03:35:00+00:00",
+      "supports": [
+        "recent technicals and post-close update"
+      ]
+    },
+    {
+      "source_id": "iwm-history",
+      "title": "IWM history",
+      "url": "https://stockanalysis.com/etf/iwm/history/",
+      "publisher": "IWM",
+      "accessed_at": "2026-10-29T03:35:00+00:00",
+      "supports": [
+        "recent technicals and post-close update"
+      ]
+    },
+    {
+      "source_id": "tlt-history",
+      "title": "TLT history",
+      "url": "https://stockanalysis.com/etf/tlt/history/",
+      "publisher": "TLT",
+      "accessed_at": "2026-10-29T03:35:00+00:00",
+      "supports": [
+        "recent technicals and post-close update"
+      ]
+    },
+    {
+      "source_id": "gld-history",
+      "title": "GLD history",
+      "url": "https://ca.investing.com/etfs/spdr-gold-trust-historical-data",
+      "publisher": "GLD",
+      "accessed_at": "2026-10-29T03:35:00+00:00",
+      "supports": [
+        "recent technicals and post-close update"
+      ]
+    },
+    {
+      "source_id": "msft",
+      "title": "Microsoft earnings",
+      "url": "https://news.microsoft.com/source/2026/10/28/microsoft-announces-first-quarter-results-2/",
+      "publisher": "Microsoft",
+      "accessed_at": "2026-10-29T03:35:00+00:00",
+      "supports": [
+        "recent technicals and post-close update"
+      ]
+    },
+    {
+      "source_id": "alphabet",
+      "title": "Reuters Alphabet report",
+      "url": "https://new.streetinsider.com/Reuters/Alphabet%2Bshares%2Bfall%2Bafter%2Brevenue%2Bmiss%2C%2Bcash%2Bburn%2Bworsens/27249195.html",
+      "publisher": "Reuters",
+      "accessed_at": "2026-10-29T03:35:00+00:00",
+      "supports": [
+        "recent technicals and post-close update"
+      ]
+    },
+    {
+      "source_id": "claims",
+      "title": "Weekly claims archive",
+      "url": "https://oui.doleta.gov/unemploy/archive.asp",
+      "publisher": "Weekly",
+      "accessed_at": "2026-10-29T03:35:00+00:00",
+      "supports": [
+        "recent technicals and post-close update"
+      ]
+    },
+    {
+      "source_id": "auction",
+      "title": "Treasury tentative auction schedule",
+      "url": "https://home.treasury.gov/system/files/221/TentativeAuctionScheduleQ22026.pdf",
+      "publisher": "Treasury",
+      "accessed_at": "2026-10-29T03:35:00+00:00",
+      "supports": [
+        "recent technicals and post-close update"
+      ]
+    }
   ],
-  "series_files":["data/trade-ideas/2026-10-28/series/GSPC.json","data/trade-ideas/2026-10-28/series/SPY.json","data/trade-ideas/2026-10-28/series/QQQ.json","data/trade-ideas/2026-10-28/series/IWM.json","data/trade-ideas/2026-10-28/series/XLE.json","data/trade-ideas/2026-10-28/series/XLF.json","data/trade-ideas/2026-10-28/series/AAPL.json","data/trade-ideas/2026-10-28/series/MSFT.json","data/trade-ideas/2026-10-28/ideas.json"],
-  "chart_files":[],
-  "warnings":["All strikes, premiums and fees are illustrative; no current executable chain was verified.","Current public options commentary did not satisfy candidate evidence requirements; own conditional analysis only.","Eight candidates shown rather than filling ten without sufficient evidence."]
+  "series_files": [
+    "data/trade-ideas/2026-10-28/ideas.json",
+    "data/daily/2026-10-28/technicals.json",
+    "data/daily/2026-10-28/series/XLK.json",
+    "data/daily/2026-10-28/series/VIX.json",
+    "data/daily/2026-10-28/series/GC_F.json",
+    "data/daily/2026-10-28/series/XLF.json",
+    "data/daily/2026-10-28/series/QQQ.json",
+    "data/daily/2026-10-28/series/TNX.json",
+    "data/daily/2026-10-28/series/TLT.json",
+    "data/daily/2026-10-28/series/DX-Y.NYB.json",
+    "data/daily/2026-10-28/series/GSPC.json",
+    "data/daily/2026-10-28/series/CL_F.json",
+    "data/daily/2026-10-28/series/XLV.json",
+    "data/daily/2026-10-28/series/IWM.json",
+    "data/daily/2026-10-28/series/XLI.json",
+    "data/daily/2026-10-28/series/SPY.json",
+    "data/daily/2026-10-28/series/XLE.json",
+    "data/daily/2026-10-28/series/BTC-USD.json"
+  ],
+  "chart_files": [],
+  "warnings": [
+    "Policy v2: all positions USD 500 including actual fees; exact entry risk unknown.",
+    "October 29 expiry availability researched; exact legs and current premium/fees unverified.",
+    "IWM vendor close discrepancy 281.36 versus 281.29; technical map consistently uses saved Yahoo."
+  ]
 }

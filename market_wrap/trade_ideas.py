@@ -19,6 +19,9 @@ def _url(value: str) -> bool:
 
 
 def validate_ideas(bundle: dict) -> None:
+    if bundle.get('policy_version') == 2:
+        from .defined_risk import validate_bundle
+        return validate_bundle(bundle)
     session = date.fromisoformat(bundle['trading_date'])
     target = date.fromisoformat(bundle['next_session'])
     generated = _parse_time(bundle['generated_at'])
@@ -85,6 +88,9 @@ def validate_ideas(bundle: dict) -> None:
 
 
 def render_ideas(bundle: dict) -> str:
+    if bundle.get('policy_version') == 2:
+        from .defined_risk import render_bundle
+        return render_bundle(bundle)
     validate_ideas(bundle)
     day = bundle['trading_date']
     observed = max((i['observed_at'] for i in bundle['candidates']), default=bundle['generated_at'])

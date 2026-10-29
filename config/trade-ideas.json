@@ -1,6 +1,10 @@
 {
-  "risk_caps": {"currency": "USD", "spx": 1000, "other": 500},
-  "target_candidates": 10,
-  "minimum_calendar_dte": 1,
+  "policy_version": 2,
+  "risk_caps": {"currency": "USD", "spx": 500, "other": 500},
+  "families": ["call_vertical", "put_vertical", "iron_condor"],
+  "core_symbols": ["SPX", "QQQ", "IWM"],
+  "optional_symbols": ["GLD", "TLT", "XLK", "XLF", "XLE", "XLI", "XLV"],
+  "maximum_candidates": 6,
+  "minimum_calendar_dte": 0,
   "maximum_calendar_dte": 7
 }

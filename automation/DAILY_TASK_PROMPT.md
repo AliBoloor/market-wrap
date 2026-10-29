@@ -41,43 +41,21 @@ gates. Do not invent chains, strikes, premiums or probabilities.
 
 ## Trade Ideas companion — same daily run, no new schedule
 
-Keep SPX next-session technical scenarios in Daily. Put expanded conditional
-trade candidates in the separate Trade Ideas tab. In the SAME daily workflow,
-prepare up to 10 evidence-backed candidates across indices, ETFs and liquid
-single names for 1–7 calendar days to expiry from the verified next session.
-Keep SPX 0DTE separate; do not count it toward these ten. Use current public
-market quotes and actual chains where available, never Option-Research or
-research PostgreSQL historical datasets. Historical OHLC may support technical
-levels, but is never a substitute for current candidate observations.
+Read docs/trade-ideas.md and config/trade-ideas.json on every wake. They are the
+canonical version 2 contract and supersede earlier SPX $1,000 / ten-candidate /
+1–7DTE instructions. Publish compact next-session alternatives using ONLY call
+vertical, put vertical, iron condor, each debit/credit variation. USD 500 maximum
+loss per position including explicit actual fees for every symbol. No naked
+options, no orders. Cover SPX/QQQ/IWM; add GLD/TLT or selected sectors only when
+supported. Technicals from the latest few days/week lead the thesis, with
+supported SMAs, next-session catalysts/times, news, attributed accessible public
+X and cross-asset scenarios. Distinguish close from later developments.
 
-Read docs/trade-ideas.md. Save data/trade-ideas/<date>/ideas.json and run
-`python -m market_wrap trade-ideas --input data/trade-ideas/<date>/ideas.json --root .`.
-Source and validate the companion evidence manifest and its own type/date
-completion marker using existing bundle conventions. Reuse daily observations;
-additional single names need timestamped current public source reads. The
-renderer writes a draft report only; it never marks complete or publishes.
-On retry, check Daily and Trade Ideas markers independently: a completed Daily
-must not prevent an incomplete companion retry; do not rewrite the completed
-Daily. Resolve due/date/official calendar gates before either branch. Preserve
-existing recurrence, delivery, public-repository safety and failure policy.
-
-Search current public X/Twitter commentary for credible level-based ideas.
-Record original post URL, author, timestamp and faithful quote/paraphrase,
-credibility basis and an independent own assessment. Do not claim good past
-performance without independent substantiation. If direct access is unavailable,
-use public indexed posts with explicit coverage limitations, or report none.
-Never fill ten with stale or unsupported ideas. Explain the shortfall.
-Risk caps are USD 1,000 maximum per SPX trade and USD 500 per other ETF/single-name trade, including fees when known. Use risk_caps configuration, never certify from absent premiums/fees. Illustrative level-based strikes and
-structures are welcome, explicitly labeled; verified listed contracts require
-current chain source, timestamp and exact contract identifiers. Never invent
-premiums, executable quotes, probabilities or falsely certify a loss cap.
-
-After successful publication, return both the Daily and Trade Ideas page links in the existing task delivery. Do not create or change a scheduler or destination.
-
-For EVERY Trade Ideas candidate, include the structured `payoff_profile` from
-docs/trade-ideas.md with same-expiry long/short legs, option type, debit/credit,
-quantity, multiplier and clearly illustrative premium/fee assumptions. Keep the
-written structure consistent. Render its expiry payoff versus P&L, breakeven,
-bounds and cap comparison. Never omit the profile or imply the what-if model is
-a verified entry quote. Name the target session in the title and data date in
-the coverage label; keep original source timestamps intact.
+Save version 2 ideas.json, render with the existing trade-ideas CLI, validate the
+evidence manifest and completion markers independently of Daily. Verify actual
+expiry/legs for 0–7DTE; distinguish desired strikes from listing verification.
+Unknown premium/fees means parametric risk and intrinsic-only schematic, no
+fabricated exact max profit/loss/breakeven. Require actual integer sizing under
+$500 inclusive fees before eligibility. Explain no-trade and assignment gates.
+Never fill a numerical quota. Report source/provider gaps. Preserve completed
+Daily and historical editions. On success return both the Daily and Trade Ideas page links.

@@ -68,3 +68,5 @@ market_wrap/            Deterministic calculations, validation, and site build
 site/                   Generated static website (not hand-edited)
 tests/                  Validation tests
 ```
+
+Trade Ideas follows [the three-family next-session contract](docs/trade-ideas.md): call verticals, put verticals and iron condors, with a USD 500 fee-inclusive cap for every position and parametric risk until entry inputs are verified.

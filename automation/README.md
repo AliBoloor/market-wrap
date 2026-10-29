@@ -16,3 +16,5 @@ Staggering the four schedules reduces concurrent edits to the shared repository.
 Trade Ideas is a companion branch of the existing Daily task, not a fifth
 automation. Check the daily/trade-ideas completion markers independently. Proposed
 prompt changes do not activate themselves; preserve the recurrences above.
+
+The active Daily automation retains its existing after-close catch-up recurrence and owner. Its prompt was updated for policy version 2 on 2026-10-29; no duplicate automation was created. Every wake must first refresh the checkout safely and reread the current companion contract. The local Mac/app must be awake and sources accessible. GitHub Actions does not supply fresh research.
