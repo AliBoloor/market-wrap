@@ -18,3 +18,11 @@ automation. Check the daily/trade-ideas completion markers independently. Propos
 prompt changes do not activate themselves; preserve the recurrences above.
 
 The active Daily automation retains its existing after-close catch-up recurrence and owner. Its prompt was updated for policy version 2 on 2026-10-29; no duplicate automation was created. Every wake must first refresh the checkout safely and reread the current companion contract. The local Mac/app must be awake and sources accessible. GitHub Actions does not supply fresh research.
+
+## Trade Ideas — noon Pacific
+
+`trade-ideas-noon-pacific` / Trade Ideas — Noon Pacific owns the separate weekday
+12:00 America/Vancouver refresh, with official exchange holiday gates. The
+closing Daily schedule remains 13:30–18:30 Vancouver and owns Daily only. Both
+use independent family/date markers. Noon stays noon on early closes. The
+Mac/app must be awake; scheduler dispatch/research/deployment can delay delivery.

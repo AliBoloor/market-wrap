@@ -5,3 +5,5 @@ __pycache__/
 site/
 !site/.gitkeep
 *.log
+
+.trade-ideas-publication.lock/

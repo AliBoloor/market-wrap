@@ -16,7 +16,7 @@ report the exact stage, and preserve the last valid publications. After a
 successful fast-forward, re-read the updated skill, this prompt and referenced
 contracts. A cached Daily-only completion guard must never bypass the companion.
 
-Use the repository-scoped `$market-wrap` skill. This is an **after-close** publication only. Determine the current time and U.S. trading date in `America/New_York`. Stop before broad web research if the U.S. cash session has not closed, today is not a U.S. trading day, or BOTH validated Daily and Trade Ideas completion markers already exist for today. If only one exists, perform only the missing companion branch. Never publish a pre-market, intraday, or holiday placeholder as the Daily Market Wrap.
+Use the repository-scoped `$market-wrap` skill. This is an **after-close** publication only. Determine the current time and U.S. trading date in `America/New_York`. Stop before broad web research if the U.S. cash session has not closed, today is not a U.S. trading day, or the validated Daily completion marker already exists for today. Never publish a pre-market, intraday, or holiday placeholder as the Daily Market Wrap.
 
 If today needs a report, inspect the public repository and read `docs/report-spec.md`, the source policy, and the relevant schema before editing. Do not disturb unrelated worktree changes. Research and write one evidence-backed **Daily Market Wrap** that answers two questions: what happened in today’s completed U.S. session and what matters for the next trading day.
 
@@ -39,23 +39,9 @@ spx-preparation.md, including official next-session calendar, macro catalyst
 times/sources, three opening scenarios, confirmation, invalidation and no-trade
 gates. Do not invent chains, strikes, premiums or probabilities.
 
-## Trade Ideas companion — same daily run, no new schedule
+## Separate Trade Ideas owner
 
-Read docs/trade-ideas.md and config/trade-ideas.json on every wake. They are the
-canonical version 2 contract and supersede earlier SPX $1,000 / ten-candidate /
-1–7DTE instructions. Publish compact next-session alternatives using ONLY call
-vertical, put vertical, iron condor, each debit/credit variation. USD 500 maximum
-loss per position including explicit actual fees for every symbol. No naked
-options, no orders. Cover SPX/QQQ/IWM; add GLD/TLT or selected sectors only when
-supported. Technicals from the latest few days/week lead the thesis, with
-supported SMAs, next-session catalysts/times, news, attributed accessible public
-X and cross-asset scenarios. Distinguish close from later developments.
-
-Save version 2 ideas.json, render with the existing trade-ideas CLI, validate the
-evidence manifest and completion markers independently of Daily. Verify actual
-expiry/legs for 0–7DTE; distinguish desired strikes from listing verification.
-Unknown premium/fees means parametric risk and intrinsic-only schematic, no
-fabricated exact max profit/loss/breakeven. Require actual integer sizing under
-$500 inclusive fees before eligibility. Explain no-trade and assignment gates.
-Never fill a numerical quota. Report source/provider gaps. Preserve completed
-Daily and historical editions. On success return both the Daily and Trade Ideas page links.
+Trade Ideas is owned exclusively by `automation/TRADE_IDEAS_NOON_TASK_PROMPT.md`
+and its noon Pacific task. This closing task must never create, regenerate or
+overwrite a Trade Ideas edition or its completion marker. Its completion guard
+is Daily-only. Preserve Trade Ideas and all unrelated changes.

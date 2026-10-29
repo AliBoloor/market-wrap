@@ -112,9 +112,12 @@ def profile(p):
 
 def render_bundle(b):
     validate_bundle(b)
-    meta=dict(report_family='trade-ideas',trading_date=b['trading_date'],title=f"Trade Ideas for {b['next_session']}",report_type='Trade Ideas',generated_at=b['generated_at'],data_observed_at=b['data_observed_at'],freshness='Completed close; post-close context separately timed',completeness='Conditional research; contracts and entry premiums unverified')
+    meta=dict(report_family='trade-ideas',trading_date=b['trading_date'],title=f"Trade Ideas for {b['next_session']}",report_type='Trade Ideas',generated_at=b['generated_at'],data_observed_at=b['data_observed_at'],freshness='Intraday noon refresh; source delays explicit' if b.get('publication_mode')=='noon' else 'Completed close; post-close context separately timed',completeness='Conditional research; contracts and entry premiums unverified')
     out='---\n'+yaml.safe_dump(meta,sort_keys=False)+'---\n\n'
-    out+=f"**Target session: {b['next_session']} · Closing baseline: {b['trading_date']} · All times New York unless stated.**\n\n"
+    baseline="Intraday baseline" if b.get("publication_mode")=="noon" else "Closing baseline"
+    out+=f"**Target session: {b['next_session']} · {baseline}: {b['trading_date']} · All times New York unless stated.**\n\n"
+    if b.get('publication_mode')=='noon':
+        out+=f"Requested refresh start: **12:00 America/Vancouver**, scheduled {b['scheduled_for']}. Actual generation: {b['generated_at']}; latest observation: {b['data_observed_at']}. This is intraday research, not a completed-session close. Publication follows research and validation; timing can be delayed.\n\n"
     out+='Only three families: **call vertical, put vertical, iron condor**. Each supports debit/credit variations. **USD 500 maximum loss per position including actual all-in fees. Never naked options.** Candidates are alternatives, not a portfolio or orders.\n\n'
     out+=b['research']+'\n\n'
     out+='## Conditional next-session setups\n\n'

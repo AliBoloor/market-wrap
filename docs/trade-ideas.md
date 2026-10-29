@@ -1,9 +1,10 @@
 # Trade Ideas: next-session defined-risk research
 
-The existing Daily research run also publishes Trade Ideas after the completed
-U.S. cash session, targeting the next verified exchange session. Reuse its
-scheduler, evidence bundle, independent companion marker and static Pages
-pipeline. GitHub Actions performs no research. A sleeping Mac, inaccessible
+Trade Ideas has a separate 12:00 noon America/Vancouver weekday run, targeting
+the next verified exchange session. The existing Daily closing run stays
+separate and never rewrites Trade Ideas. Reuse evidence bundles, the independent
+Trade Ideas date marker and the static Pages pipeline. Noon remains noon on
+early-close dates; state whether cash trading is already closed. GitHub Actions performs no research. A sleeping Mac, inaccessible
 sources or failed research can delay publication; do not promise fresh content.
 
 ## Policy version 2
@@ -66,3 +67,12 @@ pytest, publication validation and build. Preserve existing wrap and other
 editions. Legacy policy rendering remains solely for unchanged archived bundles;
 new generation must read version 2 config. This policy supersedes prior
 SPX $1,000, ten-candidate, 1–7DTE and vertical-only companion requirements.
+
+## Noon timing override (2026-10-29)
+
+Noon is the research/update start, not an instantaneous publication promise. Use
+`publication_mode: noon`, `scheduled_for`, actual generated/observation timestamps
+and current intraday evidence. No future closing data or lookahead. Calendar
+verification excludes holidays/weekends; no automatic prior-date backfill.
+Closing Daily never regenerates this date-scoped edition. Local atomic lock
+serializes manual and scheduled publication. See the noon task prompt.
