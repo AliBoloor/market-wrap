@@ -67,13 +67,13 @@ publication-safe observations, generated charts, and validation metadata.
 Secrets, cookies, credentials, browser state, private messages, account data,
 positions, and local system information are prohibited.
 
-## Trade Ideas companion
+## Trade Ideas noon publication
 
-The same daily research run also prepares the Trade Ideas family. It uses the
-shared Markdown/manifest/site architecture and its own date/family completion
-marker, not a separate scheduler. See trade-ideas.md for candidate evidence and
-risk-cap gates. Daily technical scenarios remain in Daily; expanded 1–7 DTE
-candidates appear in the Trade Ideas tab. Existing recurrences/delivery stay
-unchanged; active prompt updates and publication need separate authorization.
-
-Trade Ideas policy version 2 is rendered by `defined_risk.py`; legacy rendering preserves archived evidence. The same Daily owner researches this next-session companion. See `docs/trade-ideas.md`.
+A separate noon Pacific research owner prepares Trade Ideas for the next
+verified exchange session. Daily retains its independent closing schedule and
+cannot overwrite the noon issue. Shared Markdown/manifest/Pages architecture,
+family/date completion markers and a local atomic publication lock prevent
+repeat/conflicting work. Version 2 renders three defined-risk families with
+conditional $500 fee-inclusive entry eligibility. Actual intraday timestamps
+and source delays are visible; legacy dated evidence remains unchanged. See
+`docs/trade-ideas.md` and `automation/TRADE_IDEAS_NOON_TASK_PROMPT.md`.

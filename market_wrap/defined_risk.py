@@ -60,6 +60,13 @@ def validate_bundle(b):
     observed=_parse_time(b['data_observed_at'])
     if observed>generated or observed.astimezone(ZoneInfo('America/New_York')).date()!=session:
         raise ValueError('current-session observation required; no future data')
+    if b.get('publication_mode') == 'noon':
+        from .noon import eligibility
+        scheduled=_parse_time(b['scheduled_for']).astimezone(ZoneInfo('America/Vancouver'))
+        allowed,reason=eligibility(generated,session=session,next_session=target,
+            is_trading_day=b.get('calendar_verified') is True,completed=False)
+        if not allowed or scheduled.date()!=session or scheduled.hour!=12 or scheduled.minute!=0 or scheduled.second!=0:
+            raise ValueError('invalid noon timing/calendar: '+reason)
     if target<=session or not b['calendar_source'].startswith('https://'):
         raise ValueError('verified next-session calendar required')
     if b.get('risk_caps')!={'currency':'USD','spx':500,'other':500}:
@@ -118,7 +125,8 @@ def render_bundle(b):
     out+=f"**Target session: {b['next_session']} · {baseline}: {b['trading_date']} · All times New York unless stated.**\n\n"
     if b.get('publication_mode')=='noon':
         out+=f"Requested refresh start: **12:00 America/Vancouver**, scheduled {b['scheduled_for']}. Actual generation: {b['generated_at']}; latest observation: {b['data_observed_at']}. This is intraday research, not a completed-session close. Publication follows research and validation; timing can be delayed.\n\n"
-    out+='Only three families: **call vertical, put vertical, iron condor**. Each supports debit/credit variations. **USD 500 maximum loss per position including actual all-in fees. Never naked options.** Candidates are alternatives, not a portfolio or orders.\n\n'
+    entry_label='Entry requirement: modeled loss of the intact package must be ≤ USD 500 including actual all-in fees. Eligibility is conditional until entry inputs are verified. Never naked options.' if b.get('publication_mode')=='noon' else 'USD 500 maximum loss per position including actual all-in fees. Never naked options.'
+    out+=f'Only three families: **call vertical, put vertical, iron condor**. Each supports debit/credit variations. **{entry_label}** Candidates are alternatives, not a portfolio or orders.\n\n'
     out+=b['research']+'\n\n'
     out+='## Conditional next-session setups\n\n'
     for c in b['candidates']:

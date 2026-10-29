@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import json
 import math
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 from .models import _parse_time
@@ -149,6 +149,21 @@ No track record is assumed from popularity or self-reported results.
 
 def write_ideas(input_path: Path, output_root: Path) -> Path:
     bundle = json.loads(input_path.read_text())
+    if bundle.get('publication_mode') == 'noon':
+        from .noon import eligibility
+        marker = output_root / 'data/trade-ideas' / bundle['trading_date'] / 'complete.json'
+        completed = False
+        if marker.exists():
+            saved = json.loads(marker.read_text())
+            completed = (saved.get('status') == 'validated' and
+                         saved.get('report_family') == 'trade-ideas' and
+                         saved.get('trading_date') == bundle['trading_date'])
+        allowed, reason = eligibility(datetime.now(timezone.utc),
+            session=date.fromisoformat(bundle['trading_date']),
+            next_session=date.fromisoformat(bundle['next_session']),
+            is_trading_day=bundle.get('calendar_verified') is True, completed=completed)
+        if not allowed:
+            raise ValueError(reason)
     text = render_ideas(bundle)
     destination = output_root / 'content/reports/trade-ideas' / f"{bundle['trading_date']}.md"
     destination.parent.mkdir(parents=True, exist_ok=True)

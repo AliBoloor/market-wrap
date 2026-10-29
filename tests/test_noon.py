@@ -18,3 +18,19 @@ def test_exact_noon_dst_and_duplicate_gate():
     noon=datetime(2026,11,27,12,tzinfo=ZoneInfo('America/Vancouver'))
     assert not gate((noon-timedelta(seconds=1)).isoformat(),**p)
     assert gate(noon.isoformat(),**p) # early close stays noon local, following IANA rules
+
+
+def test_cli_refuses_duplicate_noon_issue(tmp_path, monkeypatch):
+    import json
+    import market_wrap.trade_ideas as mod
+    class Noon(datetime):
+        @classmethod
+        def now(cls,tz=None):
+            return cls.fromisoformat('2026-10-29T19:00:00+00:00')
+    monkeypatch.setattr(mod,'datetime',Noon)
+    folder=tmp_path/'data/trade-ideas/2026-10-29';folder.mkdir(parents=True)
+    (folder/'complete.json').write_text(json.dumps(dict(status='validated',report_family='trade-ideas',trading_date='2026-10-29')))
+    evidence=tmp_path/'ideas.json';evidence.write_text(json.dumps(dict(publication_mode='noon',trading_date='2026-10-29',next_session='2026-10-30',calendar_verified=True)))
+    import pytest
+    with pytest.raises(ValueError,match='already validated'):
+        mod.write_ideas(evidence,tmp_path)
