@@ -1,0 +1,62 @@
+{
+  "^GSPC": {
+    "source": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=5d&interval=5m&events=history",
+    "retrieved_at": "2026-10-29T19:00:00.569241+00:00",
+    "observed_at": "2026-10-29T18:59:58+00:00",
+    "last": 7700.0,
+    "session_high": 7732.2099609375,
+    "session_low": 7690.93994140625,
+    "session_open": 7699.60986328125,
+    "bars": 67
+  },
+  "QQQ": {
+    "source": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=5d&interval=5m&events=history",
+    "retrieved_at": "2026-10-29T19:00:00.737219+00:00",
+    "observed_at": "2026-10-29T18:59:59+00:00",
+    "last": 713.0,
+    "session_high": 718.0700073242188,
+    "session_low": 711.6199951171875,
+    "session_open": 716.5650024414062,
+    "bars": 67
+  },
+  "IWM": {
+    "source": "https://query1.finance.yahoo.com/v8/finance/chart/IWM?range=5d&interval=5m&events=history",
+    "retrieved_at": "2026-10-29T19:00:00.938487+00:00",
+    "observed_at": "2026-10-29T19:00:00+00:00",
+    "last": 283.18499755859375,
+    "session_high": 285.260009765625,
+    "session_low": 282.1499938964844,
+    "session_open": 282.4100036621094,
+    "bars": 67
+  },
+  "TLT": {
+    "source": "https://query1.finance.yahoo.com/v8/finance/chart/TLT?range=5d&interval=5m&events=history",
+    "retrieved_at": "2026-10-29T19:00:01.113686+00:00",
+    "observed_at": "2026-10-29T19:00:00+00:00",
+    "last": 81.37000274658203,
+    "session_high": 81.8550033569336,
+    "session_low": 81.16999816894531,
+    "session_open": 81.39199829101562,
+    "bars": 67
+  },
+  "GLD": {
+    "source": "https://query1.finance.yahoo.com/v8/finance/chart/GLD?range=5d&interval=5m&events=history",
+    "retrieved_at": "2026-10-29T19:00:01.280599+00:00",
+    "observed_at": "2026-10-29T18:59:57+00:00",
+    "last": 367.5899963378906,
+    "session_high": 369.94000244140625,
+    "session_low": 366.9700012207031,
+    "session_open": 368.79998779296875,
+    "bars": 67
+  },
+  "^VIX": {
+    "source": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=5d&interval=5m&events=history",
+    "retrieved_at": "2026-10-29T19:00:01.459280+00:00",
+    "observed_at": "2026-10-29T18:44:46+00:00",
+    "last": 17.049999237060547,
+    "session_high": 17.360000610351562,
+    "session_low": 16.209999084472656,
+    "session_open": 17.149999618530273,
+    "bars": 139
+  }
+}
