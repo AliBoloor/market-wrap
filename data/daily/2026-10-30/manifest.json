@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-10-30",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-10-30T20:29:08.000Z",
+  "market_data_as_of": "2026-10-30T20:00:00+00:00",
+  "state": "validated",
+  "sources": [
+    {
+      "source_id": "ap-close",
+      "title": "Wall Street drops to its worst day since June",
+      "url": "https://apnews.com/article/stock-markets-ai-alphabet-oil-16c266731fdf64178f38070af2b42497",
+      "publisher": "Associated Press",
+      "accessed_at": "2026-10-30T20:29:08.000Z",
+      "supports": ["closing narrative", "breadth", "company drivers", "global markets", "10-year yield"]
+    },
+    {
+      "source_id": "ap-scorecard",
+      "title": "How major US stock indexes fared Friday 10/30/2026",
+      "url": "https://apnews.com/article/wall-street-stocks-dow-nasdaq-a01d3551e794fed1a0c317c20bc3f0a2",
+      "publisher": "Associated Press",
+      "accessed_at": "2026-10-30T20:29:08.000Z",
+      "supports": ["index closes", "weekly context"]
+    },
+    {
+      "source_id": "bls-eci",
+      "title": "Employment Cost Index Summary - September 2026",
+      "url": "https://www.bls.gov/news.release/eci.nr0.htm",
+      "publisher": "Bureau of Labor Statistics",
+      "accessed_at": "2026-10-30T20:29:08.000Z",
+      "supports": ["ECI quarterly and annual results"]
+    },
+    {
+      "source_id": "ism-calendar",
+      "title": "Release Dates for the ISM Manufacturing and Services PMI Reports",
+      "url": "https://www.ismworld.org/supply-management-news-and-reports/reports/rob-report-calendar",
+      "publisher": "Institute for Supply Management",
+      "accessed_at": "2026-10-30T20:29:08.000Z",
+      "supports": ["November 2 Manufacturing PMI time"]
+    },
+    {
+      "source_id": "treasury-rates",
+      "title": "Daily Treasury Par Yield Curve Rates",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value_month=202610&type=daily_treasury_yield_curve",
+      "publisher": "U.S. Department of the Treasury",
+      "accessed_at": "2026-10-30T20:29:08.000Z",
+      "supports": ["latest official two-year yield", "yield-source limitation"]
+    },
+    {
+      "source_id": "late-rates",
+      "title": "U.S. Treasury Yields Fall Sharply on Oct 30",
+      "url": "https://www.gate.com/news/detail/us-treasury-yields-fall-sharply-on-oct-30-as-stock-futures-plunge-on-25308900",
+      "publisher": "Gate News citing Yonhap Infomax",
+      "accessed_at": "2026-10-30T20:29:08.000Z",
+      "supports": ["late-session two-year yield"]
+    },
+    {
+      "source_id": "saxo-vol",
+      "title": "Market Quick Take - Now Amazon and Intel spook US tech",
+      "url": "https://campaigns.home.saxo/content/articles/macro/market-quick-take---now-amazon-and-intel-spook-us-tech---30-october-2026-30102026",
+      "publisher": "Saxo",
+      "accessed_at": "2026-10-30T20:29:08.000Z",
+      "supports": ["options expected move", "VIX futures term structure", "skew"]
+    },
+    {
+      "source_id": "yahoo-chart",
+      "title": "Yahoo Finance public chart data",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-30T20:29:20.483602Z",
+      "supports": ["dashboard", "technicals", "realized volatility", "charts"]
+    },
+    {
+      "source_id": "nyse-calendar",
+      "title": "NYSE market hours and calendars",
+      "url": "https://www.nyse.com/markets/hours-calendars",
+      "publisher": "NYSE",
+      "accessed_at": "2026-10-30T20:29:08.000Z",
+      "supports": ["next-session calendar"]
+    }
+  ],
+  "series_files": [
+    "data/daily/2026-10-30/series/BTC-USD.json",
+    "data/daily/2026-10-30/series/CL_F.json",
+    "data/daily/2026-10-30/series/DX-Y.NYB.json",
+    "data/daily/2026-10-30/series/GC_F.json",
+    "data/daily/2026-10-30/series/GSPC.json",
+    "data/daily/2026-10-30/series/IWM.json",
+    "data/daily/2026-10-30/series/QQQ.json",
+    "data/daily/2026-10-30/series/SPY.json",
+    "data/daily/2026-10-30/series/TLT.json",
+    "data/daily/2026-10-30/series/TNX.json",
+    "data/daily/2026-10-30/series/VIX.json",
+    "data/daily/2026-10-30/series/XLE.json",
+    "data/daily/2026-10-30/series/XLF.json",
+    "data/daily/2026-10-30/series/XLI.json",
+    "data/daily/2026-10-30/series/XLK.json",
+    "data/daily/2026-10-30/series/XLV.json"
+  ],
+  "chart_files": [
+    "public/charts/daily/2026-10-30/GSPC.png",
+    "public/charts/daily/2026-10-30/SPY.png",
+    "public/charts/daily/2026-10-30/QQQ.png",
+    "public/charts/daily/2026-10-30/SPY-vs-TLT.png"
+  ],
+  "warnings": [
+    "Yahoo daily timestamps are provider session labels, not certified closing quote times.",
+    "The October 30 two-year yield is an attributed late-session market print; the latest official Treasury par yield is October 29.",
+    "Options measures are pre-open, source-dependent, delayed and non-executable.",
+    "Bitcoin is rolling; WTI and gold are continuous futures proxies.",
+    "No executable option premiums, fees, strikes or probabilities are presented."
+  ]
+}
