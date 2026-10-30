@@ -1,6 +1,6 @@
 # Market Wrap
 
-Status: **implemented and being expanded to four publications**. This repository
+Status: **implemented with five publication sections**. This repository
 contains the deterministic data, chart, validation, and static-site layers used
 by scheduled Codex research workflows.
 
@@ -8,9 +8,10 @@ The public publication has five sections:
 
 - **Daily Market Wrap** — a closing report for each U.S. trading session: what
   happened, why it mattered, and what to watch in the next session.
-- **Trade Ideas** — a companion generated in the same daily run, targeting up to ten
-  supported conditional 1–7 DTE candidates; explicit USD 1,000 SPX / USD 500 other-trade caps and
-  explicit evidence shortfalls prevent unsupported risk certification.
+- **Trade Ideas** — five ticker blocks (SPX, QQQ, IWM, TLT, GLD), each with
+  day/week/month technical short-condor maps, five-point wings and conditional
+  $500 entry risk. The user selects expiries; the intended independent research
+  cutoff is 15:00 America/New_York, with native registration still unconfirmed.
 - **Weekly Market Wrap** — published after the final U.S. session of the week
   (normally Friday, or Thursday when Friday is a market holiday), with a more
   macro-oriented review and week-ahead outlook.
@@ -69,6 +70,7 @@ site/                   Generated static website (not hand-edited)
 tests/                  Validation tests
 ```
 
-Trade Ideas follows [the three-family next-session contract](docs/trade-ideas.md): call verticals, put verticals and iron condors, with a USD 500 fee-inclusive cap for every position and parametric risk until entry inputs are verified.
-
-Trade Ideas refresh starts at 12:00 America/Vancouver on each verified U.S. trading day for the next session. Daily Market Wrap retains its separate after-close schedule; noon data is explicitly intraday, and publication follows research/validation.
+Trade Ideas follows [the technical-horizon contract](docs/trade-ideas.md) and
+[15:00 Eastern task prompt](automation/TRADE_IDEAS_1500_TASK_PROMPT.md). Daily
+Market Wrap keeps its separate after-close schedule. Publication follows source
+research and validation; saved automation configuration is not proof of dispatch.

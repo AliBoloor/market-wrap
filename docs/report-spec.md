@@ -192,16 +192,15 @@ not SET. SPX has no traded volume; separately label any SPY/ES volume/VWAP proxy
 
 ## Trade Ideas
 
-See [Trade Ideas evidence contract](trade-ideas.md). Daily retains its primary
-SPX next-session technical scenarios and separate 0DTE feature. Expanded trade
-candidates go into the companion tab, targeting ten supported 1–7 DTE ideas
-across indices/ETFs/single names, with fewer shown when current evidence is
-insufficient. Illustrative level-based strikes are explicitly labeled and never
-represented as verified listed contracts or executable quotes. Maximum-loss caps are USD 1,000 per SPX trade and USD 500 per other ETF/single-name trade, including known fees. Do not certify a cap from missing
-premiums/fees. Attribute X commentary and distinguish it from own analysis.
-
-## Trade Ideas policy override (2026-10-29)
-
-For new Trade Ideas editions and SPX risk sizing, `docs/trade-ideas.md` version 2 supersedes older $1,000 SPX, ten-candidate and 1–7DTE requirements. All positions require a $500 fee-inclusive maximum loss; only the three defined-risk families are authorized. Preserve historical reports as dated evidence.
-
-Trade Ideas timing is separately overridden by decision 0007 and `automation/TRADE_IDEAS_NOON_TASK_PROMPT.md`: start refresh at noon America/Vancouver, publish intraday next-session research, and never let closing Daily rewrite that edition.
+See [the policy-4 technical-horizon contract](trade-ideas.md). Five wide ticker
+blocks: SPX, QQQ, IWM, TLT, GLD. Each has next-session, one-week and one-month
+technical rows with explicit horizon dates, distinct sourced support/resistance,
+bold four-leg short-condor actions, five-point wings and an adjacent spot-centered
+intrinsic-shape schematic. The user selects expiries. No fabricated entry credit,
+net profit or breakeven; conditional $500 intact-package entry gate includes costs.
+Qualified provider gamma is labeled, or the gap is explicit. Daily keeps its
+independent closing/SPX scenarios and cannot overwrite Trade Ideas. Intended
+recurring cutoff is 15:00 America/New_York; native registration is unconfirmed.
+First policy-4 edition uses October 29 completed close and preserves earlier noon
+evidence. Decisions 0006/0007 remain historical; decision 0008 supersedes their
+family/expiry/menu/timing requirements for new Trade Ideas editions.

@@ -363,3 +363,13 @@ footer span:first-child { color: var(--heading); font-weight: 700; }
 :root { --pnl-blue: #2873b4; }
 :root[data-theme="dark"] { --pnl-blue: #80baff; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --pnl-blue: #80baff; } }
+
+/* Horizon-first technical iron-condor blocks. */
+.condor-ticker{margin:2rem 0;border:1px solid var(--border,#64748b);border-radius:16px;padding:1.25rem;overflow:hidden}
+.condor-ticker header h2{font-size:1.8rem;margin:0}.condor-ticker header p,.condor-window{font-size:.85rem;opacity:.8}
+.condor-row{display:grid;grid-template-columns:minmax(260px,1fr) minmax(300px,1fr);gap:1.4rem;align-items:center;border-top:1px solid #64748b55;padding:1.5rem 0}
+.condor-copy h3{font-size:1.35rem;margin:0}.condor-legs{font-size:1.13rem;line-height:1.8;letter-spacing:.02em}.condor-copy details{font-size:.9rem}
+.condor-chart{width:100%;min-width:280px;overflow:visible;color:inherit}.condor-chart text{fill:currentColor;font-size:10px}.condor-strike{stroke:currentColor;stroke-dasharray:4 4;opacity:.45}.condor-label{text-anchor:middle;font-weight:700}.condor-payoff{fill:none;stroke:#df8c37;stroke-width:3}.condor-axis{stroke:currentColor;opacity:.45}.condor-spot{stroke:#389ae8;stroke-width:2}.condor-spot-dot{fill:#389ae8}.condor-spot-label{text-anchor:middle;font-weight:800;fill:#389ae8!important}.condor-gamma{font-size:.85rem;opacity:.85}
+.report-body:has(.condor-ticker){max-width:1200px}.condor-trend{font-size:.95rem}
+@media(min-width:1100px){main:has(.condor-ticker){max-width:1280px}.report:has(.condor-ticker){max-width:1280px}}
+@media(max-width:760px){.condor-row{grid-template-columns:1fr}.condor-ticker{padding:1rem}.condor-legs{font-size:1.05rem}}

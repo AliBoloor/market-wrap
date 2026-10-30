@@ -19,6 +19,9 @@ def _url(value: str) -> bool:
 
 
 def validate_ideas(bundle: dict) -> None:
+    if bundle.get('policy_version') == 4:
+        from .condor import validate_bundle
+        return validate_bundle(bundle)
     if bundle.get('policy_version') == 2:
         from .defined_risk import validate_bundle
         return validate_bundle(bundle)
@@ -88,6 +91,9 @@ def validate_ideas(bundle: dict) -> None:
 
 
 def render_ideas(bundle: dict) -> str:
+    if bundle.get('policy_version') == 4:
+        from .condor import render_bundle
+        return render_bundle(bundle)
     if bundle.get('policy_version') == 2:
         from .defined_risk import render_bundle
         return render_bundle(bundle)
@@ -149,8 +155,11 @@ No track record is assumed from popularity or self-reported results.
 
 def write_ideas(input_path: Path, output_root: Path) -> Path:
     bundle = json.loads(input_path.read_text())
-    if bundle.get('publication_mode') == 'noon':
-        from .noon import eligibility
+    if bundle.get('publication_mode') in ('noon','eastern-1500'):
+        if bundle.get('publication_mode') == 'eastern-1500':
+            from .condor import eligibility
+        else:
+            from .noon import eligibility
         marker = output_root / 'data/trade-ideas' / bundle['trading_date'] / 'complete.json'
         completed = False
         if marker.exists():

@@ -1,10 +1,15 @@
 {
-  "policy_version": 2,
-  "risk_caps": {"currency": "USD", "spx": 500, "other": 500},
-  "families": ["call_vertical", "put_vertical", "iron_condor"],
-  "core_symbols": ["SPX", "QQQ", "IWM"],
-  "optional_symbols": ["GLD", "TLT", "XLK", "XLF", "XLE", "XLI", "XLV"],
-  "maximum_candidates": 6,
-  "minimum_calendar_dte": 0,
-  "maximum_calendar_dte": 7
+  "policy_version": 4,
+  "publication_mode": "eastern-1500",
+  "timezone": "America/New_York",
+  "refresh_time": "15:00",
+  "risk_cap_usd": 500,
+  "structure": "short_credit_iron_condor",
+  "core_symbols": ["SPX", "QQQ", "IWM", "TLT", "GLD"],
+  "technical_horizons": ["next-session", "one-week", "one-month"],
+  "put_wing_points": 5,
+  "call_wing_points": 5,
+  "quantity": 1,
+  "multiplier": 100,
+  "expiry_selection": "user managed; technical horizons do not imply expirations"
 }

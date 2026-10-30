@@ -14,7 +14,7 @@ Preserve unrelated files; do not stash, reset, clean, force, or overwrite them.
 If synchronization fails or branches diverge, stop this publication attempt,
 report the exact stage, and preserve the last valid publications. After a
 successful fast-forward, re-read the updated skill, this prompt and referenced
-contracts. The closing guard is Daily-only; Trade Ideas has its separate noon owner.
+contracts. The closing guard is Daily-only; Trade Ideas has its separate 15:00 Eastern owner.
 
 Use the repository-scoped `$market-wrap` skill. This is an **after-close** publication only. Determine the current time and U.S. trading date in `America/New_York`. Stop before broad web research if the U.S. cash session has not closed, today is not a U.S. trading day, or the validated Daily completion marker already exists for today. Never publish a pre-market, intraday, or holiday placeholder as the Daily Market Wrap.
 
@@ -41,7 +41,7 @@ gates. Do not invent chains, strikes, premiums or probabilities.
 
 ## Separate Trade Ideas owner
 
-Trade Ideas is owned exclusively by `automation/TRADE_IDEAS_NOON_TASK_PROMPT.md`
-and its noon Pacific task. This closing task must never create, regenerate or
+Trade Ideas is owned exclusively by `automation/TRADE_IDEAS_1500_TASK_PROMPT.md`
+and its 15:00 New York task. This closing task must never create, regenerate or
 overwrite a Trade Ideas edition or its completion marker. Its completion guard
 is Daily-only. Preserve Trade Ideas and all unrelated changes.

@@ -74,14 +74,14 @@ def test_authorized_caps_render_and_validate():
     with pytest.raises(ValueError): validate_ideas(data)
 
 
-def test_separate_noon_and_closing_owners():
+def test_separate_eastern_and_closing_owners():
     from pathlib import Path
     root=Path(__file__).resolve().parents[1]
     closing=(root/'automation/DAILY_TASK_PROMPT.md').read_text()
-    noon=(root/'automation/TRADE_IDEAS_NOON_TASK_PROMPT.md').read_text()
+    prompt=(root/'automation/TRADE_IDEAS_1500_TASK_PROMPT.md').read_text()
     assert 'git merge --ff-only origin/main' in closing
     assert 'validated Daily completion marker' in closing
     assert 'must never create, regenerate or' in closing
-    assert '12:00 America/Vancouver' in noon
-    assert 'Daily completion must neither suppress nor trigger' in noon
-    assert 'noon' in noon and 'future' in noon
+    assert '15:00 America/New_York' in prompt
+    assert "Daily's marker is independent" in prompt
+    assert 'future' in prompt and 'USER selects expiries' in prompt

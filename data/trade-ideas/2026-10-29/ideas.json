@@ -1,97 +1,291 @@
 {
-  "policy_version": 2,
-  "publication_mode": "noon",
-  "session_state": "cash open",
-  "calendar_verified": true,
-  "scheduled_for": "2026-10-29T12:00:00-07:00",
+  "policy_version": 4,
+  "publication_mode": "close-initial",
   "trading_date": "2026-10-29",
   "next_session": "2026-10-30",
-  "generated_at": "2026-10-29T19:00:20.277342+00:00",
-  "data_observed_at": "2026-10-29T19:00:00+00:00",
+  "research_cutoff": "2026-10-29T16:00:00-04:00",
+  "generated_at": "2026-10-30T02:38:14.552093+00:00",
+  "data_observed_at": "2026-10-29T20:00:00+00:00",
+  "calendar_verified": true,
   "calendar_source": "https://www.nyse.com/markets/hours-calendars",
-  "risk_caps": {
-    "currency": "USD",
-    "spx": 500,
-    "other": 500
-  },
-  "research": "## Noon assessment for Friday October 30\n\n**Own conditional analysis:** Thursday's intraday split is technology weakness versus small-cap relative strength. That is dispersion, not a uniform risk-off call. Treat yesterday's support as potential resistance after a break, and require Friday's post-ECI opening range to confirm before choosing a package. Today's tape is unfinished; these are reference zones, not a prediction of Thursday's close.\n\n### Intraday observations refreshed around noon Pacific\n\nThe saved public Yahoo five-minute series below were retrieved after the requested refresh start. Last bar timestamps and retrieval times differ; bars can be partial/delayed. Ranges are through the available snapshot, not final closing extremes. VIX has a 14:44:46 ET last observation, about 15 minutes older than the noon refresh, and its available-day range may include extended index-calculation hours. SPX is a cash index in points; all ETFs are USD/share; VIX is an index, not an ETF option quote.\n\n| Instrument | Last observation | Available day low / high so far | Observation time ET | Retrieval time UTC |\n|---|---:|---|---|---|\n| SPX | 7700.00 | 7690.94 / 7732.21 | 14:59:58 | 2026-10-29T19:00:00.569241+00:00 |\n| QQQ | 713.00 | 711.62 / 718.07 | 14:59:59 | 2026-10-29T19:00:00.737219+00:00 |\n| IWM | 283.18 | 282.15 / 285.26 | 15:00:00 | 2026-10-29T19:00:00.938487+00:00 |\n| TLT | 81.37 | 81.17 / 81.86 | 15:00:00 | 2026-10-29T19:00:01.113686+00:00 |\n| GLD | 367.59 | 366.97 / 369.94 | 14:59:57 | 2026-10-29T19:00:01.280599+00:00 |\n| ^VIX | 17.05 | 16.21 / 17.36 | 14:44:46 | 2026-10-29T19:00:01.459280+00:00 |\n\n### Technical map and recent-session context\n\nCompleted daily inputs through October 28 remain separate from today's five-minute snapshot. SPX's prior 7,718 low and 7,734\u20137,736 SMA20/prior-high cluster become reclaim tests; 7,698 SMA50 and October 27's 7,677 low are nearby support references. Above 7,758\u20137,770 is the stronger recovery threshold. QQQ's prior low 720.30 and prior high 726.12 remain overhead reference levels after the earnings-driven gap; the October 27 low 713.59 is an immediate pivot, while the 20-day average 732.48 and 50-day 725.42 describe the damaged recovery context. IWM's prior high 281.47 and prior close approximately 281.3 are support/reclaim references; 284.64 recent high and approximately 285.00 falling SMA50 are the next acceptance test. Its 200-day average is 278.53. These averages use completed daily closes only, not partial Thursday bars.\n\n[QQQ's latest completed history](https://stockanalysis.com/etf/qqq/history/) shows October 22 selloff volume around 64.6 million versus about 30\u201333 million on recovery days; that qualifies the rebound's strength, without proving future selling. [IWM's completed history](https://stockanalysis.com/etf/iwm/history/) shows recent closes 275.75 \u2192 276.99 \u2192 280.18 \u2192 281.29. Saved Yahoo's 281.36 October 28 close differs slightly: use rounded 281.3/281.5 zones and refresh Friday rather than invent precision.\n\n**Cross-asset scenarios:** use the noon TLT snapshot against 81.27\u201381.47 reclaim and 80.73 prior-low references. A Treasury rebound while QQQ falls would favor an earnings/rotation explanation over a simple yields-up thesis; it does not by itself prove causation. GLD weakness would likewise contradict a blanket gold-safe-haven claim. If TLT fails back below the reclaim area and yields rise, QQQ downside can reinforce; if TLT holds and technology reclaims the gap with broader participation, abandon the bearish call-spread thesis. Conflicting confirmations mean no trade. VIX is a broad 30-day SPX measure; no current ETF IV/skew edge is asserted.\n\n## What changed today and what matters next\n\n[BEA's advance Q3 GDP release](https://www.bea.gov/news/2026/gdp-advance-estimate-3rd-quarter-2026) reports **3.4% annualized growth**, versus 2.2% in Q2. [September personal income/outlays](https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026) reports headline PCE **+0.5% month/month, +3.6% year/year**, and core **+0.3% month/month, +3.1% year/year**; real PCE rose less than 0.1% and real disposable income fell 0.3%. These are released facts, not tomorrow's forecasts. Core is not +0.5%.\n\nMicrosoft/Alphabet earnings and the technology gap make company-specific dispersion relevant; [Microsoft's issuer release](https://news.microsoft.com/source/2026/10/28/microsoft-announces-first-quarter-results-2/) and [Reuters' Alphabet coverage](https://new.streetinsider.com/Reuters/Alphabet%2Bshares%2Bfall%2Bafter%2Brevenue%2Bmiss%2C%2Bcash%2Bburn%2Bworsens/27249195.html) are context, not evidence that every index must move together. **Amazon's 17:00 ET Thursday call is still ahead of this noon snapshot**, per its [official announcement](https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2026-report); its result can reset Friday's QQQ levels. Do not imply those results were known at noon.\n\n| Friday October 30 catalyst | New York time | Primary source / implication |\n|---|---|---|\n| Q3 Employment Cost Index | 08:30 ET | [BLS release calendar](https://www.bls.gov/schedule/2026/10_sched.htm). Wage/inflation surprise can reset rates and opening gaps. |\n| ExxonMobil earnings call | 09:30 ET | [Issuer event](https://investor.exxonmobil.com/news-events/ir-calendar/detail/20261030-3q-2026-earnings-call): 08:30 Central = 09:30 Eastern. Energy/sector context, not a single-name option candidate. |\n| SF Fed AI and the Economy: Daly welcome | 12:00 ET (09:00 Pacific) | [Official agenda](https://www.frbsf.org/wp-content/uploads/2026-FRB-SF-AI-Symposium-Conf-Agenda.pdf). A conference appearance, not a promised policy decision; check live remarks before retaining short volatility. |\n| Chevron earnings call | 11:00 ET | [Issuer event calendar](https://chevroncorp.gcs-web.com/events-and-presentations/upcoming-events). Recheck sector leadership. |\n\n[NYSE's calendar](https://www.nyse.com/markets/hours-calendars) verifies Friday October 30 is the next regular session, 09:30\u201316:00 ET. It is the final weekday/session of October; month-end flows can add noise, but no flow direction or magnitude is assumed. Unexpected policy/geopolitical news remains unquantified. Verify additional official appearances before entry.\n",
-  "candidates": [
+  "risk_cap_usd": 500,
+  "horizons": [
     {
-      "id": "01",
-      "symbol": "SPX",
-      "direction": "bearish only on failed reclaim/break",
-      "volatility_view": "Conditional realized expansion; no verified cheap-premium claim.",
-      "level_basis": "Noon low 7690.94, high 7732.21; 7698 SMA50/7677 prior swing are completed-session references. Desired five-point strikes bracket the noon low; recenter only on fresh Friday evidence.",
-      "trigger": "After Friday ECI and cash open, failed reclaim of 7718 or confirmed loss/retest of the noon low 7690.94; choose the branch matching the actual opening gap, not both blindly.",
-      "invalidation": "Acceptance back above the rejected level; reclaim 7734\u20137736 undermines the bearish case. Gap past all support means a new range first.",
-      "alternative": "Reclaim/hold of 7718 then 7734\u20137736 supports a bullish call debit/put credit alternative; mixed evidence means flat.",
-      "expiry": "2026-10-30",
-      "listing_status": "desired; contracts unverified",
-      "listing_source": "https://www.cboe.com/available_weeklys/",
-      "listing_note": "Friday expiration is the intended same-session expiry for the October 30 target. Product/expiry availability does not prove these exact desired strikes are listed. Verify all actual contract identifiers and paired deliverables before entry. Use PM-settled SPXW, not AM SPX.",
-      "model": {
-        "family": "put_vertical",
-        "kind": "debit",
-        "strikes": [
-          7690,
-          7695
-        ],
-        "quantity": 1,
-        "multiplier": 100
-      }
+      "id": "next-session",
+      "label": "Next session",
+      "start": "2026-10-30",
+      "end": "2026-10-30",
+      "trading_sessions": 1,
+      "nominal_calendar_end": "2026-10-30"
     },
     {
-      "id": "02",
-      "symbol": "QQQ",
-      "direction": "bearish rejection, conditional premium sale",
-      "volatility_view": "Conditional stabilization/contraction beneath resistance after earnings repricing; IV richness is unverified.",
-      "level_basis": "Noon range 711.62\u2013718.07; 713.59 prior low and 720.30 former support. Desired short call sits just above the noon high, with a one-dollar long wing.",
-      "trigger": "Friday after Amazon results and ECI: form an opening range, fail reclaim of the noon high 718.07, then reject a retest. If the opening gap invalidates that level, stand aside and remap.",
-      "invalidation": "Sustained acceptance above the rejected range/high; a hold above 720.30 is a stronger thesis reset. Never rely on a stop as the maximum loss.",
-      "alternative": "Persistent downside expansion favors a put debit vertical instead of assuming credit is attractive. Reclaim with TLT/breadth confirmation favors a call debit/put credit thesis.",
-      "expiry": "2026-10-30",
-      "listing_status": "desired; contracts unverified",
-      "listing_source": "https://www.cboe.com/delayed_quotes/qqq/quote_table/",
-      "listing_note": "Friday October 30 is the desired same-session expiry. Exact desired legs, current liquidity and entry premium/fees have not been verified; no executable eligibility claimed.",
-      "model": {
-        "family": "call_vertical",
-        "kind": "credit",
-        "strikes": [
-          719,
-          720
-        ],
-        "quantity": 1,
-        "multiplier": 100
-      }
+      "id": "one-week",
+      "label": "One week",
+      "start": "2026-10-30",
+      "end": "2026-11-05",
+      "trading_sessions": 5,
+      "nominal_calendar_end": "2026-11-05"
     },
     {
-      "id": "03",
-      "symbol": "IWM",
-      "direction": "range only if relative strength stalls",
-      "volatility_view": "Conditional contraction only after both range edges reject; no assumed vol compression from yesterday\u2019s Fed decision.",
-      "level_basis": "Noon low/high 282.15/285.26; 284.64\u2013285.00 completed-day overhead zone. Desired short strikes 282/286 surround the noon range; equal one-dollar wings.",
-      "trigger": "Wait at least 30 minutes Friday; a stable opening range forms, price stays between short strikes and neither breadth nor rates confirms a trend. Recheck all intraday catalyst times first.",
-      "invalidation": "Acceptance beyond either short strike or a persistent relative-strength breakout. Do not keep a short range package in a trending market.",
-      "alternative": "Hold 281.5 and accept above 285 supports a call debit/put credit alternative; break of the noon low and failed reclaim favors put debit/call credit. Strong two-sided expansion calls for reassessing a long condor, not automatically reversing.",
-      "expiry": "2026-10-30",
-      "listing_status": "desired; contracts unverified",
-      "listing_source": "https://www.cboe.com/delayed_quotes/iwm/quote_table/",
-      "listing_note": "Friday October 30 is the desired same-session expiry. Exact desired legs, current liquidity and entry premium/fees have not been verified; no executable eligibility claimed.",
-      "model": {
-        "family": "iron_condor",
-        "kind": "credit",
-        "strikes": [
-          281,
-          282,
-          286,
-          287
-        ],
-        "quantity": 1,
-        "multiplier": 100
-      }
+      "id": "one-month",
+      "label": "One month",
+      "start": "2026-10-30",
+      "end": "2026-11-27",
+      "trading_sessions": 20,
+      "nominal_calendar_end": "2026-11-29",
+      "calendar_note": "November 29 is Sunday; last session in the calendar-month window is November 27, an early-close session. Thanksgiving November 26 is excluded."
     }
   ],
-  "social_coverage": "Public-source searches around the noon refresh did not establish original X posts with reliable current timestamps, context and independently supported levels. No verified X consensus or performance record is asserted. No login/private access was used; coverage is incomplete.",
-  "limitations": "These are Friday alternatives, not instructions to enter on Thursday. Exact legs, entry premium and all-in fees are unknown. Complete paired-leg execution and verified deliverables are required; no naked legging. The $500 gate is conditional modeled expiry loss of the intact package, not a guarantee of account loss under ETF assignment/pin/after-hours residual-stock risks. Broker liquidation/slippage can differ. No future Thursday closing values or Friday outcomes are used.",
-  "sources": "- [QQQ's latest completed history](https://stockanalysis.com/etf/qqq/history/) \u00b7 retrieved/researched 2026-10-29T19:00:20.277342+00:00.\n- [IWM's completed history](https://stockanalysis.com/etf/iwm/history/) \u00b7 retrieved/researched 2026-10-29T19:00:20.277342+00:00.\n- [BEA's advance Q3 GDP release](https://www.bea.gov/news/2026/gdp-advance-estimate-3rd-quarter-2026) \u00b7 retrieved/researched 2026-10-29T19:00:20.277342+00:00.\n- [September personal income/outlays](https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026) \u00b7 retrieved/researched 2026-10-29T19:00:20.277342+00:00.\n- [Microsoft's issuer release](https://news.microsoft.com/source/2026/10/28/microsoft-announces-first-quarter-results-2/) \u00b7 retrieved/researched 2026-10-29T19:00:20.277342+00:00.\n- [Reuters' Alphabet coverage](https://new.streetinsider.com/Reuters/Alphabet%2Bshares%2Bfall%2Bafter%2Brevenue%2Bmiss%2C%2Bcash%2Bburn%2Bworsens/27249195.html) \u00b7 retrieved/researched 2026-10-29T19:00:20.277342+00:00.\n- [official announcement](https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2026-report) \u00b7 retrieved/researched 2026-10-29T19:00:20.277342+00:00.\n- [BLS release calendar](https://www.bls.gov/schedule/2026/10_sched.htm) \u00b7 retrieved/researched 2026-10-29T19:00:20.277342+00:00.\n- [Issuer event](https://investor.exxonmobil.com/news-events/ir-calendar/detail/20261030-3q-2026-earnings-call) \u00b7 retrieved/researched 2026-10-29T19:00:20.277342+00:00.\n- [Official agenda](https://www.frbsf.org/wp-content/uploads/2026-FRB-SF-AI-Symposium-Conf-Agenda.pdf) \u00b7 retrieved/researched 2026-10-29T19:00:20.277342+00:00.\n- [Issuer event calendar](https://chevroncorp.gcs-web.com/events-and-presentations/upcoming-events) \u00b7 retrieved/researched 2026-10-29T19:00:20.277342+00:00.\n- [NYSE's calendar](https://www.nyse.com/markets/hours-calendars) \u00b7 retrieved/researched 2026-10-29T19:00:20.277342+00:00.\n- [^GSPC five-minute public input](https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=5d&interval=5m&events=history) \u00b7 retrieved/researched 2026-10-29T19:00:00.569241+00:00.\n- [QQQ five-minute public input](https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=5d&interval=5m&events=history) \u00b7 retrieved/researched 2026-10-29T19:00:00.737219+00:00.\n- [IWM five-minute public input](https://query1.finance.yahoo.com/v8/finance/chart/IWM?range=5d&interval=5m&events=history) \u00b7 retrieved/researched 2026-10-29T19:00:00.938487+00:00.\n- [TLT five-minute public input](https://query1.finance.yahoo.com/v8/finance/chart/TLT?range=5d&interval=5m&events=history) \u00b7 retrieved/researched 2026-10-29T19:00:01.113686+00:00.\n- [GLD five-minute public input](https://query1.finance.yahoo.com/v8/finance/chart/GLD?range=5d&interval=5m&events=history) \u00b7 retrieved/researched 2026-10-29T19:00:01.280599+00:00.\n- [^VIX five-minute public input](https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=5d&interval=5m&events=history) \u00b7 retrieved/researched 2026-10-29T19:00:01.459280+00:00.\n- [^GSPC completed daily history](https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history) \u00b7 retrieved/researched 2026-10-28T20:26:34.573519+00:00.\n- [QQQ completed daily history](https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=2y&interval=1d&events=history) \u00b7 retrieved/researched 2026-10-28T20:26:35.763164+00:00.\n- [IWM completed daily history](https://query1.finance.yahoo.com/v8/finance/chart/IWM?range=2y&interval=1d&events=history) \u00b7 retrieved/researched 2026-10-28T20:26:35.939431+00:00.\n- [SPX listing verification gate](https://www.cboe.com/available_weeklys/) \u00b7 retrieved/researched 2026-10-29T19:00:20.277342+00:00.\n- [QQQ listing verification gate](https://www.cboe.com/delayed_quotes/qqq/quote_table/) \u00b7 retrieved/researched 2026-10-29T19:00:20.277342+00:00.\n- [IWM listing verification gate](https://www.cboe.com/delayed_quotes/iwm/quote_table/) \u00b7 retrieved/researched 2026-10-29T19:00:20.277342+00:00."
+  "tickers": [
+    {
+      "symbol": "SPX",
+      "spot": 7720.39013671875,
+      "source": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history",
+      "retrieved_at": "2026-10-30T02:22:10.583819+00:00",
+      "trend": "Completed close 7720.39; SMA20/50/200 7737.04/7698.30/7306.49. SMA50 falling; SMA200 rising. Cash SPX has no native traded volume; no synthetic volume confirmation is asserted.",
+      "levels": [
+        {
+          "horizon": "next-session",
+          "short_put": 7690,
+          "long_put": 7685,
+          "short_call": 7760,
+          "long_call": 7765,
+          "support": "7690.94\u20137698.30; desired short put 7690 at/below this zone.",
+          "resistance": "7732.21\u20137758.43; desired short call 7760 at/above this zone.",
+          "basis": "Day low and SMA50 support; day high/SMA20 7737 and prior high resistance. Recent Fibonacci 38.2% recovery near 7700.87 supports the pivot zone, not a prediction.",
+          "upside": "Acceptance above 7758.43 invalidates the upper range; reassess before the short call 7760 is threatened rather than blindly defending it.",
+          "downside": "Acceptance below 7690.94 invalidates support; reassess before short put 7690 is threatened. A gap beyond the map means no mechanical entry.",
+          "range": "Only if the horizon's support holds and resistance rejects with stable price action. These are reference zones, not a probability band or prediction that price stays between 7690 and 7760."
+        },
+        {
+          "horizon": "one-week",
+          "short_put": 7610,
+          "long_put": 7605,
+          "short_call": 7785,
+          "long_call": 7790,
+          "support": "7612.07\u20137631.77; desired short put 7610 at/below this zone.",
+          "resistance": "7770.40\u20137782.19; desired short call 7785 at/above this zone.",
+          "basis": "October 23/16 confirmed swing lows; October 21 and September 22 confirmed swing highs. A week permits testing larger multi-session pivots, rather than copying day bounds.",
+          "upside": "Acceptance above 7782.19 invalidates the upper range; reassess before the short call 7785 is threatened rather than blindly defending it.",
+          "downside": "Acceptance below 7612.07 invalidates support; reassess before short put 7610 is threatened. A gap beyond the map means no mechanical entry.",
+          "range": "Only if the horizon's support holds and resistance rejects with stable price action. These are reference zones, not a probability band or prediction that price stays between 7610 and 7785."
+        },
+        {
+          "horizon": "one-month",
+          "short_put": 7505,
+          "long_put": 7500,
+          "short_call": 7845,
+          "long_call": 7850,
+          "support": "7507.77\u20137580.06; desired short put 7505 at/below this zone.",
+          "resistance": "7821.67\u20137844.52; desired short call 7845 at/above this zone.",
+          "basis": "September 16/10 swing lows and 50/60-session floor versus October 12/6 highs. Rising SMA200 7306.49 is a deeper trend-risk reference, not the base support.",
+          "upside": "Acceptance above 7844.52 invalidates the upper range; reassess before the short call 7845 is threatened rather than blindly defending it.",
+          "downside": "Acceptance below 7507.77 invalidates support; reassess before short put 7505 is threatened. A gap beyond the map means no mechanical entry.",
+          "range": "Only if the horizon's support holds and resistance rejects with stable price action. These are reference zones, not a probability band or prediction that price stays between 7505 and 7845."
+        }
+      ],
+      "gamma_note": "Secondary model, not observed dealer inventory: SquawkFlow reports positive full-chain modeled exposure, overnight flip about 7703 and 15:55 ET repriced flip about 7714 (Oct 29). It uses settled Oct 28 open interest, Black-Scholes/IV assumptions and assumed dealer sides. Its front-expiry walls/flip are withdrawn after an audit; they are not adopted. Refresh the model for the relevant horizon; technical invalidation takes priority."
+    },
+    {
+      "symbol": "QQQ",
+      "spot": 715.3400268554688,
+      "source": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=2y&interval=1d&events=history",
+      "retrieved_at": "2026-10-30T02:22:10.624014+00:00",
+      "trend": "Completed close 715.34; SMA20/50/200 731.14/725.41/679.16. SMA50 falling; SMA200 rising. Latest ETF volume / 20-session mean: 1.03\u00d7; volume alone does not establish positioning.",
+      "levels": [
+        {
+          "horizon": "next-session",
+          "short_put": 710,
+          "long_put": 705,
+          "short_call": 728,
+          "long_call": 733,
+          "support": "711.62\u2013713.59; desired short put 710 at/below this zone.",
+          "resistance": "725.41\u2013727.95; desired short call 728 at/above this zone.",
+          "basis": "Current day low/prior-session pivot versus falling SMA50 and October 21 confirmed high. 718.07\u2013720.30 remains an intermediate reclaim gate.",
+          "upside": "Acceptance above 727.95 invalidates the upper range; reassess before the short call 728 is threatened rather than blindly defending it.",
+          "downside": "Acceptance below 711.62 invalidates support; reassess before short put 710 is threatened. A gap beyond the map means no mechanical entry.",
+          "range": "Only if the horizon's support holds and resistance rejects with stable price action. These are reference zones, not a probability band or prediction that price stays between 710 and 728."
+        },
+        {
+          "horizon": "one-week",
+          "short_put": 700,
+          "long_put": 695,
+          "short_call": 750,
+          "long_call": 755,
+          "support": "700.00\u2013707.23; desired short put 700 at/below this zone.",
+          "resistance": "739.29\u2013748.35; desired short call 750 at/above this zone.",
+          "basis": "50/60-session low and October 16/23 swing-low area; 61.8% month-range recovery 739.29 and September 22 high give separate week overhead zones.",
+          "upside": "Acceptance above 748.35 invalidates the upper range; reassess before the short call 750 is threatened rather than blindly defending it.",
+          "downside": "Acceptance below 700.00 invalidates support; reassess before short put 700 is threatened. A gap beyond the map means no mechanical entry.",
+          "range": "Only if the horizon's support holds and resistance rejects with stable price action. These are reference zones, not a probability band or prediction that price stays between 700 and 750."
+        },
+        {
+          "horizon": "one-month",
+          "short_put": 675,
+          "long_put": 670,
+          "short_call": 765,
+          "long_call": 770,
+          "support": "679.16\u2013700.00; desired short put 675 at/below this zone.",
+          "resistance": "762.86\u2013762.86; desired short call 765 at/above this zone.",
+          "basis": "SMA200 679.16 and 50/60-session floor frame longer downside; October 6 20/50/200-session high 762.86 is the major supply reference. A full month has greater uncertainty; levels are not probability bounds.",
+          "upside": "Acceptance above 762.86 invalidates the upper range; reassess before the short call 765 is threatened rather than blindly defending it.",
+          "downside": "Acceptance below 679.16 invalidates support; reassess before short put 675 is threatened. A gap beyond the map means no mechanical entry.",
+          "range": "Only if the horizon's support holds and resistance rejects with stable price action. These are reference zones, not a probability band or prediction that price stays between 675 and 765."
+        }
+      ],
+      "gamma_note": "No credible current sign/flip estimate verified for this ETF; no dealer positioning inferred from raw open interest."
+    },
+    {
+      "symbol": "IWM",
+      "spot": 284.010009765625,
+      "source": "https://query1.finance.yahoo.com/v8/finance/chart/IWM?range=2y&interval=1d&events=history",
+      "retrieved_at": "2026-10-30T02:22:10.613191+00:00",
+      "trend": "Completed close 284.01; SMA20/50/200 277.52/284.64/278.64. SMA50 falling; SMA200 rising. Latest ETF volume / 20-session mean: 0.89\u00d7; volume alone does not establish positioning.",
+      "levels": [
+        {
+          "horizon": "next-session",
+          "short_put": 281,
+          "long_put": 276,
+          "short_call": 286,
+          "long_call": 291,
+          "support": "281.29\u2013282.15; desired short put 281 at/below this zone.",
+          "resistance": "284.64\u2013285.26; desired short call 286 at/above this zone.",
+          "basis": "Prior close/high gap-support cluster and day low, versus SMA50 and current month high.",
+          "upside": "Acceptance above 285.26 invalidates the upper range; reassess before the short call 286 is threatened rather than blindly defending it.",
+          "downside": "Acceptance below 281.29 invalidates support; reassess before short put 281 is threatened. A gap beyond the map means no mechanical entry.",
+          "range": "Only if the horizon's support holds and resistance rejects with stable price action. These are reference zones, not a probability band or prediction that price stays between 281 and 286."
+        },
+        {
+          "horizon": "one-week",
+          "short_put": 277,
+          "long_put": 272,
+          "short_call": 290,
+          "long_call": 295,
+          "support": "277.52\u2013278.64; desired short put 277 at/below this zone.",
+          "resistance": "288.29\u2013288.94; desired short call 290 at/above this zone.",
+          "basis": "SMA20/SMA200 confluence and September 17/22 confirmed highs give a separate week map.",
+          "upside": "Acceptance above 288.94 invalidates the upper range; reassess before the short call 290 is threatened rather than blindly defending it.",
+          "downside": "Acceptance below 277.52 invalidates support; reassess before short put 277 is threatened. A gap beyond the map means no mechanical entry.",
+          "range": "Only if the horizon's support holds and resistance rejects with stable price action. These are reference zones, not a probability band or prediction that price stays between 277 and 290."
+        },
+        {
+          "horizon": "one-month",
+          "short_put": 269,
+          "long_put": 264,
+          "short_call": 306,
+          "long_call": 311,
+          "support": "269.88\u2013273.35; desired short put 269 at/below this zone.",
+          "resistance": "300.39\u2013305.18; desired short call 306 at/above this zone.",
+          "basis": "October 16/23 swing floors and 20/50-session low versus August 28 and 60/200-session highs. Mixed averages mean trend transition, not a guaranteed monthly range.",
+          "upside": "Acceptance above 305.18 invalidates the upper range; reassess before the short call 306 is threatened rather than blindly defending it.",
+          "downside": "Acceptance below 269.88 invalidates support; reassess before short put 269 is threatened. A gap beyond the map means no mechanical entry.",
+          "range": "Only if the horizon's support holds and resistance rejects with stable price action. These are reference zones, not a probability band or prediction that price stays between 269 and 306."
+        }
+      ],
+      "gamma_note": "No credible current sign/flip estimate verified for this ETF; no dealer positioning inferred from raw open interest."
+    },
+    {
+      "symbol": "TLT",
+      "spot": 81.48999786376953,
+      "source": "https://query1.finance.yahoo.com/v8/finance/chart/TLT?range=2y&interval=1d&events=history",
+      "retrieved_at": "2026-10-30T02:22:10.636312+00:00",
+      "trend": "Completed close 81.49; SMA20/50/200 79.45/80.51/84.65. SMA50 falling; SMA200 falling. Latest ETF volume / 20-session mean: 0.66\u00d7; volume alone does not establish positioning.",
+      "levels": [
+        {
+          "horizon": "next-session",
+          "short_put": 80.5,
+          "long_put": 75.5,
+          "short_call": 82,
+          "long_call": 87,
+          "support": "80.51\u201381.16; desired short put 80.5 at/below this zone.",
+          "resistance": "81.86\u201381.92; desired short call 82 at/above this zone.",
+          "basis": "SMA50/prior low 80.73 and day low; repeated day/10/20-session ceiling.",
+          "upside": "Acceptance above 81.92 invalidates the upper range; reassess before the short call 82 is threatened rather than blindly defending it.",
+          "downside": "Acceptance below 80.51 invalidates support; reassess before short put 80.5 is threatened. A gap beyond the map means no mechanical entry.",
+          "range": "Only if the horizon's support holds and resistance rejects with stable price action. These are reference zones, not a probability band or prediction that price stays between 80.5 and 82."
+        },
+        {
+          "horizon": "one-week",
+          "short_put": 79,
+          "long_put": 74,
+          "short_call": 84,
+          "long_call": 89,
+          "support": "79.34\u201379.82; desired short put 79 at/below this zone.",
+          "resistance": "82.50\u201383.60; desired short call 84 at/above this zone.",
+          "basis": "October 19 swing low/SMA20 79.45 and 61.8% month recovery 79.82; September 4/August 28 confirmed highs.",
+          "upside": "Acceptance above 83.60 invalidates the upper range; reassess before the short call 84 is threatened rather than blindly defending it.",
+          "downside": "Acceptance below 79.34 invalidates support; reassess before short put 79 is threatened. A gap beyond the map means no mechanical entry.",
+          "range": "Only if the horizon's support holds and resistance rejects with stable price action. These are reference zones, not a probability band or prediction that price stays between 79 and 84."
+        },
+        {
+          "horizon": "one-month",
+          "short_put": 76,
+          "long_put": 71,
+          "short_call": 86,
+          "long_call": 91,
+          "support": "76.43\u201377.74; desired short put 76 at/below this zone.",
+          "resistance": "84.65\u201385.48; desired short call 86 at/above this zone.",
+          "basis": "October 7/14 swing lows and 20/50/200-session floor, versus declining SMA200 and 252-session average. Wider time horizon does not imply bond recovery is assured.",
+          "upside": "Acceptance above 85.48 invalidates the upper range; reassess before the short call 86 is threatened rather than blindly defending it.",
+          "downside": "Acceptance below 76.43 invalidates support; reassess before short put 76 is threatened. A gap beyond the map means no mechanical entry.",
+          "range": "Only if the horizon's support holds and resistance rejects with stable price action. These are reference zones, not a probability band or prediction that price stays between 76 and 86."
+        }
+      ],
+      "gamma_note": "No credible current sign/flip estimate verified for this ETF; no dealer positioning inferred from raw open interest."
+    },
+    {
+      "symbol": "GLD",
+      "spot": 368.57000732421875,
+      "source": "https://query1.finance.yahoo.com/v8/finance/chart/GLD?range=2y&interval=1d&events=history",
+      "retrieved_at": "2026-10-30T02:22:10.601111+00:00",
+      "trend": "Completed close 368.57; SMA20/50/200 376.98/391.76/413.27. SMA50 falling; SMA200 falling. Latest ETF volume / 20-session mean: 1.14\u00d7; volume alone does not establish positioning.",
+      "levels": [
+        {
+          "horizon": "next-session",
+          "short_put": 366,
+          "long_put": 361,
+          "short_call": 374,
+          "long_call": 379,
+          "support": "366.97\u2013368.88; desired short put 366 at/below this zone.",
+          "resistance": "369.94\u2013373.60; desired short call 374 at/above this zone.",
+          "basis": "Current low/prior-low reclaim versus current and five-session highs; falling SMA20 376.98 is the next overhead reference.",
+          "upside": "Acceptance above 373.60 invalidates the upper range; reassess before the short call 374 is threatened rather than blindly defending it.",
+          "downside": "Acceptance below 366.97 invalidates support; reassess before short put 366 is threatened. A gap beyond the map means no mechanical entry.",
+          "range": "Only if the horizon's support holds and resistance rejects with stable price action. These are reference zones, not a probability band or prediction that price stays between 366 and 374."
+        },
+        {
+          "horizon": "one-week",
+          "short_put": 364,
+          "long_put": 359,
+          "short_call": 386,
+          "long_call": 391,
+          "support": "364.33\u2013364.33; desired short put 364 at/below this zone.",
+          "resistance": "384.88\u2013385.22; desired short call 386 at/above this zone.",
+          "basis": "October 23 swing floor/20/50-session low versus October 16/2 confirmed highs. SMA20/Fibonacci near 377 is an intermediate resistance cluster.",
+          "upside": "Acceptance above 385.22 invalidates the upper range; reassess before the short call 386 is threatened rather than blindly defending it.",
+          "downside": "Acceptance below 364.33 invalidates support; reassess before short put 364 is threatened. A gap beyond the map means no mechanical entry.",
+          "range": "Only if the horizon's support holds and resistance rejects with stable price action. These are reference zones, not a probability band or prediction that price stays between 364 and 386."
+        },
+        {
+          "horizon": "one-month",
+          "short_put": 361,
+          "long_put": 356,
+          "short_call": 414,
+          "long_call": 419,
+          "support": "361.36\u2013363.32; desired short put 361 at/below this zone.",
+          "resistance": "413.27\u2013413.54; desired short call 414 at/above this zone.",
+          "basis": "252/200-session lows versus SMA200 and September 3 confirmed high. The weak longer trend makes a monthly short-range assumption particularly fragile; do not force the position.",
+          "upside": "Acceptance above 413.54 invalidates the upper range; reassess before the short call 414 is threatened rather than blindly defending it.",
+          "downside": "Acceptance below 361.36 invalidates support; reassess before short put 361 is threatened. A gap beyond the map means no mechanical entry.",
+          "range": "Only if the horizon's support holds and resistance rejects with stable price action. These are reference zones, not a probability band or prediction that price stays between 361 and 414."
+        }
+      ],
+      "gamma_note": "No credible current sign/flip estimate verified for this ETF; no dealer positioning inferred from raw open interest."
+    }
+  ],
+  "research": "## How to use the three maps\n\nEach ticker has a distinct next-session, week and month technical corridor. Short\nputs sit at or below mapped support; short calls sit at or above mapped resistance;\nlong puts are five points lower and long calls five points higher. These are\nrounded technical strike hypotheses. **You choose expiries; no expiry is selected\nor implied by the technical horizon.** Longer-horizon levels are not the same\nnext-day bounds copied forward, and a wide corridor does not imply an attractive\ncredit or a high win probability.\n\nThe first edition uses the completed October 29 close. SPX held near its 50-day\naverage, QQQ remained below its falling 50-day, IWM approached its recent high,\nTLT rebounded inside a weak longer trend, and GLD remained below falling longer\naverages. That dispersion argues for ticker-specific confirmation rather than\nselling every range together. A persistent breakout, failed support or a gap\npast the map is a reason to skip/reassess, not to add an unauthorized structure.\n\nFriday's ECI at 08:30 ET is on the [BLS calendar](https://www.bls.gov/schedule/2026/10_sched.htm).\n[Reuters' October 29 wrap](https://www.reuters.com/world/china/global-markets-global-markets-2026-10-29/)\nreports post-close technology earnings pressure. That later context is not\nblended into the closing prices; refresh opening conditions before using the\nnext-session row. The week and month maps also require refresh as their windows\nprogress. Technical levels describe conditional scenarios, not guaranteed price bounds.\n",
+  "methods": "Saved two-year daily OHLC is clipped through October 29. Daily-bar timestamps\nidentify the session opening bar; the selected OHLC was retrieved after the\ncompleted cash close. The baseline as-of is 16:00 New York, not the daily bar's\n09:30 timestamp. No October 30 observations or later close is used.\n\nMethods combine daily/5/10/20/50/60/200/252-session ranges; 20/50/200-session simple\naverages and slopes; and confirmed swing pivots requiring two bars on each side\nwithin the saved history. The 20-session range is a month proxy, not a calendar\nmonth return. 38.2% and 61.8% retracements of that observed range are secondary\nconfluence aids, not independently predictive levels. Calculations and pivot\ndates remain in the inspectable technical JSON. ETF volume is compared with the\n20-session mean; SPX cash volume is unavailable. Ticker-specific next-day versus\nweekly/monthly anchors are explained in every row.\n\nPublic [SquawkFlow methodology and dated observations](https://squawkflow.com/gex)\nprovide the qualified SPX gamma context. This is an assumed-position provider\nmodel, not an audited dealer book; its front-expiry levels were withdrawn. The\nother four tickers have explicit gamma gaps. No inaccessible posts, private\nfeeds, performance record or open-interest-derived dealer facts are invented.\n",
+  "calendar_note": "The week is one calendar week from the October 29 close, covering five trading sessions through November 5. The month runs to nominal November 29 (Sunday); its final session is November 27, an early close, with Thanksgiving November 26 excluded: 20 trading sessions. Horizons describe technical maps, not option expirations.",
+  "sources": "- [SPX saved daily inputs](https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history) \u00b7 retrieved/researched 2026-10-30T02:22:10.583819+00:00.\n- [QQQ saved daily inputs](https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=2y&interval=1d&events=history) \u00b7 retrieved/researched 2026-10-30T02:22:10.624014+00:00.\n- [IWM saved daily inputs](https://query1.finance.yahoo.com/v8/finance/chart/IWM?range=2y&interval=1d&events=history) \u00b7 retrieved/researched 2026-10-30T02:22:10.613191+00:00.\n- [TLT saved daily inputs](https://query1.finance.yahoo.com/v8/finance/chart/TLT?range=2y&interval=1d&events=history) \u00b7 retrieved/researched 2026-10-30T02:22:10.636312+00:00.\n- [GLD saved daily inputs](https://query1.finance.yahoo.com/v8/finance/chart/GLD?range=2y&interval=1d&events=history) \u00b7 retrieved/researched 2026-10-30T02:22:10.601111+00:00.\n- [BLS calendar](https://www.bls.gov/schedule/2026/10_sched.htm) \u00b7 retrieved/researched 2026-10-30T02:38:14.552093+00:00.\n- [Reuters' October 29 wrap](https://www.reuters.com/world/china/global-markets-global-markets-2026-10-29/) \u00b7 retrieved/researched 2026-10-30T02:38:14.552093+00:00.\n- [SquawkFlow methodology and dated observations](https://squawkflow.com/gex) \u00b7 retrieved/researched 2026-10-30T02:38:14.552093+00:00.\n- [NYSE official calendar](https://www.nyse.com/markets/hours-calendars) \u00b7 retrieved/researched 2026-10-30T02:38:14.552093+00:00.\n- [SPX contract specifications](https://www.cboe.com/tradable-products/sp-500/spx-options/spx-specifications) \u00b7 retrieved/researched 2026-10-30T02:38:14.552093+00:00.\n- [Earlier noon revision evidence](https://github.com/AliBoloor/market-wrap/blob/main/data/trade-ideas/2026-10-29/revisions/noon/report.md) \u00b7 retrieved/researched 2026-10-30T02:38:14.552093+00:00.",
+  "limitations": "Automatic recurring refresh has not yet been confirmed; check the actual issue timestamps. Daily remains a separate closing publication. The earlier noon issue is preserved in revision evidence and Git history. All technical strikes require the actual contract/listing you choose; premiums and fees are unknown. No broker/order action occurs."
 }

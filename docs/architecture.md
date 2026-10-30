@@ -67,13 +67,14 @@ publication-safe observations, generated charts, and validation metadata.
 Secrets, cookies, credentials, browser state, private messages, account data,
 positions, and local system information are prohibited.
 
-## Trade Ideas noon publication
+## Trade Ideas technical horizons
 
-A separate noon Pacific research owner prepares Trade Ideas for the next
-verified exchange session. Daily retains its independent closing schedule and
-cannot overwrite the noon issue. Shared Markdown/manifest/Pages architecture,
-family/date completion markers and a local atomic publication lock prevent
-repeat/conflicting work. Version 2 renders three defined-risk families with
-conditional $500 fee-inclusive entry eligibility. Actual intraday timestamps
-and source delays are visible; legacy dated evidence remains unchanged. See
-`docs/trade-ideas.md` and `automation/TRADE_IDEAS_NOON_TASK_PROMPT.md`.
+An independent 15:00 America/New_York research owner prepares short-condor
+technical maps for five tickers and day/week/month horizons. The user manages
+expiries. Daily retains its closing schedule and cannot overwrite this issue.
+Shared Markdown/manifests/Pages, family/date markers and an atomic local lock
+prevent repeat/conflicting work. Policy 4 uses condor.py; legacy renderers preserve
+archives. The first authorized edition uses October 29's completed close rather
+than pretending it was a 15:00 snapshot. Native scheduler registration remains
+unconfirmed; reconcile the existing ID, never create a duplicate. See
+trade-ideas.md and automation/TRADE_IDEAS_1500_TASK_PROMPT.md.

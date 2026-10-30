@@ -1,0 +1,269 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-10-29",
+  "report_family": "trade-ideas",
+  "report_type": "Trade Ideas",
+  "generated_at": "2026-10-29T19:00:20.277342+00:00",
+  "market_data_as_of": "2026-10-29T19:00:00+00:00",
+  "state": "validated",
+  "sources": [
+    {
+      "source_id": "research-0",
+      "title": "QQQ's latest completed history",
+      "url": "https://stockanalysis.com/etf/qqq/history/",
+      "publisher": "QQQ's",
+      "accessed_at": "2026-10-29T19:00:20.277342+00:00",
+      "supports": [
+        "noon research and next-session context"
+      ]
+    },
+    {
+      "source_id": "research-1",
+      "title": "IWM's completed history",
+      "url": "https://stockanalysis.com/etf/iwm/history/",
+      "publisher": "IWM's",
+      "accessed_at": "2026-10-29T19:00:20.277342+00:00",
+      "supports": [
+        "noon research and next-session context"
+      ]
+    },
+    {
+      "source_id": "research-2",
+      "title": "BEA's advance Q3 GDP release",
+      "url": "https://www.bea.gov/news/2026/gdp-advance-estimate-3rd-quarter-2026",
+      "publisher": "BEA's",
+      "accessed_at": "2026-10-29T19:00:20.277342+00:00",
+      "supports": [
+        "noon research and next-session context"
+      ]
+    },
+    {
+      "source_id": "research-3",
+      "title": "September personal income/outlays",
+      "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026",
+      "publisher": "September",
+      "accessed_at": "2026-10-29T19:00:20.277342+00:00",
+      "supports": [
+        "noon research and next-session context"
+      ]
+    },
+    {
+      "source_id": "research-4",
+      "title": "Microsoft's issuer release",
+      "url": "https://news.microsoft.com/source/2026/10/28/microsoft-announces-first-quarter-results-2/",
+      "publisher": "Microsoft's",
+      "accessed_at": "2026-10-29T19:00:20.277342+00:00",
+      "supports": [
+        "noon research and next-session context"
+      ]
+    },
+    {
+      "source_id": "research-5",
+      "title": "Reuters' Alphabet coverage",
+      "url": "https://new.streetinsider.com/Reuters/Alphabet%2Bshares%2Bfall%2Bafter%2Brevenue%2Bmiss%2C%2Bcash%2Bburn%2Bworsens/27249195.html",
+      "publisher": "Reuters'",
+      "accessed_at": "2026-10-29T19:00:20.277342+00:00",
+      "supports": [
+        "noon research and next-session context"
+      ]
+    },
+    {
+      "source_id": "research-6",
+      "title": "official announcement",
+      "url": "https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2026-report",
+      "publisher": "official",
+      "accessed_at": "2026-10-29T19:00:20.277342+00:00",
+      "supports": [
+        "noon research and next-session context"
+      ]
+    },
+    {
+      "source_id": "research-7",
+      "title": "BLS release calendar",
+      "url": "https://www.bls.gov/schedule/2026/10_sched.htm",
+      "publisher": "BLS",
+      "accessed_at": "2026-10-29T19:00:20.277342+00:00",
+      "supports": [
+        "noon research and next-session context"
+      ]
+    },
+    {
+      "source_id": "research-8",
+      "title": "Issuer event",
+      "url": "https://investor.exxonmobil.com/news-events/ir-calendar/detail/20261030-3q-2026-earnings-call",
+      "publisher": "Issuer",
+      "accessed_at": "2026-10-29T19:00:20.277342+00:00",
+      "supports": [
+        "noon research and next-session context"
+      ]
+    },
+    {
+      "source_id": "research-9",
+      "title": "Official agenda",
+      "url": "https://www.frbsf.org/wp-content/uploads/2026-FRB-SF-AI-Symposium-Conf-Agenda.pdf",
+      "publisher": "Official",
+      "accessed_at": "2026-10-29T19:00:20.277342+00:00",
+      "supports": [
+        "noon research and next-session context"
+      ]
+    },
+    {
+      "source_id": "research-10",
+      "title": "Issuer event calendar",
+      "url": "https://chevroncorp.gcs-web.com/events-and-presentations/upcoming-events",
+      "publisher": "Issuer",
+      "accessed_at": "2026-10-29T19:00:20.277342+00:00",
+      "supports": [
+        "noon research and next-session context"
+      ]
+    },
+    {
+      "source_id": "research-11",
+      "title": "NYSE's calendar",
+      "url": "https://www.nyse.com/markets/hours-calendars",
+      "publisher": "NYSE's",
+      "accessed_at": "2026-10-29T19:00:20.277342+00:00",
+      "supports": [
+        "noon research and next-session context"
+      ]
+    },
+    {
+      "source_id": "snapshot-GSPC",
+      "title": "^GSPC five-minute public input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-29T19:00:00.569241+00:00",
+      "supports": [
+        "intraday observation"
+      ]
+    },
+    {
+      "source_id": "snapshot-QQQ",
+      "title": "QQQ five-minute public input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-29T19:00:00.737219+00:00",
+      "supports": [
+        "intraday observation"
+      ]
+    },
+    {
+      "source_id": "snapshot-IWM",
+      "title": "IWM five-minute public input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IWM?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-29T19:00:00.938487+00:00",
+      "supports": [
+        "intraday observation"
+      ]
+    },
+    {
+      "source_id": "snapshot-TLT",
+      "title": "TLT five-minute public input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TLT?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-29T19:00:01.113686+00:00",
+      "supports": [
+        "intraday observation"
+      ]
+    },
+    {
+      "source_id": "snapshot-GLD",
+      "title": "GLD five-minute public input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GLD?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-29T19:00:01.280599+00:00",
+      "supports": [
+        "intraday observation"
+      ]
+    },
+    {
+      "source_id": "snapshot-VIX",
+      "title": "^VIX five-minute public input",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=5d&interval=5m&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-29T19:00:01.459280+00:00",
+      "supports": [
+        "intraday observation"
+      ]
+    },
+    {
+      "source_id": "prior-GSPC",
+      "title": "^GSPC completed daily history",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-28T20:26:34.573519+00:00",
+      "supports": [
+        "completed-day technical context"
+      ]
+    },
+    {
+      "source_id": "prior-QQQ",
+      "title": "QQQ completed daily history",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=2y&interval=1d&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-28T20:26:35.763164+00:00",
+      "supports": [
+        "completed-day technical context"
+      ]
+    },
+    {
+      "source_id": "prior-IWM",
+      "title": "IWM completed daily history",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IWM?range=2y&interval=1d&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-28T20:26:35.939431+00:00",
+      "supports": [
+        "completed-day technical context"
+      ]
+    },
+    {
+      "source_id": "listing-SPX",
+      "title": "SPX listing verification gate",
+      "url": "https://www.cboe.com/available_weeklys/",
+      "publisher": "Cboe",
+      "accessed_at": "2026-10-29T19:00:20.277342+00:00",
+      "supports": [
+        "contract verification limitation"
+      ]
+    },
+    {
+      "source_id": "listing-QQQ",
+      "title": "QQQ listing verification gate",
+      "url": "https://www.cboe.com/delayed_quotes/qqq/quote_table/",
+      "publisher": "Cboe",
+      "accessed_at": "2026-10-29T19:00:20.277342+00:00",
+      "supports": [
+        "contract verification limitation"
+      ]
+    },
+    {
+      "source_id": "listing-IWM",
+      "title": "IWM listing verification gate",
+      "url": "https://www.cboe.com/delayed_quotes/iwm/quote_table/",
+      "publisher": "Cboe",
+      "accessed_at": "2026-10-29T19:00:20.277342+00:00",
+      "supports": [
+        "contract verification limitation"
+      ]
+    }
+  ],
+  "series_files": [
+    "data/trade-ideas/2026-10-29/series/VIX.json",
+    "data/trade-ideas/2026-10-29/series/GLD.json",
+    "data/trade-ideas/2026-10-29/series/QQQ.json",
+    "data/trade-ideas/2026-10-29/series/TLT.json",
+    "data/trade-ideas/2026-10-29/series/GSPC.json",
+    "data/trade-ideas/2026-10-29/series/IWM.json",
+    "data/trade-ideas/2026-10-29/ideas.json",
+    "data/trade-ideas/2026-10-29/noon-snapshot.json",
+    "data/trade-ideas/2026-10-29/failures.json",
+    "data/daily/2026-10-28/technicals.json"
+  ],
+  "chart_files": [],
+  "warnings": [
+    "Intraday noon snapshot, not completed Thursday closing data.",
+    "Exact listed legs, premiums and actual all-in costs unverified; $500 entry eligibility conditional.",
+    "Public X coverage incomplete; no verified consensus."
+  ]
+}

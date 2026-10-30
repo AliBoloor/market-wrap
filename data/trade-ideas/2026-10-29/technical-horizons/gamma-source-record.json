@@ -1,0 +1,7 @@
+{
+  "source": "https://squawkflow.com/gex",
+  "retrieved_at": "2026-10-30T02:38:14.552093+00:00",
+  "observed_at": "2026-10-29T15:55:00-04:00",
+  "provider": "SquawkFlow",
+  "assessment": "Secondary model, not observed dealer inventory: SquawkFlow reports positive full-chain modeled exposure, overnight flip about 7703 and 15:55 ET repriced flip about 7714 (Oct 29). It uses settled Oct 28 open interest, Black-Scholes/IV assumptions and assumed dealer sides. Its front-expiry walls/flip are withdrawn after an audit; they are not adopted. Refresh the model for the relevant horizon; technical invalidation takes priority."
+}
