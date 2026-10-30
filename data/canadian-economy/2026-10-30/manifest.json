@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-10-30",
+  "report_type": "Canadian Economy",
+  "report_family": "canadian-economy",
+  "generated_at": "2026-10-30T20:17:46Z",
+  "market_data_as_of": "2026-10-30T20:16:18Z",
+  "state": "validated",
+  "sources": [
+    {"source_id":"statcan-gdp","title":"Gross domestic product by industry, August 2026","url":"https://www150.statcan.gc.ca/n1/daily-quotidien/261030/dq261030a-eng.htm","publisher":"Statistics Canada","accessed_at":"2026-10-30T20:17:46Z","supports":["GDP","manufacturing","resources","advance estimate"]},
+    {"source_id":"statcan-labour","title":"Labour Force Survey, September 2026","url":"https://www150.statcan.gc.ca/n1/daily-quotidien/261009/dq261009a-eng.htm","publisher":"Statistics Canada","accessed_at":"2026-10-30T20:17:46Z","supports":["employment","unemployment","wages","participation","provincial labour"]},
+    {"source_id":"statcan-cpi","title":"Consumer Price Index, September 2026","url":"https://www150.statcan.gc.ca/n1/daily-quotidien/261019/dq261019a-eng.htm?indgeo=0&indid=3665-2","publisher":"Statistics Canada","accessed_at":"2026-10-30T20:17:46Z","supports":["inflation","energy","food","shelter"]},
+    {"source_id":"statcan-trade","title":"Canadian international merchandise trade, August 2026","url":"https://www150.statcan.gc.ca/n1/daily-quotidien/261006/dq261006a-eng.htm","publisher":"Statistics Canada","accessed_at":"2026-10-30T20:17:46Z","supports":["exports","imports","trade balance","United States trade"]},
+    {"source_id":"statcan-retail","title":"Retail trade, August 2026","url":"https://www150.statcan.gc.ca/n1/daily-quotidien/261023/dq261023a-eng.htm","publisher":"Statistics Canada","accessed_at":"2026-10-30T20:17:46Z","supports":["retail sales","volumes","advance estimate"]},
+    {"source_id":"statcan-productivity","title":"Labour productivity, hourly compensation and unit labour cost, second quarter 2026","url":"https://www150.statcan.gc.ca/n1/daily-quotidien/260903/dq260903c-eng.htm","publisher":"Statistics Canada","accessed_at":"2026-10-30T20:17:46Z","supports":["productivity","hours worked","unit labour costs"]},
+    {"source_id":"statcan-population","title":"Canada's population estimates, second quarter 2026","url":"https://www150.statcan.gc.ca/n1/daily-quotidien/260923/dq260923b-eng.htm","publisher":"Statistics Canada","accessed_at":"2026-10-30T20:17:46Z","supports":["population","immigration","non-permanent residents"]},
+    {"source_id":"statcan-calendar","title":"2026-2027 major economic release dates","url":"https://www150.statcan.gc.ca/n1/en/release-diffusion/2026-eng.pdf?st=JwXqPj0_","publisher":"Statistics Canada","accessed_at":"2026-10-30T20:17:46Z","supports":["November release calendar"]},
+    {"source_id":"cmhc-starts","title":"Monthly Housing Starts and Other Construction Data Tables, September 2026","url":"https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/housing-data/data-tables/housing-market-data/monthly-housing-starts-construction-data-tables","publisher":"Canada Mortgage and Housing Corporation","accessed_at":"2026-10-30T20:17:46Z","supports":["housing starts","regional housing"]},
+    {"source_id":"cmhc-mortgage","title":"Residential Mortgage Industry Report, fall 2026","url":"https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/housing-research/research-reports/housing-finance/residential-mortgage-industry-report","publisher":"Canada Mortgage and Housing Corporation","accessed_at":"2026-10-30T20:17:46Z","supports":["mortgage arrears","mortgage payments","mortgage debt"]},
+    {"source_id":"boc-decision","title":"Bank of Canada raises the policy rate by 25 basis points to 2.5%","url":"https://www.bankofcanada.ca/2026/10/fad-press-release-2026-10-28/","publisher":"Bank of Canada","accessed_at":"2026-10-30T20:17:46Z","supports":["policy rate","growth outlook","inflation outlook","global context"]},
+    {"source_id":"boc-mpr","title":"Monetary Policy Report—October 2026","url":"https://www.bankofcanada.ca/publications/mpr/mpr-2026-10-28/","publisher":"Bank of Canada","accessed_at":"2026-10-30T20:17:46Z","supports":["monetary policy","growth forecast","inflation forecast","policy reading"]},
+    {"source_id":"boc-yields","title":"Government of Canada two- and ten-year benchmark bond yields","url":"https://www.bankofcanada.ca/valet/observations/BD.CDN.2YR.DQ.YLD,BD.CDN.10YR.DQ.YLD/json?start_date=2026-09-30&end_date=2026-10-30","publisher":"Bank of Canada","accessed_at":"2026-10-30T20:17:46Z","supports":["two-year yield","ten-year yield","yield curve"]},
+    {"source_id":"boc-fx","title":"USD/CAD daily average observations","url":"https://www.bankofcanada.ca/valet/observations/FXUSDCAD/json?start_date=2026-09-30&end_date=2026-10-30","publisher":"Bank of Canada","accessed_at":"2026-10-30T20:17:46Z","supports":["Canadian dollar","exchange rate"]},
+    {"source_id":"boc-calendar","title":"Bank of Canada 2026 policy announcement schedule","url":"https://www.bankofcanada.ca/2025/08/bank-canada-publishes-2026-schedule-policy-interest-rate-announcements-other-major-publications/","publisher":"Bank of Canada","accessed_at":"2026-10-30T20:17:46Z","supports":["December policy decision"]},
+    {"source_id":"finance-budget","title":"Government of Canada to release Budget 2026 on November 5","url":"https://www.canada.ca/en/department-finance/news/2026/10/government-of-canada-to-release-budget-2026-on-november-5-2026.html","publisher":"Department of Finance Canada","accessed_at":"2026-10-30T20:17:46Z","supports":["Budget 2026 timing","fiscal policy"]},
+    {"source_id":"finance-remission","title":"Process for requesting remission of tariffs that apply on certain goods from the U.S.","url":"https://www.canada.ca/en/department-finance/programs/international-trade-finance-policy/process-requesting-remission-tariffs-that-apply-on-certain-goods-us.html","publisher":"Department of Finance Canada","accessed_at":"2026-10-30T20:17:46Z","supports":["tariff remission","trade policy"]},
+    {"source_id":"pbo-outlook","title":"Economic and Fiscal Outlook – October 2026","url":"https://www.pbo-dpb.ca/en/publications/RP-2627-011-S--economic-fiscal-outlook-october-2026--perspectives-economiques-financieres-octobre-2026","publisher":"Parliamentary Budget Officer","accessed_at":"2026-10-30T20:17:46Z","supports":["fiscal outlook","growth forecast","deficits","borrowing","policy reading"]},
+    {"source_id":"ontario-action","title":"Prime Minister Carney and Premier Ford launch new action plan to protect workers from tariffs and strengthen Ontario industries","url":"https://www.pm.gc.ca/en/news/news-releases/2026/10/21/prime-minister-carney-and-premier-ford-launch-new-action-plan-protect","publisher":"Prime Minister of Canada","accessed_at":"2026-10-30T20:17:46Z","supports":["Ontario industry policy","tariff support","provincial policy"]},
+    {"source_id":"quebec-election","title":"Results and statistics – 2026 provincial general election","url":"https://www.electionsquebec.qc.ca/en/results-and-statistics/","publisher":"Élections Québec","accessed_at":"2026-10-30T20:17:46Z","supports":["Quebec election","provincial politics"]},
+    {"source_id":"td-weekly","title":"Weekly Bottom Line, October 23, 2026","url":"https://economics.td.com/ca-weekly-bottom-line?linkId=98875353","publisher":"TD Economics","accessed_at":"2026-10-30T20:17:46Z","supports":["commercial bank view","monetary policy debate","policy reading"]},
+    {"source_id":"cfib-trade","title":"Mapping Canada's uneven exposure to the U.S. trade war","url":"https://www.cfib-fcei.ca/en/research-economic-analysis/mapping-canadas-uneven-exposure-to-the-u.s.-trade-war-the-provinces-and-industries-most-at-risk","publisher":"Canadian Federation of Independent Business","accessed_at":"2026-10-30T20:17:46Z","supports":["small business","tariffs","business viewpoint","policy reading"]},
+    {"source_id":"irpp-trade","title":"Canada's trade deals need a small-business usability test","url":"https://policyoptions.irpp.org/2026/10/sme-trade-deals/","publisher":"Policy Options / Institute for Research on Public Policy","accessed_at":"2026-10-30T20:17:46Z","supports":["trade diversification","small business","centrist institutional viewpoint","policy reading"]},
+    {"source_id":"cdhowe-shadow","title":"The Growth Imperative: The C.D. Howe Institute's 2026 Shadow Budget","url":"https://cdhowe.org/publication/the-growth-imperative-the-c-d-howe-institutes-2026-shadow-budget/","publisher":"C.D. Howe Institute","accessed_at":"2026-10-30T20:17:46Z","supports":["market-oriented viewpoint","fiscal policy","productivity","policy reading"]},
+    {"source_id":"ccpa-industry","title":"Alternative federal budget 2026-27: Industrial development","url":"https://www.policyalternatives.ca/news-research/alternative-federal-budget-2026-27-industrial-development/","publisher":"Canadian Centre for Policy Alternatives","accessed_at":"2026-10-30T20:17:46Z","supports":["progressive viewpoint","industrial policy","worker adjustment","policy reading"]},
+    {"source_id":"yahoo","title":"Yahoo Finance chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPTSE?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-10-30T20:16:18Z","supports":["market returns","technicals","chart"]}
+  ],
+  "series_files": [
+    "data/canadian-economy/2026-10-30/series/GSPTSE.json",
+    "data/canadian-economy/2026-10-30/series/CL_F.json",
+    "data/canadian-economy/2026-10-30/series/GC_F.json",
+    "data/canadian-economy/2026-10-30/series/RY.json",
+    "data/canadian-economy/2026-10-30/series/ENB.json",
+    "data/canadian-economy/2026-10-30/series/CNI.json"
+  ],
+  "chart_files": ["public/charts/canadian-economy/2026-10-30/GSPTSE.png"],
+  "warnings": [
+    "CAD=X and TD failed strict Yahoo OHLC validation and were excluded from deterministic market calculations.",
+    "Official Bank of Canada USD/CAD replaced the rejected currency history; no substitute TD series was fabricated.",
+    "Official bond-yield observations stop at October 29 while official currency observations extend through October 30.",
+    "Official releases published in October have mixed August, September, second-quarter, and point-in-time reference periods.",
+    "Selected company series are U.S.-listed shares denominated in U.S. dollars."
+  ]
+}
