@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-11-02",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-11-02T21:32:45.013Z",
+  "market_data_as_of": "2026-11-02T21:00:00+00:00",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"More drops for AI and tech stocks overshadow gains for most of Wall Street","url":"https://apnews.com/article/stocks-markets-ai-earnings-oil-iran-048328e49e47ce7afe6c1fb9d9acf13d","publisher":"Associated Press","accessed_at":"2026-11-02T21:32:45.013Z","supports":["closing narrative","breadth","company drivers","global markets","ISM context"]},
+    {"source_id":"ap-scorecard","title":"How major US stock indexes fared Monday 11/2/2026","url":"https://apnews.com/article/wall-street-stocks-dow-nasdaq-475bb37b4d95dd99e26c94e708c99f8f","publisher":"Associated Press","accessed_at":"2026-11-02T21:32:45.013Z","supports":["index closes","year-to-date context"]},
+    {"source_id":"ism-october","title":"October 2026 Manufacturing PMI","url":"https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/october/","publisher":"Institute for Supply Management","accessed_at":"2026-11-02T21:32:45.013Z","supports":["Manufacturing PMI","production","employment"]},
+    {"source_id":"bls-calendar","title":"Schedule of Selected Releases 2026","url":"https://www.bls.gov/schedule/2026/home.htm","publisher":"Bureau of Labor Statistics","accessed_at":"2026-11-02T21:32:45.013Z","supports":["November 3 JOLTS release time"]},
+    {"source_id":"fec-election","title":"Election results and voting information","url":"https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/","publisher":"Federal Election Commission","accessed_at":"2026-11-02T21:32:45.013Z","supports":["November 3 federal election date"]},
+    {"source_id":"cboe-options","title":"Tech Rout, Muted Vol: Bullish Positioning Unwinds","url":"https://www.cboe.com/insights/posts/week-of-11-2-2026-tech-rout-muted-vol-bullish-positioning-unwinds/","publisher":"Cboe","accessed_at":"2026-11-02T21:32:45.013Z","supports":["VIX context","single-stock skew","retail put buying","TLT options"]},
+    {"source_id":"fred-two-year","title":"Market Yield on U.S. Treasury Securities at 2-Year Constant Maturity","url":"https://fred.stlouisfed.org/series/DGS2","publisher":"Federal Reserve Bank of St. Louis","accessed_at":"2026-11-02T21:32:45.013Z","supports":["two-year Treasury yield"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance public chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-11-02T21:32:58.202413Z","supports":["dashboard","technicals","realized volatility","charts"]},
+    {"source_id":"nyse-calendar","title":"NYSE market hours and calendars","url":"https://www.nyse.com/markets/hours-calendars","publisher":"NYSE","accessed_at":"2026-11-02T21:32:45.013Z","supports":["next-session calendar"]}
+  ],
+  "series_files": [
+    "data/daily/2026-11-02/series/BTC-USD.json","data/daily/2026-11-02/series/CL_F.json","data/daily/2026-11-02/series/DX-Y.NYB.json","data/daily/2026-11-02/series/GC_F.json","data/daily/2026-11-02/series/GSPC.json","data/daily/2026-11-02/series/IWM.json","data/daily/2026-11-02/series/QQQ.json","data/daily/2026-11-02/series/SPY.json","data/daily/2026-11-02/series/TLT.json","data/daily/2026-11-02/series/TNX.json","data/daily/2026-11-02/series/VIX.json","data/daily/2026-11-02/series/XLE.json","data/daily/2026-11-02/series/XLF.json","data/daily/2026-11-02/series/XLI.json","data/daily/2026-11-02/series/XLK.json","data/daily/2026-11-02/series/XLV.json"
+  ],
+  "chart_files": ["public/charts/daily/2026-11-02/GSPC.png","public/charts/daily/2026-11-02/SPY.png","public/charts/daily/2026-11-02/QQQ.png","public/charts/daily/2026-11-02/SPY-vs-TLT.png"],
+  "warnings": ["Yahoo daily timestamps are provider session labels, not certified closing quote times.","Options measures are source-dependent, delayed and non-executable.","Bitcoin is rolling; WTI and gold are continuous futures proxies.","Election results timing is uncertain and no directional outcome is assumed.","No executable option premiums, fees, strikes or probabilities are presented."]
+}
