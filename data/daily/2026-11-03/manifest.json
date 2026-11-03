@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-11-03",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-11-03T21:31:29.761Z",
+  "market_data_as_of": "2026-11-03T21:00:00+00:00",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"Nvidia and other Big Tech stocks lift Wall Street and make up for a drop by Apple","url":"https://apnews.com/article/0d235af127a92c68da0cc2c45c028cef","publisher":"Associated Press","accessed_at":"2026-11-03T21:31:29.761Z","supports":["closing narrative","company drivers","global markets"]},
+    {"source_id":"ap-scorecard","title":"How major US stock indexes fared Tuesday 11/3/2026","url":"https://apnews.com/article/95ac47c160dba546cbbdf72c10010e2c","publisher":"Associated Press","accessed_at":"2026-11-03T21:31:29.761Z","supports":["index scorecard"]},
+    {"source_id":"bls-jolts","title":"Job Openings and Labor Turnover Survey — September 2026","url":"https://www.bls.gov/news.release/jolts.htm","publisher":"Bureau of Labor Statistics","accessed_at":"2026-11-03T21:31:29.761Z","supports":["job openings","hires","separations","quits"]},
+    {"source_id":"bea-trade","title":"International Trade in Goods and Services — August 2026","url":"https://bea.gov/news/2026/us-international-trade-goods-and-services-august-2026","publisher":"Bureau of Economic Analysis","accessed_at":"2026-11-03T21:31:29.761Z","supports":["November 4 September trade release"]},
+    {"source_id":"ism-calendar","title":"ISM PMI report release calendar","url":"https://www.ismworld.org/supply-management-news-and-reports/reports/rob-report-calendar/","publisher":"Institute for Supply Management","accessed_at":"2026-11-03T21:31:29.761Z","supports":["November 4 Services PMI release"]},
+    {"source_id":"cboe-options","title":"Tech Rout, Muted Vol: Bullish Positioning Unwinds","url":"https://www.cboe.com/insights/posts/week-of-11-2-2026-tech-rout-muted-vol-bullish-positioning-unwinds/","publisher":"Cboe","accessed_at":"2026-11-03T21:31:29.761Z","supports":["options positioning","skew","TLT options"]},
+    {"source_id":"fred-two-year","title":"Market Yield on U.S. Treasury Securities at 2-Year Constant Maturity","url":"https://fred.stlouisfed.org/series/DGS2","publisher":"Federal Reserve Bank of St. Louis","accessed_at":"2026-11-03T21:31:29.761Z","supports":["stale November 2 two-year yield"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance public chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-11-03T21:32:06.123997Z","supports":["dashboard","technicals","realized volatility","charts"]},
+    {"source_id":"nyse-calendar","title":"NYSE market hours and calendars","url":"https://www.nyse.com/markets/hours-calendars","publisher":"NYSE","accessed_at":"2026-11-03T21:31:29.761Z","supports":["next regular session"]}
+  ],
+  "series_files": [
+    "data/daily/2026-11-03/series/BTC-USD.json","data/daily/2026-11-03/series/DX-Y.NYB.json","data/daily/2026-11-03/series/GSPC.json","data/daily/2026-11-03/series/IWM.json","data/daily/2026-11-03/series/QQQ.json","data/daily/2026-11-03/series/SPY.json","data/daily/2026-11-03/series/TLT.json","data/daily/2026-11-03/series/TNX.json","data/daily/2026-11-03/series/VIX.json","data/daily/2026-11-03/series/XLE.json","data/daily/2026-11-03/series/XLF.json","data/daily/2026-11-03/series/XLI.json","data/daily/2026-11-03/series/XLK.json","data/daily/2026-11-03/series/XLV.json"
+  ],
+  "chart_files": ["public/charts/daily/2026-11-03/GSPC.png","public/charts/daily/2026-11-03/SPY.png","public/charts/daily/2026-11-03/QQQ.png","public/charts/daily/2026-11-03/SPY-vs-TLT.png"],
+  "warnings": ["WTI and gold were rejected by strict OHLC validation and omitted.","The latest available two-year Treasury observation was November 2, one day stale.","Yahoo daily timestamps are provider session labels, not certified closing quote times.","Options measures are source-dependent, delayed and non-executable.","Bitcoin is rolling.","Election results were unresolved at publication time.","No executable option premiums, fees, strikes or probabilities are presented."]
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "symbol": "GC=F",
+    "source": "Yahoo Finance chart data",
+    "reason": "low is above another OHLC value"
+  },
+  {
+    "symbol": "CL=F",
+    "source": "Yahoo Finance chart data",
+    "reason": "high is below another OHLC value"
+  }
+]
