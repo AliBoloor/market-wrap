@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-11-05",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-11-05T21:30:14.737Z",
+  "market_data_as_of": "2026-11-05T21:00:00+00:00",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"A brutal sell-off for AI stocks sends Wall Street reeling, and the S&P 500 tumbles 4.4%","url":"https://apnews.com/article/stocks-markets-ai-midterm-oil-trump-7ee9c212805aa5e70cf34d25aab7a36e","publisher":"Associated Press","accessed_at":"2026-11-05T21:30:14.737Z","supports":["closing narrative","AI selloff","global markets"]},
+    {"source_id":"bls-productivity","title":"Productivity and Costs, Third Quarter 2026, Preliminary","url":"https://www.bls.gov/news.release/prod2.nr0.htm","publisher":"Bureau of Labor Statistics","accessed_at":"2026-11-05T21:30:14.737Z","supports":["productivity","unit labor costs"]},
+    {"source_id":"ap-claims","title":"Unemployment claims drop to 189,000, the fewest since mid-July","url":"https://apnews.com/article/039c8e6b655b7bc3dd5e2836bbb2ecc9","publisher":"Associated Press","accessed_at":"2026-11-05T21:30:14.737Z","supports":["initial unemployment claims"]},
+    {"source_id":"bls-employment-calendar","title":"Schedule of Releases for the Employment Situation","url":"https://www.bls.gov/schedule/news_release/empsit.htm","publisher":"Bureau of Labor Statistics","accessed_at":"2026-11-05T21:30:14.737Z","supports":["November 6 Employment Situation"]},
+    {"source_id":"cboe-options","title":"Tech Rout, Muted Vol: Bullish Positioning Unwinds","url":"https://www.cboe.com/insights/posts/week-of-11-2-2026-tech-rout-muted-vol-bullish-positioning-unwinds/","publisher":"Cboe","accessed_at":"2026-11-05T21:30:14.737Z","supports":["call demand","put demand","skew"]},
+    {"source_id":"saxo-options","title":"Vote premium drains from the front - Options Brief - 5 November 2026","url":"https://www.home.saxo/en-gb/content/articles/options/vote-premium-drains-from-the-front---options-brief---5-november-2026-05112026","publisher":"Saxo","accessed_at":"2026-11-05T21:30:14.737Z","supports":["pre-open Friday implied move","snapshot limitation"]},
+    {"source_id":"treasury-rates","title":"Daily Treasury Par Yield Curve Rates","url":"https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve","publisher":"U.S. Department of the Treasury","accessed_at":"2026-11-05T21:30:14.737Z","supports":["November 4 two-year Treasury yield"]},
+    {"source_id":"axios-ai","title":"Big Tech scrambles to offer voters a new AI deal","url":"https://www.axios.com/2026/11/05/ai-data-center-election-backlash-concessions","publisher":"Axios","accessed_at":"2026-11-05T21:30:14.737Z","supports":["AI data-center policy context"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance public chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-11-05T21:31:23Z","supports":["dashboard","technicals","realized volatility","charts"]},
+    {"source_id":"nyse-calendar","title":"NYSE market hours and calendars","url":"https://www.nyse.com/markets/hours-calendars","publisher":"NYSE","accessed_at":"2026-11-05T21:30:14.737Z","supports":["next regular session"]}
+  ],
+  "series_files": [
+    "data/daily/2026-11-05/series/BTC-USD.json","data/daily/2026-11-05/series/CL_F.json","data/daily/2026-11-05/series/DX-Y.NYB.json","data/daily/2026-11-05/series/GC_F.json","data/daily/2026-11-05/series/GSPC.json","data/daily/2026-11-05/series/IWM.json","data/daily/2026-11-05/series/QQQ.json","data/daily/2026-11-05/series/SPY.json","data/daily/2026-11-05/series/TLT.json","data/daily/2026-11-05/series/TNX.json","data/daily/2026-11-05/series/VIX.json","data/daily/2026-11-05/series/XLE.json","data/daily/2026-11-05/series/XLF.json","data/daily/2026-11-05/series/XLI.json","data/daily/2026-11-05/series/XLK.json","data/daily/2026-11-05/series/XLV.json"
+  ],
+  "chart_files": ["public/charts/daily/2026-11-05/GSPC.png","public/charts/daily/2026-11-05/SPY.png","public/charts/daily/2026-11-05/QQQ.png","public/charts/daily/2026-11-05/SPY-vs-TLT.png"],
+  "warnings": ["The latest available official two-year Treasury observation was November 4 and is one session stale.","Yahoo daily timestamps are provider session labels, not certified closing quote times.","The Friday options implied-move figure was observed before Thursday's selloff and is not a closing estimate.","Options measures are source-dependent, delayed and non-executable.","Bitcoin is rolling; WTI and gold are continuous futures proxies.","No executable option premiums, fees, strikes or probabilities are presented."]
+}
