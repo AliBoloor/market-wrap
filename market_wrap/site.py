@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import html
+from hashlib import sha256
 import re
 import shutil
 from dataclasses import dataclass
@@ -146,6 +147,8 @@ def _report_article(report: Report, template: Template) -> str:
     freshness = str(metadata["freshness"])
     completeness = str(metadata["completeness"])
     return template.substitute(
+        report_family=html.escape(report.family),
+        source_sha256=sha256(report.source.read_bytes()).hexdigest(),
         title=html.escape(str(metadata["title"])),
         trading_date=html.escape(report.slug),
         coverage_label=html.escape(f"Data session {report.slug}" if report.family == "trade-ideas" else report.slug),

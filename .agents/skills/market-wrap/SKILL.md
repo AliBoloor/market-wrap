@@ -18,7 +18,9 @@ contains the safe checkout-refresh procedure and two independent bundle guards.
    applicable scheduled-task prompt.
 2. Determine the current time in `America/New_York`, resolve the trading
    calendar, and identify publication type and coverage period.
-3. Stop before web research if that type/period has a validated marker. For the daily run, check Daily and Trade Ideas markers independently and retry only the missing companion.
+3. A validated marker suppresses repeated research, not failed delivery recovery.
+   For Daily, run the live publication-status/recovery preflight in the Daily
+   task prompt before exiting as a duplicate. Other cadence ownership stays unchanged. For the daily run, check Daily and Trade Ideas markers independently and retry only the missing companion.
 4. Confirm the cadence is due:
    - Daily: after the completed regular U.S. session.
    - Weekly: after the week's final U.S. session, normally Friday, or Thursday

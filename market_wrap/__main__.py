@@ -93,6 +93,13 @@ def _ideas(args: argparse.Namespace) -> int:
     return 0
 
 
+def _publication_status(args: argparse.Namespace) -> int:
+    from .publication import publication_status
+    result=publication_status(args.root.resolve(),family=args.family,base_url=args.base_url)
+    print(json.dumps(result,indent=2))
+    return 0 if result['state']=='published' else 2
+
+
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Market Wrap publication tooling")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -107,6 +114,11 @@ def _parser() -> argparse.ArgumentParser:
     ideas.add_argument("--input", type=Path, required=True)
     ideas.add_argument("--root", type=Path, default=Path("."))
     ideas.set_defaults(handler=_ideas)
+    delivery = subparsers.add_parser("publication-status", help="verify exact validated report on live latest and dated routes; no research or mutation")
+    delivery.add_argument("--root", type=Path, default=Path("."))
+    delivery.add_argument("--family", choices=("daily","weekly","monthly","canadian-economy","trade-ideas"), default="daily")
+    delivery.add_argument("--base-url", default="https://aliboloor.github.io/market-wrap/")
+    delivery.set_defaults(handler=_publication_status)
     return parser
 
 

@@ -43,13 +43,30 @@ or write. It needs only the standard `GITHUB_TOKEN`, not a repository secret.
 - **Tasks overlap:** serialize, update the next checkout, and revalidate.
 - **Push fails:** reconcile remote changes without force-pushing.
 - **Build fails:** repair locally and push a new commit.
-- **Deploy fails:** verify Pages permissions and rerun after correction.
+- **Deploy fails:** keep the validated content bundle; inspect the exact Pages
+  run and retry failed deploy jobs only after identifying the failed stage. A
+  marker is not publication proof. See the Daily delivery recovery preflight.
 - **Publication is late:** use the next eligible post-close check and show the
   real generation time; never reclassify Daily as an opening or mid-session report.
-- **Publication exists:** exit without research, changes, or a new commit.
+- **Daily content exists:** skip research, then run `python -m market_wrap
+  publication-status --root . --family daily`. Exit as already published only
+  when BOTH latest and dated pages match the source hash. Otherwise recover
+  delivery without rewriting content. Never commit a delivery receipt/push loop.
 
 ## Safety
 
 The repository is public. Review staged files before publication. Never commit
 secrets, cookies, private messages, local paths, account details, positions,
 orders, or browser state. Never force-push from a scheduled task.
+
+## November 4 deployment recovery
+
+The report commit c5f77e439929eb6ba1cf962a23591d6260dd926d passed build, tests
+and validation, but Pages stayed updating_pages until its 600-second timeout.
+A failed-job-only retry succeeded. Later scheduled checks had incorrectly
+suppressed recovery because complete.json was validated. Report article identity
+now carries family/date/source SHA-256, and publication-status verifies BOTH
+latest and dated routes. Network errors, old HTML, wrong dates or changed source
+content are pending delivery, never successful completion. Retry existing runs,
+not new research. See automation/DAILY_TASK_PROMPT.md for bounded/no-duplicate
+recovery. Native scheduler controls remain separate; no control denial is bypassed.
