@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-11-06",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-11-06T21:26:41.792Z",
+  "market_data_as_of": "2026-11-06T21:00:00+00:00",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"AI stocks halt their brutal, worldwide sell-off as Wall Street trims its loss for the week","url":"https://apnews.com/article/markets-japan-nikkei-oil-ai-bba6f0bf9035a6e6b1c4fef3e8230b89","publisher":"Associated Press","accessed_at":"2026-11-06T21:26:41.792Z","supports":["closing narrative","breadth","global markets"]},
+    {"source_id":"bls-employment","title":"The Employment Situation - October 2026","url":"https://www.bls.gov/news.release/archives/empsit_11062026.htm","publisher":"Bureau of Labor Statistics","accessed_at":"2026-11-06T21:26:41.792Z","supports":["payrolls","unemployment","wages","revisions"]},
+    {"source_id":"saxo-options","title":"Eight times the priced move - Options Brief - 6 November 2026","url":"https://campaigns.home.saxo/en-gb/content/articles/options/eight-times-the-priced-move---options-brief---6-november-2026-06112026","publisher":"Saxo","accessed_at":"2026-11-06T21:26:41.792Z","supports":["term structure","skew","payroll implied move"]},
+    {"source_id":"cboe-vix","title":"VIX Volatility Products","url":"https://www.cboe.com/tradable-products/vix","publisher":"Cboe","accessed_at":"2026-11-06T21:26:41.792Z","supports":["VIX definition"]},
+    {"source_id":"treasury-refunding","title":"Quarterly Refunding Statement","url":"https://home.treasury.gov/news/press-releases/sb0678","publisher":"U.S. Department of the Treasury","accessed_at":"2026-11-06T21:26:41.792Z","supports":["November 9 three-year auction"]},
+    {"source_id":"fed-calendar","title":"Federal Reserve Board Calendar: November 2026","url":"https://www.federalreserve.gov/newsevents/2026-november.htm","publisher":"Federal Reserve Board","accessed_at":"2026-11-06T21:26:41.792Z","supports":["November 9 Bowman event"]},
+    {"source_id":"treasury-rates","title":"Daily Treasury Par Yield Curve Rates","url":"https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve","publisher":"U.S. Department of the Treasury","accessed_at":"2026-11-06T21:26:41.792Z","supports":["November 5 two-year Treasury yield"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance public chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-11-06T21:27:16Z","supports":["dashboard","technicals","realized volatility","charts"]},
+    {"source_id":"nyse-calendar","title":"NYSE market hours and calendars","url":"https://www.nyse.com/markets/hours-calendars","publisher":"NYSE","accessed_at":"2026-11-06T21:26:41.792Z","supports":["next regular session"]}
+  ],
+  "series_files": [
+    "data/daily/2026-11-06/series/BTC-USD.json","data/daily/2026-11-06/series/CL_F.json","data/daily/2026-11-06/series/GC_F.json","data/daily/2026-11-06/series/GSPC.json","data/daily/2026-11-06/series/IWM.json","data/daily/2026-11-06/series/QQQ.json","data/daily/2026-11-06/series/SPY.json","data/daily/2026-11-06/series/TLT.json","data/daily/2026-11-06/series/TNX.json","data/daily/2026-11-06/series/VIX.json","data/daily/2026-11-06/series/XLE.json","data/daily/2026-11-06/series/XLF.json","data/daily/2026-11-06/series/XLI.json","data/daily/2026-11-06/series/XLK.json","data/daily/2026-11-06/series/XLV.json"
+  ],
+  "chart_files": ["public/charts/daily/2026-11-06/GSPC.png","public/charts/daily/2026-11-06/SPY.png","public/charts/daily/2026-11-06/QQQ.png","public/charts/daily/2026-11-06/SPY-vs-TLT.png"],
+  "warnings": ["The Dollar Index was rejected by strict OHLC validation and omitted.","The latest available official two-year Treasury observation was November 5 and is one session stale.","Yahoo daily timestamps are provider session labels, not certified closing quote times.","The options term-structure snapshot carries Thursday's close and Friday overnight data; it is not a Monday closing estimate.","Options measures are source-dependent, delayed and non-executable.","Bitcoin is rolling; WTI and gold are continuous futures proxies.","No executable option premiums, fees, strikes or probabilities are presented."]
+}
