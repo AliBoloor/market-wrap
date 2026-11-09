@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-11-09",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-11-09T21:31:33Z",
+  "market_data_as_of": "2026-11-09T21:00:00+00:00",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"US stocks rally and recover most of last week's losses as oil prices swing lower","url":"https://apnews.com/article/stocks-markets-ai-trump-oil-d938f8e6ff42b3706e1d36e6245ec56b","publisher":"Associated Press","accessed_at":"2026-11-09T21:31:33Z","supports":["closing narrative","global markets","oil and AI context"]},
+    {"source_id":"cboe-vol","title":"No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades","url":"https://www.cboe.com/insights/posts/week-of-11-9-2026-no-contagion-yet-equity-vol-spikes-macro-vol-fades","publisher":"Cboe","accessed_at":"2026-11-09T21:31:33Z","supports":["skew","correlation","cross-asset implied volatility"]},
+    {"source_id":"saxo-options","title":"The spike settles, the curve stays inverted","url":"https://campaigns.home.saxo/content/articles/options/the-spike-settles-the-curve-stays-inverted---options-brief---9-november-2026-09112026","publisher":"Saxo","accessed_at":"2026-11-09T21:31:33Z","supports":["term structure","weekly implied range","options limitations"]},
+    {"source_id":"bls-calendar","title":"Schedule of Selected Releases for November 2026","url":"https://www.bls.gov/schedule/2026/11_sched_list.htm","publisher":"Bureau of Labor Statistics","accessed_at":"2026-11-09T21:31:33Z","supports":["November 10 CPI and real earnings"]},
+    {"source_id":"fed-calendar","title":"Federal Reserve Board Calendar: November 2026","url":"https://www.federalreserve.gov/newsevents/2026-november.htm","publisher":"Federal Reserve Board","accessed_at":"2026-11-09T21:31:33Z","supports":["November 10 Fed appearances"]},
+    {"source_id":"treasury-refunding","title":"Quarterly Refunding Statement","url":"https://home.treasury.gov/news/press-releases/sb0678","publisher":"U.S. Department of the Treasury","accessed_at":"2026-11-09T21:31:33Z","supports":["November 10 ten-year auction"]},
+    {"source_id":"treasury-rates","title":"Daily Treasury Par Yield Curve Rates","url":"https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve","publisher":"U.S. Department of the Treasury","accessed_at":"2026-11-09T21:31:33Z","supports":["November 9 two- and ten-year yields"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance public chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-11-09T21:30:48Z","supports":["dashboard","technicals","realized volatility","charts"]},
+    {"source_id":"nyse-calendar","title":"NYSE market hours and calendars","url":"https://www.nyse.com/trade/hours-calendars","publisher":"NYSE","accessed_at":"2026-11-09T21:31:33Z","supports":["next regular session"]}
+  ],
+  "series_files": [
+    "data/daily/2026-11-09/series/BTC-USD.json","data/daily/2026-11-09/series/CL_F.json","data/daily/2026-11-09/series/DX-Y.NYB.json","data/daily/2026-11-09/series/GC_F.json","data/daily/2026-11-09/series/GSPC.json","data/daily/2026-11-09/series/IWM.json","data/daily/2026-11-09/series/QQQ.json","data/daily/2026-11-09/series/SPY.json","data/daily/2026-11-09/series/TLT.json","data/daily/2026-11-09/series/TNX.json","data/daily/2026-11-09/series/VIX.json","data/daily/2026-11-09/series/XLE.json","data/daily/2026-11-09/series/XLF.json","data/daily/2026-11-09/series/XLI.json","data/daily/2026-11-09/series/XLK.json","data/daily/2026-11-09/series/XLV.json"
+  ],
+  "chart_files": ["public/charts/daily/2026-11-09/GSPC.png","public/charts/daily/2026-11-09/SPY.png","public/charts/daily/2026-11-09/QQQ.png","public/charts/daily/2026-11-09/SPY-vs-TLT.png"],
+  "warnings": ["Yahoo daily timestamps are provider session labels, not certified closing quote times.","The Cboe note summarizes the preceding week's option data; the Saxo snapshot carries Friday closes and pre-session quotes, not Monday closing implied moves.","Options measures are source-dependent, delayed and non-executable.","Bitcoin is rolling; WTI and gold are continuous futures proxies.","No executable option premiums, fees, strikes or probabilities are presented."]
+}
