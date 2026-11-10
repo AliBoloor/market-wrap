@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-11-10",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-11-10T23:40:00Z",
+  "market_data_as_of": "2026-11-10T21:00:00+00:00",
+  "state": "validated",
+  "sources": [
+    {"source_id":"bls-cpi","title":"Consumer Price Index — October 2026","url":"https://www.bls.gov/news.release/CPI.htm","publisher":"Bureau of Labor Statistics","accessed_at":"2026-11-10T23:40:00Z","supports":["headline and core CPI","component detail","year-over-year data limitation"]},
+    {"source_id":"ap-close","title":"US stocks slip following a discouraging update on inflation","url":"https://apnews.com/article/stock-markets-ai-earnings-oil-ffe205fbc4fddf65c3e8e64e740355b7","publisher":"Associated Press","accessed_at":"2026-11-10T23:40:00Z","supports":["closing narrative","global markets","Fed and corporate context"]},
+    {"source_id":"treasury-rates","title":"Daily Treasury Par Yield Curve Rates","url":"https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve","publisher":"U.S. Department of the Treasury","accessed_at":"2026-11-10T23:40:00Z","supports":["November 10 two- and ten-year yields","curve repricing"]},
+    {"source_id":"cboe-term","title":"VIX Term Structure","url":"https://www.cboe.com/tradable-products/vix/term-structure","publisher":"Cboe","accessed_at":"2026-11-10T23:40:00Z","supports":["SPX implied-volatility term structure"]},
+    {"source_id":"cboe-vol","title":"No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades","url":"https://www.cboe.com/insights/posts/week-of-11-9-2026-no-contagion-yet-equity-vol-spikes-macro-vol-fades","publisher":"Cboe","accessed_at":"2026-11-10T23:40:00Z","supports":["skew","correlation","cross-asset implied volatility"]},
+    {"source_id":"sifma-veterans","title":"Fixed Income Market Close Recommendation for Veterans Day","url":"https://www.sifma.org/news/press-releases/sifma-fixed-income-market-close-recommendation-in-the-u-s-the-u-k-and-japan-for-the-u-s-veterans-day-holiday-2026","publisher":"SIFMA","accessed_at":"2026-11-10T23:40:00Z","supports":["November 11 fixed-income close"]},
+    {"source_id":"nyse-calendar","title":"NYSE market hours and calendars","url":"https://www.nyse.com/trade/hours-calendars","publisher":"NYSE","accessed_at":"2026-11-10T23:40:00Z","supports":["November 11 equity session","regular hours"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance public chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-11-10T23:37:09Z","supports":["dashboard","technicals","realized volatility","charts"]}
+  ],
+  "series_files": [
+    "data/daily/2026-11-10/series/BTC-USD.json","data/daily/2026-11-10/series/CL_F.json","data/daily/2026-11-10/series/DX-Y.NYB.json","data/daily/2026-11-10/series/GC_F.json","data/daily/2026-11-10/series/GSPC.json","data/daily/2026-11-10/series/IWM.json","data/daily/2026-11-10/series/QQQ.json","data/daily/2026-11-10/series/SPY.json","data/daily/2026-11-10/series/TLT.json","data/daily/2026-11-10/series/TNX.json","data/daily/2026-11-10/series/VIX.json","data/daily/2026-11-10/series/XLE.json","data/daily/2026-11-10/series/XLF.json","data/daily/2026-11-10/series/XLI.json","data/daily/2026-11-10/series/XLK.json","data/daily/2026-11-10/series/XLV.json"
+  ],
+  "chart_files": ["public/charts/daily/2026-11-10/GSPC.png","public/charts/daily/2026-11-10/SPY.png","public/charts/daily/2026-11-10/QQQ.png","public/charts/daily/2026-11-10/SPY-vs-TLT.png"],
+  "warnings": ["Yahoo daily timestamps are provider session labels, not certified closing quote times.","Cboe term-structure values are delayed informational observations, not executable quotes.","The Cboe skew and correlation commentary summarizes the preceding week's data.","Veterans Day equity trading occurs without normal U.S. cash fixed-income trading under SIFMA's recommendation.","Bitcoin is rolling; WTI and gold are continuous futures proxies.","No executable option premiums, fees, strikes, probabilities or dealer positions are presented."]
+}
