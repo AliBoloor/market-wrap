@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-11-11",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-11-11T21:42:00Z",
+  "market_data_as_of": "2026-11-11T21:00:00+00:00",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"A rebound in AI stocks lifts the US market as the S&P 500 climbs","url":"https://apnews.com/article/stock-markets-ai-earnings-oil-297d040c83844a9563327340b370c24e","publisher":"Associated Press","accessed_at":"2026-11-11T21:42:00Z","supports":["closing narrative","global markets","company moves"]},
+    {"source_id":"nyfed-calendar","title":"November 2026 Economic Indicators Calendar","url":"https://www.newyorkfed.org/research/calendars/i-nov26.html","publisher":"Federal Reserve Bank of New York","accessed_at":"2026-11-11T21:42:00Z","supports":["initial claims time","existing-home-sales time"]},
+    {"source_id":"fed-calendar","title":"Federal Reserve Board Calendar: November 2026","url":"https://www.federalreserve.gov/newsevents/2026-november.htm","publisher":"Federal Reserve Board","accessed_at":"2026-11-11T21:42:00Z","supports":["Governor Barr appearance","delayed H.15 release"]},
+    {"source_id":"cboe-term","title":"VIX Term Structure","url":"https://www.cboe.com/tradable-products/vix/term-structure/","publisher":"Cboe","accessed_at":"2026-11-11T21:42:00Z","supports":["SPX implied-volatility framework","observation timestamp"]},
+    {"source_id":"cboe-vol","title":"No Contagion (Yet): Equity Vol Spikes, Macro Vol Fades","url":"https://www.cboe.com/insights/posts/week-of-11-9-2026-no-contagion-yet-equity-vol-spikes-macro-vol-fades/","publisher":"Cboe","accessed_at":"2026-11-11T21:42:00Z","supports":["implied correlation","rotation interpretation"]},
+    {"source_id":"cboe-volume","title":"Derivatives October 2026 Volume Highlights","url":"https://www.cboe.com/insights/posts/market-metrics-that-matter-derivatives-october-2026-volume-highlights","publisher":"Cboe","accessed_at":"2026-11-11T21:42:00Z","supports":["SPX/XSP activity","SPXO launch"]},
+    {"source_id":"cisco-ir","title":"Cisco Q1FY27 Earnings Results","url":"https://investor.cisco.com/default.aspx?LanguageId=1&SectionId=817fbab8-2828-44a2-91a0-f10cb8ac2b03","publisher":"Cisco Investor Relations","accessed_at":"2026-11-11T21:42:00Z","supports":["November 12 earnings time"]},
+    {"source_id":"treasury-rates","title":"Daily Treasury Par Yield Curve Rates","url":"https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve","publisher":"U.S. Department of the Treasury","accessed_at":"2026-11-11T21:42:00Z","supports":["November 10 two- and ten-year yield carry"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance public chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-11-11T21:35:20Z","supports":["dashboard","technicals","realized volatility","charts"]}
+  ],
+  "series_files": [
+    "data/daily/2026-11-11/series/BTC-USD.json","data/daily/2026-11-11/series/CL_F.json","data/daily/2026-11-11/series/DX-Y.NYB.json","data/daily/2026-11-11/series/GC_F.json","data/daily/2026-11-11/series/GSPC.json","data/daily/2026-11-11/series/IWM.json","data/daily/2026-11-11/series/QQQ.json","data/daily/2026-11-11/series/SPY.json","data/daily/2026-11-11/series/TLT.json","data/daily/2026-11-11/series/TNX.json","data/daily/2026-11-11/series/VIX.json","data/daily/2026-11-11/series/XLE.json","data/daily/2026-11-11/series/XLF.json","data/daily/2026-11-11/series/XLI.json","data/daily/2026-11-11/series/XLK.json","data/daily/2026-11-11/series/XLV.json"
+  ],
+  "chart_files": ["public/charts/daily/2026-11-11/GSPC.png","public/charts/daily/2026-11-11/SPY.png","public/charts/daily/2026-11-11/QQQ.png","public/charts/daily/2026-11-11/SPY-vs-TLT.png"],
+  "warnings": ["Yahoo daily timestamps are provider session labels, not certified closing quote times.","The U.S. cash Treasury market was closed on Veterans Day; official two- and ten-year yields are carried from November 10.","The Cboe term-structure page supplied a timestamp and methodology but no inspectable maturity table.","Bitcoin is rolling; WTI and gold are continuous futures proxies.","No executable option premiums, fees, strikes, probabilities or dealer positions are presented."]
+}
