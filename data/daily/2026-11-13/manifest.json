@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-11-13",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-11-13T21:31:00Z",
+  "market_data_as_of": "2026-11-13T21:00:00+00:00",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"Wall Street slips as technology shares weaken","url":"https://apnews.com/article/stocks-markets-ai-us-oil-f8edd0eeb1494d4d2584715686c5e619","publisher":"Associated Press","accessed_at":"2026-11-13T21:31:00Z","supports":["closing context","Friday Treasury yields","global markets"]},
+    {"source_id":"bls-ppi","title":"Producer Price Index News Release","url":"https://www.bls.gov/news.release/ppi.nr0.htm","publisher":"Bureau of Labor Statistics","accessed_at":"2026-11-13T21:31:00Z","supports":["October PPI"]},
+    {"source_id":"nyse-calendar","title":"NYSE Hours and Calendars","url":"https://www.nyse.com/trade/hours-calendars","publisher":"NYSE","accessed_at":"2026-11-13T21:31:00Z","supports":["next-session calendar"]},
+    {"source_id":"fed-calendar","title":"Federal Reserve Board Calendar - November 2026","url":"https://www.federalreserve.gov/newsevents/2026-november.htm","publisher":"Federal Reserve Board","accessed_at":"2026-11-13T21:31:00Z","supports":["Monday Fed events","Tuesday calendar"]},
+    {"source_id":"treasury-auctions","title":"Tentative Auction Schedule","url":"https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.pdf","publisher":"U.S. Treasury","accessed_at":"2026-11-13T21:31:00Z","supports":["refunding settlement"]},
+    {"source_id":"cboe-vol","title":"No Contagion Yet","url":"https://www.cboe.com/insights/posts/week-of-11-9-2026-no-contagion-yet-equity-vol-spikes-macro-vol-fades","publisher":"Cboe","accessed_at":"2026-11-13T21:31:00Z","supports":["implied correlation","rotation interpretation"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance public chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-11-13T21:29:55Z","supports":["dashboard","technicals","realized volatility","charts"]}
+  ],
+  "series_files": ["data/daily/2026-11-13/series/BTC-USD.json","data/daily/2026-11-13/series/CL_F.json","data/daily/2026-11-13/series/DX-Y.NYB.json","data/daily/2026-11-13/series/GC_F.json","data/daily/2026-11-13/series/GSPC.json","data/daily/2026-11-13/series/IWM.json","data/daily/2026-11-13/series/QQQ.json","data/daily/2026-11-13/series/SPY.json","data/daily/2026-11-13/series/TLT.json","data/daily/2026-11-13/series/TNX.json","data/daily/2026-11-13/series/VIX.json","data/daily/2026-11-13/series/XLE.json","data/daily/2026-11-13/series/XLF.json","data/daily/2026-11-13/series/XLI.json","data/daily/2026-11-13/series/XLK.json","data/daily/2026-11-13/series/XLV.json"],
+  "chart_files": ["public/charts/daily/2026-11-13/GSPC.png","public/charts/daily/2026-11-13/SPY.png","public/charts/daily/2026-11-13/QQQ.png","public/charts/daily/2026-11-13/SPY-vs-TLT.png"],
+  "warnings": ["Yahoo daily timestamps are provider session labels, not certified closing quote times.","Official Treasury par yields were available through November 12; Friday yields are timestamped AP observations.","Cboe commentary predates Friday and does not establish closing dealer gamma.","Bitcoin is rolling; WTI and gold are continuous futures proxies.","No executable option premiums, strikes, probabilities or dealer positions are presented."]
+}
