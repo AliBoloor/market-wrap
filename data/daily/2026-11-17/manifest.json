@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-11-17",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-11-17T21:33:00Z",
+  "market_data_as_of": "2026-11-17T21:00:00+00:00",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"Wall Street shakes again as Nvidia and other jittery AI stocks swing lower","url":"https://apnews.com/article/stock-markets-ai-earnings-oil-4d5a35288288389d894e63e6bebe8240","publisher":"Associated Press","accessed_at":"2026-11-17T21:33:00Z","supports":["closing narrative","breadth","global markets","company moves","10-year yield"]},
+    {"source_id":"nvidia-results","title":"NVIDIA Announces Financial Results for Third Quarter Fiscal 2027","url":"https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027","publisher":"NVIDIA","accessed_at":"2026-11-17T21:33:00Z","supports":["post-close earnings","outlook","call timing"]},
+    {"source_id":"fed-calendar","title":"Federal Reserve Board Calendar - November 2026","url":"https://www.federalreserve.gov/newsevents/2026-november.htm","publisher":"Federal Reserve Board","accessed_at":"2026-11-17T21:33:00Z","supports":["Waller appearance","FOMC minutes"]},
+    {"source_id":"bls-calendar","title":"Schedule of Selected Releases for November 2026","url":"https://www.bls.gov/schedule/2026/11_sched_list.htm","publisher":"Bureau of Labor Statistics","accessed_at":"2026-11-17T21:33:00Z","supports":["November 18 release time"]},
+    {"source_id":"saxo-options","title":"Volatility jumps at the front before Nvidia","url":"https://green-ext-cdprod.aksnll.exk8s.iitech.dk/en-mena/content/articles/options/volatility-jumps-at-the-front-before-nvidia---options-brief---17-november-2026-17112026","publisher":"Saxo Bank","accessed_at":"2026-11-17T21:33:00Z","supports":["options expected-move context"]},
+    {"source_id":"treasury-rates","title":"Daily Treasury Par Yield Curve Rates","url":"https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve","publisher":"U.S. Department of the Treasury","accessed_at":"2026-11-17T21:33:00Z","supports":["two-year yield staleness"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance public chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-11-17T21:31:21Z","supports":["dashboard","technicals","realized volatility","charts"]}
+  ],
+  "series_files": ["data/daily/2026-11-17/series/BTC-USD.json","data/daily/2026-11-17/series/CL_F.json","data/daily/2026-11-17/series/DX-Y.NYB.json","data/daily/2026-11-17/series/GC_F.json","data/daily/2026-11-17/series/GSPC.json","data/daily/2026-11-17/series/IWM.json","data/daily/2026-11-17/series/QQQ.json","data/daily/2026-11-17/series/SPY.json","data/daily/2026-11-17/series/TLT.json","data/daily/2026-11-17/series/TNX.json","data/daily/2026-11-17/series/VIX.json","data/daily/2026-11-17/series/XLE.json","data/daily/2026-11-17/series/XLF.json","data/daily/2026-11-17/series/XLI.json","data/daily/2026-11-17/series/XLK.json","data/daily/2026-11-17/series/XLV.json"],
+  "chart_files": ["public/charts/daily/2026-11-17/GSPC.png","public/charts/daily/2026-11-17/SPY.png","public/charts/daily/2026-11-17/QQQ.png","public/charts/daily/2026-11-17/SPY-vs-TLT.png"],
+  "warnings": ["Yahoo daily timestamps are provider session labels, not certified closing quote times.","The November 17 two-year Treasury yield was not yet available from the official daily curve; 4.83% is the November 16 observation.","Nvidia results were released after the cash close and no post-market reaction is included.","The options commentary is a pre-open snapshot and does not establish current dealer gamma.","Bitcoin is rolling; WTI and gold are continuous futures proxies.","No executable option premiums, strikes, probabilities or dealer positions are presented."]
+}
