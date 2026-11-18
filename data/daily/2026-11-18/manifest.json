@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-11-18",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-11-18T21:35:44Z",
+  "market_data_as_of": "2026-11-18T21:00:00+00:00",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"A fifth straight drop for the S&P 500 drags Wall Street to its longest losing streak since June","url":"https://apnews.com/article/stock-markets-ai-earnings-oil-apec-shenzhen-dad5715bc91b4aba23a567a40e22b1fc","publisher":"Associated Press","accessed_at":"2026-11-18T21:35:44Z","supports":["closing narrative","global markets","company moves","10-year yield"]},
+    {"source_id":"ap-fed","title":"Fed minutes: Higher interest rates needed in December as inflation worries mount","url":"https://apnews.com/article/9e72f3b6e3484173471cc382d6918de0","publisher":"Associated Press","accessed_at":"2026-11-18T21:35:44Z","supports":["FOMC interpretation"]},
+    {"source_id":"ap-uk","title":"UK inflation rises to year high","url":"https://apnews.com/article/fe3a7091affaa7a5a850e30581be9c93","publisher":"Associated Press","accessed_at":"2026-11-18T21:35:44Z","supports":["global markets"]},
+    {"source_id":"fomc-minutes","title":"Minutes of the Federal Open Market Committee, October 27-28, 2026","url":"https://www.federalreserve.gov/monetarypolicy/fomcminutes20261028.htm","publisher":"Federal Reserve Board","accessed_at":"2026-11-18T21:35:44Z","supports":["policy","AI financial-stability discussion"]},
+    {"source_id":"fed-calendar","title":"Federal Reserve Board Calendar - November 2026","url":"https://www.federalreserve.gov/newsevents/2026-November.htm","publisher":"Federal Reserve Board","accessed_at":"2026-11-18T21:35:44Z","supports":["November 19 speakers","next-session verification"]},
+    {"source_id":"pnc-calendar","title":"Weekly Economic Roundup - 16 November 2026","url":"https://www.pnc.com/content/dam/pnc-com/pdf/aboutpnc/EconomicReports/neoandrounduparchives/PNC_Economics_Research_Weekly_Economic_Roundup_16_November_2026.pdf","publisher":"PNC Economics","accessed_at":"2026-11-18T21:35:44Z","supports":["jobless claims","Philadelphia Fed survey"]},
+    {"source_id":"earnings-calendar","title":"Earnings calendar this week","url":"https://investingly.io/earnings-calendar","publisher":"Investingly","accessed_at":"2026-11-18T21:35:44Z","supports":["Walmart earnings"]},
+    {"source_id":"treasury-auctions","title":"Treasury Securities Upcoming Auctions Data","url":"https://fiscaldata.treasury.gov/datasets/upcoming-auctions/","publisher":"U.S. Department of the Treasury","accessed_at":"2026-11-18T21:35:44Z","supports":["four-week bill auction"]},
+    {"source_id":"treasury-rates","title":"Daily Treasury Par Yield Curve Rates","url":"https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve","publisher":"U.S. Department of the Treasury","accessed_at":"2026-11-18T21:35:44Z","supports":["two-year yield staleness"]},
+    {"source_id":"options-move","title":"SPX Expected Move Today, Plus SPY and QQQ","url":"https://squawkflow.com/expected-move","publisher":"SquawkFlow","accessed_at":"2026-11-18T21:35:44Z","supports":["options implied move","methodology","observation time"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance public chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-11-18T21:35:44Z","supports":["dashboard","technicals","realized volatility","charts"]}
+  ],
+  "series_files": ["data/daily/2026-11-18/series/BTC-USD.json","data/daily/2026-11-18/series/DX-Y.NYB.json","data/daily/2026-11-18/series/GC_F.json","data/daily/2026-11-18/series/GSPC.json","data/daily/2026-11-18/series/IWM.json","data/daily/2026-11-18/series/QQQ.json","data/daily/2026-11-18/series/SPY.json","data/daily/2026-11-18/series/TLT.json","data/daily/2026-11-18/series/TNX.json","data/daily/2026-11-18/series/VIX.json","data/daily/2026-11-18/series/XLE.json","data/daily/2026-11-18/series/XLF.json","data/daily/2026-11-18/series/XLI.json","data/daily/2026-11-18/series/XLK.json","data/daily/2026-11-18/series/XLV.json"],
+  "chart_files": ["public/charts/daily/2026-11-18/GSPC.png","public/charts/daily/2026-11-18/SPY.png","public/charts/daily/2026-11-18/QQQ.png","public/charts/daily/2026-11-18/SPY-vs-TLT.png"],
+  "warnings": ["Yahoo daily timestamps are provider session labels, not certified closing quote times.","The November 18 two-year Treasury yield was not yet available from the official daily curve; 4.80% is the November 17 observation.","WTI was omitted because the collected source bar failed strict OHLC validation.","The options snapshot is delayed and forward-based; it is not an executable quote or forecast.","Bitcoin is rolling and gold is a continuous futures proxy.","No qualified-provider gamma snapshot, executable option premiums, strikes, probabilities or dealer positions are presented."]
+}
