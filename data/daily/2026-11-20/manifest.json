@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-11-20",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-11-20T21:33:01Z",
+  "market_data_as_of": "2026-11-20T21:00:00+00:00",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"S&P 500 sinks 3.7% and the Nasdaq composite goes negative for the year","url":"https://apnews.com/article/stock-markets-anthropic-ai-chips-boom-c4c3f4878b12989347f8a930ed813dad","publisher":"Associated Press","accessed_at":"2026-11-20T21:33:01Z","supports":["closing narrative","breadth","company moves","global markets","consumer sentiment","10-year yield"]},
+    {"source_id":"imf-global","title":"Global Markets Monitor — November 20, 2026","url":"https://www.imfconnect.org/content/dam/imf/News%20and%20Generic%20Content/GMM/archive/GMM%20November%2020%2C%202026.pdf","publisher":"International Monetary Fund","accessed_at":"2026-11-20T21:33:01Z","supports":["global markets","cross-asset context"]},
+    {"source_id":"treasury-rates","title":"Daily Treasury Par Yield Curve Rates","url":"https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve","publisher":"U.S. Department of the Treasury","accessed_at":"2026-11-20T21:33:01Z","supports":["two-year yield","ten-year yield"]},
+    {"source_id":"cboe-vix","title":"VIX Volatility Products","url":"https://www.cboe.com/tradable-products/vix/","publisher":"Cboe","accessed_at":"2026-11-20T21:33:01Z","supports":["VIX definition","options interpretation"]},
+    {"source_id":"saxo-options","title":"Stocks fall together as near-term volatility jumps — Options Brief","url":"https://green-ext-cdprod.aksnll.exk8s.iitech.dk/en-sg/content/articles/options/stocks-fall-together-as-near-term-volatility-jumps---options-brief---20-november-2026-20112026","publisher":"Saxo","accessed_at":"2026-11-20T21:33:01Z","supports":["options term structure","skew"]},
+    {"source_id":"cboe-calendar","title":"Cboe 2026 Options Expiration Calendar","url":"https://res-certification.cboe.com/resources/options/Cboe2026OPTIONSCalendar.pdf","publisher":"Cboe","accessed_at":"2026-11-20T21:33:01Z","supports":["standard expiration","November 23 weekly options"]},
+    {"source_id":"nyse-calendar","title":"Holidays and Trading Hours","url":"https://www.nyse.com/trade/hours-calendars","publisher":"New York Stock Exchange","accessed_at":"2026-11-20T21:33:01Z","supports":["November 23 regular session","Thanksgiving schedule"]},
+    {"source_id":"fed-calendar","title":"Federal Reserve Board Calendar — November 2026","url":"https://www.federalreserve.gov/newsevents/2026-November.htm","publisher":"Federal Reserve Board","accessed_at":"2026-11-20T21:33:01Z","supports":["November 23 calendar"]},
+    {"source_id":"bls-calendar","title":"Schedule of Selected Releases for November 2026","url":"https://www.bls.gov/schedule/2026/11_sched.htm","publisher":"Bureau of Labor Statistics","accessed_at":"2026-11-20T21:33:01Z","supports":["November 23 calendar"]},
+    {"source_id":"treasury-auctions","title":"Tentative Auction Schedule of U.S. Treasury Securities","url":"https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.pdf","publisher":"U.S. Department of the Treasury","accessed_at":"2026-11-20T21:33:01Z","supports":["November 23 Treasury auctions"]},
+    {"source_id":"earnings-calendar","title":"Earnings, Week of Nov 23–Nov 27","url":"https://pro.thestreet.com/earnings/week/2026-11-23","publisher":"TheStreet","accessed_at":"2026-11-20T21:33:01Z","supports":["November 23 earnings"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance public chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-11-20T21:32:10Z","supports":["dashboard","technicals","realized volatility","charts"]}
+  ],
+  "series_files": ["data/daily/2026-11-20/series/BTC-USD.json","data/daily/2026-11-20/series/CL_F.json","data/daily/2026-11-20/series/DX-Y.NYB.json","data/daily/2026-11-20/series/GC_F.json","data/daily/2026-11-20/series/GSPC.json","data/daily/2026-11-20/series/IWM.json","data/daily/2026-11-20/series/QQQ.json","data/daily/2026-11-20/series/SPY.json","data/daily/2026-11-20/series/TLT.json","data/daily/2026-11-20/series/TNX.json","data/daily/2026-11-20/series/VIX.json","data/daily/2026-11-20/series/XLE.json","data/daily/2026-11-20/series/XLF.json","data/daily/2026-11-20/series/XLI.json","data/daily/2026-11-20/series/XLK.json","data/daily/2026-11-20/series/XLV.json"],
+  "chart_files": ["public/charts/daily/2026-11-20/GSPC.png","public/charts/daily/2026-11-20/SPY.png","public/charts/daily/2026-11-20/QQQ.png","public/charts/daily/2026-11-20/SPY-vs-TLT.png"],
+  "warnings": ["Yahoo daily timestamps are provider session labels, not certified closing quote times.","WTI and gold are continuous futures proxies.","The options term-structure commentary predates Friday's close and must not be treated as an executable post-close surface.","No qualified-provider closing gamma snapshot, executable option premiums, strikes, probabilities or dealer positions are presented."]
+}
