@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-11-23",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-11-23T21:34:04Z",
+  "market_data_as_of": "2026-11-23T21:00:00+00:00",
+  "state": "validated",
+  "sources": [
+    {"source_id":"ap-close","title":"US stocks surge and recover half of last week's plunge after Jensen Huang returns as Nvidia's CEO","url":"https://apnews.com/article/stocks-markets-rates-technology-ai-anthropic-49ba1beba78fa4ed2bd5898029f79c91","publisher":"Associated Press","accessed_at":"2026-11-23T21:34:04Z","supports":["closing narrative","breadth","company moves","global markets","earnings context"]},
+    {"source_id":"treasury-rates","title":"Daily Treasury Par Yield Curve Rates","url":"https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve","publisher":"U.S. Department of the Treasury","accessed_at":"2026-11-23T21:34:04Z","supports":["two-year yield","ten-year yield"]},
+    {"source_id":"saxo-options","title":"Capitulation touched, not confirmed — Options Brief","url":"https://www.home.saxo/content/articles/options/capitulation-touched-not-confirmed---options-brief---23-november-2026-23112026","publisher":"Saxo","accessed_at":"2026-11-23T21:34:04Z","supports":["options term structure","skew","implied movement"]},
+    {"source_id":"fed-calendar","title":"Federal Reserve Board Calendar — November 2026","url":"https://www.federalreserve.gov/newsevents/2026-November.htm","publisher":"Federal Reserve Board","accessed_at":"2026-11-23T21:34:04Z","supports":["November 24 calendar"]},
+    {"source_id":"bls-calendar","title":"Schedule of Selected Releases for November 2026","url":"https://www.bls.gov/schedule/2026/11_sched.htm","publisher":"Bureau of Labor Statistics","accessed_at":"2026-11-23T21:34:04Z","supports":["November 24 calendar"]},
+    {"source_id":"treasury-auctions","title":"Tentative Auction Schedule of U.S. Treasury Securities","url":"https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.pdf","publisher":"U.S. Department of the Treasury","accessed_at":"2026-11-23T21:34:04Z","supports":["November 24 Treasury auctions"]},
+    {"source_id":"adi-results","title":"Analog Devices to Report Fourth Quarter Fiscal Year 2026 Financial Results on Tuesday, November 24, 2026","url":"https://www.analog.com/en/newsroom/press-releases/2026/10-22-2026-adi-report-4q-fy2026-financial-results.html","publisher":"Analog Devices","accessed_at":"2026-11-23T21:34:04Z","supports":["Analog Devices earnings time"]},
+    {"source_id":"mdt-results","title":"Medtronic to announce financial results for its second quarter of fiscal year 2027","url":"https://news.medtronic.com/2026-11-04-Medtronic-to-announce-financial-results-for-its-second-quarter-of-fiscal-year-2027","publisher":"Medtronic","accessed_at":"2026-11-23T21:34:04Z","supports":["Medtronic earnings date"]},
+    {"source_id":"earnings-calendar","title":"Earnings Calendar and Analysis for This Week","url":"https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks","publisher":"Kiplinger","accessed_at":"2026-11-23T21:34:04Z","supports":["November 24 earnings calendar"]},
+    {"source_id":"yahoo-chart","title":"Yahoo Finance public chart data","url":"https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history","publisher":"Yahoo Finance","accessed_at":"2026-11-23T21:33:27Z","supports":["dashboard","technicals","realized volatility","charts"]}
+  ],
+  "series_files": ["data/daily/2026-11-23/series/BTC-USD.json","data/daily/2026-11-23/series/CL_F.json","data/daily/2026-11-23/series/DX-Y.NYB.json","data/daily/2026-11-23/series/GC_F.json","data/daily/2026-11-23/series/GSPC.json","data/daily/2026-11-23/series/IWM.json","data/daily/2026-11-23/series/QQQ.json","data/daily/2026-11-23/series/SPY.json","data/daily/2026-11-23/series/TLT.json","data/daily/2026-11-23/series/TNX.json","data/daily/2026-11-23/series/VIX.json","data/daily/2026-11-23/series/XLE.json","data/daily/2026-11-23/series/XLF.json","data/daily/2026-11-23/series/XLI.json","data/daily/2026-11-23/series/XLK.json","data/daily/2026-11-23/series/XLV.json"],
+  "chart_files": ["public/charts/daily/2026-11-23/GSPC.png","public/charts/daily/2026-11-23/SPY.png","public/charts/daily/2026-11-23/QQQ.png","public/charts/daily/2026-11-23/SPY-vs-TLT.png"],
+  "warnings": ["Yahoo daily timestamps are provider session labels, not certified closing quote times.","WTI and gold are continuous futures proxies.","The options term-structure commentary was observed before Monday's close; no independent closing surface was verified.","No qualified-provider closing gamma snapshot, executable option premiums, strikes, probabilities or dealer positions are presented."]
+}
