@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "trading_date": "2026-11-24",
+  "report_type": "Daily Market Wrap",
+  "report_family": "daily",
+  "generated_at": "2026-11-24T21:30:27Z",
+  "market_data_as_of": "2026-11-24T21:00:00Z",
+  "state": "validated",
+  "sources": [
+    {
+      "source_id": "source-0",
+      "title": "Index closes",
+      "url": "https://apnews.com/article/6cc4e580290aadf304ee316d6d46dd81",
+      "publisher": "AP",
+      "accessed_at": "2026-11-24T21:30:27Z",
+      "supports": [
+        "Index closes"
+      ]
+    },
+    {
+      "source_id": "source-1",
+      "title": "AI leadership and global closes",
+      "url": "https://apnews.com/article/feec0e25b9994b1c86b16329cf770192",
+      "publisher": "AP global",
+      "accessed_at": "2026-11-24T21:30:27Z",
+      "supports": [
+        "AI leadership and global closes"
+      ]
+    },
+    {
+      "source_id": "source-2",
+      "title": "Treasury par yields",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value_month=202611&type=daily_treasury_yield_curve",
+      "publisher": "Treasury",
+      "accessed_at": "2026-11-24T21:30:27Z",
+      "supports": [
+        "Treasury par yields"
+      ]
+    },
+    {
+      "source_id": "source-3",
+      "title": "Prior-close options term structure",
+      "url": "https://campaigns.home.saxo/content/articles/options/one-session-flattens-the-fear-curve---options-brief---24-november-2026-24112026",
+      "publisher": "Saxo",
+      "accessed_at": "2026-11-24T21:30:27Z",
+      "supports": [
+        "Prior-close options term structure"
+      ]
+    },
+    {
+      "source_id": "source-4",
+      "title": "PCE release",
+      "url": "https://www.bea.gov/news/schedule/",
+      "publisher": "BEA",
+      "accessed_at": "2026-11-24T21:30:27Z",
+      "supports": [
+        "PCE release"
+      ]
+    },
+    {
+      "source_id": "source-5",
+      "title": "New home sales",
+      "url": "https://www.census.gov/economic-indicators/calendar-listview-2026.html",
+      "publisher": "Census",
+      "accessed_at": "2026-11-24T21:30:27Z",
+      "supports": [
+        "New home sales"
+      ]
+    },
+    {
+      "source_id": "source-6",
+      "title": "Session calendar",
+      "url": "https://www.nyse.com/trade/hours-calendars",
+      "publisher": "NYSE",
+      "accessed_at": "2026-11-24T21:30:27Z",
+      "supports": [
+        "Session calendar"
+      ]
+    },
+    {
+      "source_id": "source-7",
+      "title": "Market data and charts",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=2y&interval=1d&events=history",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-11-24T21:30:27Z",
+      "supports": [
+        "Market data and charts"
+      ]
+    }
+  ],
+  "series_files": [
+    "data/daily/2026-11-24/series/GSPC.json",
+    "data/daily/2026-11-24/series/XLV.json",
+    "data/daily/2026-11-24/series/XLK.json",
+    "data/daily/2026-11-24/series/XLF.json",
+    "data/daily/2026-11-24/series/XLE.json",
+    "data/daily/2026-11-24/series/XLI.json",
+    "data/daily/2026-11-24/series/SPY.json",
+    "data/daily/2026-11-24/series/QQQ.json",
+    "data/daily/2026-11-24/series/IWM.json",
+    "data/daily/2026-11-24/series/TLT.json",
+    "data/daily/2026-11-24/series/VIX.json",
+    "data/daily/2026-11-24/series/TNX.json",
+    "data/daily/2026-11-24/series/DX-Y.NYB.json",
+    "data/daily/2026-11-24/series/GC_F.json",
+    "data/daily/2026-11-24/series/CL_F.json",
+    "data/daily/2026-11-24/series/BTC-USD.json"
+  ],
+  "chart_files": [
+    "public/charts/daily/2026-11-24/GSPC.png",
+    "public/charts/daily/2026-11-24/SPY.png",
+    "public/charts/daily/2026-11-24/QQQ.png",
+    "public/charts/daily/2026-11-24/SPY-vs-TLT.png"
+  ],
+  "warnings": [
+    "Provider daily timestamps are session labels; cross-asset cutoffs differ.",
+    "Closing options surface and exchange breadth unavailable."
+  ]
+}
